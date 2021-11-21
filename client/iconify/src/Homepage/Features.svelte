@@ -3,13 +3,12 @@
     import Icon from '@iconify/svelte';
 
 	import { fade } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
 
     import TypedJs from '@loscrackitos/svelte-typed-js';
 
     const icon_sets = [
         ["Emoji One", "emojione-v1:speaker-high-volume", "4500+"],
-        ["Noto Icons", "noto:anchor", "1000+"]
+        ["Noto Emoji", "noto:anchor", "3000+"]
     ] 
 
     const svg_examples = [
@@ -34,7 +33,7 @@
 
     const incrementSVGExampleCount = () => {
         current_svg_example = last_current_svg_example + 0;
-        current_svg_example < svg_examples.length -1 ? current_svg_example ++ : current_svg_example = 0;
+        current_svg_example < svg_examples.length ? current_svg_example ++ : current_svg_example = 0;
         last_current_svg_example = current_svg_example + 0;
         setTimeout(() => {
             current_svg_example = null;
@@ -42,7 +41,7 @@
     }
 </script>
 
-<div class="w-full px-8">
+<div class="w-full px-16">
     <p class="text-red-500 font-medium text-2xl text-center tracking-wide">Feautres</p>
     <h2 class="text-6xl font-semibold tracking-wide text-gray-700 text-center mb-12">Many icons, one framework</h2>
     <Paragraph isHTML content="Iconify icons collection includes <a>over 100,000 icons</a> from popular fonts and emoji sets: <a>Font Awesome 4 and 5</a>, <a>Material Design Icons</a>, <a>IonIcons</a>, <a>Vaadin Icons</a>, <a>Entypo+</a> and many many more. You can use them all on same page without loading multiple glyph fonts. Only icons used on page will be loaded instead of entire fonts.
@@ -60,15 +59,39 @@
                 <br/><br/>
                 See <a>icon collections page</a> for list of available icons." />
             </div>
-            <div class="w-1/2"></div>
+            <div class="w-1/2">
+                <div class="flex gap-6 flex-col relative">
+                    <div class="arrow"></div>                
+                    <div class="bg-gray-100 shadow-md rounded-lg w-full flex flex-col">
+                        <h4 class="text-gray-700 text-3xl tracking-wide text-center font-medium m-6">API</h4>
+                        <img src="./assets/iconsdemo.svg" alt="icons example w-full" />
+                        <p class="text-gray-700 text-2xl tracking-wide text-center m-6">100,000+ icons</p>
+                    </div>
+                    <div class="bg-gray-100 shadow-md rounded-lg w-full">
+                        <div class="flex flex-wrap justify-center gap-2 m-6">
+                            <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">mdi:opacity</div>
+                            <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">ion:ios-cart</div>
+                            <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">mdi:flask</div>
+                            <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">noto:anchor</div>
+                            <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">fxemoji:alien</div>
+                        </div>
+                        <p class="text-gray-700 text-2xl tracking-wide text-center m-6">Only icons used on page are downloaded</p>
+                    </div>
+                    <div class="bg-gray-100 shadow-md rounded-lg w-full">
+                        <h4 class="text-gray-700 text-3xl tracking-wide text-center font-medium m-6">Browser</h4>
+                        <div class="w-full flex justify-center">
+                            <img src="./assets/iconsdemoresult.svg" alt="icons example" class="w-96" />
+                        </div>
+                        <p class="text-gray-700 text-2xl tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon) </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="flex gap-12 items-center">
             <div class="w-1/2">
                 <div class="bg-gray-100 text-gray-700 py-4 px-5 rounded-md shadow-md mt-4 mb-4">
                     <code>
                         &lt;<span style="all: inherit; color: rgb(49, 141, 225)">script</span> src="<span style="all: inherit; color: rgb(225, 62, 49); text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>"&gt;&lt;/<span class="text-blue-500" style="all: inherit; color: rgb(49, 141, 225)">script</span>&gt;
-                        <br/><br/>
-                        &lt;<span style="all: inherit; color: rgb(49, 141, 225)">i</span> class="<span style="all: inherit; color: rgb(225, 62, 49);">iconify</span>" data-icon="<span style="all: inherit; color: rgb(225, 62, 49);">mdi:food-apple</span>" style="font-size: 64px; color: #318DE1;"&gt;&lt;/<span style="all: inherit; color: rgb(49, 141, 225)">i</span>&gt;
                         <br/><br/>
                         <TypedJs strings={svg_examples} contentType={null} backDelay={2000} typeSpeed={10} on:stringTyped={incrementSVGExampleCount} style="all: inherit;" loop={true}>
                             <span class="typing" style="all: inherit;" ></span>
@@ -83,7 +106,7 @@
                     </div>
                     <div class="w-full h-full items-center justify-center flex">
                         {#if current_svg_example === 1}
-                        <div in:fade out:fade><Icon icon="mdi:food-apple" width="64" height="64" class="text-blue-500" /></div>
+                        <div in:fade out:fade><Icon icon="mdi:food-apple" width="64" height="64" color="#3C8A3F" /></div>
                         {:else if current_svg_example === 2}
                         <div in:fade out:fade><Icon icon="flat-color-icons:alarm-clock" width="64" height="64" /></div>
                         {:else if current_svg_example === 3}
@@ -91,7 +114,7 @@
                         {:else if current_svg_example === 4}
                         <div in:fade out:fade><p style="font-size: 24px;" class="flex gap-2 items-center">Inline cat <Icon icon="emojione-v1:cat-face" inline={true} width="24" height="24" /> emoji!</p></div>
                         {:else if current_svg_example === 5}
-                        <div in:fade out:fade><Icon icon="mdi:alert-octagon" width="64" height="64" class="text-blue-500" /></div>
+                        <div in:fade out:fade><Icon icon="mdi:alert-octagon" width="64" height="64" color="#c41953" /></div>
                         {/if}
                     </div>
                 </div>
@@ -151,8 +174,37 @@
     </div>
 </div>
 
-<style global lang="scss">
-    code > div {
-        all: inherit;
+<style lang="scss">
+    .arrow {
+        position: absolute;
+        top: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: calc(100% + 4rem);
+        background-color: #DDDDDD;
+        border-radius: 2px;
+        z-index: -1;
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 2px;
+            height: 1rem;
+            background-color: #DDDDDD;
+            border-radius: 2px;
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+            transform-origin: bottom right;
+        }
+
+        &::after {
+            transform: rotate(45deg);
+            transform-origin: bottom left;
+        }
     }
 </style>

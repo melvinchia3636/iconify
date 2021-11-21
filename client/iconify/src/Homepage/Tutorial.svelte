@@ -2,7 +2,7 @@
     import Paragraph from "./Paragraph.svelte";
 </script>
 
-<div class="w-full px-8">
+<div class="w-full px-16">
     <p class="text-red-500 font-medium text-2xl text-center tracking-wide">Get Started</p>
     <h2 class="text-6xl font-semibold tracking-wide text-gray-700 text-center mb-12">How to use Iconify</h2>
     <Paragraph content="Iconify is very easy to use: add one <script> tag in head section of your document or before </body> to include Iconify: " />

@@ -1,4 +1,4 @@
-<div class="w-full flex gap-20 items-center px-8">
+<div class="w-full flex gap-20 items-center px-16">
     <div class="text-6xl font-semibold tracking-wide text-center leading-tight whitespace-nowrap text-gray-700">
         Thousands of<br/>icons, one<br/>
         <span class="text-red-500">unified</span> framework.
