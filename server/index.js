@@ -45,7 +45,7 @@ app.get('/fetch-iconsets', async (req, res) => {
                 item.category = undefined
             }
         
-            res.send(items)
+            res.send(req.query.nobulk ? rows : items)
         }
     )
 });

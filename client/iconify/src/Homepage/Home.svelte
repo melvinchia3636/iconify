@@ -9,7 +9,7 @@
     import License from "./License.svelte"
 </script>
 
-<div class="flex flex-col gap-32">
+<div class="flex flex-col gap-32 px-12">
     <Hero />
     <Intro />
     <Tutorial />

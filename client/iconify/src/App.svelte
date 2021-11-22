@@ -2,15 +2,22 @@
 	import { Router, Route } from "svelte-navigator"
 
 	import Navbar from "./Utils/Navbar.svelte"
+	import Footer from "./Utils/Footer.svelte";
+
 	import Home from "./Homepage/Home.svelte";
+	import Browse from "./Browse/Browse.svelte";
 </script>
 
 <Router>
-	<main class="px-12 py-8 pb-24">
+	<main class="pt-8">
 		<Navbar />
 		<Route path="/">
 			<Home />
 		</Route>
+		<Route path="/icon-sets">
+			<Browse />
+		</Route>
+		<Footer />
 	</main>
 </Router>
 
@@ -20,6 +27,10 @@
     @tailwind utilities;
 
 	@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700&family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap');
+
+	body {
+		margin: 0;
+	}
 
 	* {
 		font-family: Barlow, sans-serif;

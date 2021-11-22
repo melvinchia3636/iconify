@@ -1,5 +1,6 @@
 <script>
     import Icon from "@iconify/svelte";
+    import { slide } from "svelte/transition";
 
     async function getIconSet() {
         const res = await fetch("http://localhost:3001/fetch-iconsets")
@@ -9,26 +10,25 @@
 
     let getIconSetPromise = getIconSet()
     const colors = ['red', 'yellow', 'green', 'indigo', 'purple'];
+
+    export let selectedCategory = null;
+    export let iconFilterTerm;
 </script>
 
-<div class="w-full px-16 flex flex-col items-center">
-    <p class="text-red-500 font-medium text-2xl text-center tracking-wide">Browse</p>
-    <h2 class="text-6xl font-semibold tracking-wide text-gray-700 text-center mb-12">All available icons</h2>
-    <div class="bg-white shadow-md inline-flex items-center p-4 gap-4 w-3/5 rounded-md overflow-hidden">
-        <Icon icon="fe:search" class="text-gray-300" width="32" height="32"/>
-        <input type="text" class=" tracking-wide text-xl text-gray-500 w-full" placeholder="Search all icons" />
-    </div>
+<div class="w-full mt-8 flex flex-col items-center">
     {#await getIconSetPromise}
         <p>Waiting</p>
     {:then icon_sets}
-        <div class="flex flex-col gap-6 w-full pt-12">
+        <div class="flex flex-col w-full pt-12">
             {#each Object.entries(icon_sets) as [name, icon_sets], index}
-                <div class="rounded-lg overflow-hidden shadow-md w-full">
+                {#if selectedCategory === null || selectedCategory === index}
+                <div in:slide out:slide class="rounded-lg mb-6 overflow-hidden shadow-md w-full">
                     <div class="bg-{colors[index]}-500 p-12 py-8 text-white text-3xl font-medium tracking-wide">
                         {name}
                     </div>
                     <div class="p-12 grid grid-cols-2 flex-wrap gap-4">
                         {#each icon_sets as icon_set}
+                            {#if !iconFilterTerm.trim() || icon_set.name.toLowerCase().includes(iconFilterTerm.trim().toLowerCase())}
                             <div class="rounded-lg overflow-hidden shadow-md flex flex-grow">
                                 <div class="text-white text-2xl font-medium tracking-wide flex flex-col w-3/12">
                                     <div class="bg-{colors[index]}-400 text-white w-full h-full flex items-center justify-center px-4 py-3 gap-3">
@@ -51,9 +51,11 @@
                                     <p class="tracking-wide text-lg text-gray-400 mt-3">By <a target="_blank" href={icon_set.url || "/"} class="text-{colors[index % 7]}-400">{icon_set.author}</a></p>
                                 </div>
                             </div>
+                            {/if}
                         {/each}
                     </div>
                 </div>
+                {/if}
             {/each}
         </div>
     {/await}
