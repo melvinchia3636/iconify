@@ -26,8 +26,8 @@
         </div>
         <div class="flex gap-12">
             <div class="w-full inline-flex gap-2 justify-end mt-2">
-                <div class="px-4 py-2 h-12 bg-red-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">fa:home</div>
-                <div class="px-4 py-2 h-12 bg-red-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">mdi:alert</div>
+                <div class="px-4 py-2 h-12 bg-red-1000 rounded-md shadow-md text-white font-medium text-lg tracking-wide">fa:home</div>
+                <div class="px-4 py-2 h-12 bg-red-1000 rounded-md shadow-md text-white font-medium text-lg tracking-wide">mdi:alert</div>
             </div>
             <div class="bg-blue-500 text-white font-medium text-3xl rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center">02</div>
             <div class="w-full mt-4">

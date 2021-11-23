@@ -6,6 +6,8 @@
 
 	import Home from "./Homepage/Home.svelte";
 	import Browse from "./Browse/Browse.svelte";
+	import IconList from "./IconList/IconList.svelte";
+	import SearchAll from "./SearchAll/SearchAll.svelte";
 </script>
 
 <Router>
@@ -14,8 +16,14 @@
 		<Route path="/">
 			<Home />
 		</Route>
+		<Route path="/icon-set/:icon_set" let:params>
+			<IconList icon_set={params.icon_set}/>
+		</Route>
 		<Route path="/icon-sets">
 			<Browse />
+		</Route>
+		<Route path="/search">
+			<SearchAll />
 		</Route>
 		<Footer />
 	</main>

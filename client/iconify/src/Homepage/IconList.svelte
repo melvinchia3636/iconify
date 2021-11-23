@@ -4,7 +4,7 @@
     async function getIconSet() {
         const res = await fetch("http://localhost:3001/fetch-iconsets")
         const data = await res.json()
-        return data
+        return data.icon_aets
     }
 
     let getIconSetPromise = getIconSet()
@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                                 <div class="py-3 px-4 flex flex-col justify-between">
-                                    <a target="_blank" href="./icon-set/{icon_set.prefix}" class="text-{colors[index % 7]}-400 tracking-wide text-2xl font-medium">{icon_set.name}</a>
+                                    <a href="./icon-set/{icon_set.prefix}" class="text-{colors[index % 7]}-400 tracking-wide text-2xl font-medium">{icon_set.name}</a>
                                     <p class="tracking-wide text-lg text-gray-400 mt-3">By <a target="_blank" href={icon_set.url || "/"} class="text-{colors[index % 7]}-400">{icon_set.author}</a></p>
                                 </div>
                             </div>

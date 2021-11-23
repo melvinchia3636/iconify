@@ -4,9 +4,6 @@ import requests
 from tqdm import tqdm
 import time
 
-
-data = json.load(open('collections.json', 'r', encoding="utf-8"))
-
 db = pymysql.connect(host="thecodeblog.net", port=3306, database="thecodeb_iconify", user="thecodeb_root", password="redaxe3636", charset="utf8")
 
 with db:
@@ -43,6 +40,11 @@ with db:
         def updateIconSetMeta():
             sql = "UPDATE icon_set SET has_theme_prefixes = %s, has_theme_suffixes = %s, has_tags = %s WHERE id=@icon_set"
             cursor.execute(sql, ('themePrefixes' in data, 'themeSuffixes' in data, 'tags' in data))
+            db.commit()
+
+        def updateIconSetVersion():
+            sql = "UPDATE icon_set SET version = %s WHERE id=@icon_set"
+            cursor.execute(sql, data['info']['version'])
             db.commit()
         
         #insert relationship between icons and tags
@@ -133,4 +135,4 @@ with db:
             db.commit()
             print(data['name'])
 
-        insertSampleIcons()
+        updateIconSetVersion()
