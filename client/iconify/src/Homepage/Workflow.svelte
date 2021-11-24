@@ -1,5 +1,5 @@
 <script>
-    import Paragraph from "./Paragraph.svelte";
+    import Paragraph from "../Utils/Paragraph.svelte";
 </script>
 
 <div class="w-full px-16">
@@ -19,9 +19,11 @@
             </div>
             <div class="bg-blue-500 text-white font-medium text-3xl rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center">01</div>
             <div class="w-full mt-4">
-                <Paragraph isHTML content="Script looks for icon placeholders.
-                <br/><br/>
-                See <a>how to use Iconify tutorial</a>. " />
+                <Paragraph>
+                    Script looks for icon placeholders.
+                    <br/><br/>
+                    See <a>how to use Iconify tutorial</a>. 
+                </Paragraph>
             </div>
         </div>
         <div class="flex gap-12">
@@ -31,7 +33,9 @@
             </div>
             <div class="bg-blue-500 text-white font-medium text-3xl rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center">02</div>
             <div class="w-full mt-4">
-                <Paragraph isHTML content="Script retrieves icon names from placeholders. " />
+                <Paragraph>
+                    Script retrieves icon names from placeholders.
+                </Paragraph>
             </div>
         </div>
         <div class="flex gap-12">
@@ -63,9 +67,11 @@
             </div>
             <div class="bg-blue-500 text-white font-medium text-3xl rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center">03</div>
             <div class="w-full mt-4">
-                <Paragraph isHTML content="Script connects to Iconify API and retrieves SVG data for all icons found on page.
-                <br/><br/>
-                Iconify API is hosted on network of servers spread across the world, so data would load in fraction of a second from any location." />
+                <Paragraph>
+                    Script connects to Iconify API and retrieves SVG data for all icons found on page.
+                    <br/><br/>
+                    Iconify API is hosted on network of servers spread across the world, so data would load in fraction of a second from any location.
+                </Paragraph>
             </div>
         </div>
         <div class="flex gap-12">
@@ -84,9 +90,11 @@
             </div>
             <div class="bg-blue-500 text-white font-medium text-3xl rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center">04</div>
             <div class="w-full mt-4">
-                <Paragraph isHTML content="Script replaces placeholders with SVG.
-                <br/><br/>
-                More detailed description is <a>available in documentation</a>." />
+                <Paragraph>
+                    Script replaces placeholders with SVG.
+                    <br/><br/>
+                    More detailed description is <a>available in documentation</a>.
+                </Paragraph>
             </div>
         </div>
     </div>

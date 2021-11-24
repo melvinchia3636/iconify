@@ -1,5 +1,5 @@
 <script>
-    import Icon from "@iconify/svelte"
+    import Icon from '@iconify/svelte';
 </script>
 
 <footer class="py-4 px-28 w-full mt-16 text-white flex justify-between items-center bg-blue-500">

@@ -16,8 +16,8 @@
 		<Route path="/">
 			<Home />
 		</Route>
-		<Route path="/icon-set/:icon_set" let:params>
-			<IconList icon_set={params.icon_set}/>
+		<Route path="/icon-set/:iconSet" let:params>
+			<IconList iconSet={params.iconSet}/>
 		</Route>
 		<Route path="/icon-sets">
 			<Browse />
@@ -47,4 +47,5 @@
 			outline: none;
 		}
 	}
+
 </style>

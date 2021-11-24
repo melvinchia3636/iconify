@@ -1,49 +1,59 @@
 <script>
-    import Icon from "@iconify/svelte";
+    import Icon from '@iconify/svelte';
     import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
 
     const colors = {
-        General: 'red',
-        Emoji: 'yellow',
-        "Brands / Social": 'green', 
-        Maps: 'indigo', 
-        Thematic: 'purple'
-    }
+      General: 'red',
+      Emoji: 'yellow',
+      'Brands / Social': 'green',
+      Maps: 'indigo',
+      Thematic: 'purple',
+    };
 
     let iconlist = null;
-    let icon_sets = null
-    let currentPage = 1
+    let iconSets = null;
+    let currentPage = 1;
     const urlParams = new URLSearchParams(window.location.search);
-    const searchTerm = urlParams.get("q");
-    let hasMore = false
+    const searchTerm = urlParams.get('q');
+    let hasMore = false;
     let currentIconSet = null;
+    let isLoading = false;
 
-    async function getIconSet(icon_set, isNewSets) {
-        if (isNewSets) iconlist = null
-        currentIconSet = icon_set || null
-        const res = await fetch(`http://localhost:3001/search-icons?q=${searchTerm}&page=${currentPage}${icon_set ? "&icon_set=" + icon_set : ""}`)
-        const data = await res.json()
-        iconlist = data.icons.length ? (!isNewSets ? iconlist.concat(data.icons) : data.icons) : []
-        icon_sets = data.icon_sets
-        hasMore = data.hasMore
+    async function getIconSet(iconSet, isNewSets) {
+      if (isNewSets) {
+        iconlist = null;
+        hasMore = false;
+        currentPage = 1;
+      }
+      currentIconSet = iconSet || null;
+      const res = await fetch(`http://localhost:3001/search-icons?q=${searchTerm}&page=${currentPage}${iconSet ? `&icon_set=${iconSet}` : ''}`);
+      const data = await res.json();
+      if (data.icons.length) {
+        iconlist = !isNewSets ? iconlist.concat(data.icons) : data.icons;
+      } else {
+        iconlist = [];
+      }
+      iconSets = data.icon_sets;
+      hasMore = data.hasMore;
+      isLoading = false;
     }
 
-    getIconSet(null, true)
+    getIconSet(null, true);
 
-    document.addEventListener("keypress", (e) => {
-        if (e.code === "Slash") {
-            document.querySelector("input").focus()
-            e.preventDefault()
-        }
-    })
+    document.addEventListener('keypress', (e) => {
+      if (e.code === 'Slash') {
+        document.querySelector('input').focus();
+        e.preventDefault();
+      }
+    });
 </script>
 
 <div class="w-full px-24 flex flex-col justify-center">
     <h1 class="text-center font-semibold tracking-wide text-5xl text-gray-700 mb-6 mt-12">Search results for "{searchTerm}"</h1>
-    {#if icon_sets}
+    {#if iconSets}
         <div class="flex gap-2 flex-wrap mb-12 justify-center">
-            {#each icon_sets as icon_set}
-                <button on:click={() => getIconSet(currentIconSet !== icon_set.prefix ? icon_set.prefix : null, true)} class="{currentIconSet === null || currentIconSet === icon_set.prefix ? `bg-${colors[icon_set.category]}-500` : `border-2 border-${colors[icon_set.category]}-500 text-${colors[icon_set.category]}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md ">{icon_set.name}</button>
+            {#each iconSets as iconSet}
+                <button on:click={() => getIconSet(currentIconSet !== iconSet.prefix ? iconSet.prefix : null, true)} class="{currentIconSet === null || currentIconSet === iconSet.prefix ? `bg-${colors[iconSet.category]}-500` : `border-2 border-${colors[iconSet.category]}-500 text-${colors[iconSet.category]}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md ">{iconSet.name}</button>
             {/each}
         </div>
     {/if}
@@ -74,5 +84,23 @@
         <p class="text-3xl text-center tracking-wide font-medium text-gray-500">Nothing found :(</p>
     {/if}
     {#if hasMore}
-    <button on:click={() => {currentPage ++; getIconSet()}} class="bg-blue-500 font-medium text-white text-xl rounded-md shadow-md px-12 py-3 tracking-wide">Load More</button>{/if}
+        <button on:click={() => { currentPage += 1; isLoading = true; getIconSet(); }} class="bg-blue-500 font-medium flex items-center justify-center text-white text-xl rounded-md shadow-md px-12 h-16 tracking-wide">
+            {#if isLoading}
+                <div
+                class="-mb-12">
+                    <LottiePlayer
+                        src="/assets/loading_white.json"
+                        autoplay="{true}"
+                        loop="{true}"
+                        renderer="svg"
+                        background="transparent"
+                        height="{100}"
+                        width="{100}"
+                    />
+                </div>
+            {:else}
+                Load More
+            {/if}
+        </button>
+    {/if}
 </div>

@@ -1,15 +1,15 @@
 <script>
-    import IconList from "./IconList.svelte";
-    import Header from "./Header.svelte";
-    import Search from "./Search.svelte";
-    import BottomDec from "../Utils/BottomDec.svelte";
-    import { iconFilterTerm } from './store.ts'
+  import IconList from "./IconList.svelte";
+  import Header from "./Header.svelte";
+  import Search from "./Search.svelte";
+  import BottomDec from "../Utils/BottomDec.svelte";
+  import { iconFilterTerm } from './store.ts'
 
-    let selectedCategory = null;
+  let selectedCategory = null;
 
-    const setSelectedCategory = value => {
-        selectedCategory = value;
-    }
+  const setSelectedCategory = (value) => {
+    selectedCategory = value;
+  };
 </script>
 
 <div class="flex flex-col px-16">

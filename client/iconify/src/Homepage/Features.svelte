@@ -1,5 +1,5 @@
 <script>
-    import Paragraph from "./Paragraph.svelte";
+    import Paragraph from "../Utils/Paragraph.svelte";
     import Icon from '@iconify/svelte';
 
 	import { fade } from 'svelte/transition';
@@ -44,20 +44,24 @@
 <div class="w-full px-16">
     <p class="text-red-500 font-medium text-2xl text-center tracking-wide">Feautres</p>
     <h2 class="text-6xl font-semibold tracking-wide text-gray-700 text-center mb-12">Many icons, one framework</h2>
-    <Paragraph isHTML content="Iconify icons collection includes <a>over 100,000 icons</a> from popular fonts and emoji sets: <a>Font Awesome 4 and 5</a>, <a>Material Design Icons</a>, <a>IonIcons</a>, <a>Vaadin Icons</a>, <a>Entypo+</a> and many many more. You can use them all on same page without loading multiple glyph fonts. Only icons used on page will be loaded instead of entire fonts.
-    <br/><br/>
-    Icon designers can publish their own icon sets too. Iconify offers open source tools to clean up and publish custom icon sets. " />
+    <Paragraph>
+        Iconify icons collection includes <a>over 100,000 icons</a> from popular fonts and emoji sets: <a>Font Awesome 4 and 5</a>, <a>Material Design Icons</a>, <a>IonIcons</a>, <a>Vaadin Icons</a>, <a>Entypo+</a> and many many more. You can use them all on same page without loading multiple glyph fonts. Only icons used on page will be loaded instead of entire fonts.
+        <br/><br/>
+        Icon designers can publish their own icon sets too. Iconify offers open source tools to clean up and publish custom icon sets. 
+    </Paragraph>
     <div class="pt-20 w-full flex flex-col gap-24">
         <div class="flex gap-12 items-center">
             <div class="w-1/2">
                 <h3 class="text-blue-500 font-semibold tracking-wide text-5xl mb-8">Load on demand</h3>
-                <Paragraph isHTML content="Fonts and other SVG frameworks load entire collections. Even if you are using only 10-20 icons, your visitors are forced to load them all.
-                <br/><br/>
-                Iconify works differently. Very differently! Iconify loads only icons used on page. Icons are loaded as external resources that are cached by browser, not embedded into each page. No other SVG framework can do that.
-                <br/><br/>
-                What is advantage of this unique approach to handling icons? You are no longer limited to one collection. You can use them all on same page without having to load megabytes of data!
-                <br/><br/>
-                See <a>icon collections page</a> for list of available icons." />
+                <Paragraph>
+                    Fonts and other SVG frameworks load entire collections. Even if you are using only 10-20 icons, your visitors are forced to load them all.
+                    <br/><br/>
+                    Iconify works differently. Very differently! Iconify loads only icons used on page. Icons are loaded as external resources that are cached by browser, not embedded into each page. No other SVG framework can do that.
+                    <br/><br/>
+                    What is advantage of this unique approach to handling icons? You are no longer limited to one collection. You can use them all on same page without having to load megabytes of data!
+                    <br/><br/>
+                    See <a>icon collections page</a> for list of available icons.
+                </Paragraph>
             </div>
             <div class="w-1/2">
                 <div class="flex gap-6 flex-col relative">
@@ -121,23 +125,27 @@
             </div>
             <div class="w-1/2">
                 <h3 to use class="text-blue-500 font-semibold tracking-wide text-5xl mb-8">Easy to use</h3>
-                <Paragraph isHTML content={`Syntax is similar to glyph fonts. Write a placeholder element, Iconify will replace it with SVG.
-                <br/><br/>
-                Use span or i or any other HTML tag with class="iconify". If you want an icon to behave like text, aligned slightly below baseline, use class="iconify-inline".
-                <br/><br/>
-                Icons are easy to style with CSS: size is set by font-size, color for monotone icons is set by text color. Just like glyph fonts.
-                <br/><br/>
-                Do not forget to add Iconify script tag in head section of your document or before </body>!
-                <br/><br/>
-                See <a>how to use Iconify</a> tutorial.`} />
+                <Paragraph>
+                    Syntax is similar to glyph fonts. Write a placeholder element, Iconify will replace it with SVG.
+                    <br/><br/>
+                    Use span or i or any other HTML tag with class="iconify". If you want an icon to behave like text, aligned slightly below baseline, use class="iconify-inline".
+                    <br/><br/>
+                    Icons are easy to style with CSS: size is set by font-size, color for monotone icons is set by text color. Just like glyph fonts.
+                    <br/><br/>
+                    Do not forget to add Iconify script tag in head section of your document or before {'</body>'}!
+                    <br/><br/>
+                    See <a>how to use Iconify</a> tutorial.
+                </Paragraph>
             </div>
         </div>
         <div class="flex gap-12 items-center">
             <div class="w-1/2">
                 <h3 to use class="text-blue-500 font-semibold tracking-wide text-5xl mb-8">Over 100,000 icons to choose from</h3>
-                <Paragraph isHTML content="One script to access thousands of icons from popular collections: FontAwesome, Material Design, Vaadin Icons, Emoji One, Twemoji, Icons8 sets and many more.
-                <br/><br/>
-                You can use Iconify with custom and commercial icon sets too." />
+                <Paragraph>
+                    One script to access thousands of icons from popular collections: FontAwesome, Material Design, Vaadin Icons, Emoji One, Twemoji, Icons8 sets and many more.
+                    <br/><br/>
+                    You can use Iconify with custom and commercial icon sets too.
+                </Paragraph>
             </div>
             <div class="w-1/2 h-full flex items-center justify-center gap-24 mb-24">
                 <button on:click={prevIcon}>
@@ -164,11 +172,13 @@
             </div>
             <div class="w-1/2">
                 <h3 to use class="text-blue-500 font-semibold tracking-wide text-5xl mb-8">Lightning fast</h3>
-                <Paragraph isHTML content="Icons are loaded from Iconify API in bulk, reducing number of queries. Script is small and fast. Placeholders are replaced with SVG images in fraction of second.
-                <br/><br/>
-                Iconify API is hosted on network of servers spread across the globe. Visitors are always connected to closest server, reducing loading time to fraction of second.
-                <br/><br/>
-                If you want to, you can <a>create your own Iconify API server</a>!" />
+                <Paragraph>
+                    Icons are loaded from Iconify API in bulk, reducing number of queries. Script is small and fast. Placeholders are replaced with SVG images in fraction of second.
+                    <br/><br/>
+                    Iconify API is hosted on network of servers spread across the globe. Visitors are always connected to closest server, reducing loading time to fraction of second.
+                    <br/><br/>
+                    If you want to, you can <a>create your own Iconify API server</a>!
+                </Paragraph>
             </div>
         </div>
     </div>

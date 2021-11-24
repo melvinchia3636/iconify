@@ -1,8 +1,8 @@
 <script>
-    import Paragraph from "../Homepage/Paragraph.svelte";
+    import Paragraph from './Paragraph.svelte';
 </script>
 
-<Paragraph isHTML content="
+<Paragraph>
     <p class='mt-8'>
         Icon sets are automatically kept up to date, making sure you always have access to the newest icons.
         <br/><br/>
@@ -14,4 +14,4 @@
         <br/><br/>
         See <a>about Iconify page</a> to learn more about Iconify project.
     </p>
-" />
+</Paragraph>

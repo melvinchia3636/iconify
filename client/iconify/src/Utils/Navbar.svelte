@@ -1,14 +1,25 @@
 <script>
-    import { Link } from "svelte-navigator";
+    import { Link } from 'svelte-navigator';
+
+    const pathname = `/${new URL(document.URL).pathname.split('/')[1]}`;
+    const navOptions = [
+      [['/'], 'Home'],
+      [['/icon-sets', '/icon-set', '/search'], 'Icons'],
+      [['https://docs.iconify.design/'], 'Documentation'],
+      [['https://github.com/iconify'], 'Github'],
+    ];
 </script>
 
 <nav class="flex px-12 justify-between w-full mb-8">
     <a href="/"><img src="../assets/logo.svg" alt="iconify logo" /></a>
     <div class="flex items-center gap-16 text-xl tracking-wide font-medium -mt-1 text-gray-700">
-        <Link to="/" class="text-blue-500 font-semibold" style="font-size: 1.3rem">Home</Link>
-        <Link to="/icon-sets">Icons</Link>
-        <Link to="/docs">Documentation</Link>
-        <Link to="/github">Github</Link>
+        {#each navOptions as [route, name]}
+            {#if route.includes(pathname)}
+                <a href={route[0]} class="text-blue-500 font-semibold" style="font-size: 1.3rem">{name}</a>
+            {:else}
+                <a href={route[0]}>{name}</a>
+            {/if}
+        {/each}
     </div>
     <Link to="/icon-sets" class="bg-red-1000 shadow-md px-6 pt-3 pb-4 text-white font-semibold text-xl tracking-wide rounded-md flex items-center gap-6">
         Browse Icons

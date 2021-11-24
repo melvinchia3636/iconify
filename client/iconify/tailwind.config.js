@@ -8,23 +8,26 @@ module.exports = {
     extend: {
       colors: {
         blue: {
-          500: "#318DE1",
-          600: "#0A5DA9"
+          500: '#318DE1',
+          600: '#0A5DA9',
         },
         red: {
-          1000: "#E13E31"
-        }
+          1000: '#E13E31',
+        },
+      },
+      rotate: {
+        270: "270deg"
       }
+    },
+    scale: {
+      flip: -1
     }
   },
-  plugins: [
-
-  ],
   purge: {
     content: [
-     "./src/**/*.svelte",
+      './src/**/*.svelte',
 
     ],
-    enabled: production // disable purge in dev
+    enabled: production, // disable purge in dev
   },
 };

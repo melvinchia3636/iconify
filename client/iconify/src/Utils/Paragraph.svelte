@@ -1,14 +1,5 @@
-<script>
-    export let content = "";
-    export let isHTML = false;
-</script>
-
 <p class="text-gray-700 text-xl tracking-wide">
-    {#if isHTML}
-        {@html content}
-    {:else}
-        {content}
-    {/if}
+    <slot></slot>
 </p>
 
 <style global lang="scss">
