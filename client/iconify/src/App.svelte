@@ -1,5 +1,5 @@
 <script>
-	import { Router, Route } from "svelte-navigator"
+	import { Router, Route } from "svelte-navigator";
 
 	import Navbar from "./Utils/Navbar.svelte"
 	import Footer from "./Utils/Footer.svelte";
@@ -8,6 +8,10 @@
 	import Browse from "./Browse/Browse.svelte";
 	import IconList from "./IconList/IconList.svelte";
 	import SearchAll from "./SearchAll/SearchAll.svelte";
+
+	window.onload = () => {
+		window.scrollTo({ top: 0 });
+	}
 </script>
 
 <Router>

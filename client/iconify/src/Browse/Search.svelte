@@ -1,6 +1,6 @@
 <script>
     import Icon from '@iconify/svelte';
-    import { count } from './stores.js';
+    import { count } from './stores';
 
     const categories = {
       red: 'General',

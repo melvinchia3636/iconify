@@ -3,7 +3,7 @@
   import Header from "./Header.svelte";
   import Search from "./Search.svelte";
   import BottomDec from "../Utils/BottomDec.svelte";
-  import { iconFilterTerm } from './store.ts'
+  import { iconFilterTerm } from './stores'
 
   let selectedCategory = null;
 

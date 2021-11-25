@@ -1,7 +1,7 @@
 <script>
     import Paragraph from "../../../Utils/Paragraph.svelte";
     import CodeSnippet from "../CodeSnippet.svelte";
-    import MoreInfo from "../MoreInfo.svelte"
+    import MoreInfo from "../MoreInfo.svelte";
 </script>
 
 <Paragraph>

@@ -1,13 +1,33 @@
 <script>
     import Icon from "@iconify/svelte";
-    import { fade, slide } from "svelte/transition"
-    import { currentIcon, currentIconSet } from "./stores"
+    import { fade, slide } from "svelte/transition";
+    import {
+        currentIcon,
+        currentIconSet,
+        currentColor,
+        currentWidth,
+        currentHeight,
+        currentFlipHorizontal,
+        currentFlipVertical,
+        currentRotate
+    } from "./stores";
 
-    import Ember from "./docs/Ember.svelte"
-    import SVGFramework from "./docs/HTML/SVGFrameworks.svelte"
-    import CSS from "./docs/HTML/CSS.svelte"
-    import React from "./docs/React/React.svelte"
-    import ReactOffline from "./docs/React/ReactOffline.svelte"
+    import { isColor } from "./utils";
+
+    import Ember from "./docs/Ember.svelte";
+    import SVGFramework from "./docs/HTML/SVGFrameworks.svelte";
+    import CSS from "./docs/HTML/CSS.svelte";
+    import React from "./docs/React/React.svelte";
+    import ReactOffline from "./docs/React/ReactOffline.svelte";
+    import Svelte from "./docs/Svelte/Svelte.svelte";
+    import SvelteOffline from "./docs/Svelte/SvelteOffline.svelte";
+    import Vue2 from "./docs/Vue/Vue2.svelte";
+    import Vue3 from "./docs/Vue/Vue3.svelte";
+    import Vue2Offline from "./docs/Vue/Vue2Offline.svelte";
+    import Vue3Offline from "./docs/Vue/Vue3Offline.svelte";
+    import SVG from "./docs/SVG/SVG.svelte";
+    import SVGURI from "./docs/SVG/SVGURI.svelte"
+    import SVGWithRectangle from "./docs/SVG/SVGWithRectangle.svelte"
 
     let curIcon = null;
     let curIconSet = null;
@@ -41,18 +61,18 @@
             name: "Vue",
             icon: "akar-icons:vue-fill",
             subtabs: [
-                ["Vue3", null],
-                ["Vue2", null],
-                ["Vue3 (offline)", null],
-                ["Vue2 (offline)", null],
+                ["Vue3", Vue3],
+                ["Vue2", Vue2],
+                ["Vue3 (offline)", Vue3Offline],
+                ["Vue2 (offline)", Vue2Offline],
             ]
         },
         {
             name: "Svelte",
             icon: "cib:svelte",
             subtabs: [
-                ["Svelte", null],
-                ["Svelte (offline)", null],
+                ["Svelte", Svelte],
+                ["Svelte (offline)", SvelteOffline],
             ]
         },
         {
@@ -62,11 +82,11 @@
         },
         {
             name: "SVG",
-            icon: "tabler:vector-beizer-2",
+            icon: "mdi:svg",
             subtabs: [
-                ["SVG", null], 
-                ["SVG with viewBox rectangle", null], 
-                ["SVG as data: URI", null]
+                ["SVG", SVG], 
+                ["SVG with viewBox rectangle", SVGWithRectangle], 
+                ["SVG as data: URI", SVGURI]
             ]
         }
     ]
@@ -74,30 +94,27 @@
     currentIcon.subscribe(value => {
         curIcon = value
     })
-
     currentIconSet.subscribe(value => {
         curIconSet = value
     })
 
-    const isColor = (strColor) => {
-        const s = new Option().style;
-        s.color = strColor;
-        return s.color !== '';
-    }
-    $: document.body.style.overflow = curIcon ? "hidden" : "auto"
+    $: document.body.style.overflow = curIcon ? "hidden" : "auto";
+
+    $: currentColor.set(color.toLowerCase());
+    $: currentWidth.set(width && !isNaN(width) ? parseInt(width, 10) : 24);
+    $: currentHeight.set(height && !isNaN(height) ? parseInt(height, 10) : 24);
+    $: currentFlipHorizontal.set(flipHoriz);
+    $: currentFlipVertical.set(flipVert);
+    $: currentRotate.set(rotate);
 </script>
 
 <div in:fade out:fade class="fixed w-full h-screen flex items-center justify-center top-0 left-0 bg-black bg-opacity-20">
     <div in:slide out:slide class="w-full p-8 gap-8 flex relative bg-white m-24 rounded-xl shadow-xl" style="height: calc(100vh - 8rem)">
         <button on:click={() => currentIcon.set(null)} class="absolute right-6 top-6"><Icon icon="heroicons-solid:x" class="text-gray-300" width="24" height="24" /></button>
         <div class="h-full relative w-2/5 flex-shrink-0 flex items-center justify-center rounded-xl shadow-lg">
-            <Icon icon={curIcon} class="transform rotate-{rotate} transition-all" style="{flipVert && "--tw-rotate-x: 180deg"};{flipHoriz && "--tw-rotate-y: 180deg"}; color: {isColor(color) ? color : "currentColor"}; width: {width && !isNaN(width) && parseInt(width) <= 172  ? width : "172"}px; height: {height && !isNaN(height) && parseInt(height) <= 172 ? height : "172"}px" />
-            <p class="font-medium text-gray-700 tracking-wide text-xl absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8">
-                {width && !isNaN(width) <= 172 ? width : "172"} x {height && !isNaN(height) ? height : "172"}
-                {#if (width && !isNaN(width) && parseInt(width) > 172) || (height && !isNaN(height) && parseInt(height) > 172)}
-                <br/>
-                (size too large to be displayed here)
-                {/if}
+            <Icon icon={curIcon} class="transform rotate-{rotate} transition-all w-56 h-56" style="{flipVert && "--tw-rotate-x: 180deg"};{flipHoriz && "--tw-rotate-y: 180deg"}; color: {isColor(color) ? color : "currentColor"};" />
+            <p class="font-medium text-gray-700 tracking-wide text-xl absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all">
+                {width && !isNaN(width) ? width : "24"} x {height && !isNaN(height) ? height : "24"}
             </p>
         </div>
         <div class="w-full h-full overflow-auto pr-4 mt-8">
@@ -126,11 +143,11 @@
                     </div>
                     <div class="flex gap-2 p-3 items-center shadow-md rounded-md">
                         <Icon icon="fluent:auto-fit-width-20-filled" width="28" height="28" class="text-gray-300"/>
-                        <input size="5" type="text" class="text-gray-700 font-medium tracking-wide text-xl placeholder-gray-300" bind:value={width} placeholder="172" autocomplete="off">
+                        <input size="5" type="text" class="text-gray-700 font-medium tracking-wide text-xl placeholder-gray-300" bind:value={width} placeholder="24" autocomplete="off">
                     </div>
                     <div class="flex gap-2 p-3 items-center shadow-md rounded-md">
                         <Icon icon="fluent:auto-fit-height-20-filled" width="28" height="28" class="text-gray-300"/>
-                        <input size="5" type="text" class="text-gray-700 font-medium tracking-wide text-xl placeholder-gray-300" bind:value={height} placeholder="172" autocomplete="off">
+                        <input size="5" type="text" class="text-gray-700 font-medium tracking-wide text-xl placeholder-gray-300" bind:value={height} placeholder="24" autocomplete="off">
                     </div>
                 </div>
                 <div class="p-4 flex gap-3 border-gray-200 border-2 rounded-md relative">
@@ -161,7 +178,7 @@
                 </div>
                 <div class="p-4 flex gap-3 border-gray-200 border-2 rounded-md relative">
                     <div class="absolute left-4 bg-white p-2 h-4 flex items-center" style="top: -0.6rem">
-                        <p class="tracking-wide text-gray-300 text-base font-medium">Display</p>
+                        <p class="tracking-wide text-gray-300 text-base font-medium">Rotate</p>
                     </div>
                     <button on:click={() => rotate = 0} class="flex relative z-10 gap-2 py-3 px-4 items-center shadow-md rounded-md {rotate == 0 ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
                         <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="{rotate === 0 ? "text-white" : "text-gray-300"}">
