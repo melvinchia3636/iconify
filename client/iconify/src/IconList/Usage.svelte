@@ -4,15 +4,10 @@
     import {
         currentIcon,
         currentIconSet,
-        currentColor,
-        currentWidth,
-        currentHeight,
-        currentFlipHorizontal,
-        currentFlipVertical,
-        currentRotate
     } from "./stores";
 
     import { isColor } from "./utils";
+    import CopyToClipboard from "svelte-copy-to-clipboard";
 
     import Ember from "./docs/Ember.svelte";
     import SVGFramework from "./docs/HTML/SVGFrameworks.svelte";
@@ -36,9 +31,10 @@
     let flipVert = false;
     let flipHoriz = false;
     let display = "block";
-    let rotate = 0
-    let currentTab = 0
-    let currentSubTab = 0
+    let rotate = 0;
+    let currentTab = 0;
+    let currentSubTab = 0;
+    let isCopied = false;
 
     let tabs = [
         {
@@ -99,23 +95,24 @@
     })
 
     $: document.body.style.overflow = curIcon ? "hidden" : "auto";
-
-    $: currentColor.set(color.toLowerCase());
-    $: currentWidth.set(width && !isNaN(width) ? parseInt(width, 10) : 24);
-    $: currentHeight.set(height && !isNaN(height) ? parseInt(height, 10) : 24);
-    $: currentFlipHorizontal.set(flipHoriz);
-    $: currentFlipVertical.set(flipVert);
-    $: currentRotate.set(rotate);
 </script>
 
 <div in:fade out:fade class="fixed w-full h-screen flex items-center justify-center top-0 left-0 bg-black bg-opacity-20">
     <div in:slide out:slide class="w-full p-8 gap-8 flex relative bg-white m-24 rounded-xl shadow-xl" style="height: calc(100vh - 8rem)">
         <button on:click={() => currentIcon.set(null)} class="absolute right-6 top-6"><Icon icon="heroicons-solid:x" class="text-gray-300" width="24" height="24" /></button>
         <div class="h-full relative w-2/5 flex-shrink-0 flex items-center justify-center rounded-xl shadow-lg">
-            <Icon icon={curIcon} class="transform rotate-{rotate} transition-all w-56 h-56" style="{flipVert && "--tw-rotate-x: 180deg"};{flipHoriz && "--tw-rotate-y: 180deg"}; color: {isColor(color) ? color : "currentColor"};" />
-            <p class="font-medium text-gray-700 tracking-wide text-xl absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all">
-                {width && !isNaN(width) ? width : "24"} x {height && !isNaN(height) ? height : "24"}
-            </p>
+            {#if display === "inline"}
+                <p class="text-gray-700 tracking-wide text-2xl p-12 text-center">
+                    Text with icon sample
+                    <Icon icon={curIcon} class="transform inline rotate-{rotate} transition-all" style="{flipVert && "--tw-rotate-x: 180deg"};{flipHoriz && "--tw-rotate-y: 180deg"}; color: {isColor(color) ? color : "currentColor"}; width: {width && !isNaN(width) && parseInt(width) <= 256 ? `${width}px` : "1.5rem"}; height: {height && !isNaN(height) && parseInt(height) <= 256 ? `${height}px` : "1.5rem"}"></Icon>
+                    to show icon alignment in text.
+                </p>
+            {:else}
+                <Icon icon={curIcon} class="transform rotate-{rotate} transition-all" style="{flipVert && "--tw-rotate-x: 180deg"};{flipHoriz && "--tw-rotate-y: 180deg"}; color: {isColor(color) ? color : "currentColor"}; width: {width && !isNaN(width) && parseInt(width) <= 256 ? `${width}px` : "172px"}; height: {height && !isNaN(height) && parseInt(height) <= 256 ? `${height}px` : "172px"}" />
+                <p class="font-medium text-gray-700 tracking-wide text-xl absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all">
+                    {width && !isNaN(width) ? width : "24"} x {height && !isNaN(height) ? height : "24"}
+                </p>
+            {/if}
         </div>
         <div class="w-full h-full overflow-auto pr-4 mt-8">
             <p class="text-blue-500 font-medium tracking-wide text-xl">{curIconSet}</p>
@@ -123,9 +120,15 @@
                 {#if curIcon}
                     <h2 class="text-gray-700 font-semibold text-5xl tracking-wide -mt-1">{curIcon}</h2>
                 {/if}
-                <button class="mt-1">
-                    <Icon icon="ic:round-content-copy" width="32" height="32" class="text-gray-400"/>
-                </button>
+                    <CopyToClipboard text={curIcon} on:copy={() => {isCopied = true; setTimeout(() => {isCopied = false;}, 1000);}} let:copy>
+                        <button class="mt-1 relative w-8 h-8" on:click={copy}>
+                            {#if !isCopied}
+                                <div class="absolute top-0 left-0" transition:fade="{{duration: 150}}"><Icon icon="ic:round-content-copy" width="32" height="32" class="text-gray-400"/></div>
+                            {:else}
+                                <svg transition:fade="{{duration: 150}}" xmlns="http://www.w3.org/2000/svg" class="text-gray-400 absolute top-0 left-0" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="2.4rem" height="2.4rem" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47z" fill="currentColor"/></svg>
+                            {/if}
+                        </button>
+                    </CopyToClipboard>
             </div>
             <div class="flex gap-4 mt-8 flex-wrap">
                 <div class="p-4 flex gap-4 border-gray-200 border-2 rounded-md relative">
@@ -231,7 +234,17 @@
                     </div>
                 {/if}
                 <div class="mt-8 mb-8">
-                    <svelte:component this={tabs[currentTab].subTab || tabs[currentTab].subtabs[currentSubTab][1]} />
+                    <svelte:component 
+                        this={tabs[currentTab].subTab || tabs[currentTab].subtabs[currentSubTab][1]}
+                        icon={curIcon}
+                        color={color}
+                        width={width}
+                        height={height}
+                        flipHorizontal={flipHoriz}
+                        flipVertical={flipVert}
+                        rotate={rotate}
+                        display={display}
+                    />
                 </div>
             </div>
         </div>

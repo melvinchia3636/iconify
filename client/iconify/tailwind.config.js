@@ -21,7 +21,17 @@ module.exports = {
     },
     scale: {
       flip: -1
-    }
+    },
+    screens: {
+      "sssm": "500px",
+      "ssm": "590px",
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "1100": "1100px",
+      "xl": "1281px",
+      "2xl": "1536px"
+  },
   },
   purge: {
     content: [

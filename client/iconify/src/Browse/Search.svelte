@@ -31,7 +31,7 @@ count.subscribe((value) => {
     </button>
 </form>
 <div class="w-full flex gap-8 mt-4 items-center justify-between">
-    <div class="flex gap-2">
+    <div class="flex gap-2 flex-wrap">
         {#each Object.entries(categories) as [color, category], index}
             <button on:click={() => setSelectedCategory(selectedCategory == index ? null : index)} class="{selectedCategory === null || selectedCategory === index ? `bg-${color}-500` : `border-2 border-${color}-500 text-${color}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-full ">{category}</button>
         {/each}

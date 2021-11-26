@@ -4,37 +4,19 @@
     import MoreInfo from "../MoreInfo.svelte";
 
     import { isColor, colornameFromHex } from "../../utils";
-    import { currentColor, currentWidth, currentHeight, currentFlipHorizontal, currentFlipVertical, currentRotate } from "../../stores";
 
-    let curColor;
-    let curWidth;
-    let curHeight;
-    let curFlipHorizontal;
-    let curFlipVertical;
-    let curRotate;
-
-    currentColor.subscribe(value => {
-        curColor = value;
-    })
-    currentWidth.subscribe(value => {
-        curWidth = value
-    })
-    currentHeight.subscribe(value => {
-        curHeight = value
-    })
-    currentFlipHorizontal.subscribe(value => {
-        curFlipHorizontal = value
-    })
-    currentFlipVertical.subscribe(value => {
-        curFlipVertical = value
-    })
-    currentRotate.subscribe(value => {
-        curRotate = value
-    })
+    export let color;
+    export let width;
+    export let height;
+    export let flipHorizontal;
+    export let flipVertical;
+    export let rotate;
+    export let display;
+    export let icon;
 </script>
 
 <Paragraph>Iconify SVG framework makes using icons as easy as icon fonts. To use "13-plus in HTML, add this code to the document:</Paragraph>
-<CodeSnippet>{`<span class="iconify" data-icon="uil:13-plus"${isColor(curColor) ? ` style="color:${colornameFromHex(curColor)}` : ""}${curWidth !== 24 ? ` data-width="${curWidth}"` : ""}${curHeight !== 24 ? ` data-height="${curHeight}"` : ""}${curFlipHorizontal && curFlipVertical ? ' data-flip="horizontal,vertical"' : `${curFlipHorizontal ? ' data-flip="horizontal' : ""}${curFlipVertical ? ' data-flip="vertical"' : ""}`}${curRotate ? ` data-rotate=${curRotate}deg` : ""}></span>`}</CodeSnippet>
+<CodeSnippet>{`<span class="iconify${display === "inline" ? "-inline" : ""}" data-icon="${icon}"${isColor(color) ? ` style="color:${colornameFromHex(color)}` : ""}${width ? ` data-width="${width}"` : ""}${height ? ` data-height="${height}"` : ""}${flipHorizontal && flipVertical ? ' data-flip="horizontal,vertical"' : `${flipHorizontal ? ' data-flip="horizontal' : ""}${flipVertical ? ' data-flip="vertical"' : ""}`}${rotate ? ` data-rotate="${rotate}deg"` : ""}></span>`}</CodeSnippet>
 <Paragraph>
     Iconify SVG framework will load icon data from Iconify API and replace that placeholder with SVG.
     <br/>

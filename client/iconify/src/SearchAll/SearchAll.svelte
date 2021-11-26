@@ -1,6 +1,8 @@
 <script>
     import Icon from '@iconify/svelte';
     import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
+    import { currentIcon, currentIconSet as curIconSet } from '../IconList/stores';
+    import Usage from "../IconList/Usage.svelte";
 
     const colors = {
       General: 'red',
@@ -18,6 +20,12 @@
     let hasMore = false;
     let currentIconSet = null;
     let isLoading = false;
+
+    let curIcon = null;
+
+    currentIcon.subscribe(value => {
+        curIcon = value
+    })
 
     async function getIconSet(iconSet, isNewSets) {
       if (isNewSets) {
@@ -48,12 +56,12 @@
     });
 </script>
 
-<div class="w-full px-24 flex flex-col justify-center">
-    <h1 class="text-center font-semibold tracking-wide text-5xl text-gray-700 mb-6 mt-12">Search results for "{searchTerm}"</h1>
+<div class="w-full px-4 sm:px-24 flex flex-col justify-center">
+    <h1 class="text-center font-semibold tracking-wide text-4xl sssm:text-5xl text-gray-700 mb-6 sssm:mt-12">Search results for "{searchTerm}"</h1>
     {#if iconSets}
         <div class="flex gap-2 flex-wrap mb-12 justify-center">
             {#each iconSets as iconSet}
-                <button on:click={() => getIconSet(currentIconSet !== iconSet.prefix ? iconSet.prefix : null, true)} class="{currentIconSet === null || currentIconSet === iconSet.prefix ? `bg-${colors[iconSet.category]}-500` : `border-2 border-${colors[iconSet.category]}-500 text-${colors[iconSet.category]}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md ">{iconSet.name}</button>
+                <button on:click={() => getIconSet(currentIconSet !== iconSet.prefix ? iconSet.prefix : null, true)} class="{currentIconSet === null || currentIconSet === iconSet.prefix ? `bg-${colors[iconSet.category]}-500` : `border-2 border-${colors[iconSet.category]}-500 text-${colors[iconSet.category]}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-md sssm:text-lg px-4 flex-grow sssm:px-8 pb-0.5 rounded-md ">{iconSet.name}</button>
             {/each}
         </div>
     {/if}
@@ -61,10 +69,10 @@
         {#if iconlist}
             <div class="w-full grid gap-4 pb-8" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))">
                 {#each iconlist as icon}
-                    <div class="shadow-md rounded-md flex flex-col gap-12 p-12 pb-4 items-center justify-between">
+                    <button on:click={() => {curIconSet.set(iconSets.filter(e => e.prefix === icon.icon_set)[0].name); currentIcon.set(`${icon.icon_set}:${icon.name}`)}} class="transition-all bg-white hover:bg-gray-50 shadow-md rounded-md flex flex-col gap-12 p-12 pb-4 items-center justify-between">
                         <Icon icon={`${icon.icon_set}:${icon.name}`} width="56" height="56" class="text-gray-700" />
                         <p class="font-medium tracking-wide text-gray-700 text-center">{icon.icon_set}:{icon.name}</p>
-                    </div>
+                    </button>
                 {/each}
             </div>
         {:else}
@@ -102,5 +110,8 @@
                 Load More
             {/if}
         </button>
+    {/if}
+    {#if curIcon}
+        <Usage />
     {/if}
 </div>

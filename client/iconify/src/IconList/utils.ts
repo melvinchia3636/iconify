@@ -158,4 +158,4 @@ const wordToHex = {
 const hexToWord = Object.fromEntries(Object.entries(wordToHex).map(([k, v]) => [v, k]))
 
 export const colornameToHex = (color) => wordToHex[color.toUpperCase()] || color;
-export const colornameFromHex = (hex) => hexToWord[hex.toUpperCase()] || hex;
+export const colornameFromHex = (hex) => hexToWord[hex.toUpperCase()] || hex.toLowerCase();
