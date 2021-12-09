@@ -6,16 +6,51 @@
     export let color;
     export let width;
     export let height;
-    export let display;
+    export let flipHorizontal;
+    export let flipVertical;
+    export let rotate;
     export let icon;
 
-    let SVGOriginal = getIcon(icon)?.body;
-    let SVG = SVGOriginal + ""
+    function saveSvg(svgEl, name) {
+        var svgData = svgEl;
+        var preface = '<?xml version="1.0" standalone="no"?>\r\n';
+        var svgBlob = new Blob([preface, svgData], {type:"image/svg+xml;charset=utf-8"});
+        var svgUrl = URL.createObjectURL(svgBlob);
+        var downloadLink = document.createElement("a");
+        downloadLink.href = svgUrl;
+        downloadLink.download = name;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    }
 
-    $: SVG = isColor(color) ? SVGOriginal.replace("currentColor", colornameFromHex(color)) : SVGOriginal
+    const baseURL = `https://api.iconify.design/${icon.split(":")[0]}/${icon.split(":")[1]}.svg`;
+    let url = new URL(baseURL);
+    let urlString = url.toString();
+    let curSVG = "";
+    $: (() => {
+        isColor(color) ? url.searchParams.set("color", colornameFromHex(color)) : url.searchParams.delete("color");
+        width ? url.searchParams.set("width", width) : url.searchParams.delete("width")
+        height ? url.searchParams.set("height", height) : url.searchParams.delete("height");
+        rotate ? url.searchParams.set("rotate", `${rotate}deg`) : url.searchParams.delete("rotate")
+
+        if (!(flipHorizontal || flipVertical)) {
+            url.searchParams.delete("flip");
+        } else if (flipHorizontal && flipVertical) {
+            url.searchParams.set("flip", "vertical,horizontal")
+        } else if (flipVertical) {
+            url.searchParams.set("flip", "vertical")
+        } else {
+            url.searchParams.set("flip", "horizontal")
+        }
+
+        urlString = url.toString()
+    })();
+
+        $: fetch(urlString).then(res => res.text()).then(data => {curSVG = data;})
 </script>
 
 <CodeSnippet>
-    {`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"${display === 'inline' ? ` style="vertical-align: -0.125em;"` : ""} width="${width ? width : "1rem"}" height="${height ? height : "1rem"}" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">${SVG}</svg>`}
+    {curSVG}
 </CodeSnippet>
-
+<button on:click={() => {saveSvg(curSVG, icon.split(":")[1]+'.svg')}} class="w-full p-4 text-xl font-medium tracking-wide text-white bg-blue-500 shadow-md rounded-md">Download SVG</button>

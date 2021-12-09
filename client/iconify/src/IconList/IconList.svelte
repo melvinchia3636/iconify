@@ -39,7 +39,7 @@
             hasMore = false;
         }
         currentTag = tag || null;
-        const res = await fetch(`http://localhost:3001/fetch-iconlist/${iconSet}/${page}?${tag ? `tag=${tag.replace('&', '%26')}` : ''}${searchTerm ? `&q=${searchTerm.toLowerCase()}` : ''}`);
+        const res = await fetch(`https://api.iconify.thecodeblog.net/fetch-iconlist/${iconSet}/${page}?${tag ? `tag=${tag.replace('&', '%26')}` : ''}${searchTerm ? `&q=${searchTerm.toLowerCase()}` : ''}`);
         const data = await res.json();
         iconlist = data.icons.length ? (!isNewTag ? iconlist.concat(data.icons) : data.icons) : [];
         version = data.version || '1.0.0';
@@ -62,29 +62,29 @@
     });
 </script>
 
-<div class="w-full px-24 flex flex-col justify-center">
-    <h1 class="text-center font-semibold tracking-wide text-5xl text-gray-700 mb-6 mt-12">{name}<span class="text-xl text-blue-500 ml-2">v{version}</span></h1>
-    <div class="bg-white shadow-md inline-flex items-center mx-auto p-4 mb-6 gap-4 w-full rounded-md overflow-hidden">
+<div class="flex flex-col justify-center w-full px-24">
+    <h1 class="mt-12 mb-6 text-5xl font-semibold tracking-wide text-center text-gray-700">{name}<span class="ml-2 text-xl text-blue-500">v{version}</span></h1>
+    <div class="inline-flex items-center w-full p-4 mx-auto mb-6 overflow-hidden bg-white shadow-md gap-4 rounded-md">
         <Icon icon="fe:search" class="text-gray-300" width="32" height="32"/>
-        <input bind:value={searchTerm} on:input={() => getIconSet(currentTag, true)} type="text" class=" tracking-wide text-xl text-gray-500 w-full" placeholder="Search {iconCount} icons (Press '/' to focus)" />
+        <input bind:value={searchTerm} on:input={() => getIconSet(currentTag, true)} type="text" class="w-full text-xl tracking-wide text-gray-500 " placeholder="Search {iconCount} icons (Press '/' to focus)" />
     </div>
-    <div class="flex gap-2 flex-wrap mb-12 justify-center">
+    <div class="flex flex-wrap justify-center mb-12 gap-2">
         {#each tags as tag}
             <button on:click={() => getIconSet(currentTag !== tag ? tag : null, true)} class="{currentTag === null || currentTag === tag ? `bg-${colors[category]}-500` : `border-2 border-${colors[category]}-500 text-${colors[category]}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md ">{tag}</button>
         {/each}
     </div>
     {#if iconlist === null || iconlist.length > 0}
         {#if iconlist}
-            <div class="w-full grid gap-4 pb-8" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))">
+            <div class="w-full pb-8 grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))">
                 {#each iconlist as icon}
-                    <div on:click={() => {currentIcon.set(`${iconSet}:${icon.name}`)}} class="transition-all bg-white hover:bg-gray-50 cursor-pointer shadow-md rounded-md flex flex-col gap-12 p-12 pb-4 items-center justify-between">
+                    <div on:click={() => {currentIcon.set(`${iconSet}:${icon.name}`)}} class="flex flex-col items-center justify-between p-12 pb-4 bg-white shadow-md cursor-pointer transition-all hover:bg-gray-50 rounded-md gap-12">
                         <Icon icon={`${iconSet}:${icon.name}`} width="56" height="56" class="text-gray-700" />
-                        <p class="font-medium tracking-wide text-gray-700 text-center">{icon.name}</p>
+                        <p class="font-medium tracking-wide text-center text-gray-700">{icon.name}</p>
                     </div>
                 {/each}
             </div>
         {:else}
-            <div class="w-full flex justify-center">
+            <div class="flex justify-center w-full">
                 <LottiePlayer
                     src="/assets/loading_anim.json"
                     autoplay="{true}"
@@ -97,10 +97,10 @@
             </div>
         {/if}
     {:else}
-        <p class="text-3xl text-center tracking-wide font-medium text-gray-500">Nothing found :(</p>
+        <p class="text-3xl font-medium tracking-wide text-center text-gray-500">Nothing found :(</p>
     {/if}
     {#if hasMore}
-        <button on:click={() => { page += 1; isLoading = true; getIconSet(); }} class="bg-blue-500 font-medium flex items-center justify-center text-white text-xl rounded-md shadow-md px-12 h-16 tracking-wide">
+        <button on:click={() => { page += 1; isLoading = true; getIconSet(); }} class="flex items-center justify-center h-16 px-12 text-xl font-medium tracking-wide text-white bg-blue-500 shadow-md rounded-md">
             {#if isLoading}
                 <div class="-mb-12">
                     <LottiePlayer

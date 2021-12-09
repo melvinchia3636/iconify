@@ -9,7 +9,7 @@
     import License from './License.svelte';
 </script>
 
-<div class="flex flex-col gap-32 px-12">
+<div class="flex flex-col px-12 gap-32">
     <Hero />
     <Intro />
     <Tutorial />
@@ -18,4 +18,6 @@
     <IconList />
     <Compatibility />
     <License />
+    <div class="bg-red-500 bg-yellow-500 bg-green-500 bg-indigo-400 bg-indigo-500 bg-purple-400 bg-purple-500"></div>
+    <div class="text-red-400 text-yellow-400 text-green-400 text-indigo-400 text-purple-400"></div>
 </div>

@@ -29,7 +29,7 @@
 		<Route path="/search">
 			<SearchAll />
 		</Route>
-		<!--<Footer />-->
+		<Footer />
 	</main>
 </Router>
 
