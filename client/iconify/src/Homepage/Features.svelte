@@ -42,7 +42,7 @@
 </script>
 
 <div class="w-full px-16">
-    <p class="text-red-500 font-medium text-2xl text-center tracking-wide">Feautres</p>
+    <p class="text-rose-500 font-medium text-2xl text-center tracking-wide">Feautres</p>
     <h2 class="text-6xl font-semibold tracking-wide text-gray-700 text-center mb-12">Many icons, one framework</h2>
     <Paragraph>
         Iconify icons collection includes <a>over 100,000 icons</a> from popular fonts and emoji sets: <a>Font Awesome 4 and 5</a>, <a>Material Design Icons</a>, <a>IonIcons</a>, <a>Vaadin Icons</a>, <a>Entypo+</a> and many many more. You can use them all on same page without loading multiple glyph fonts. Only icons used on page will be loaded instead of entire fonts.
@@ -104,9 +104,9 @@
                 </div>
                 <div class="w-full h-64 flex flex-col rounded-md border border-gray-700">
                     <div class="flex items-center gap-2 p-3 border-b border-gray-700">
-                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-rose-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-orange-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
                     </div>
                     <div class="w-full h-full items-center justify-center flex">
                         {#if current_svg_example === 1}
@@ -156,7 +156,7 @@
                     {#each icon_sets as icon_set, index}
                         {#if index == current_icon_set}
                             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" in:fade out:fade><Icon icon={icon_set[1]} width="256" height="256"/></div>
-                            <h4 class="text-red-500 font-medium text-3xl tracking-wider mt-16 absolute top-56" in:fade out:fade>{icon_set[0]}</h4>
+                            <h4 class="text-rose-500 font-medium text-3xl tracking-wider mt-16 absolute top-56" in:fade out:fade>{icon_set[0]}</h4>
                             <h5 class="text-gray-700 font-medium text-xl tracking-wider mt-16 absolute top-64 pt-2" in:fade out:fade>{icon_set[2]} icons</h5>
                         {/if}
                     {/each}

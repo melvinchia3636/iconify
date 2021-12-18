@@ -8,11 +8,11 @@
     }
 
     const getIconSetPromise = getIconSet();
-    const colors = ['red', 'yellow', 'green', 'indigo', 'purple'];
+    const colors = ['rose', 'orange', 'emerald', 'sky', 'purple'];
 </script>
 
 <div class="flex flex-col items-center w-full px-16">
-    <p class="text-2xl font-medium tracking-wide text-center text-red-500">Browse</p>
+    <p class="text-2xl font-medium tracking-wide text-center text-rose-500">Browse</p>
     <h2 class="mb-12 text-6xl font-semibold tracking-wide text-center text-gray-700">All available icons</h2>
     <div class="inline-flex items-center w-3/5 p-4 overflow-hidden bg-white shadow-md gap-4 rounded-md">
         <Icon icon="fe:search" class="text-gray-300" width="32" height="32"/>

@@ -5,7 +5,7 @@
 <div class="w-full flex gap-20 items-center px-16">
     <div class="text-6xl font-semibold tracking-wide text-center leading-tight whitespace-nowrap text-gray-700">
         Thousands of<br/>icons, one<br/>
-        <span class="text-red-500">unified</span> framework.
+        <span class="text-rose-500">unified</span> framework.
     </div>
     <Paragraph>
         There are many excellent icon sets available. Each has its own custom syntax, some are available only as fonts and almost all of them load entire set even if you are displaying just few icons.

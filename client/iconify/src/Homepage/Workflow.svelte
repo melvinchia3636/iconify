@@ -3,7 +3,7 @@
 </script>
 
 <div class="w-full px-16">
-    <p class="text-red-500 font-medium text-2xl text-center tracking-wide">Workflow</p>
+    <p class="text-rose-500 font-medium text-2xl text-center tracking-wide">Workflow</p>
     <h2 class="text-6xl font-semibold tracking-wide text-gray-700 text-center mb-16">How does Iconify work?</h2>
     <div class="flex flex-col gap-16 relative">
         <div class="big-arrow"></div>

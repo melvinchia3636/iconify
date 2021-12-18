@@ -18,6 +18,7 @@
     <IconList />
     <Compatibility />
     <License />
-    <div class="bg-red-500 bg-yellow-500 bg-green-500 bg-indigo-400 bg-indigo-500 bg-purple-400 bg-purple-500"></div>
-    <div class="text-red-400 text-yellow-400 text-green-400 text-indigo-400 text-purple-400"></div>
 </div>
+<div class="h-0 bg-rose-500 bg-orange-500 bg-emerald-500 bg-sky-400 bg-sky-500 bg-purple-400 bg-purple-500"></div>
+<div class="h-0 text-rose-400 text-orange-400 text-emerald-400 text-sky-400 text-purple-400 text-rose-500 text-orange-500 text-emerald-500 text-sky-500 text-purple-500"></div>
+<div class="h-0 border-rose-500 border-orange-500 border-emerald-500 border-sky-500 border-purple-500"></div>

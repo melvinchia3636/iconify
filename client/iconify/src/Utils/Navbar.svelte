@@ -11,25 +11,25 @@
     ];
 </script>
 
-<nav class="flex px-8 sssm:px-12 justify-between items-center w-full mb-8">
-    <div class="flex-shrink-0 flex items-center gap-6">
+<nav class="flex items-center justify-between w-full px-8 mb-8 ssm:px-12">
+    <div class="flex items-center flex-shrink-0 gap-6">
         <button class="block 1100:hidden">
-            <Icon icon="gg:menu" class="text-gray-700" width="2rem" height="2rem" />
+            <Icon icon="gg:menu" class="text-gray-700" width="1.8rem" height="1.8rem" />
         </button>
         <a href="/"><img src="../assets/logo.svg" alt="iconify logo" /></a>
     </div>
-    <div class="items-center gap-16 text-xl tracking-wide font-medium -mt-1 text-gray-700 hidden 1100:flex">
+    <div class="items-center hidden -mt-1 text-xl font-medium tracking-wide text-gray-700 gap-16 1100:flex">
         {#each navOptions as [route, name]}
             {#if route.includes(pathname)}
-                <a href={route[0]} class="text-blue-500 font-semibold" style="font-size: 1.3rem">{name}</a>
+                <a href={route[0]} class="font-semibold text-blue-500" style="font-size: 1.3rem">{name}</a>
             {:else}
                 <a href={route[0]}>{name}</a>
             {/if}
         {/each}
     </div>
-    <Link to="/icon-sets" class="hidden ssm:flex bg-red-1000 shadow-md px-6 pt-3 pb-4 text-white font-semibold text-xl tracking-wide rounded-md items-center gap-6">
+    <Link to="/icon-sets" class="items-center hidden px-6 pt-3 pb-4 text-xl font-semibold tracking-wide text-white shadow-md ssm:flex bg-red-1000 rounded-md gap-6">
         Browse Icons
-        <svg class='mt-1 flex-shrink-0' width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class='flex-shrink-0 mt-1' width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>

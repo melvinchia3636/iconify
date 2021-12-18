@@ -3,7 +3,7 @@
 </script>
 
 <div class="w-full px-16">
-    <p class="text-red-500 font-medium text-2xl text-center tracking-wide">Compatibility</p>
+    <p class="text-rose-500 font-medium text-2xl text-center tracking-wide">Compatibility</p>
     <h2 class="text-6xl font-semibold tracking-wide text-gray-700 text-center mb-12">Iconify in different browsers</h2>
     <Paragraph>
         Iconify supports all modern browsers.

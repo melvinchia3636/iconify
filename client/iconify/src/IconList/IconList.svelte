@@ -13,10 +13,10 @@
     })
 
     const colors = {
-      General: 'red',
-      Emoji: 'yellow',
-      'Brands / Social': 'green',
-      Maps: 'indigo',
+      General: 'rose',
+      Emoji: 'orange',
+      'Brands / Social': 'emerald',
+      Maps: 'sky',
       Thematic: 'purple',
     };
 
@@ -69,8 +69,10 @@
         <input bind:value={searchTerm} on:input={() => getIconSet(currentTag, true)} type="text" class="w-full text-xl tracking-wide text-gray-500 " placeholder="Search {iconCount} icons (Press '/' to focus)" />
     </div>
     <div class="flex flex-wrap justify-center mb-12 gap-2">
-        {#each tags as tag}
-            <button on:click={() => getIconSet(currentTag !== tag ? tag : null, true)} class="{currentTag === null || currentTag === tag ? `bg-${colors[category]}-500` : `border-2 border-${colors[category]}-500 text-${colors[category]}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md ">{tag}</button>
+        {#each tags.sort() as tag}
+            {#if tag}
+                <button on:click={() => getIconSet(currentTag !== tag ? tag : null, true)} class="{currentTag === null || currentTag === tag ? `bg-${colors[category]}-500` : `border-2 border-${colors[category]}-500 text-${colors[category]}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md ">{tag}</button>
+            {/if}
         {/each}
     </div>
     {#if iconlist === null || iconlist.length > 0}

@@ -33,11 +33,7 @@ module.exports = {
       "2xl": "1536px"
   },
   },
-  purge: {
-    content: [
-      './src/**/*.svelte',
-
-    ],
-    enabled: production, // disable purge in dev
-  },
+  content: [
+    './src/**/*.svelte',
+  ],
 };

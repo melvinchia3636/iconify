@@ -1,6 +1,6 @@
 <div class="w-full bg-blue-500 rounded-lg relative p-16 shadow-md">
     <div class="inline-flex flex-col">
-        <div class="bg-white text-red-500 pt-6 px-10 inline relative w-min text-8xl font-bold tracking-wide rounded-t-2xl round">Unified</div>
+        <div class="bg-white text-rose-500 pt-6 px-10 inline relative w-min text-8xl font-bold tracking-wide rounded-t-2xl round">Unified</div>
         <div class="bg-white text-gray-700 py-6 px-10 inline-block text-6xl font-medium tracking-wide rounded-b-2xl rounded-tr-2xl">Icons Framework</div>
     </div>
     <p class="text-white text-3xl leading-9 tracking-wide mt-8">One library, over 100,000 vector icons.

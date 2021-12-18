@@ -5,10 +5,10 @@
     import Usage from "../IconList/Usage.svelte";
 
     const colors = {
-      General: 'red',
-      Emoji: 'yellow',
-      'Brands / Social': 'green',
-      Maps: 'indigo',
+      General: 'rose',
+      Emoji: 'orange',
+      'Brands / Social': 'emerald',
+      Maps: 'sky',
       Thematic: 'purple',
     };
 
