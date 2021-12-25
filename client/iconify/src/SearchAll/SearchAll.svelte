@@ -56,8 +56,8 @@
     });
 </script>
 
-<div class="flex flex-col justify-center w-full px-4 sm:px-24">
-    <h1 class="mb-6 text-4xl font-semibold tracking-wide text-center text-gray-700 sssm:text-5xl sssm:mt-12">Search results for "{searchTerm}"</h1>
+<div class="flex flex-col justify-center w-full px-12 md:px-24">
+    <h1 class="mb-6 text-3xl font-semibold tracking-wide text-center text-gray-700 sssm:text-5xl sm:mt-12">Search results for "{searchTerm}"</h1>
     {#if iconSets}
         <div class="flex flex-wrap justify-center mb-12 gap-2">
             {#each iconSets as iconSet}

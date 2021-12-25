@@ -2,6 +2,8 @@
     import Icon from '@iconify/svelte';
     import { Link } from 'svelte-navigator';
 
+    import { slide } from 'svelte/transition'
+
     const pathname = `/${new URL(document.URL).pathname.split('/')[1]}`;
     const navOptions = [
       [['/'], 'Home'],
@@ -9,11 +11,17 @@
       [['https://docs.iconify.design/'], 'Documentation'],
       [['https://github.com/iconify'], 'Github'],
     ];
+
+    let isNavOpen = false;
+
+    const toggleNav = () => {
+        isNavOpen = !isNavOpen;
+    }
 </script>
 
 <nav class="flex items-center justify-between w-full px-8 mb-8 ssm:px-12">
-    <div class="flex items-center flex-shrink-0 gap-6">
-        <button class="block 1100:hidden">
+    <div class="flex items-center flex-shrink-0 gap-6 z-50">
+        <button class="block 1100:hidden" on:click={toggleNav}>
             <Icon icon="gg:menu" class="text-gray-700" width="1.8rem" height="1.8rem" />
         </button>
         <a href="/"><img src="../assets/logo.svg" alt="iconify logo" /></a>
@@ -34,4 +42,15 @@
             <path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </Link>
+    {#if isNavOpen}
+        <div class="fixed top-0 left-0 w-full h-screen bg-white flex gap-16 flex-col items-center justify-center text-xl font-medium tracking-wide text-gray-700" transition:slide>
+            {#each navOptions as [route, name]}
+                {#if route.includes(pathname)}
+                    <a href={route[0]} class="font-semibold text-blue-500" style="font-size: 1.3rem">{name}</a>
+                {:else}
+                    <a href={route[0]}>{name}</a>
+                {/if}
+            {/each}
+        </div>
+    {/if}
 </nav>

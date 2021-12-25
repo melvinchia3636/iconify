@@ -62,7 +62,7 @@
     });
 </script>
 
-<div class="flex flex-col justify-center w-full px-24">
+<div class="flex flex-col justify-center w-full px-12 md:px-24">
     <h1 class="mt-12 mb-6 text-5xl font-semibold tracking-wide text-center text-gray-700">{name}<span class="ml-2 text-xl text-blue-500">v{version}</span></h1>
     <div class="inline-flex items-center w-full p-4 mx-auto mb-6 overflow-hidden bg-white shadow-md gap-4 rounded-md">
         <Icon icon="fe:search" class="text-gray-300" width="32" height="32"/>
@@ -71,7 +71,7 @@
     <div class="flex flex-wrap justify-center mb-12 gap-2">
         {#each tags.sort() as tag}
             {#if tag}
-                <button on:click={() => getIconSet(currentTag !== tag ? tag : null, true)} class="{currentTag === null || currentTag === tag ? `bg-${colors[category]}-500` : `border-2 border-${colors[category]}-500 text-${colors[category]}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md ">{tag}</button>
+                <button on:click={() => getIconSet(currentTag !== tag ? tag : null, true)} class="{currentTag === null || currentTag === tag ? `bg-${colors[category]}-500` : `border-2 border-${colors[category]}-500 text-${colors[category]}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md flex-grow md:flex-grow-0">{tag}</button>
             {/if}
         {/each}
     </div>
