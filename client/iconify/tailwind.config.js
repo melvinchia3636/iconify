@@ -23,9 +23,13 @@ module.exports = {
       flip: -1
     },
     screens: {
+      "390": "390px",
+      "ssssm": "480px",
       "sssm": "500px",
+      "530": "530px",
       "ssm": "590px",
       "sm": "640px",
+      "700": "700px",
       "md": "768px",
       "lg": "1024px",
       "1100": "1100px",

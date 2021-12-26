@@ -1,4 +1,4 @@
-<p class="text-base tracking-wide text-gray-700 sm:text-xl">
+<p class="tracking-wide text-gray-700 text-xl">
     <slot></slot>
 </p>
 
