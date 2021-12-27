@@ -39,6 +39,7 @@
             hasMore = false;
         }
         currentTag = tag || null;
+        console.log(currentTag)
         const res = await fetch(`https://api.iconify.thecodeblog.net/fetch-iconlist/${iconSet}/${page}?${tag ? `tag=${tag.replace('&', '%26')}` : ''}${searchTerm ? `&q=${searchTerm.toLowerCase()}` : ''}`);
         const data = await res.json();
         iconlist = data.icons.length ? (!isNewTag ? iconlist.concat(data.icons) : data.icons) : [];
@@ -102,7 +103,7 @@
         <p class="text-3xl font-medium tracking-wide text-center text-gray-500">Nothing found :(</p>
     {/if}
     {#if hasMore}
-        <button on:click={() => { page += 1; isLoading = true; getIconSet(); }} class="flex items-center justify-center h-16 px-12 text-xl font-medium tracking-wide text-white bg-blue-500 shadow-md rounded-md">
+        <button on:click={() => { page += 1; isLoading = true; getIconSet(currentTag); }} class="flex items-center justify-center h-16 px-12 text-xl font-medium tracking-wide text-white bg-blue-500 shadow-md rounded-md">
             {#if isLoading}
                 <div class="-mb-12">
                     <LottiePlayer

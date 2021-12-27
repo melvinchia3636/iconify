@@ -94,7 +94,7 @@
         <div class="flex gap-12 items-center">
             <div class="w-1/2">
                 <div class="bg-gray-100 text-gray-700 py-4 px-5 rounded-md shadow-md mt-4 mb-4">
-                    <code>
+                    <code class="break-words">
                         &lt;<span style="all: inherit; color: rgb(49, 141, 225)">script</span> src="<span style="all: inherit; color: rgb(225, 62, 49); text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>"&gt;&lt;/<span class="text-blue-500" style="all: inherit; color: rgb(49, 141, 225)">script</span>&gt;
                         <br/><br/>
                         <TypedJs strings={svg_examples} contentType={null} backDelay={2000} typeSpeed={10} on:stringTyped={incrementSVGExampleCount} style="all: inherit;" loop={true}>

@@ -92,7 +92,7 @@
         <p class="text-3xl font-medium tracking-wide text-center text-gray-500">Nothing found :(</p>
     {/if}
     {#if hasMore}
-        <button on:click={() => { currentPage += 1; isLoading = true; getIconSet(); }} class="flex items-center justify-center h-16 px-12 text-xl font-medium tracking-wide text-white bg-blue-500 shadow-md rounded-md">
+        <button on:click={() => { currentPage += 1; isLoading = true; getIconSet(currentIconSet); }} class="flex items-center justify-center h-16 px-12 text-xl font-medium tracking-wide text-white bg-blue-500 shadow-md rounded-md">
             {#if isLoading}
                 <div
                 class="-mb-12">

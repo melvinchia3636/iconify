@@ -43,7 +43,7 @@
         </svg>
     </Link>
     {#if isNavOpen}
-        <div class="fixed top-0 left-0 w-full h-screen bg-white flex gap-16 flex-col items-center justify-center text-xl font-medium tracking-wide text-gray-700" transition:slide>
+        <div class="fixed z-40 top-0 left-0 w-full h-screen bg-white flex gap-16 flex-col items-center justify-center text-xl font-medium tracking-wide text-gray-700" transition:slide>
             {#each navOptions as [route, name]}
                 {#if route.includes(pathname)}
                     <a href={route[0]} class="font-semibold text-blue-500" style="font-size: 1.3rem">{name}</a>

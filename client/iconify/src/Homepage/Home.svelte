@@ -13,8 +13,6 @@
     <Hero />
     <Intro />
     <Tutorial />
-    <Features />
-    <Workflow />
     <IconList />
     <Compatibility />
     <License />
