@@ -28,7 +28,7 @@
                 <div class="bg-{colors[index]}-500 p-8 md:p-12 py-6 md:py-8 text-white text-2xl md:text-3xl font-medium tracking-wide">
                     {name}
                 </div>
-                <div class="flex-wrap p-4 md:p-12 grid gap-4 grid-cols-[repeat(auto-fit,minmax(300px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(400px,1fr))]">
+                <div class="flex-wrap p-4 md:p-12 grid gap-4 grid-cols-[repeat(auto-fit,minmax(280px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(400px,1fr))]">
                     {#each iconSets as iconSet}
                         {#if !iconFilterTerm.trim() || iconSet.name.toLowerCase().includes(iconFilterTerm.trim().toLowerCase())}
                         <div class="flex flex-col sssm:flex-row flex-grow overflow-hidden rounded-lg shadow-md w-full">

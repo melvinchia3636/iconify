@@ -9,10 +9,12 @@
     import License from './License.svelte';
 </script>
 
-<div class="flex flex-col px-8 ssm:px-12 gap-20 sm:gap-32">
+<div class="flex flex-col px-3 390:px-8 ssm:px-12 gap-20 sm:gap-32">
     <Hero />
     <Intro />
     <Tutorial />
+    <Features />
+    <!--<Workflow />-->
     <IconList />
     <Compatibility />
     <License />

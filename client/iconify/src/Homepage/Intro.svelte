@@ -8,7 +8,7 @@
         <span class="text-rose-500">unified</span> framework.
     </div>
     <Paragraph>
-        <p class="text-lg 380:text-xl">
+        <p class="text-lg ssssm:text-xl">
             There are many excellent icon sets available. Each has its own custom syntax, some are available only as fonts and almost all of them load entire set even if you are displaying just few icons.
             <br/><br/>
             Iconify tries to combine all those icon sets. Iconify is a unified open source icon framework that makes it possible to use many icons from different icon sets on same page or in same application using one syntax.

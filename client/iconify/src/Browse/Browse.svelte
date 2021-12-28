@@ -12,7 +12,7 @@
   };
 </script>
 
-<div class="flex flex-col px-4 sm:px-16">
+<div class="flex flex-col px-3 390:px-8 ssm:px-12">
     <Header />
     <Search bind:value={$iconFilterTerm} setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} iconFilterTerm={$iconFilterTerm} />
     <IconList selectedCategory={selectedCategory} iconFilterTerm={$iconFilterTerm}/>

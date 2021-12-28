@@ -19,7 +19,7 @@
     }
 </script>
 
-<nav class="flex items-center justify-between w-full px-8 mb-8 ssm:px-12">
+<nav class="flex items-center justify-between w-full px-3 390:px-8 ssm:px-12 mb-8">
     <div class="flex items-center flex-shrink-0 gap-6 z-50">
         <button class="block 1100:hidden" on:click={toggleNav}>
             <Icon icon="gg:menu" class="text-gray-700" width="1.8rem" height="1.8rem" />

@@ -6,7 +6,7 @@
     <p class="text-rose-500 font-medium text-xl ssssm:text-2xl text-center tracking-wide">Compatibility</p>
     <h2 class="text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-gray-700 text-center mb-6 lg:mb-12">Iconify in different browsers</h2>
     <Paragraph>
-        <div class="text-lg 380:text-xl">
+        <div class="text-lg ssssm:text-xl">
             Iconify supports all modern browsers.
             <br/><br/>
             Older browsers that are supported:

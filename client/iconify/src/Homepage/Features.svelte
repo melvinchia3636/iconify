@@ -41,35 +41,39 @@
     }
 </script>
 
-<div class="w-full px-16">
-    <p class="text-rose-500 font-medium text-2xl text-center tracking-wide">Feautres</p>
-    <h2 class="text-6xl font-semibold tracking-wide text-gray-700 text-center mb-12">Many icons, one framework</h2>
+<div class="w-full px-0 md:px-16">
+    <p class="text-rose-500 font-medium text-xl ssssm:text-2xl text-center tracking-wide">Feautres</p>
+    <h2 class="text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-gray-700 text-center mb-6 lg:mb-12">Many icons, one framework</h2>
     <Paragraph>
-        Iconify icons collection includes <a>over 100,000 icons</a> from popular fonts and emoji sets: <a>Font Awesome 4 and 5</a>, <a>Material Design Icons</a>, <a>IonIcons</a>, <a>Vaadin Icons</a>, <a>Entypo+</a> and many many more. You can use them all on same page without loading multiple glyph fonts. Only icons used on page will be loaded instead of entire fonts.
-        <br/><br/>
-        Icon designers can publish their own icon sets too. Iconify offers open source tools to clean up and publish custom icon sets. 
+        <div class="text-lg ssssm:text-xl">
+            Iconify icons collection includes <a href="/icon-sets">over 100,000 icons</a> from popular fonts and emoji sets: <a>Font Awesome 4 and 5</a>, <a>Material Design Icons</a>, <a>IonIcons</a>, <a>Vaadin Icons</a>, <a>Entypo+</a> and many many more. You can use them all on same page without loading multiple glyph fonts. Only icons used on page will be loaded instead of entire fonts.
+            <br/><br/>
+            Icon designers can publish their own icon sets too. Iconify offers open source tools to clean up and publish custom icon sets. 
+        </div>
     </Paragraph>
     <div class="pt-20 w-full flex flex-col gap-24">
-        <div class="flex gap-12 items-center">
-            <div class="w-1/2">
-                <h3 class="text-blue-500 font-semibold tracking-wide text-5xl mb-8">Load on demand</h3>
+        <div class="flex flex-col sm:flex-row gap-12 items-center">
+            <div class="w-full sm:w-1/2">
+                <h3 class="text-blue-500 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Load on demand</h3>
                 <Paragraph>
-                    Fonts and other SVG frameworks load entire collections. Even if you are using only 10-20 icons, your visitors are forced to load them all.
-                    <br/><br/>
-                    Iconify works differently. Very differently! Iconify loads only icons used on page. Icons are loaded as external resources that are cached by browser, not embedded into each page. No other SVG framework can do that.
-                    <br/><br/>
-                    What is advantage of this unique approach to handling icons? You are no longer limited to one collection. You can use them all on same page without having to load megabytes of data!
-                    <br/><br/>
-                    See <a>icon collections page</a> for list of available icons.
+                    <div class="text-lg md:text-xl">
+                        Fonts and other SVG frameworks load entire collections. Even if you are using only 10-20 icons, your visitors are forced to load them all.
+                        <br/><br/>
+                        Iconify works differently. Very differently! Iconify loads only icons used on page. Icons are loaded as external resources that are cached by browser, not embedded into each page. No other SVG framework can do that.
+                        <br/><br/>
+                        What is advantage of this unique approach to handling icons? You are no longer limited to one collection. You can use them all on same page without having to load megabytes of data!
+                        <br/><br/>
+                        See <a href="/icon-sets">icon collections page</a> for list of available icons.
+                    </div>
                 </Paragraph>
             </div>
-            <div class="w-1/2">
+            <div class="w-full sm:w-1/2">
                 <div class="flex gap-6 flex-col relative">
                     <div class="arrow"></div>                
                     <div class="bg-gray-100 shadow-md rounded-lg w-full flex flex-col">
-                        <h4 class="text-gray-700 text-3xl tracking-wide text-center font-medium m-6">API</h4>
+                        <h4 class="text-gray-700 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">API</h4>
                         <img src="./assets/iconsdemo.svg" alt="icons example w-full" />
-                        <p class="text-gray-700 text-2xl tracking-wide text-center m-6">100,000+ icons</p>
+                        <p class="text-gray-700 text-xl md:text-2xl tracking-wide text-center m-6">100,000+ icons</p>
                     </div>
                     <div class="bg-gray-100 shadow-md rounded-lg w-full">
                         <div class="flex flex-wrap justify-center gap-2 m-6">
@@ -79,20 +83,20 @@
                             <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">noto:anchor</div>
                             <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">fxemoji:alien</div>
                         </div>
-                        <p class="text-gray-700 text-2xl tracking-wide text-center m-6">Only icons used on page are downloaded</p>
+                        <p class="text-gray-700 text-xl md:text-2xl tracking-wide text-center m-6">Only icons used on page are downloaded</p>
                     </div>
                     <div class="bg-gray-100 shadow-md rounded-lg w-full">
-                        <h4 class="text-gray-700 text-3xl tracking-wide text-center font-medium m-6">Browser</h4>
+                        <h4 class="text-gray-700 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">Browser</h4>
                         <div class="w-full flex justify-center">
                             <img src="./assets/iconsdemoresult.svg" alt="icons example" class="w-96" />
                         </div>
-                        <p class="text-gray-700 text-2xl tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon) </p>
+                        <p class="text-gray-700 text-xl md:text-2xl tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon) </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="flex gap-12 items-center">
-            <div class="w-1/2">
+        <div class="flex flex-col-reverse sm:flex-row gap-12 items-center">
+            <div class="w-full sm:w-1/2">
                 <div class="bg-gray-100 text-gray-700 py-4 px-5 rounded-md shadow-md mt-4 mb-4">
                     <code class="break-words">
                         &lt;<span style="all: inherit; color: rgb(49, 141, 225)">script</span> src="<span style="all: inherit; color: rgb(225, 62, 49); text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>"&gt;&lt;/<span class="text-blue-500" style="all: inherit; color: rgb(49, 141, 225)">script</span>&gt;
@@ -123,41 +127,43 @@
                     </div>
                 </div>
             </div>
-            <div class="w-1/2">
-                <h3 to use class="text-blue-500 font-semibold tracking-wide text-5xl mb-8">Easy to use</h3>
+            <div class="w-full sm:w-1/2">
+                <h3 to use class="text-blue-500 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Easy to use</h3>
                 <Paragraph>
-                    Syntax is similar to glyph fonts. Write a placeholder element, Iconify will replace it with SVG.
-                    <br/><br/>
-                    Use span or i or any other HTML tag with class="iconify". If you want an icon to behave like text, aligned slightly below baseline, use class="iconify-inline".
-                    <br/><br/>
-                    Icons are easy to style with CSS: size is set by font-size, color for monotone icons is set by text color. Just like glyph fonts.
-                    <br/><br/>
-                    Do not forget to add Iconify script tag in head section of your document or before {'</body>'}!
-                    <br/><br/>
-                    See <a>how to use Iconify</a> tutorial.
+                    <div class="text-lg md:text-xl">
+                        Syntax is similar to glyph fonts. Write a placeholder element, Iconify will replace it with SVG.
+                        <br/><br/>
+                        Use span or i or any other HTML tag with class="iconify". If you want an icon to behave like text, aligned slightly below baseline, use class="iconify-inline".
+                        <br/><br/>
+                        Icons are easy to style with CSS: size is set by font-size, color for monotone icons is set by text color. Just like glyph fonts.
+                        <br/><br/>
+                        Do not forget to add Iconify script tag in head section of your document or before {'</body>'}!
+                        <br/><br/>
+                        See <a href="https://docs.iconify.design">how to use Iconify</a> tutorial.
+                    </div>
                 </Paragraph>
             </div>
         </div>
-        <div class="flex gap-12 items-center">
-            <div class="w-1/2">
-                <h3 to use class="text-blue-500 font-semibold tracking-wide text-5xl mb-8">Over 100,000 icons to choose from</h3>
+        <div class="flex flex-col sm:flex-row gap-12 items-center">
+            <div class="w-full sm:w-1/2">
+                <h3 to use class="text-blue-500 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Over 100,000 icons to choose from</h3>
                 <Paragraph>
                     One script to access thousands of icons from popular collections: FontAwesome, Material Design, Vaadin Icons, Emoji One, Twemoji, Icons8 sets and many more.
                     <br/><br/>
                     You can use Iconify with custom and commercial icon sets too.
                 </Paragraph>
             </div>
-            <div class="w-1/2 h-full flex items-center justify-center gap-24 mb-24">
+            <div class="w-full sm:w-1/2 h-full flex items-center justify-center gap-24 mb-20">
                 <button on:click={prevIcon}>
                     <Icon icon="eva:chevron-left-outline" width="48" height="48" class="text-blue-500 mt-16"/>
                 </button>
                 <div class="flex relative h-full flex-col items-center">
-                    <div class="w-64 h-64"></div>
+                    <div class="w-20 h-32 xl:w-64 xl:h-64"></div>
                     {#each icon_sets as icon_set, index}
                         {#if index == current_icon_set}
-                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" in:fade out:fade><Icon icon={icon_set[1]} width="256" height="256"/></div>
-                            <h4 class="text-rose-500 font-medium text-3xl tracking-wider mt-16 absolute top-56" in:fade out:fade>{icon_set[0]}</h4>
-                            <h5 class="text-gray-700 font-medium text-xl tracking-wider mt-16 absolute top-64 pt-2" in:fade out:fade>{icon_set[2]} icons</h5>
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" in:fade out:fade><Icon icon={icon_set[1]} class="w-32 h-32 380:w-48 380:h-48 xl:w-64 xl:h-64"/></div>
+                            <h4 class="text-rose-500 font-medium text-3xl tracking-wider mt-16 absolute top-20 380:top-28 xl:top-56 whitespace-nowrap" in:fade out:fade>{icon_set[0]}</h4>
+                            <h5 class="text-gray-700 font-medium text-xl tracking-wider mt-16 absolute top-28 380:top-36 pt-2 xl:top-64 whitespace-nowrap" in:fade out:fade>{icon_set[2]} icons</h5>
                         {/if}
                     {/each}
                 </div>
@@ -166,18 +172,20 @@
                 </button>
             </div>
         </div>
-        <div class="flex gap-12 items-center">
-            <div class="w-1/2">
+        <div class="flex flex-col-reverse sm:flex-row gap-12 items-center">
+            <div class="w-full sm:w-1/2 -mb-12">
                 <img src="./assets/servermap.svg" alt="server distribution" class="w-full"/>
             </div>
-            <div class="w-1/2">
-                <h3 to use class="text-blue-500 font-semibold tracking-wide text-5xl mb-8">Lightning fast</h3>
+            <div class="w-full 530:sm:w-1/2">
+                <h3 to use class="text-blue-500 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Lightning fast</h3>
                 <Paragraph>
-                    Icons are loaded from Iconify API in bulk, reducing number of queries. Script is small and fast. Placeholders are replaced with SVG images in fraction of second.
-                    <br/><br/>
-                    Iconify API is hosted on network of servers spread across the globe. Visitors are always connected to closest server, reducing loading time to fraction of second.
-                    <br/><br/>
-                    If you want to, you can <a>create your own Iconify API server</a>!
+                    <div class="text-lg md:text-xl">
+                        Icons are loaded from Iconify API in bulk, reducing number of queries. Script is small and fast. Placeholders are replaced with SVG images in fraction of second.
+                        <br/><br/>
+                        Iconify API is hosted on network of servers spread across the globe. Visitors are always connected to closest server, reducing loading time to fraction of second.
+                        <br/><br/>
+                        If you want to, you can <a>create your own Iconify API server</a>!
+                    </div>
                 </Paragraph>
             </div>
         </div>
