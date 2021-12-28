@@ -97,10 +97,10 @@
     $: document.body.style.overflow = curIcon ? "hidden" : "auto";
 </script>
 
-<div in:fade out:fade class="fixed w-full h-screen flex items-center justify-center top-0 left-0 bg-black bg-opacity-20">
-    <div in:slide out:slide class="w-full p-8 gap-8 flex relative bg-white m-24 rounded-xl shadow-xl" style="height: calc(100vh - 8rem)">
+<div in:fade out:fade class="fixed z-[60] w-full h-screen flex items-center justify-center top-0 left-0 bg-black bg-opacity-20">
+    <div in:slide out:slide class="w-full p-8 gap-8 flex flex-col md:flex-row overflow-auto md:overflow-hidden relative bg-white m-4 ssssm:m-12 700:m-24 rounded-xl shadow-xl" style="height: calc(100vh - 8rem)">
         <button on:click={() => currentIcon.set(null)} class="absolute right-6 top-6"><Icon icon="heroicons-solid:x" class="text-gray-300" width="24" height="24" /></button>
-        <div class="h-full relative w-2/5 flex-shrink-0 flex items-center justify-center rounded-xl shadow-lg">
+        <div class="pt-12 pb-24 md:h-full relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center rounded-xl shadow-lg">
             {#if display === "inline"}
                 <p class="text-gray-700 tracking-wide text-2xl p-12 text-center">
                     Text with icon sample
@@ -114,11 +114,11 @@
                 </p>
             {/if}
         </div>
-        <div class="w-full h-full overflow-auto pr-4 mt-8">
+        <div class="w-full h-full overflow-visible md:overflow-auto pr-4 mt-8">
             <p class="text-blue-500 font-medium tracking-wide text-xl">{curIconSet}</p>
             <div class="flex gap-4 items-center">
                 {#if curIcon}
-                    <h2 class="text-gray-700 font-semibold text-5xl tracking-wide -mt-1">{curIcon}</h2>
+                    <h2 class="text-gray-700 font-semibold break-all text-5xl tracking-wide -mt-1">{curIcon}</h2>
                 {/if}
                     <CopyToClipboard text={curIcon} on:copy={() => {isCopied = true; setTimeout(() => {isCopied = false;}, 1000);}} let:copy>
                         <button class="mt-1 relative w-8 h-8" on:click={copy}>
@@ -131,65 +131,65 @@
                     </CopyToClipboard>
             </div>
             <div class="flex gap-4 mt-8 flex-wrap">
-                <div class="p-4 flex gap-4 border-gray-200 border-2 rounded-md relative">
+                <div class="p-4 flex flex-grow xl:flex-grow-0 gap-4 border-gray-200 border-2 rounded-md relative">
                     <div class="absolute -top-6 left-4 bg-white p-2">
                         <p class="tracking-wide text-gray-300 text-md font-medium">Color</p>
                     </div>
-                    <div class="flex gap-2 p-3 items-center shadow-md rounded-md">
+                    <div class="flex flex-grow gap-2 p-3 items-center shadow-md rounded-md">
                         <Icon icon="ic:baseline-water-drop" width="28" height="28" style="color: {isColor(color) ? color : "currentColor"}"/>
                         <input bind:value={color} size="12" type="text" class="text-gray-700 font-medium tracking-wide text-xl placeholder-gray-300" placeholder="#000000" autocomplete="off">
                     </div>
                 </div>
-                <div class="p-4 flex gap-3 border-gray-200 border-2 rounded-md relative">
+                <div class="p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-gray-200 border-2 rounded-md relative">
                     <div class="absolute left-4 bg-white p-2 h-4 flex items-center" style="top: -0.6rem">
                         <p class="tracking-wide text-gray-300 text-md font-medium">Size</p>
                     </div>
-                    <div class="flex gap-2 p-3 items-center shadow-md rounded-md">
+                    <div class="flex flex-grow gap-2 p-3 items-center shadow-md rounded-md">
                         <Icon icon="fluent:auto-fit-width-20-filled" width="28" height="28" class="text-gray-300"/>
                         <input size="5" type="text" class="text-gray-700 font-medium tracking-wide text-xl placeholder-gray-300" bind:value={width} placeholder="24" autocomplete="off">
                     </div>
-                    <div class="flex gap-2 p-3 items-center shadow-md rounded-md">
+                    <div class="flex flex-grow gap-2 p-3 items-center shadow-md rounded-md">
                         <Icon icon="fluent:auto-fit-height-20-filled" width="28" height="28" class="text-gray-300"/>
                         <input size="5" type="text" class="text-gray-700 font-medium tracking-wide text-xl placeholder-gray-300" bind:value={height} placeholder="24" autocomplete="off">
                     </div>
                 </div>
-                <div class="p-4 flex gap-3 border-gray-200 border-2 rounded-md relative">
+                <div class="p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-gray-200 border-2 rounded-md relative">
                     <div class="absolute left-4 bg-white p-2 h-4 flex items-center" style="top: -0.6rem">
                         <p class="tracking-wide text-gray-300 text-md font-medium">Flip</p>
                     </div>
-                    <button on:click={() => flipHoriz = !flipHoriz} class="flex relative z-10 gap-2 p-3 items-center shadow-md rounded-md {flipHoriz ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
+                    <button on:click={() => flipHoriz = !flipHoriz} class="flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md {flipHoriz ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
                         <Icon icon="mdi:flip-horizontal" width="28" height="28" class="{flipHoriz ? "text-white" : "text-gray-300"}"/>
                         <p class="{flipHoriz ? "text-white" : "text-gray-300"} font-medium tracking-wide text-xl">Horizontal</p>
                     </button>
-                    <button on:click={() => flipVert = !flipVert} class="flex relative z-10 gap-2 p-3 items-center shadow-md rounded-md {flipVert ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
+                    <button on:click={() => flipVert = !flipVert} class="flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md {flipVert ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
                         <Icon icon="mdi:flip-vertical" width="28" height="28" class="{flipVert ? "text-white" : "text-gray-300"}"/>
                         <p class="{flipVert ? "text-white" : "text-gray-300"} font-medium tracking-wide text-xl">Vertical</p>
                     </button>
                 </div>
-                <div class="p-4 flex gap-3 border-gray-200 border-2 rounded-md relative">
+                <div class="p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-gray-200 border-2 rounded-md relative">
                     <div class="absolute left-4 bg-white p-2 h-4 flex items-center" style="top: -0.6rem">
                         <p class="tracking-wide text-gray-300 text-base font-medium">Display</p>
                     </div>
-                    <button on:click={() => display = "block"} class="flex relative z-10 gap-2 p-3 items-center shadow-md rounded-md {display === "block" ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
+                    <button on:click={() => display = "block"} class="flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md {display === "block" ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
                         <Icon icon="mdi:flip-horizontal" width="28" height="28" class="{display === "block" ? "text-white" : "text-gray-300"}"/>
                         <p class="{display === "block" ? "text-white" : "text-gray-300"} font-medium tracking-wide text-xl">Block</p>
                     </button>
-                    <button on:click={() => display = "inline"} class="flex relative z-10 gap-2 p-3 items-center shadow-md rounded-md {display === "inline" ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
+                    <button on:click={() => display = "inline"} class="flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md {display === "inline" ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
                         <Icon icon="mdi:flip-vertical" width="28" height="28" class="{display === "inline" ? "text-white" : "text-gray-300"}"/>
                         <p class="{display === "inline" ? "text-white" : "text-gray-300"} font-medium tracking-wide text-xl">Inline</p>
                     </button>
                 </div>
-                <div class="p-4 flex gap-3 border-gray-200 border-2 rounded-md relative">
+                <div class="p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-gray-200 border-2 rounded-md relative">
                     <div class="absolute left-4 bg-white p-2 h-4 flex items-center" style="top: -0.6rem">
                         <p class="tracking-wide text-gray-300 text-base font-medium">Rotate</p>
                     </div>
-                    <button on:click={() => rotate = 0} class="flex relative z-10 gap-2 py-3 px-4 items-center shadow-md rounded-md {rotate == 0 ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
+                    <button on:click={() => rotate = 0} class="flex flex-grow relative z-10 gap-2 py-3 px-4 items-center shadow-md rounded-md {rotate == 0 ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
                         <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="{rotate === 0 ? "text-white" : "text-gray-300"}">
                             <circle cx="3" cy="3" r="3" fill="currentColor"/>
                         </svg>                            
                         <p class="{rotate === 0 ? "text-white" : "text-gray-300"} font-medium tracking-wide text-xl">0°</p>
                     </button>
-                    <button on:click={() => rotate = 90} class="flex relative z-10 gap-2 p-3 items-center shadow-md rounded-md {rotate === 90 ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
+                    <button on:click={() => rotate = 90} class="flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md {rotate === 90 ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="{rotate === 90 ? "text-white" : "text-gray-300"}">
                             <path d="M12 6C13.5913 6 15.1174 6.63214 16.2426 7.75736C17.3679 8.88258 18 10.4087 18 12V14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             <path d="M18 15L21 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -197,7 +197,7 @@
                         </svg>                            
                         <p class="{rotate === 90 ? "text-white" : "text-gray-300"} font-medium tracking-wide text-xl">90°</p>
                     </button>
-                    <button on:click={() => rotate = 180} class="flex relative z-10 gap-2 p-3 items-center shadow-md rounded-md {rotate === 180 ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
+                    <button on:click={() => rotate = 180} class="flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md {rotate === 180 ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="{rotate === 180 ? "text-white" : "text-gray-300"}">
                             <path d="M11.998 6C13.5893 6 15.1155 6.63214 16.2407 7.75736C17.3659 8.88258 17.998 10.4087 17.998 12C17.998 13.5913 17.3659 15.1174 16.2407 16.2426C15.1155 17.3679 13.5893 18 11.998 18H9.49805" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             <path d="M9 18L12 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -205,7 +205,7 @@
                         </svg>                       
                         <p class="{rotate === 180 ? "text-white" : "text-gray-300"} font-medium tracking-wide text-xl">180°</p>
                     </button>
-                    <button on:click={() => rotate = 270} class="flex relative z-10 gap-2 p-3 items-center shadow-md rounded-md {rotate === 270 ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
+                    <button on:click={() => rotate = 270} class="flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md {rotate === 270 ? "bg-blue-500" : "bg-white hover:bg-gray-50"} transition-all">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="{rotate === 270 ? "text-white" : "text-gray-300"}">
                             <path d="M13.8 5.00002C15.224 5.00002 16.6161 5.42229 17.8001 6.21344C18.9841 7.00459 19.907 8.12907 20.4519 9.4447C20.9969 10.7603 21.1395 12.208 20.8617 13.6047C20.5838 15.0013 19.8981 16.2843 18.8912 17.2912C17.8842 18.2981 16.6013 18.9839 15.2046 19.2617C13.808 19.5395 12.3603 19.3969 11.0447 18.852C9.72905 18.307 8.60456 17.3842 7.81342 16.2001C7.02227 15.0161 6.6 13.624 6.6 12.2V9.20002" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             <path d="M6.6001 8.60007L3.0001 12.2001" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>

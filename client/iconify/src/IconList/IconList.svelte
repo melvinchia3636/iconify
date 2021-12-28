@@ -64,7 +64,7 @@
 </script>
 
 <div class="flex flex-col justify-center w-full px-12 md:px-24">
-    <h1 class="mt-12 mb-6 text-5xl font-semibold tracking-wide text-center text-gray-700">{name}<span class="ml-2 text-xl text-blue-500">v{version}</span></h1>
+    <h1 class="mt-12 mb-6 text-5xl font-semibold tracking-wide text-center text-gray-700 flex flex-col items-center gap-6 sm:inline">{name}<span class="ml-2 text-xl text-blue-500">v{version}</span></h1>
     <div class="inline-flex items-center w-full p-4 mx-auto mb-6 overflow-hidden bg-white shadow-md gap-4 rounded-md">
         <Icon icon="fe:search" class="text-gray-300" width="32" height="32"/>
         <input bind:value={searchTerm} on:input={() => getIconSet(currentTag, true)} type="text" class="w-full text-xl tracking-wide text-gray-500 " placeholder="Search {iconCount} icons (Press '/' to focus)" />
