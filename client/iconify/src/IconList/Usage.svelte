@@ -216,7 +216,7 @@
                 </div>
             </div>
             <div class="mt-12">
-                <div class="flex flex-wrap gap-1.5">
+                <div class="flex flex-wrap gap-2">
                     {#each tabs as tab, index}
                         <button on:click={() => {currentTab = index; currentSubTab = 0}} class="transition-all flex gap-2 {currentTab === index ? "font-medium bg-blue-500 text-white" : 'bg-white text-gray-400'} tracking-wide px-3 items-center justify-center py-2 rounded-md shadow-md text-xl">
                             <Icon icon={tab.icon} width="20" height="20" />
@@ -225,7 +225,7 @@
                     {/each}
                 </div>
                 {#if tabs[currentTab].subtabs}
-                    <div class="flex flex-wrap gap-1.5 mt-8">
+                    <div class="flex flex-wrap gap-2 mt-8">
                         {#each tabs[currentTab].subtabs as [name,], index}
                         <button on:click={() => {currentSubTab = index}} class="transition-all flex gap-2 {currentSubTab == index ? "font-medium bg-blue-500 text-white" : 'bg-white text-gray-400'} tracking-wide px-4 items-center justify-center py-2 rounded-md shadow-md text-xl">
                             <span class="-mt-0.5">{name}</span>

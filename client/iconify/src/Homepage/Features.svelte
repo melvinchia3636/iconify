@@ -33,7 +33,7 @@
 
     const incrementSVGExampleCount = () => {
         current_svg_example = last_current_svg_example + 0;
-        current_svg_example < svg_examples.length ? current_svg_example ++ : current_svg_example = 0;
+        current_svg_example < svg_examples.length ? current_svg_example ++ : current_svg_example = 1;
         last_current_svg_example = current_svg_example + 0;
         setTimeout(() => {
             current_svg_example = null;
