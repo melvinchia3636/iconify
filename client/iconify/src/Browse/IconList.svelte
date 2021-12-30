@@ -6,7 +6,7 @@
     let iconSets = {};
 
     async function getIconSet() {
-      const res = await fetch('http://api.iconify.thecodeblog.net/fetch-iconsets');
+      const res = await fetch('https://api.iconify.thecodeblog.net/fetch-iconsets');
       const data = await res.json();
       iconSets = data.icon_sets;
       count.set(data.count);

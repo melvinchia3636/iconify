@@ -34,3 +34,4 @@ _output
 /site/scripts/svelte-app/
 /site/src/routes/_contributors.js
 /site/src/routes/_donors.js
+client/iconify/public/Archive.zip

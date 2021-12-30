@@ -34,7 +34,7 @@
         currentPage = 1;
       }
       currentIconSet = iconSet || null;
-      const res = await fetch(`http://api.iconify.thecodeblog.net/search-icons?q=${searchTerm}&page=${currentPage}${iconSet ? `&icon_set=${iconSet}` : ''}`);
+      const res = await fetch(`https://api.iconify.thecodeblog.net/search-icons?q=${searchTerm}&page=${currentPage}${iconSet ? `&icon_set=${iconSet}` : ''}`);
       const data = await res.json();
       if (data.icons.length) {
         iconlist = !isNewSets ? iconlist.concat(data.icons) : data.icons;
