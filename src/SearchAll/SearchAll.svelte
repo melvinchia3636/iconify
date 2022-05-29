@@ -126,7 +126,7 @@
       </div>
     {/if}
   {:else}
-    <p class="text-3xl font-medium tracking-wide text-center text-stone-500">
+    <p class="text-xl font-medium tracking-wide text-center text-stone-500">
       Nothing found :(
     </p>
   {/if}

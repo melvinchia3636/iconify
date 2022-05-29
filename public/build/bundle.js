@@ -43320,7 +43320,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		c() {
     			p = element("p");
     			p.textContent = "Nothing found :(";
-    			attr(p, "class", "text-3xl font-medium tracking-wide text-center text-stone-600");
+    			attr(p, "class", "text-xl font-medium tracking-wide text-center text-stone-600");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -44076,7 +44076,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		c() {
     			p = element("p");
     			p.textContent = "Nothing found :(";
-    			attr(p, "class", "text-3xl font-medium tracking-wide text-center text-stone-500");
+    			attr(p, "class", "text-xl font-medium tracking-wide text-center text-stone-500");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);

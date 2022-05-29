@@ -185,7 +185,7 @@ import { onMount } from "svelte";
       </div>
     {/if}
   {:else}
-    <p class="text-3xl font-medium tracking-wide text-center text-stone-600">
+    <p class="text-xl font-medium tracking-wide text-center text-stone-600">
       Nothing found :(
     </p>
   {/if}
