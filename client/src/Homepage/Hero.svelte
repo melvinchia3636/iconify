@@ -1,14 +1,14 @@
 <div
-  class="w-full bg-yellow-400  relative p-4 sssm:p-8 ssm:p-16 shadow-md"
+  class="w-full bg-stone-600  relative p-4 sssm:p-8 ssm:p-16 "
 >
   <div class="inline-flex flex-col w-full ssm:w-auto">
     <div
-      class="bg-zinc-800 text-yellow-400 pt-4 530:pt-6 px-6 530:px-10 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide rounded-t-2xl round "
+      class="bg-zinc-800 text-stone-600 pt-4 530:pt-6 px-6 530:px-10 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide rounded-t-2xl round "
     >
       Unified
     </div>
     <div
-      class="bg-zinc-800 text-zinc-600 dark:text-zinc-100 w-full ssm:w-auto block py-4 530:py-6 px-6 530:px-10 text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide rounded-b-2xl rounded-tr-2xl"
+      class="bg-zinc-800 text-zinc-600 dark:text-stone-600 w-full ssm:w-auto block py-4 530:py-6 px-6 530:px-10 text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide rounded-b-2xl rounded-tr-2xl"
     >
       Icons Framework
     </div>
@@ -21,16 +21,16 @@
   </p>
   <form
     action="/search"
-    class="mt-10 flex w-full md:w-9/12 lg:w-5/12 overflow-hidden rounded-md shadow-md"
+    class="mt-10 flex w-full md:w-9/12 lg:w-5/12 overflow-hidden rounded-md "
   >
     <input
       autocomplete="off"
       name="q"
       type="text"
-      class="bg-zinc-200 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide"
+      class="bg-stone-600 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide"
       placeholder="Search icons..."
     />
-    <button type="submit" class="bg-yellow-500 py-4 px-6">
+    <button type="submit" class="bg-stone-500 py-4 px-6">
       <svg
         class="mt-1 w-6 h-6"
         viewBox="0 0 19 17"

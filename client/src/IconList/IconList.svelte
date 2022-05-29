@@ -3,6 +3,7 @@
   import { LottiePlayer } from "@lottiefiles/svelte-lottie-player";
   import Usage from "./Usage.svelte";
   import { currentIcon, currentIconSet } from "./stores";
+import { onMount } from "svelte";
 
   export let iconSet;
 
@@ -52,11 +53,17 @@
     if (currentTag !== tag) {
       currentTag = tag;
       filteredIconList = iconlist.filter((icon) => {
-        return icon.tags.includes(tag);
+        return icon.tags.includes(tag) && (icon.name || icon)
+        .toLowerCase()
+        .includes(document.getElementById("icon-search").value.toLowerCase());
       });
     } else {
       currentTag = null;
-      filteredIconList = iconlist;
+      filteredIconList = iconlist.filter((icon) => {
+        return (icon.name || icon)
+        .toLowerCase()
+        .includes(document.getElementById("icon-search").value.toLowerCase());
+      });
     }
   };
 
@@ -64,27 +71,36 @@
     filteredIconList = iconlist.filter((icon) => {
       return (icon.name || icon)
         .toLowerCase()
-        .includes(e.target.value.toLowerCase());
+        .includes(e.target.value.toLowerCase()) && (currentTag ? icon.tags.includes(currentTag) : true);
     });
   };
+
+  onMount(() => {
+    document.body.onkeydown = (e) => {
+      if (e.key == "/") {
+        e.preventDefault();
+        document.getElementById("icon-search").focus();
+      }
+    };
+  })
 </script>
 
 <div class="flex flex-1 flex-col w-full px-12 md:px-24">
   <h1
-    class="mt-12 mb-6 text-3xl font-semibold tracking-wide text-center text-zinc-600 dark:text-zinc-100 flex flex-col items-center gap-6 sm:inline"
+    class="mt-12 mb-6 text-3xl font-semibold tracking-wide text-center text-stone-600 flex flex-col items-center gap-6 sm:inline"
   >
-    {name}<span class="ml-2 text-base text-yellow-400">v{version}</span>
+    {name}<span class="ml-2 text-base text-stone-600">v{version}</span>
   </h1>
   <div
-    class="inline-flex items-center w-full rounded-md p-4 mx-auto mb-6 overflow-hidden bg-white dark:bg-zinc-700 dark:bg-opacity-40 shadow-md gap-4 "
+    class="inline-flex items-center w-full p-4 mx-auto mb-6 overflow-hidden border-2 border-stone-600 gap-4"
   >
-    <Icon icon="fe:search" class="text-zinc-300" width="24" height="24" />
+    <Icon icon="uil:search" class="text-stone-600" width="24" height="24" />
     <input
       bind:value={searchTerm}
       on:input={inputOnChange}
       type="text"
       id="icon-search"
-      class="w-full tracking-wide text-zinc-500 dark:text-zinc-200 bg-transparent"
+      class="w-full tracking-wide text-stone-600 placeholder-stone-600 bg-transparent"
       placeholder="Search {iconCount} icons (Press '/' to focus)"
     />
   </div>
@@ -95,8 +111,8 @@
         <button
           on:click={() => setCurrentTag(tag)}
           class="{currentTag === tag
-            ? `bg-yellow-400 text-zinc-800`
-            : `border-2 border-yellow-400 text-yellow-400`} whitespace-nowrap rounded-md h-11 flex transition-all items-center justify-center shadow-md font-medium text-sm px-8 flex-grow md:flex-grow-0"
+            ? `bg-stone-600 text-stone-200`
+            : `border-2 border-stone-600 text-stone-600`} whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"
           >{tag}</button
         >
       {/if}
@@ -114,16 +130,16 @@
             on:click={() => {
               currentIcon.set(`${iconSet}:${icon.name || icon}`);
             }}
-            class="flex flex-col items-center justify-between rounded-md bg-white dark:bg-zinc-700 dark:bg-opacity-40 cursor-pointer transition-all hover:bg-zinc-50 dark:hover:bg-opacity-60  p-4"
+            class="flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 dark:hover:bg-opacity-60 p-4"
           >
             <Icon
               icon={`${iconSet}:${icon.name || icon}`}
               width="32"
               height="32"
-              class="text-zinc-600 dark:text-zinc-200"
+              class="text-stone-600"
             />
             <p
-              class="font-medium text-xs tracking-wide text-center text-zinc-600 dark:text-zinc-500 mt-4"
+              class="font-medium text-xs tracking-wide text-center text-stone-600 mt-4 -mb-0.5"
             >
               {icon.name || icon}
             </p>
@@ -144,7 +160,7 @@
       </div>
     {/if}
   {:else}
-    <p class="text-3xl font-medium tracking-wide text-center text-zinc-500">
+    <p class="text-3xl font-medium tracking-wide text-center text-stone-600">
       Nothing found :(
     </p>
   {/if}

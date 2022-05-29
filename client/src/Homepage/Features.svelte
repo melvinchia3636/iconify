@@ -42,8 +42,8 @@
 </script>
 
 <div class="w-full px-0 md:px-16">
-    <p class="text-yellow-400 font-medium text-xl ssssm:text-2xl text-center tracking-wide">Feautres</p>
-    <h2 class="text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-zinc-100 text-center mb-6 lg:mb-12">Many icons, one framework</h2>
+    <p class="text-stone-600 font-medium text-xl ssssm:text-2xl text-center tracking-wide">Feautres</p>
+    <h2 class="text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-stone-600 text-center mb-6 lg:mb-12">Many icons, one framework</h2>
     <Paragraph>
         <div class="text-lg ssssm:text-xl">
             Iconify icons collection includes <a href="/icon-sets">over 100,000 icons</a> from popular fonts and emoji sets: <a>Font Awesome 4 and 5</a>, <a>Material Design Icons</a>, <a>IonIcons</a>, <a>Vaadin Icons</a>, <a>Entypo+</a> and many many more. You can use them all on same page without loading multiple glyph fonts. Only icons used on page will be loaded instead of entire fonts.
@@ -54,7 +54,7 @@
     <div class="pt-20 w-full flex flex-col gap-24">
         <div class="flex flex-col sm:flex-row gap-12 items-center">
             <div class="w-full sm:w-1/2">
-                <h3 class="text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Load on demand</h3>
+                <h3 class="text-stone-600 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Load on demand</h3>
                 <Paragraph>
                     <div class="text-lg md:text-xl">
                         Fonts and other SVG frameworks load entire collections. Even if you are using only 10-20 icons, your visitors are forced to load them all.
@@ -70,36 +70,36 @@
             <div class="w-full sm:w-1/2">
                 <div class="flex gap-6 flex-col relative">
                     <div class="arrow"></div>                
-                    <div class="bg-zinc-100 shadow-md  w-full flex flex-col">
-                        <h4 class="text-zinc-600 dark:text-zinc-100 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">API</h4>
+                    <div class="bg-stone-600   w-full flex flex-col">
+                        <h4 class="text-zinc-600 dark:text-stone-600 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">API</h4>
                         <img src="./assets/iconsdemo.svg" alt="icons example w-full" />
-                        <p class="text-zinc-600 dark:text-zinc-100 text-xl md:text-2xl tracking-wide text-center m-6">100,000+ icons</p>
+                        <p class="text-zinc-600 dark:text-stone-600 text-xl md:text-2xl tracking-wide text-center m-6">100,000+ icons</p>
                     </div>
-                    <div class="bg-zinc-100 shadow-md  w-full">
+                    <div class="bg-stone-600   w-full">
                         <div class="flex flex-wrap justify-center gap-2 m-6">
-                            <div class="px-3 py-2 bg-yellow-400  shadow-md text-zinc-200 font-medium text-lg tracking-wide">mdi:opacity</div>
-                            <div class="px-3 py-2 bg-yellow-400  shadow-md text-zinc-200 font-medium text-lg tracking-wide">ion:ios-cart</div>
-                            <div class="px-3 py-2 bg-yellow-400  shadow-md text-zinc-200 font-medium text-lg tracking-wide">mdi:flask</div>
-                            <div class="px-3 py-2 bg-yellow-400  shadow-md text-zinc-200 font-medium text-lg tracking-wide">noto:anchor</div>
-                            <div class="px-3 py-2 bg-yellow-400  shadow-md text-zinc-200 font-medium text-lg tracking-wide">fxemoji:alien</div>
+                            <div class="px-3 py-2 bg-stone-600   text-stone-600 font-medium text-lg tracking-wide">mdi:opacity</div>
+                            <div class="px-3 py-2 bg-stone-600   text-stone-600 font-medium text-lg tracking-wide">ion:ios-cart</div>
+                            <div class="px-3 py-2 bg-stone-600   text-stone-600 font-medium text-lg tracking-wide">mdi:flask</div>
+                            <div class="px-3 py-2 bg-stone-600   text-stone-600 font-medium text-lg tracking-wide">noto:anchor</div>
+                            <div class="px-3 py-2 bg-stone-600   text-stone-600 font-medium text-lg tracking-wide">fxemoji:alien</div>
                         </div>
-                        <p class="text-zinc-600 dark:text-zinc-100 text-xl md:text-2xl tracking-wide text-center m-6">Only icons used on page are downloaded</p>
+                        <p class="text-zinc-600 dark:text-stone-600 text-xl md:text-2xl tracking-wide text-center m-6">Only icons used on page are downloaded</p>
                     </div>
-                    <div class="bg-zinc-100 shadow-md  w-full">
-                        <h4 class="text-zinc-600 dark:text-zinc-100 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">Browser</h4>
+                    <div class="bg-stone-600   w-full">
+                        <h4 class="text-zinc-600 dark:text-stone-600 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">Browser</h4>
                         <div class="w-full flex justify-center">
                             <img src="./assets/iconsdemoresult.svg" alt="icons example" class="w-96" />
                         </div>
-                        <p class="text-zinc-600 dark:text-zinc-100 text-xl md:text-2xl tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon) </p>
+                        <p class="text-zinc-600 dark:text-stone-600 text-xl md:text-2xl tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon) </p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="flex flex-col-reverse sm:flex-row gap-12 items-center">
             <div class="w-full sm:w-1/2">
-                <div class="bg-zinc-100 text-zinc-600 dark:text-zinc-100 py-4 px-5  shadow-md mt-4 mb-4">
+                <div class="bg-stone-600 text-zinc-600 dark:text-stone-600 py-4 px-5   mt-4 mb-4">
                     <code class="break-words">
-                        &lt;<span style="all: inherit; color: rgb(49, 141, 225)">script</span> src="<span style="all: inherit; color: rgb(225, 62, 49); text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>"&gt;&lt;/<span class="text-yellow-400" style="all: inherit; color: rgb(49, 141, 225)">script</span>&gt;
+                        &lt;<span style="all: inherit; color: rgb(49, 141, 225)">script</span> src="<span style="all: inherit; color: rgb(225, 62, 49); text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>"&gt;&lt;/<span class="text-stone-600" style="all: inherit; color: rgb(49, 141, 225)">script</span>&gt;
                         <br/><br/>
                         <TypedJs strings={svg_examples} contentType={null} backDelay={2000} typeSpeed={10} on:stringTyped={incrementSVGExampleCount} style="all: inherit;" loop={true}>
                             <span class="typing" style="all: inherit;" ></span>
@@ -108,9 +108,9 @@
                 </div>
                 <div class="w-full h-64 flex flex-col  border border-zinc-600">
                     <div class="flex items-center gap-2 p-3 border-b border-zinc-600">
-                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-stone-600"></div>
                         <div class="w-3 h-3 rounded-full bg-orange-400"></div>
-                        <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-stone-600"></div>
                     </div>
                     <div class="w-full h-full items-center justify-center flex">
                         {#if current_svg_example === 1}
@@ -128,7 +128,7 @@
                 </div>
             </div>
             <div class="w-full sm:w-1/2">
-                <h3 to use class="text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Easy to use</h3>
+                <h3 to use class="text-stone-600 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Easy to use</h3>
                 <Paragraph>
                     <div class="text-lg md:text-xl">
                         Syntax is similar to glyph fonts. Write a placeholder element, Iconify will replace it with SVG.
@@ -146,7 +146,7 @@
         </div>
         <div class="flex flex-col sm:flex-row gap-12 items-center">
             <div class="w-full sm:w-1/2">
-                <h3 to use class="text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Over 100,000 icons to choose from</h3>
+                <h3 to use class="text-stone-600 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Over 100,000 icons to choose from</h3>
                 <Paragraph>
                     One script to access thousands of icons from popular collections: FontAwesome, Material Design, Vaadin Icons, Emoji One, Twemoji, Icons8 sets and many more.
                     <br/><br/>
@@ -155,20 +155,20 @@
             </div>
             <div class="w-full sm:w-1/2 h-full flex items-center justify-center gap-24 mb-20">
                 <button on:click={prevIcon}>
-                    <Icon icon="eva:chevron-left-outline" width="48" height="48" class="text-yellow-400 mt-16"/>
+                    <Icon icon="eva:chevron-left-outline" width="48" height="48" class="text-stone-600 mt-16"/>
                 </button>
                 <div class="flex relative h-full flex-col items-center">
                     <div class="w-20 h-32 xl:w-64 xl:h-64"></div>
                     {#each icon_sets as icon_set, index}
                         {#if index == current_icon_set}
                             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" in:fade out:fade><Icon icon={icon_set[1]} class="w-32 h-32 380:w-48 380:h-48 xl:w-64 xl:h-64"/></div>
-                            <h4 class="text-yellow-400 font-medium text-3xl tracking-wider mt-16 absolute top-20 380:top-28 xl:top-56 whitespace-nowrap" in:fade out:fade>{icon_set[0]}</h4>
-                            <h5 class="text-zinc-600 dark:text-zinc-100 font-medium text-xl tracking-wider mt-16 absolute top-28 380:top-36 pt-2 xl:top-64 whitespace-nowrap" in:fade out:fade>{icon_set[2]} icons</h5>
+                            <h4 class="text-stone-600 font-medium text-3xl tracking-wider mt-16 absolute top-20 380:top-28 xl:top-56 whitespace-nowrap" in:fade out:fade>{icon_set[0]}</h4>
+                            <h5 class="text-zinc-600 dark:text-stone-600 font-medium text-xl tracking-wider mt-16 absolute top-28 380:top-36 pt-2 xl:top-64 whitespace-nowrap" in:fade out:fade>{icon_set[2]} icons</h5>
                         {/if}
                     {/each}
                 </div>
                 <button on:click={nextIcon}>
-                    <Icon icon="eva:chevron-right-outline" width="48" height="48" class="text-yellow-400 mt-16"/>
+                    <Icon icon="eva:chevron-right-outline" width="48" height="48" class="text-stone-600 mt-16"/>
                 </button>
             </div>
         </div>
@@ -177,7 +177,7 @@
                 <img src="./assets/servermap.svg" alt="server distribution" class="w-full"/>
             </div>
             <div class="w-full 530:sm:w-1/2">
-                <h3 to use class="text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Lightning fast</h3>
+                <h3 to use class="text-stone-600 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8">Lightning fast</h3>
                 <Paragraph>
                     <div class="text-lg md:text-xl">
                         Icons are loaded from Iconify API in bulk, reducing number of queries. Script is small and fast. Placeholders are replaced with SVG images in fraction of second.

@@ -3,9 +3,9 @@
 </script>
 
 <div class="w-full flex flex-col lg:flex-row gap-12 lg:gap-20 items-center px-0 md:px-16">
-    <div class="text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-center !leading-tight whitespace-nowrap text-zinc-600 dark:text-zinc-100">
+    <div class="text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-center !leading-tight whitespace-nowrap text-zinc-600 dark:text-stone-600">
         Thousands of<br/>icons, one<br/>
-        <span class="text-yellow-400">unified</span> framework.
+        <span class="text-stone-600">unified</span> framework.
     </div>
     <Paragraph>
         <p class="text-lg ssssm:text-xl">

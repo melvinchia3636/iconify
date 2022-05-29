@@ -24,7 +24,7 @@
 </script>
 
 <Router>
-  <main class="pt-8 dark:bg-zinc-800 min-h-[100vh] flex flex-col">
+  <main class="pt-8 bg-stone-100 min-h-[100vh] flex flex-col">
     <Navbar />
     <Route path="/">
       <Home />

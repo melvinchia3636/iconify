@@ -66,9 +66,9 @@
   };
 </script>
 
-<div class="flex flex-col justify-center w-full px-12 md:px-24">
+<div class="flex-1 px-12 md:px-24">
   <h1
-    class="mb-6 text-3xl font-semibold tracking-wide text-center text-zinc-600 dark:text-zinc-100 sssm:text-5xl sm:mt-12"
+    class="mb-6 text-3xl font-semibold tracking-wide text-center text-zinc-600  sm:mt-12"
   >
     Search results for "{searchTerm}"
   </h1>
@@ -77,16 +77,9 @@
       {#each Object.entries(iconSets) as [name, iconSet]}
         <button
           on:click={() => setCurrentIconSet(name)}
-          class="{currentIconSet === null || currentIconSet === name
-            ? `bg-${
-                colors[iconSet.category || 'Other'] ||
-                console.log(iconSet.category)
-              }-500`
-            : `border-2 border-${
-                colors[iconSet.category || 'Other']
-              }-500 text-${
-                colors[iconSet.category || 'Other']
-              }-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-zinc-200 font-medium text-md sssm:text-lg px-4 flex-grow sssm:px-8 pb-0.5  "
+          class="{currentIconSet === name
+            ? `bg-stone-600`
+            : `text-stone-600`} border-2 border-stone-600 whitespace-nowrap h-11 flex transition-all items-center justify-center text-stone-600 font-medium px-4 flex-grow sssm:px-8 pb-0.5  "
           >{iconSet.name}</button
         >
       {/each}
@@ -99,22 +92,24 @@
         style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))"
       >
         {#each filteredIconList as icon}
-          <button
+          <div
             on:click={() => {
               currentIcon.set(icon);
             }}
-            class="flex flex-col items-center justify-between p-12 pb-4 bg-zinc-200 shadow-md transition-all hover:bg-zinc-50  gap-12"
+            class="flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 dark:hover:bg-opacity-60 p-4"
           >
             <Icon
-              icon={`${icon}`}
-              width="56"
-              height="56"
-              class="text-zinc-600 dark:text-zinc-100"
+              icon={icon}
+              width="32"
+              height="32"
+              class="text-stone-600"
             />
-            <p class="font-medium tracking-wide text-center text-zinc-600 dark:text-zinc-100">
+            <p
+              class="font-medium text-xs tracking-wide text-center text-stone-600 mt-4 -mb-0.5"
+            >
               {icon}
             </p>
-          </button>
+          </div>
         {/each}
       </div>
     {:else}

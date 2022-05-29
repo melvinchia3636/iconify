@@ -53,4 +53,4 @@
 <CodeSnippet>
     {curSVG}
 </CodeSnippet>
-<button on:click={() => {saveSvg(curSVG, icon.split(":")[1]+'.svg')}} class="w-full p-4 text-xl font-medium tracking-wide text-zinc-200 bg-yellow-400 shadow-md ">Download SVG</button>
+<button on:click={() => {saveSvg(curSVG, icon.split(":")[1]+'.svg')}} class="w-full p-4 text-xl font-medium tracking-wide text-stone-600 bg-stone-600  ">Download SVG</button>

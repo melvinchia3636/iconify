@@ -20,11 +20,11 @@
   <License />
 </div>
 <div
-  class="h-0 bg-yellow-400 bg-orange-500 bg-emerald-500 bg-sky-400 bg-sky-500 bg-purple-400 bg-purple-500 bg-zinc-500 bg-teal-500 bg-zinc-400 bg-teal-400"
+  class="h-0 bg-stone-600 bg-orange-500 bg-stone-500 bg-stone-600 bg-stone-500 bg-purple-400 bg-purple-500 bg-zinc-500 bg-stone-500 bg-zinc-400 bg-stone-600"
 />
 <div
-  class="h-0 text-yellow-400 text-orange-400 text-emerald-400 text-sky-400 text-purple-400 text-yellow-400 text-orange-500 text-emerald-500 text-sky-500 text-purple-500 text-zinc-500 text-teal-500 text-zinc-400 text-teal-400"
+  class="h-0 text-stone-600 text-orange-400 text-stone-600 text-stone-600 text-purple-400 text-stone-600 text-orange-500 text-stone-500 text-stone-500 text-purple-500 text-zinc-500 text-stone-500 text-zinc-400 text-stone-600"
 />
 <div
-  class="h-0 border-yellow-400 border-orange-500 border-emerald-500 border-sky-500 border-purple-500 border-zinc-500 border-teal-500"
+  class="h-0 border-stone-600 border-orange-500 border-stone-500 border-stone-500 border-purple-500 border-zinc-500 border-stone-500"
 />

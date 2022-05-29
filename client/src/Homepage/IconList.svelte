@@ -30,27 +30,27 @@
       <div
         in:slide
         out:slide
-        class="w-full mb-6 overflow-hidden shadow-md"
+        class="w-full mb-6 overflow-hidden "
       >
         <div
           class="bg-{colors[
             index
-          ]}-500 p-8 md:p-12 py-6 md:py-8 text-zinc-200 text-2xl md:text-3xl font-medium tracking-wide"
+          ]}-500 p-8 md:p-12 py-6 md:py-8 text-stone-600 text-2xl md:text-3xl font-medium tracking-wide"
         >
           {name}
         </div>
         <div class="flex-wrap p-4 md:p-12 grid gap-4 icon-list">
           {#each iconSets as iconSet}
             <div
-              class="flex flex-col sssm:flex-row flex-grow overflow-hidden  shadow-md w-full"
+              class="flex flex-col sssm:flex-row flex-grow overflow-hidden   w-full"
             >
               <div
-                class="flex flex-col flex-shrink-0 text-2xl font-medium tracking-wide text-zinc-200 w-full sssm:w-36"
+                class="flex flex-col flex-shrink-0 text-2xl font-medium tracking-wide text-stone-600 w-full sssm:w-36"
               >
                 <div
                   class="bg-{colors[
                     index
-                  ]}-400 text-zinc-200 w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3"
+                  ]}-400 text-stone-600 w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3"
                 >
                   {#each iconSet.samples as sampleIcon}
                     <Icon
@@ -62,7 +62,7 @@
                 <div
                   class="w-full h-full bg-{colors[
                     index
-                  ]}-500 flex px-4 py-2 sssm:py-0 justify-between items-center text-zinc-200"
+                  ]}-500 flex px-4 py-2 sssm:py-0 justify-between items-center text-stone-600"
                   style="font-size: 1.2rem"
                 >
                   <p>{iconSet.total}</p>

@@ -5271,7 +5271,7 @@ var app = (function () {
     			a = element("a");
     			t = text(t_value);
     			attr(a, "href", /*route*/ ctx[4][0]);
-    			attr(a, "class", "font-semibold text-yellow-400");
+    			attr(a, "class", "font-semibold relative after:w-1/2 after:border-b-2 after:absolute after:border-stone-600 after:bottom-0 after:left-1/2 after:-translate-x-1/2");
     		},
     		m(target, anchor) {
     			insert(target, a, anchor);
@@ -5315,7 +5315,7 @@ var app = (function () {
     	};
     }
 
-    // (38:4) <Link to="/icon-sets" class="items-center rounded-md hidden px-6 pt-[0.9rem] pb-4 text-lg font-semibold tracking-wide text-zinc-800 shadow-md ssm:flex bg-yellow-400  gap-6">
+    // (38:4) <Link to="/icon-sets" class="items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide text-stone-600 ssm:flex border-2 border-stone-600 gap-6">
     function create_default_slot$n(ctx) {
     	let t;
     	let svg;
@@ -5338,7 +5338,7 @@ var app = (function () {
     			attr(path1, "stroke-width", "2.6");
     			attr(path1, "stroke-linecap", "round");
     			attr(path1, "stroke-linejoin", "round");
-    			attr(svg, "class", "flex-shrink-0 mt-1 text-zinc-800");
+    			attr(svg, "class", "flex-shrink-0 text-zinc-800 w-4 h-4");
     			attr(svg, "width", "19");
     			attr(svg, "height", "17");
     			attr(svg, "viewBox", "0 0 19 17");
@@ -5379,7 +5379,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr(div, "class", "fixed z-40 top-0 left-0 w-full h-screen bg-zinc-200 flex gap-16 flex-col items-center justify-center text-xl font-medium tracking-wide text-zinc-600 dark:text-zinc-100");
+    			attr(div, "class", "fixed z-40 top-0 left-0 w-full h-screen bg-stone-600 flex gap-16 flex-col items-center justify-center text-lg font-medium tracking-wide text-zinc-600 dark:text-stone-600");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -5471,7 +5471,7 @@ var app = (function () {
     			a = element("a");
     			t = text(t_value);
     			attr(a, "href", /*route*/ ctx[4][0]);
-    			attr(a, "class", "font-semibold text-yellow-400");
+    			attr(a, "class", "font-semibold text-stone-600");
     			set_style(a, "font-size", "1.3rem");
     		},
     		m(target, anchor) {
@@ -5535,7 +5535,7 @@ var app = (function () {
     	icon = new Icon({
     			props: {
     				icon: "gg:menu",
-    				class: "text-zinc-600 dark:text-zinc-100",
+    				class: "text-stone-600",
     				width: "1.8rem",
     				height: "1.8rem"
     			}
@@ -5551,7 +5551,7 @@ var app = (function () {
     	link = new Link$1({
     			props: {
     				to: "/icon-sets",
-    				class: "items-center rounded-md hidden px-6 pt-[0.9rem] pb-4 text-lg font-semibold tracking-wide text-zinc-800 shadow-md ssm:flex bg-yellow-400  gap-6",
+    				class: "items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide text-stone-600 ssm:flex border-2 border-stone-600 gap-6",
     				$$slots: { default: [create_default_slot$n] },
     				$$scope: { ctx }
     			}
@@ -5582,7 +5582,7 @@ var app = (function () {
     			attr(button, "class", "block 1100:hidden");
     			attr(a, "href", "/");
     			attr(div0, "class", "flex items-center flex-shrink-0 gap-6 z-50");
-    			attr(div1, "class", "items-center hidden -mt-1 font-medium text-lg tracking-wide text-zinc-600 dark:text-zinc-100 gap-16 1100:flex");
+    			attr(div1, "class", "items-center hidden -mt-1 font-medium tracking-wide text-stone-600 gap-16 1100:flex");
     			attr(nav, "class", "flex items-center justify-between w-full px-3 390:px-8 ssm:px-12 mb-8");
     		},
     		m(target, anchor) {
@@ -5807,10 +5807,10 @@ var app = (function () {
     			t7 = text(" · ");
     			create_component(icon5.$$.fragment);
     			attr(div, "class", "flex gap-8");
-    			attr(a, "class", "text-zinc-200 underline");
+    			attr(a, "class", "text-stone-600 underline");
     			attr(a, "href", "/");
     			attr(p, "class", "tracking-wide flex gap-2 items-center justify-center");
-    			attr(footer, "class", "py-4 px-12 w-full mt-16 text-zinc-200 flex flex-col gap-4 md:flex-row justify-between items-center bg-yellow-400 dark:bg-zinc-800");
+    			attr(footer, "class", "py-4 px-12 w-full mt-16 text-stone-600 flex flex-col gap-4 md:flex-row justify-between items-center bg-stone-600");
     		},
     		m(target, anchor) {
     			insert(target, footer, anchor);
@@ -5880,15 +5880,15 @@ var app = (function () {
     		c() {
     			div3 = element("div");
 
-    			div3.innerHTML = `<div class="inline-flex flex-col w-full ssm:w-auto"><div class="bg-zinc-800 text-yellow-400 pt-4 530:pt-6 px-6 530:px-10 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide rounded-t-2xl round  svelte-1bijpfq">Unified</div> 
-    <div class="bg-zinc-800 text-zinc-600 dark:text-zinc-100 w-full ssm:w-auto block py-4 530:py-6 px-6 530:px-10 text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide rounded-b-2xl rounded-tr-2xl">Icons Framework</div></div> 
+    			div3.innerHTML = `<div class="inline-flex flex-col w-full ssm:w-auto"><div class="bg-zinc-800 text-stone-600 pt-4 530:pt-6 px-6 530:px-10 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide rounded-t-2xl round  svelte-1bijpfq">Unified</div> 
+    <div class="bg-zinc-800 text-zinc-600 dark:text-stone-600 w-full ssm:w-auto block py-4 530:py-6 px-6 530:px-10 text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide rounded-b-2xl rounded-tr-2xl">Icons Framework</div></div> 
   <p class="text-zinc-800 text-xl sssm:text-xl ssm:text-2xl leading-7 sssm:leading-8 ssm:leading-10 tracking-wide mt-8">More than 100 icon sets, one library.
     <br class="hidden 700:inline"/>Over 100,000 open source vector icons.</p> 
-  <form action="/search" class="mt-10 flex w-full md:w-9/12 lg:w-5/12 overflow-hidden rounded-md shadow-md"><input autocomplete="off" name="q" type="text" class="bg-zinc-200 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide" placeholder="Search icons..."/> 
-    <button type="submit" class="bg-yellow-500 py-4 px-6"><svg class="mt-1 w-6 h-6" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form> 
+  <form action="/search" class="mt-10 flex w-full md:w-9/12 lg:w-5/12 overflow-hidden rounded-md "><input autocomplete="off" name="q" type="text" class="bg-stone-600 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide" placeholder="Search icons..."/> 
+    <button type="submit" class="bg-stone-500 py-4 px-6"><svg class="mt-1 w-6 h-6" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form> 
   <img src="./assets/hero.svg" alt="hero design" class="absolute right-0 top-0 h-full hidden lg:block"/>`;
 
-    			attr(div3, "class", "w-full bg-yellow-400 relative p-4 sssm:p-8 ssm:p-16 shadow-md");
+    			attr(div3, "class", "w-full bg-stone-600 relative p-4 sssm:p-8 ssm:p-16 ");
     		},
     		m(target, anchor) {
     			insert(target, div3, anchor);
@@ -5921,7 +5921,7 @@ var app = (function () {
     		c() {
     			p = element("p");
     			if (default_slot) default_slot.c();
-    			attr(p, "class", "tracking-wide text-zinc-600 dark:text-zinc-100");
+    			attr(p, "class", "tracking-wide text-zinc-600 dark:text-stone-600");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -6030,11 +6030,11 @@ var app = (function () {
     			div0 = element("div");
 
     			div0.innerHTML = `Thousands of<br/>icons, one<br/> 
-        <span class="text-yellow-400">unified</span> framework.`;
+        <span class="text-stone-600">unified</span> framework.`;
 
     			t5 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(div0, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-center !leading-tight whitespace-nowrap text-zinc-600 dark:text-zinc-100");
+    			attr(div0, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-center !leading-tight whitespace-nowrap text-zinc-600 dark:text-stone-600");
     			attr(div1, "class", "w-full flex flex-col lg:flex-row gap-12 lg:gap-20 items-center px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -6187,7 +6187,7 @@ var app = (function () {
     			create_component(paragraph0.$$.fragment);
     			t4 = space();
     			div0 = element("div");
-    			div0.innerHTML = `<code class="break-words">&lt;<span style="all: inherit; color: rgb(49, 141, 225)">script</span> src=&quot;<span style="all: inherit; color: rgb(225, 62, 49); text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>&quot;&gt;&lt;/<span class="text-yellow-400" style="all: inherit; color: rgb(49, 141, 225)">script</span>&gt;</code>`;
+    			div0.innerHTML = `<code class="break-words">&lt;<span style="all: inherit; color: rgb(49, 141, 225)">script</span> src=&quot;<span style="all: inherit; color: rgb(225, 62, 49); text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>&quot;&gt;&lt;/<span class="text-stone-600" style="all: inherit; color: rgb(49, 141, 225)">script</span>&gt;</code>`;
     			t12 = space();
     			create_component(paragraph1.$$.fragment);
     			t13 = space();
@@ -6199,10 +6199,10 @@ var app = (function () {
 
     			t32 = space();
     			create_component(paragraph2.$$.fragment);
-    			attr(p, "class", "text-yellow-400 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
-    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-zinc-100 text-center mb-6 lg:mb-12");
-    			attr(div0, "class", "bg-zinc-100 text-zinc-600 dark:text-zinc-100 py-4 px-5 shadow-md mt-4 mb-8");
-    			attr(div1, "class", "bg-zinc-100 text-zinc-600 dark:text-zinc-100 py-4 px-5 shadow-md mt-4 mb-8");
+    			attr(p, "class", "text-stone-600 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
+    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-stone-600 text-center mb-6 lg:mb-12");
+    			attr(div0, "class", "bg-stone-600 text-zinc-600 dark:text-stone-600 py-4 px-5 mt-4 mb-8");
+    			attr(div1, "class", "bg-stone-600 text-zinc-600 dark:text-stone-600 py-4 px-5 mt-4 mb-8");
     			attr(div2, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -8005,8 +8005,8 @@ var app = (function () {
     			t3 = text(t3_value);
     			t4 = text(" icons");
     			attr(div, "class", "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2");
-    			attr(h4, "class", "text-yellow-400 font-medium text-3xl tracking-wider mt-16 absolute top-20 380:top-28 xl:top-56 whitespace-nowrap");
-    			attr(h5, "class", "text-zinc-600 dark:text-zinc-100 font-medium text-xl tracking-wider mt-16 absolute top-28 380:top-36 pt-2 xl:top-64 whitespace-nowrap");
+    			attr(h4, "class", "text-stone-600 font-medium text-3xl tracking-wider mt-16 absolute top-20 380:top-28 xl:top-56 whitespace-nowrap");
+    			attr(h5, "class", "text-zinc-600 dark:text-stone-600 font-medium text-xl tracking-wider mt-16 absolute top-28 380:top-36 pt-2 xl:top-64 whitespace-nowrap");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -8295,7 +8295,7 @@ var app = (function () {
     				icon: "eva:chevron-left-outline",
     				width: "48",
     				height: "48",
-    				class: "text-yellow-400 mt-16"
+    				class: "text-stone-600 mt-16"
     			}
     		});
 
@@ -8315,7 +8315,7 @@ var app = (function () {
     				icon: "eva:chevron-right-outline",
     				width: "48",
     				height: "48",
-    				class: "text-yellow-400 mt-16"
+    				class: "text-stone-600 mt-16"
     			}
     		});
 
@@ -8348,18 +8348,18 @@ var app = (function () {
     			div13 = element("div");
 
     			div13.innerHTML = `<div class="flex gap-6 flex-col relative"><div class="arrow svelte-qrbof6"></div>                 
-                    <div class="bg-zinc-100 shadow-md w-full flex flex-col"><h4 class="text-zinc-600 dark:text-zinc-100 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">API</h4> 
+                    <div class="bg-stone-600 w-full flex flex-col"><h4 class="text-zinc-600 dark:text-stone-600 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">API</h4> 
                         <img src="./assets/iconsdemo.svg" alt="icons example w-full"/> 
-                        <p class="text-zinc-600 dark:text-zinc-100 text-xl md:text-2xl tracking-wide text-center m-6">100,000+ icons</p></div> 
-                    <div class="bg-zinc-100 shadow-md w-full"><div class="flex flex-wrap justify-center gap-2 m-6"><div class="px-3 py-2 bg-yellow-400 shadow-md text-zinc-200 font-medium text-lg tracking-wide">mdi:opacity</div> 
-                            <div class="px-3 py-2 bg-yellow-400 shadow-md text-zinc-200 font-medium text-lg tracking-wide">ion:ios-cart</div> 
-                            <div class="px-3 py-2 bg-yellow-400 shadow-md text-zinc-200 font-medium text-lg tracking-wide">mdi:flask</div> 
-                            <div class="px-3 py-2 bg-yellow-400 shadow-md text-zinc-200 font-medium text-lg tracking-wide">noto:anchor</div> 
-                            <div class="px-3 py-2 bg-yellow-400 shadow-md text-zinc-200 font-medium text-lg tracking-wide">fxemoji:alien</div></div> 
-                        <p class="text-zinc-600 dark:text-zinc-100 text-xl md:text-2xl tracking-wide text-center m-6">Only icons used on page are downloaded</p></div> 
-                    <div class="bg-zinc-100 shadow-md w-full"><h4 class="text-zinc-600 dark:text-zinc-100 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">Browser</h4> 
+                        <p class="text-zinc-600 dark:text-stone-600 text-xl md:text-2xl tracking-wide text-center m-6">100,000+ icons</p></div> 
+                    <div class="bg-stone-600 w-full"><div class="flex flex-wrap justify-center gap-2 m-6"><div class="px-3 py-2 bg-stone-600 text-stone-600 font-medium text-lg tracking-wide">mdi:opacity</div> 
+                            <div class="px-3 py-2 bg-stone-600 text-stone-600 font-medium text-lg tracking-wide">ion:ios-cart</div> 
+                            <div class="px-3 py-2 bg-stone-600 text-stone-600 font-medium text-lg tracking-wide">mdi:flask</div> 
+                            <div class="px-3 py-2 bg-stone-600 text-stone-600 font-medium text-lg tracking-wide">noto:anchor</div> 
+                            <div class="px-3 py-2 bg-stone-600 text-stone-600 font-medium text-lg tracking-wide">fxemoji:alien</div></div> 
+                        <p class="text-zinc-600 dark:text-stone-600 text-xl md:text-2xl tracking-wide text-center m-6">Only icons used on page are downloaded</p></div> 
+                    <div class="bg-stone-600 w-full"><h4 class="text-zinc-600 dark:text-stone-600 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">Browser</h4> 
                         <div class="w-full flex justify-center"><img src="./assets/iconsdemoresult.svg" alt="icons example" class="w-96"/></div> 
-                        <p class="text-zinc-600 dark:text-zinc-100 text-xl md:text-2xl tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon)</p></div></div>`;
+                        <p class="text-zinc-600 dark:text-stone-600 text-xl md:text-2xl tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon)</p></div></div>`;
 
     			t30 = space();
     			div24 = element("div");
@@ -8384,9 +8384,9 @@ var app = (function () {
     			div21 = element("div");
     			div19 = element("div");
 
-    			div19.innerHTML = `<div class="w-3 h-3 rounded-full bg-yellow-400"></div> 
+    			div19.innerHTML = `<div class="w-3 h-3 rounded-full bg-stone-600"></div> 
                         <div class="w-3 h-3 rounded-full bg-orange-400"></div> 
-                        <div class="w-3 h-3 rounded-full bg-emerald-400"></div>`;
+                        <div class="w-3 h-3 rounded-full bg-stone-600"></div>`;
 
     			t42 = space();
     			div20 = element("div");
@@ -8430,9 +8430,9 @@ var app = (function () {
     			h33.textContent = "Lightning fast";
     			t56 = space();
     			create_component(paragraph4.$$.fragment);
-    			attr(p0, "class", "text-yellow-400 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
-    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-zinc-100 text-center mb-6 lg:mb-12");
-    			attr(h30, "class", "text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
+    			attr(p0, "class", "text-stone-600 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
+    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-stone-600 text-center mb-6 lg:mb-12");
+    			attr(h30, "class", "text-stone-600 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
     			attr(div0, "class", "w-full sm:w-1/2");
     			attr(div13, "class", "w-full sm:w-1/2");
     			attr(div14, "class", "flex flex-col sm:flex-row gap-12 items-center");
@@ -8442,23 +8442,23 @@ var app = (function () {
     			set_style(span1, "color", "rgb(225, 62, 49)");
     			set_style(span1, "text-decoration", "underline");
     			set_style(span1, "text-decoration-thickness", "1px");
-    			attr(span2, "class", "text-yellow-400");
+    			attr(span2, "class", "text-stone-600");
     			set_style(span2, "all", "inherit");
     			set_style(span2, "color", "rgb(49, 141, 225)");
     			attr(code, "class", "break-words");
-    			attr(div15, "class", "bg-zinc-100 text-zinc-600 dark:text-zinc-100 py-4 px-5 shadow-md mt-4 mb-4");
+    			attr(div15, "class", "bg-stone-600 text-zinc-600 dark:text-stone-600 py-4 px-5 mt-4 mb-4");
     			attr(div19, "class", "flex items-center gap-2 p-3 border-b border-zinc-600");
     			attr(div20, "class", "w-full h-full items-center justify-center flex");
     			attr(div21, "class", "w-full h-64 flex flex-col border border-zinc-600");
     			attr(div22, "class", "w-full sm:w-1/2");
     			attr(h31, "to", "");
     			attr(h31, "use", "");
-    			attr(h31, "class", "text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
+    			attr(h31, "class", "text-stone-600 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
     			attr(div23, "class", "w-full sm:w-1/2");
     			attr(div24, "class", "flex flex-col-reverse sm:flex-row gap-12 items-center");
     			attr(h32, "to", "");
     			attr(h32, "use", "");
-    			attr(h32, "class", "text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
+    			attr(h32, "class", "text-stone-600 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
     			attr(div25, "class", "w-full sm:w-1/2");
     			attr(div26, "class", "w-20 h-32 xl:w-64 xl:h-64");
     			attr(div27, "class", "flex relative h-full flex-col items-center");
@@ -8467,7 +8467,7 @@ var app = (function () {
     			attr(div30, "class", "w-full sm:w-1/2 -mb-12");
     			attr(h33, "to", "");
     			attr(h33, "use", "");
-    			attr(h33, "class", "text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
+    			attr(h33, "class", "text-stone-600 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
     			attr(div31, "class", "w-full 530:sm:w-1/2");
     			attr(div32, "class", "flex flex-col-reverse sm:flex-row gap-12 items-center");
     			attr(div33, "class", "pt-20 w-full flex flex-col gap-24");
@@ -11845,10 +11845,10 @@ var app = (function () {
     			a1 = element("a");
     			t7 = text(t7_value);
     			t8 = space();
-    			attr(div0, "class", "bg-" + /*colors*/ ctx[1][/*index*/ ctx[4]] + "-400 text-zinc-200 w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3" + " svelte-wnymtn");
-    			attr(div1, "class", div1_class_value = "w-full h-full bg-" + /*colors*/ ctx[1][/*index*/ ctx[4]] + "-500 flex px-4 py-2 sssm:py-0 justify-between items-center text-zinc-200" + " svelte-wnymtn");
+    			attr(div0, "class", "bg-" + /*colors*/ ctx[1][/*index*/ ctx[4]] + "-400 text-stone-600 w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3" + " svelte-wnymtn");
+    			attr(div1, "class", div1_class_value = "w-full h-full bg-" + /*colors*/ ctx[1][/*index*/ ctx[4]] + "-500 flex px-4 py-2 sssm:py-0 justify-between items-center text-stone-600" + " svelte-wnymtn");
     			set_style(div1, "font-size", "1.2rem");
-    			attr(div2, "class", "flex flex-col flex-shrink-0 text-2xl font-medium tracking-wide text-zinc-200 w-full sssm:w-36");
+    			attr(div2, "class", "flex flex-col flex-shrink-0 text-2xl font-medium tracking-wide text-stone-600 w-full sssm:w-36");
     			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[5].prefix);
     			attr(a0, "class", a0_class_value = "text-" + /*colors*/ ctx[1][/*index*/ ctx[4] % 7] + "-400 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-2xl font-medium" + " svelte-wnymtn");
     			attr(a1, "target", "_blank");
@@ -11856,7 +11856,7 @@ var app = (function () {
     			attr(a1, "class", a1_class_value = "text-" + /*colors*/ ctx[1][/*index*/ ctx[4] % 7] + "-400" + " svelte-wnymtn");
     			attr(p1, "class", "mt-3 overflow-hidden text-lg tracking-wide text-zinc-400 whitespace-nowrap overflow-ellipsis w-11/12");
     			attr(div3, "class", "flex flex-col justify-between px-4 py-3 w-full");
-    			attr(div4, "class", "flex flex-col sssm:flex-row flex-grow overflow-hidden shadow-md w-full");
+    			attr(div4, "class", "flex flex-col sssm:flex-row flex-grow overflow-hidden w-full");
     		},
     		m(target, anchor) {
     			insert(target, div4, anchor);
@@ -12015,9 +12015,9 @@ var app = (function () {
     			}
 
     			t2 = space();
-    			attr(div0, "class", div0_class_value = "bg-" + /*colors*/ ctx[1][/*index*/ ctx[4]] + "-500 p-8 md:p-12 py-6 md:py-8 text-zinc-200 text-2xl md:text-3xl font-medium tracking-wide" + " svelte-wnymtn");
+    			attr(div0, "class", div0_class_value = "bg-" + /*colors*/ ctx[1][/*index*/ ctx[4]] + "-500 p-8 md:p-12 py-6 md:py-8 text-stone-600 text-2xl md:text-3xl font-medium tracking-wide" + " svelte-wnymtn");
     			attr(div1, "class", "flex-wrap p-4 md:p-12 grid gap-4 icon-list svelte-wnymtn");
-    			attr(div2, "class", "w-full mb-6 overflow-hidden shadow-md");
+    			attr(div2, "class", "w-full mb-6 overflow-hidden ");
     		},
     		m(target, anchor) {
     			insert(target, div2, anchor);
@@ -12279,8 +12279,8 @@ var app = (function () {
     			h2.textContent = "Iconify in different browsers";
     			t3 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(p, "class", "text-yellow-400 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
-    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-zinc-100 text-center mb-6 lg:mb-12");
+    			attr(p, "class", "text-stone-600 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
+    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-stone-600 text-center mb-6 lg:mb-12");
     			attr(div, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -12379,8 +12379,8 @@ var app = (function () {
     			h2.textContent = "Iconify under legal protection";
     			t3 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(p, "class", "text-yellow-400 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
-    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-zinc-100 text-center mb-6 lg:mb-12");
+    			attr(p, "class", "text-stone-600 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
+    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-stone-600 text-center mb-6 lg:mb-12");
     			attr(div, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -12479,9 +12479,9 @@ var app = (function () {
     			t8 = space();
     			div3 = element("div");
     			attr(div0, "class", "flex flex-col px-3 390:px-8 ssm:px-12 gap-20 sm:gap-32");
-    			attr(div1, "class", "h-0 bg-yellow-400 bg-orange-500 bg-emerald-500 bg-sky-400 bg-sky-500 bg-purple-400 bg-purple-500 bg-zinc-500 bg-teal-500 bg-zinc-400 bg-teal-400");
-    			attr(div2, "class", "h-0 text-yellow-400 text-orange-400 text-emerald-400 text-sky-400 text-purple-400 text-yellow-400 text-orange-500 text-emerald-500 text-sky-500 text-purple-500 text-zinc-500 text-teal-500 text-zinc-400 text-teal-400");
-    			attr(div3, "class", "h-0 border-yellow-400 border-orange-500 border-emerald-500 border-sky-500 border-purple-500 border-zinc-500 border-teal-500");
+    			attr(div1, "class", "h-0 bg-stone-600 bg-orange-500 bg-stone-500 bg-stone-600 bg-stone-500 bg-purple-400 bg-purple-500 bg-zinc-500 bg-stone-500 bg-zinc-400 bg-stone-600");
+    			attr(div2, "class", "h-0 text-stone-600 text-orange-400 text-stone-600 text-stone-600 text-purple-400 text-stone-600 text-orange-500 text-stone-500 text-stone-500 text-purple-500 text-zinc-500 text-stone-500 text-zinc-400 text-stone-600");
+    			attr(div3, "class", "h-0 border-stone-600 border-orange-500 border-stone-500 border-stone-500 border-purple-500 border-zinc-500 border-stone-500");
     		},
     		m(target, anchor) {
     			insert(target, div0, anchor);
@@ -12615,9 +12615,9 @@ var app = (function () {
     			}
 
     			t2 = space();
-    			attr(div0, "class", "bg-yellow-400 p-8 md:p-12 py-6 md:py-8 text-zinc-800 text-2xl font-medium tracking-wide");
+    			attr(div0, "class", "bg-stone-600 p-8 text-stone-100 text-2xl font-medium tracking-wide");
     			attr(div1, "class", "flex-wrap p-4 md:p-12 grid gap-4 icon-list svelte-wnymtn");
-    			attr(div2, "class", "w-full mb-6 overflow-hidden rounded-md shadow-md dark:bg-zinc-700 dark:bg-opacity-20");
+    			attr(div2, "class", "w-full mb-6 overflow-hidden border-2 border-stone-600");
     		},
     		m(target, anchor) {
     			insert(target, div2, anchor);
@@ -12762,17 +12762,17 @@ var app = (function () {
     			a1 = element("a");
     			t7 = text(t7_value);
     			t8 = space();
-    			attr(div0, "class", "bg-yellow-400 text-zinc-800 w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3");
-    			attr(div1, "class", "w-full h-full bg-yellow-500 flex px-4 py-2 sssm:py-0 justify-between items-center text-zinc-800");
-    			attr(div2, "class", "flex flex-col flex-shrink-0 font-medium tracking-wide text-zinc-800 w-full sssm:w-36");
+    			attr(div0, "class", "w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3 text-stone-600");
+    			attr(div1, "class", "w-full h-full border-t-2 border-stone-600 flex p-4 py-4 sssm:py-0 justify-between items-center text-stone-600 text-smr");
+    			attr(div2, "class", "flex flex-col flex-shrink-0 border-r-2 border-stone-600 font-medium tracking-wide text-zinc-800 w-full sssm:w-36");
     			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[8].prefix);
-    			attr(a0, "class", "text-yellow-400 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium");
+    			attr(a0, "class", "text-stone-600 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium");
     			attr(a1, "target", "_blank");
     			attr(a1, "href", a1_href_value = /*iconSet*/ ctx[8].author.url || "/");
-    			attr(a1, "class", "text-yellow-400");
-    			attr(p1, "class", "mt-3 overflow-hidden tracking-wide text-zinc-400 whitespace-nowrap overflow-ellipsis w-11/12");
+    			attr(a1, "class", "underline");
+    			attr(p1, "class", "mt-3 overflow-hidden tracking-wide text-stone-600 whitespace-nowrap overflow-ellipsis w-11/12");
     			attr(div3, "class", "flex flex-col justify-between px-4 py-3 w-full");
-    			attr(div4, "class", "flex flex-col sssm:flex-row flex-grow overflow-hidden shadow-md w-full dark:bg-zinc-700 dark:bg-opacity-30 rounded-md");
+    			attr(div4, "class", "flex flex-col sssm:flex-row flex-grow overflow-hidden w-full border-2 border-stone-600");
     		},
     		m(target, anchor) {
     			insert(target, div4, anchor);
@@ -12947,8 +12947,8 @@ var app = (function () {
     	icon = new Icon({
     			props: {
     				icon: "icon-park-outline:auto-height-one",
-    				width: "24",
-    				height: "24"
+    				width: "20",
+    				height: "20"
     			}
     		});
 
@@ -13246,7 +13246,7 @@ var app = (function () {
         <br/><br/>
         Click icon set name to see all available icons.`;
 
-    			attr(p, "class", "text-center text-base");
+    			attr(p, "class", "text-center text-base text-stone-600");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -13277,7 +13277,7 @@ var app = (function () {
     			h1.textContent = "Browse Icons";
     			t1 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(h1, "class", "mb-4 text-2xl font-semibold tracking-wide text-center text-yellow-400 sm:mb-8 sm:text-5xl mt-12");
+    			attr(h1, "class", "mb-4 text-2xl font-semibold tracking-wide text-center text-stone-600 sm:mb-8 sm:text-5xl mt-12");
     		},
     		m(target, anchor) {
     			insert(target, h1, anchor);
@@ -13347,8 +13347,8 @@ var app = (function () {
     			t = text(t_value);
 
     			attr(button, "class", button_class_value = "" + ((/*selectedCategory*/ ctx[2] === /*index*/ ctx[10]
-    			? `bg-yellow-400 text-zinc-800`
-    			: `border-2 border-yellow-400 text-yellow-400`) + " whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center shadow-md font-medium px-8 rounded-md"));
+    			? `bg-stone-600 text-stone-100`
+    			: `text-stone-600`) + " border-2 border-stone-600 whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center font-medium px-8"));
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -13363,8 +13363,8 @@ var app = (function () {
     			ctx = new_ctx;
 
     			if (dirty & /*selectedCategory*/ 4 && button_class_value !== (button_class_value = "" + ((/*selectedCategory*/ ctx[2] === /*index*/ ctx[10]
-    			? `bg-yellow-400 text-zinc-800`
-    			: `border-2 border-yellow-400 text-yellow-400`) + " whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center shadow-md font-medium px-8 rounded-md"))) {
+    			? `bg-stone-600 text-stone-100`
+    			: `text-stone-600`) + " border-2 border-stone-600 whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center font-medium px-8"))) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -13399,8 +13399,8 @@ var app = (function () {
 
     	icon0 = new Icon({
     			props: {
-    				icon: "fe:search",
-    				class: "text-zinc-300",
+    				icon: "uil:search",
+    				class: "text-stone-600",
     				width: "24",
     				height: "24"
     			}
@@ -13415,8 +13415,8 @@ var app = (function () {
 
     	icon1 = new Icon({
     			props: {
-    				icon: "fe:search",
-    				class: "text-zinc-300",
+    				icon: "octicon:filter-16",
+    				class: "text-stone-600",
     				width: "24",
     				height: "24"
     			}
@@ -13449,19 +13449,19 @@ var app = (function () {
     			attr(input0, "name", "q");
     			attr(input0, "id", "q");
     			attr(input0, "type", "text");
-    			attr(input0, "class", "w-full tracking-wide text-zinc-500 bg-transparent");
+    			attr(input0, "class", "w-full tracking-wide text-stone-600 placeholder-stone-600 bg-transparent");
     			attr(input0, "placeholder", input0_placeholder_value = "Search " + /*count_value*/ ctx[3].toLocaleString() + " icons");
-    			attr(div0, "class", "inline-flex items-center w-full p-4 overflow-hidden bg-zinc-200 dark:bg-zinc-700 rounded-md dark:bg-opacity-40 shadow-md gap-4 ");
+    			attr(div0, "class", "inline-flex items-center w-full p-4 overflow-hidden border-2 border-stone-600 gap-4 ");
     			attr(button, "type", "submit");
-    			attr(button, "class", "flex items-center justify-center h-16 sm:h-full px-12 rounded-md font-semibold tracking-wide text-yellow-400 border-2 border-yellow-400 shadow-md whitespace-nowrap gap-6");
+    			attr(button, "class", "flex items-center justify-center h-16 sm:h-full px-12 font-semibold tracking-wide text-stone-600 border-2 border-stone-600 whitespace-nowrap gap-6");
     			attr(form, "action", "/search");
-    			attr(form, "class", "flex flex-col w-full sm:h-16 mt-12 sm:flex-row gap-4");
+    			attr(form, "class", "flex flex-col w-full sm:h-16 mt-12 sm:flex-row gap-2");
     			attr(div1, "class", "flex flex-wrap gap-2");
     			attr(input1, "type", "text");
-    			attr(input1, "class", "w-full tracking-wide text-zinc-500 bg-transparent");
+    			attr(input1, "class", "w-full tracking-wide text-stone-600 placeholder-stone-600 bg-transparent");
     			attr(input1, "placeholder", "Filter icon sets");
-    			attr(div2, "class", "inline-flex items-center p-4 overflow-hidden bg-zinc-200 dark:bg-zinc-700 dark:bg-opacity-40 rounded-md shadow-md gap-4 w-full md:w-96 flex-shrink-0 ");
-    			attr(div3, "class", "flex flex-col md:flex-row items-center justify-between w-full mt-4 gap-4");
+    			attr(div2, "class", "inline-flex items-center p-4 overflow-hidden border-2 border-stone-600 gap-3 w-full md:w-96 flex-shrink-0");
+    			attr(div3, "class", "flex flex-col md:flex-row items-start justify-between w-full mt-4 gap-4");
     		},
     		m(target, anchor) {
     			insert(target, form, anchor);
@@ -36355,7 +36355,7 @@ var app = (function () {
     			code = element("code");
     			if (default_slot) default_slot.c();
     			attr(code, "class", "whitespace-pre-wrap break-all");
-    			attr(div, "class", "bg-zinc-100 text-zinc-600 dark:text-zinc-100 py-4 px-5 shadow-md my-4 overflow-scroll");
+    			attr(div, "class", "bg-stone-600 text-zinc-600 dark:text-stone-600 py-4 px-5 my-4 overflow-scroll");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -36428,7 +36428,7 @@ var app = (function () {
     	icon = new Icon({
     			props: {
     				icon: "mdi:link-variant",
-    				class: "text-yellow-400 flex-shrink-0",
+    				class: "text-stone-600 flex-shrink-0",
     				width: "24",
     				height: "24"
     			}
@@ -36445,7 +36445,7 @@ var app = (function () {
     			a = element("a");
     			if (default_slot) default_slot.c();
     			attr(a, "href", /*link*/ ctx[0]);
-    			attr(div, "class", "mt-10 flex items-center gap-1 text-lg ssssm:text-xl tracking-wide text-yellow-400");
+    			attr(div, "class", "mt-10 flex items-center gap-1 text-lg ssssm:text-xl tracking-wide text-stone-600");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -40952,7 +40952,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t0 = space();
     			button = element("button");
     			button.textContent = "Download SVG";
-    			attr(button, "class", "w-full p-4 text-xl font-medium tracking-wide text-zinc-200 bg-yellow-400 shadow-md ");
+    			attr(button, "class", "w-full p-4 text-xl font-medium tracking-wide text-stone-600 bg-stone-600 ");
     		},
     		m(target, anchor) {
     			mount_component(codesnippet, target, anchor);
@@ -41419,7 +41419,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t1 = text(t1_value);
     			t2 = text(" x ");
     			t3 = text(t3_value);
-    			attr(p, "class", "font-medium text-zinc-600 dark:text-zinc-100 tracking-wide text-xl absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all");
+    			attr(p, "class", "font-medium text-zinc-600 dark:text-stone-600 tracking-wide text-xl absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all");
     		},
     		m(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -41498,7 +41498,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t0 = text("Text with icon sample\n                    ");
     			create_component(icon.$$.fragment);
     			t1 = text("\n                    to show icon alignment in text.");
-    			attr(p, "class", "text-zinc-600 dark:text-zinc-100 tracking-wide text-2xl p-12 text-center");
+    			attr(p, "class", "text-zinc-600 dark:text-stone-600 tracking-wide text-2xl p-12 text-center");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -41547,7 +41547,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		c() {
     			h2 = element("h2");
     			t = text(/*curIcon*/ ctx[0]);
-    			attr(h2, "class", "text-zinc-600 dark:text-zinc-100 font-semibold break-all text-5xl tracking-wide -mt-1");
+    			attr(h2, "class", "text-zinc-600 dark:text-stone-600 font-semibold break-all text-5xl tracking-wide -mt-1");
     		},
     		m(target, anchor) {
     			insert(target, h2, anchor);
@@ -41781,8 +41781,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(span, "class", "-mt-0.5");
 
     			attr(button, "class", button_class_value = "transition-all flex gap-2 " + (/*currentTab*/ ctx[9] === /*index*/ ctx[30]
-    			? "font-medium bg-yellow-400 text-zinc-200"
-    			: 'bg-zinc-200 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-3 items-center justify-center py-2 shadow-md text-xl");
+    			? "font-medium bg-stone-600 text-stone-600"
+    			: 'bg-stone-600 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-3 items-center justify-center py-2 text-xl");
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -41802,8 +41802,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			ctx = new_ctx;
 
     			if (!current || dirty[0] & /*currentTab*/ 512 && button_class_value !== (button_class_value = "transition-all flex gap-2 " + (/*currentTab*/ ctx[9] === /*index*/ ctx[30]
-    			? "font-medium bg-yellow-400 text-zinc-200"
-    			: 'bg-zinc-200 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-3 items-center justify-center py-2 shadow-md text-xl")) {
+    			? "font-medium bg-stone-600 text-stone-600"
+    			: 'bg-stone-600 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-3 items-center justify-center py-2 text-xl")) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -41907,8 +41907,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(span, "class", "-mt-0.5");
 
     			attr(button, "class", button_class_value = "transition-all flex gap-2 " + (/*currentSubTab*/ ctx[10] == /*index*/ ctx[30]
-    			? "font-medium bg-yellow-400 text-zinc-200"
-    			: 'bg-zinc-200 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-4 items-center justify-center py-2 shadow-md text-xl");
+    			? "font-medium bg-stone-600 text-stone-600"
+    			: 'bg-stone-600 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-4 items-center justify-center py-2 text-xl");
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -41926,8 +41926,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			if (dirty[0] & /*currentTab*/ 512 && t0_value !== (t0_value = /*name*/ ctx[28] + "")) set_data(t0, t0_value);
 
     			if (dirty[0] & /*currentSubTab*/ 1024 && button_class_value !== (button_class_value = "transition-all flex gap-2 " + (/*currentSubTab*/ ctx[10] == /*index*/ ctx[30]
-    			? "font-medium bg-yellow-400 text-zinc-200"
-    			: 'bg-zinc-200 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-4 items-center justify-center py-2 shadow-md text-xl")) {
+    			? "font-medium bg-stone-600 text-stone-600"
+    			: 'bg-stone-600 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-4 items-center justify-center py-2 text-xl")) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -42151,7 +42151,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-horizontal",
     				width: "28",
     				height: "28",
-    				class: /*flipHoriz*/ ctx[6] ? "text-zinc-200" : "text-zinc-300"
+    				class: /*flipHoriz*/ ctx[6]
+    				? "text-stone-600"
+    				: "text-zinc-300"
     			}
     		});
 
@@ -42160,7 +42162,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-vertical",
     				width: "28",
     				height: "28",
-    				class: /*flipVert*/ ctx[5] ? "text-zinc-200" : "text-zinc-300"
+    				class: /*flipVert*/ ctx[5] ? "text-stone-600" : "text-zinc-300"
     			}
     		});
 
@@ -42170,7 +42172,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				width: "28",
     				height: "28",
     				class: /*display*/ ctx[7] === "block"
-    				? "text-zinc-200"
+    				? "text-stone-600"
     				: "text-zinc-300"
     			}
     		});
@@ -42181,7 +42183,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				width: "28",
     				height: "28",
     				class: /*display*/ ctx[7] === "inline"
-    				? "text-zinc-200"
+    				? "text-stone-600"
     				: "text-zinc-300"
     			}
     		});
@@ -42346,67 +42348,70 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			attr(button0, "class", "absolute right-6 top-6");
     			attr(div0, "class", "pt-12 pb-24 md:h-full relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center rounded-xl shadow-lg dark:bg-zinc-600 dark:bg-opacity-40");
-    			attr(p0, "class", "text-yellow-400 font-medium tracking-wide text-xl");
+    			attr(p0, "class", "text-stone-600 font-medium tracking-wide text-xl");
     			attr(div1, "class", "flex gap-4 items-center");
-    			attr(div2, "class", "absolute -top-6 left-4 bg-zinc-200 dark:bg-zinc-700 p-2");
+    			attr(div2, "class", "absolute -top-6 left-4 bg-stone-600 dark:bg-zinc-700 p-2");
     			attr(input0, "size", "12");
     			attr(input0, "type", "text");
-    			attr(input0, "class", "text-zinc-600 dark:text-zinc-100 bg-transparent font-medium tracking-wide text-xl placeholder-zinc-300");
+    			attr(input0, "class", "text-zinc-600 dark:text-stone-600 bg-transparent font-medium tracking-wide text-xl placeholder-zinc-300");
     			attr(input0, "placeholder", "#000000");
     			attr(input0, "autocomplete", "off");
-    			attr(div3, "class", "flex flex-grow gap-2 p-3 items-center shadow-md ");
-    			attr(div4, "class", "p-4 flex flex-grow xl:flex-grow-0 gap-4 border-zinc-200 border-2 relative");
-    			attr(div5, "class", "absolute left-4 bg-zinc-200 dark:bg-zinc-700 p-2 h-4 flex items-center");
+    			attr(div3, "class", "flex flex-grow gap-2 p-3 items-center ");
+    			attr(div4, "class", "p-4 flex flex-grow xl:flex-grow-0 gap-4 border-stone-600 border-2 relative");
+    			attr(div5, "class", "absolute left-4 bg-stone-600 dark:bg-zinc-700 p-2 h-4 flex items-center");
     			set_style(div5, "top", "-0.6rem");
     			attr(input1, "size", "5");
     			attr(input1, "type", "text");
-    			attr(input1, "class", "text-zinc-600 dark:text-zinc-100 bg-transparent font-medium tracking-wide text-xl placeholder-zinc-300");
+    			attr(input1, "class", "text-zinc-600 dark:text-stone-600 bg-transparent font-medium tracking-wide text-xl placeholder-zinc-300");
     			attr(input1, "placeholder", "24");
     			attr(input1, "autocomplete", "off");
-    			attr(div6, "class", "flex flex-grow gap-2 p-3 items-center shadow-md ");
+    			attr(div6, "class", "flex flex-grow gap-2 p-3 items-center ");
     			attr(input2, "size", "5");
     			attr(input2, "type", "text");
-    			attr(input2, "class", "text-zinc-600 dark:text-zinc-100 bg-transparent font-medium tracking-wide text-xl placeholder-zinc-300");
+    			attr(input2, "class", "text-zinc-600 dark:text-stone-600 bg-transparent font-medium tracking-wide text-xl placeholder-zinc-300");
     			attr(input2, "placeholder", "24");
     			attr(input2, "autocomplete", "off");
-    			attr(div7, "class", "flex flex-grow gap-2 p-3 items-center shadow-md ");
-    			attr(div8, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-zinc-200 border-2 relative");
-    			attr(div9, "class", "absolute left-4 bg-zinc-200 dark:bg-zinc-700 p-2 h-4 flex items-center");
+    			attr(div7, "class", "flex flex-grow gap-2 p-3 items-center ");
+    			attr(div8, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-stone-600 border-2 relative");
+    			attr(div9, "class", "absolute left-4 bg-stone-600 dark:bg-zinc-700 p-2 h-4 flex items-center");
     			set_style(div9, "top", "-0.6rem");
-    			attr(p4, "class", p4_class_value = "" + ((/*flipHoriz*/ ctx[6] ? "text-zinc-200" : "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button1, "class", button1_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*flipHoriz*/ ctx[6]
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
+    			attr(p4, "class", p4_class_value = "" + ((/*flipHoriz*/ ctx[6]
+    			? "text-stone-600"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(p5, "class", p5_class_value = "" + ((/*flipVert*/ ctx[5] ? "text-zinc-200" : "text-zinc-300") + " font-medium tracking-wide text-xl"));
+    			attr(button1, "class", button1_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*flipHoriz*/ ctx[6]
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
-    			attr(button2, "class", button2_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*flipVert*/ ctx[5]
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
+    			attr(p5, "class", p5_class_value = "" + ((/*flipVert*/ ctx[5] ? "text-stone-600" : "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(div10, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-zinc-200 border-2 relative");
-    			attr(div11, "class", "absolute left-4 bg-zinc-200 dark:bg-zinc-700 p-2 h-4 flex items-center");
+    			attr(button2, "class", button2_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*flipVert*/ ctx[5]
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
+
+    			attr(div10, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-stone-600 border-2 relative");
+    			attr(div11, "class", "absolute left-4 bg-stone-600 dark:bg-zinc-700 p-2 h-4 flex items-center");
     			set_style(div11, "top", "-0.6rem");
 
     			attr(p7, "class", p7_class_value = "" + ((/*display*/ ctx[7] === "block"
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button3, "class", button3_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*display*/ ctx[7] === "block"
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
+    			attr(button3, "class", button3_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*display*/ ctx[7] === "block"
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
     			attr(p8, "class", p8_class_value = "" + ((/*display*/ ctx[7] === "inline"
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button4, "class", button4_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*display*/ ctx[7] === "inline"
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
+    			attr(button4, "class", button4_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*display*/ ctx[7] === "inline"
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
-    			attr(div12, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-zinc-200 border-2 relative");
-    			attr(div13, "class", "absolute left-4 bg-zinc-200 dark:bg-zinc-700 p-2 h-4 flex items-center");
+    			attr(div12, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-stone-600 border-2 relative");
+    			attr(div13, "class", "absolute left-4 bg-stone-600 dark:bg-zinc-700 p-2 h-4 flex items-center");
     			set_style(div13, "top", "-0.6rem");
     			attr(circle, "cx", "3");
     			attr(circle, "cy", "3");
@@ -42419,16 +42424,16 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg0, "xmlns", "http://www.w3.org/2000/svg");
 
     			attr(svg0, "class", svg0_class_value = /*rotate*/ ctx[8] === 0
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300");
 
     			attr(p10, "class", p10_class_value = "" + ((/*rotate*/ ctx[8] === 0
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button5, "class", button5_class_value = "flex flex-grow relative z-10 gap-2 py-3 px-4 items-center shadow-md " + (/*rotate*/ ctx[8] == 0
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
+    			attr(button5, "class", button5_class_value = "flex flex-grow relative z-10 gap-2 py-3 px-4 items-center " + (/*rotate*/ ctx[8] == 0
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
     			attr(path0, "d", "M12 6C13.5913 6 15.1174 6.63214 16.2426 7.75736C17.3679 8.88258 18 10.4087 18 12V14.5");
     			attr(path0, "stroke", "currentColor");
@@ -42449,16 +42454,16 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg1, "xmlns", "http://www.w3.org/2000/svg");
 
     			attr(svg1, "class", svg1_class_value = /*rotate*/ ctx[8] === 90
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300");
 
     			attr(p11, "class", p11_class_value = "" + ((/*rotate*/ ctx[8] === 90
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button6, "class", button6_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 90
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
+    			attr(button6, "class", button6_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 90
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
     			attr(path3, "d", "M11.998 6C13.5893 6 15.1155 6.63214 16.2407 7.75736C17.3659 8.88258 17.998 10.4087 17.998 12C17.998 13.5913 17.3659 15.1174 16.2407 16.2426C15.1155 17.3679 13.5893 18 11.998 18H9.49805");
     			attr(path3, "stroke", "currentColor");
@@ -42479,16 +42484,16 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg2, "xmlns", "http://www.w3.org/2000/svg");
 
     			attr(svg2, "class", svg2_class_value = /*rotate*/ ctx[8] === 180
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300");
 
     			attr(p12, "class", p12_class_value = "" + ((/*rotate*/ ctx[8] === 180
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button7, "class", button7_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 180
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
+    			attr(button7, "class", button7_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 180
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
     			attr(path6, "d", "M13.8 5.00002C15.224 5.00002 16.6161 5.42229 17.8001 6.21344C18.9841 7.00459 19.907 8.12907 20.4519 9.4447C20.9969 10.7603 21.1395 12.208 20.8617 13.6047C20.5838 15.0013 19.8981 16.2843 18.8912 17.2912C17.8842 18.2981 16.6013 18.9839 15.2046 19.2617C13.808 19.5395 12.3603 19.3969 11.0447 18.852C9.72905 18.307 8.60456 17.3842 7.81342 16.2001C7.02227 15.0161 6.6 13.624 6.6 12.2V9.20002");
     			attr(path6, "stroke", "currentColor");
@@ -42509,24 +42514,24 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg3, "xmlns", "http://www.w3.org/2000/svg");
 
     			attr(svg3, "class", svg3_class_value = /*rotate*/ ctx[8] === 270
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300");
 
     			attr(p13, "class", p13_class_value = "" + ((/*rotate*/ ctx[8] === 270
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button8, "class", button8_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 270
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
+    			attr(button8, "class", button8_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 270
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
-    			attr(div14, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-zinc-200 border-2 relative");
+    			attr(div14, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-stone-600 border-2 relative");
     			attr(div15, "class", "flex gap-4 mt-8 flex-wrap");
     			attr(div16, "class", "flex flex-wrap gap-2");
     			attr(div17, "class", "mt-8 mb-8");
     			attr(div18, "class", "mt-12");
     			attr(div19, "class", "w-full h-full overflow-visible md:overflow-auto pr-4 mt-8");
-    			attr(div20, "class", "w-full p-8 gap-8 flex flex-col md:flex-row overflow-auto md:overflow-hidden relative bg-zinc-200 dark:bg-zinc-700 m-4 ssssm:m-12 700:m-24 rounded-xl shadow-xl");
+    			attr(div20, "class", "w-full p-8 gap-8 flex flex-col md:flex-row overflow-auto md:overflow-hidden relative bg-stone-600 dark:bg-zinc-700 m-4 ssssm:m-12 700:m-24 rounded-xl shadow-xl");
     			set_style(div20, "height", "calc(100vh - 8rem)");
     			attr(div21, "class", "fixed z-[60] w-full h-screen flex items-center justify-center top-0 left-0 bg-black bg-opacity-20");
     		},
@@ -42748,142 +42753,148 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			const icon4_changes = {};
-    			if (dirty[0] & /*flipHoriz*/ 64) icon4_changes.class = /*flipHoriz*/ ctx[6] ? "text-zinc-200" : "text-zinc-300";
+
+    			if (dirty[0] & /*flipHoriz*/ 64) icon4_changes.class = /*flipHoriz*/ ctx[6]
+    			? "text-stone-600"
+    			: "text-zinc-300";
+
     			icon4.$set(icon4_changes);
 
-    			if (!current || dirty[0] & /*flipHoriz*/ 64 && p4_class_value !== (p4_class_value = "" + ((/*flipHoriz*/ ctx[6] ? "text-zinc-200" : "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
+    			if (!current || dirty[0] & /*flipHoriz*/ 64 && p4_class_value !== (p4_class_value = "" + ((/*flipHoriz*/ ctx[6]
+    			? "text-stone-600"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p4, "class", p4_class_value);
     			}
 
-    			if (!current || dirty[0] & /*flipHoriz*/ 64 && button1_class_value !== (button1_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*flipHoriz*/ ctx[6]
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*flipHoriz*/ 64 && button1_class_value !== (button1_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*flipHoriz*/ ctx[6]
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button1, "class", button1_class_value);
     			}
 
     			const icon5_changes = {};
-    			if (dirty[0] & /*flipVert*/ 32) icon5_changes.class = /*flipVert*/ ctx[5] ? "text-zinc-200" : "text-zinc-300";
+    			if (dirty[0] & /*flipVert*/ 32) icon5_changes.class = /*flipVert*/ ctx[5] ? "text-stone-600" : "text-zinc-300";
     			icon5.$set(icon5_changes);
 
-    			if (!current || dirty[0] & /*flipVert*/ 32 && p5_class_value !== (p5_class_value = "" + ((/*flipVert*/ ctx[5] ? "text-zinc-200" : "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
+    			if (!current || dirty[0] & /*flipVert*/ 32 && p5_class_value !== (p5_class_value = "" + ((/*flipVert*/ ctx[5] ? "text-stone-600" : "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p5, "class", p5_class_value);
     			}
 
-    			if (!current || dirty[0] & /*flipVert*/ 32 && button2_class_value !== (button2_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*flipVert*/ ctx[5]
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*flipVert*/ 32 && button2_class_value !== (button2_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*flipVert*/ ctx[5]
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button2, "class", button2_class_value);
     			}
 
     			const icon6_changes = {};
 
     			if (dirty[0] & /*display*/ 128) icon6_changes.class = /*display*/ ctx[7] === "block"
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300";
 
     			icon6.$set(icon6_changes);
 
     			if (!current || dirty[0] & /*display*/ 128 && p7_class_value !== (p7_class_value = "" + ((/*display*/ ctx[7] === "block"
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p7, "class", p7_class_value);
     			}
 
-    			if (!current || dirty[0] & /*display*/ 128 && button3_class_value !== (button3_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*display*/ ctx[7] === "block"
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*display*/ 128 && button3_class_value !== (button3_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*display*/ ctx[7] === "block"
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button3, "class", button3_class_value);
     			}
 
     			const icon7_changes = {};
 
     			if (dirty[0] & /*display*/ 128) icon7_changes.class = /*display*/ ctx[7] === "inline"
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300";
 
     			icon7.$set(icon7_changes);
 
     			if (!current || dirty[0] & /*display*/ 128 && p8_class_value !== (p8_class_value = "" + ((/*display*/ ctx[7] === "inline"
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p8, "class", p8_class_value);
     			}
 
-    			if (!current || dirty[0] & /*display*/ 128 && button4_class_value !== (button4_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*display*/ ctx[7] === "inline"
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*display*/ 128 && button4_class_value !== (button4_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*display*/ ctx[7] === "inline"
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button4, "class", button4_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && svg0_class_value !== (svg0_class_value = /*rotate*/ ctx[8] === 0
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300")) {
     				attr(svg0, "class", svg0_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && p10_class_value !== (p10_class_value = "" + ((/*rotate*/ ctx[8] === 0
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p10, "class", p10_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && button5_class_value !== (button5_class_value = "flex flex-grow relative z-10 gap-2 py-3 px-4 items-center shadow-md " + (/*rotate*/ ctx[8] == 0
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && button5_class_value !== (button5_class_value = "flex flex-grow relative z-10 gap-2 py-3 px-4 items-center " + (/*rotate*/ ctx[8] == 0
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button5, "class", button5_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && svg1_class_value !== (svg1_class_value = /*rotate*/ ctx[8] === 90
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300")) {
     				attr(svg1, "class", svg1_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && p11_class_value !== (p11_class_value = "" + ((/*rotate*/ ctx[8] === 90
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p11, "class", p11_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && button6_class_value !== (button6_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 90
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && button6_class_value !== (button6_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 90
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button6, "class", button6_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && svg2_class_value !== (svg2_class_value = /*rotate*/ ctx[8] === 180
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300")) {
     				attr(svg2, "class", svg2_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && p12_class_value !== (p12_class_value = "" + ((/*rotate*/ ctx[8] === 180
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p12, "class", p12_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && button7_class_value !== (button7_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 180
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && button7_class_value !== (button7_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 180
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button7, "class", button7_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && svg3_class_value !== (svg3_class_value = /*rotate*/ ctx[8] === 270
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300")) {
     				attr(svg3, "class", svg3_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && p13_class_value !== (p13_class_value = "" + ((/*rotate*/ ctx[8] === 270
-    			? "text-zinc-200"
+    			? "text-stone-600"
     			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p13, "class", p13_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && button8_class_value !== (button8_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 270
-    			? "bg-yellow-400"
-    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && button8_class_value !== (button8_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 270
+    			? "bg-stone-600"
+    			: "bg-stone-600 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button8, "class", button8_class_value);
     			}
 
@@ -43211,7 +43222,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	return child_ctx;
     }
 
-    // (91:2) {#if tags.length}
+    // (107:2) {#if tags.length}
     function create_if_block_3$1(ctx) {
     	let div;
     	let each_value_1 = /*tags*/ ctx[5].sort();
@@ -43269,7 +43280,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (94:6) {#if tag}
+    // (110:6) {#if tag}
     function create_if_block_4(ctx) {
     	let button;
     	let t_value = /*tag*/ ctx[21] + "";
@@ -43288,8 +43299,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t = text(t_value);
 
     			attr(button, "class", button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[21]
-    			? `bg-yellow-400 text-zinc-800`
-    			: `border-2 border-yellow-400 text-yellow-400`) + " whitespace-nowrap rounded-md h-11 flex transition-all items-center justify-center shadow-md font-medium text-sm px-8 flex-grow md:flex-grow-0"));
+    			? `bg-stone-600 text-stone-200`
+    			: `border-2 border-stone-600 text-stone-600`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"));
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -43305,8 +43316,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			if (dirty & /*tags*/ 32 && t_value !== (t_value = /*tag*/ ctx[21] + "")) set_data(t, t_value);
 
     			if (dirty & /*currentTag, tags*/ 96 && button_class_value !== (button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[21]
-    			? `bg-yellow-400 text-zinc-800`
-    			: `border-2 border-yellow-400 text-yellow-400`) + " whitespace-nowrap rounded-md h-11 flex transition-all items-center justify-center shadow-md font-medium text-sm px-8 flex-grow md:flex-grow-0"))) {
+    			? `bg-stone-600 text-stone-200`
+    			: `border-2 border-stone-600 text-stone-600`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"))) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -43318,7 +43329,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (93:4) {#each tags.sort() as tag}
+    // (109:4) {#each tags.sort() as tag}
     function create_each_block_1$1(ctx) {
     	let if_block_anchor;
     	let if_block = /*tag*/ ctx[21] && create_if_block_4(ctx);
@@ -43353,7 +43364,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (146:2) {:else}
+    // (162:2) {:else}
     function create_else_block_1$1(ctx) {
     	let p;
 
@@ -43361,7 +43372,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		c() {
     			p = element("p");
     			p.textContent = "Nothing found :(";
-    			attr(p, "class", "text-3xl font-medium tracking-wide text-center text-zinc-500");
+    			attr(p, "class", "text-3xl font-medium tracking-wide text-center text-stone-600");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -43375,7 +43386,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (106:2) {#if filteredIconList === null || filteredIconList.length > 0}
+    // (122:2) {#if filteredIconList === null || filteredIconList.length > 0}
     function create_if_block_1$1(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -43445,7 +43456,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (133:4) {:else}
+    // (149:4) {:else}
     function create_else_block$1(ctx) {
     	let div;
     	let lottieplayer;
@@ -43491,7 +43502,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (107:4) {#if filteredIconList}
+    // (123:4) {#if filteredIconList}
     function create_if_block_2$1(ctx) {
     	let div;
     	let current;
@@ -43579,7 +43590,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (112:8) {#each filteredIconList as icon}
+    // (128:8) {#each filteredIconList as icon}
     function create_each_block$1(ctx) {
     	let div;
     	let icon;
@@ -43597,7 +43608,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[18].name || /*icon*/ ctx[18]}`,
     				width: "32",
     				height: "32",
-    				class: "text-zinc-600 dark:text-zinc-200"
+    				class: "text-stone-600"
     			}
     		});
 
@@ -43613,8 +43624,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			p = element("p");
     			t1 = text(t1_value);
     			t2 = space();
-    			attr(p, "class", "font-medium text-xs tracking-wide text-center text-zinc-600 dark:text-zinc-500 mt-4");
-    			attr(div, "class", "flex flex-col items-center justify-between rounded-md bg-white dark:bg-zinc-700 dark:bg-opacity-40 cursor-pointer transition-all hover:bg-zinc-50 dark:hover:bg-opacity-60 p-4");
+    			attr(p, "class", "font-medium text-xs tracking-wide text-center text-stone-600 mt-4 -mb-0.5");
+    			attr(div, "class", "flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 dark:hover:bg-opacity-60 p-4");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -43655,7 +43666,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (151:2) {#if curIcon}
+    // (167:2) {#if curIcon}
     function create_if_block$1(ctx) {
     	let usage;
     	let current;
@@ -43708,8 +43719,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	icon = new Icon({
     			props: {
-    				icon: "fe:search",
-    				class: "text-zinc-300",
+    				icon: "uil:search",
+    				class: "text-stone-600",
     				width: "24",
     				height: "24"
     			}
@@ -43747,13 +43758,13 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			if_block1.c();
     			t7 = space();
     			if (if_block2) if_block2.c();
-    			attr(span, "class", "ml-2 text-base text-yellow-400");
-    			attr(h1, "class", "mt-12 mb-6 text-3xl font-semibold tracking-wide text-center text-zinc-600 dark:text-zinc-100 flex flex-col items-center gap-6 sm:inline");
+    			attr(span, "class", "ml-2 text-base text-stone-600");
+    			attr(h1, "class", "mt-12 mb-6 text-3xl font-semibold tracking-wide text-center text-stone-600 flex flex-col items-center gap-6 sm:inline");
     			attr(input, "type", "text");
     			attr(input, "id", "icon-search");
-    			attr(input, "class", "w-full tracking-wide text-zinc-500 dark:text-zinc-200 bg-transparent");
+    			attr(input, "class", "w-full tracking-wide text-stone-600 placeholder-stone-600 bg-transparent");
     			attr(input, "placeholder", input_placeholder_value = "Search " + /*iconCount*/ ctx[4] + " icons (Press '/' to focus)");
-    			attr(div0, "class", "inline-flex items-center w-full rounded-md p-4 mx-auto mb-6 overflow-hidden bg-white dark:bg-zinc-700 dark:bg-opacity-40 shadow-md gap-4 ");
+    			attr(div0, "class", "inline-flex items-center w-full p-4 mx-auto mb-6 overflow-hidden border-2 border-stone-600 gap-4");
     			attr(div1, "class", "flex flex-1 flex-col w-full px-12 md:px-24");
     		},
     		m(target, anchor) {
@@ -43921,19 +43932,31 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			$$invalidate(6, currentTag = tag);
 
     			$$invalidate(8, filteredIconList = iconlist.filter(icon => {
-    				return icon.tags.includes(tag);
+    				return icon.tags.includes(tag) && (icon.name || icon).toLowerCase().includes(document.getElementById("icon-search").value.toLowerCase());
     			}));
     		} else {
     			$$invalidate(6, currentTag = null);
-    			$$invalidate(8, filteredIconList = iconlist);
+
+    			$$invalidate(8, filteredIconList = iconlist.filter(icon => {
+    				return (icon.name || icon).toLowerCase().includes(document.getElementById("icon-search").value.toLowerCase());
+    			}));
     		}
     	};
 
     	const inputOnChange = function (e) {
     		$$invalidate(8, filteredIconList = iconlist.filter(icon => {
-    			return (icon.name || icon).toLowerCase().includes(e.target.value.toLowerCase());
+    			return (icon.name || icon).toLowerCase().includes(e.target.value.toLowerCase()) && (currentTag ? icon.tags.includes(currentTag) : true);
     		}));
     	};
+
+    	onMount(() => {
+    		document.body.onkeydown = e => {
+    			if (e.key == "/") {
+    				e.preventDefault();
+    				document.getElementById("icon-search").focus();
+    			}
+    		};
+    	});
 
     	function input_input_handler() {
     		searchTerm = this.value;
@@ -44018,7 +44041,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*currentIconSet, Object, iconSets, colors, console, setCurrentIconSet*/ 83) {
+    			if (dirty & /*currentIconSet, Object, iconSets, setCurrentIconSet*/ 35) {
     				each_value_1 = Object.entries(/*iconSets*/ ctx[0]);
     				let i;
 
@@ -44058,7 +44081,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[7](/*name*/ ctx[15]);
+    		return /*click_handler*/ ctx[6](/*name*/ ctx[15]);
     	}
 
     	return {
@@ -44066,9 +44089,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			button = element("button");
     			t = text(t_value);
 
-    			attr(button, "class", button_class_value = "" + ((/*currentIconSet*/ ctx[1] === null || /*currentIconSet*/ ctx[1] === /*name*/ ctx[15]
-    			? `bg-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other'] || console.log(/*iconSet*/ ctx[16].category)}-500`
-    			: `border-2 border-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other']}-500 text-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other']}-500`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-zinc-200 font-medium text-md sssm:text-lg px-4 flex-grow sssm:px-8 pb-0.5"));
+    			attr(button, "class", button_class_value = "" + ((/*currentIconSet*/ ctx[1] === /*name*/ ctx[15]
+    			? `bg-stone-600`
+    			: `text-stone-600`) + " border-2 border-stone-600 whitespace-nowrap h-11 flex transition-all items-center justify-center text-stone-600 font-medium px-4 flex-grow sssm:px-8 pb-0.5"));
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -44083,9 +44106,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			ctx = new_ctx;
     			if (dirty & /*iconSets*/ 1 && t_value !== (t_value = /*iconSet*/ ctx[16].name + "")) set_data(t, t_value);
 
-    			if (dirty & /*currentIconSet, iconSets*/ 3 && button_class_value !== (button_class_value = "" + ((/*currentIconSet*/ ctx[1] === null || /*currentIconSet*/ ctx[1] === /*name*/ ctx[15]
-    			? `bg-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other'] || console.log(/*iconSet*/ ctx[16].category)}-500`
-    			: `border-2 border-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other']}-500 text-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other']}-500`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-zinc-200 font-medium text-md sssm:text-lg px-4 flex-grow sssm:px-8 pb-0.5"))) {
+    			if (dirty & /*currentIconSet, iconSets*/ 3 && button_class_value !== (button_class_value = "" + ((/*currentIconSet*/ ctx[1] === /*name*/ ctx[15]
+    			? `bg-stone-600`
+    			: `text-stone-600`) + " border-2 border-stone-600 whitespace-nowrap h-11 flex transition-all items-center justify-center text-stone-600 font-medium px-4 flex-grow sssm:px-8 pb-0.5"))) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -44097,7 +44120,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (133:2) {:else}
+    // (128:2) {:else}
     function create_else_block_1(ctx) {
     	let p;
 
@@ -44119,7 +44142,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (95:2) {#if filteredIconList === null || filteredIconList.length > 0}
+    // (88:2) {#if filteredIconList === null || filteredIconList.length > 0}
     function create_if_block_1(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -44189,7 +44212,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (120:4) {:else}
+    // (115:4) {:else}
     function create_else_block(ctx) {
     	let div;
     	let lottieplayer;
@@ -44235,7 +44258,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (96:4) {#if filteredIconList}
+    // (89:4) {#if filteredIconList}
     function create_if_block_2(ctx) {
     	let div;
     	let current;
@@ -44323,9 +44346,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (101:8) {#each filteredIconList as icon}
+    // (94:8) {#each filteredIconList as icon}
     function create_each_block(ctx) {
-    	let button;
+    	let div;
     	let icon;
     	let t0;
     	let p;
@@ -44338,46 +44361,46 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	icon = new Icon({
     			props: {
-    				icon: `${/*icon*/ ctx[12]}`,
-    				width: "56",
-    				height: "56",
-    				class: "text-zinc-600 dark:text-zinc-100"
+    				icon: /*icon*/ ctx[12],
+    				width: "32",
+    				height: "32",
+    				class: "text-stone-600"
     			}
     		});
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[8](/*icon*/ ctx[12]);
+    		return /*click_handler_1*/ ctx[7](/*icon*/ ctx[12]);
     	}
 
     	return {
     		c() {
-    			button = element("button");
+    			div = element("div");
     			create_component(icon.$$.fragment);
     			t0 = space();
     			p = element("p");
     			t1 = text(t1_value);
     			t2 = space();
-    			attr(p, "class", "font-medium tracking-wide text-center text-zinc-600 dark:text-zinc-100");
-    			attr(button, "class", "flex flex-col items-center justify-between p-12 pb-4 bg-zinc-200 shadow-md transition-all hover:bg-zinc-50 gap-12");
+    			attr(p, "class", "font-medium text-xs tracking-wide text-center text-stone-600 mt-4 -mb-0.5");
+    			attr(div, "class", "flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 dark:hover:bg-opacity-60 p-4");
     		},
     		m(target, anchor) {
-    			insert(target, button, anchor);
-    			mount_component(icon, button, null);
-    			append(button, t0);
-    			append(button, p);
+    			insert(target, div, anchor);
+    			mount_component(icon, div, null);
+    			append(div, t0);
+    			append(div, p);
     			append(p, t1);
-    			append(button, t2);
+    			append(div, t2);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen(button, "click", click_handler_1);
+    				dispose = listen(div, "click", click_handler_1);
     				mounted = true;
     			}
     		},
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			const icon_changes = {};
-    			if (dirty & /*filteredIconList*/ 4) icon_changes.icon = `${/*icon*/ ctx[12]}`;
+    			if (dirty & /*filteredIconList*/ 4) icon_changes.icon = /*icon*/ ctx[12];
     			icon.$set(icon_changes);
     			if ((!current || dirty & /*filteredIconList*/ 4) && t1_value !== (t1_value = /*icon*/ ctx[12] + "")) set_data(t1, t1_value);
     		},
@@ -44391,7 +44414,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			current = false;
     		},
     		d(detaching) {
-    			if (detaching) detach(button);
+    			if (detaching) detach(div);
     			destroy_component(icon);
     			mounted = false;
     			dispose();
@@ -44399,7 +44422,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (138:2) {#if curIcon}
+    // (133:2) {#if curIcon}
     function create_if_block(ctx) {
     	let usage;
     	let current;
@@ -44454,15 +44477,15 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		c() {
     			div = element("div");
     			h1 = element("h1");
-    			h1.textContent = `Search results for "${/*searchTerm*/ ctx[5]}"`;
+    			h1.textContent = `Search results for "${/*searchTerm*/ ctx[4]}"`;
     			t3 = space();
     			if (if_block0) if_block0.c();
     			t4 = space();
     			if_block1.c();
     			t5 = space();
     			if (if_block2) if_block2.c();
-    			attr(h1, "class", "mb-6 text-3xl font-semibold tracking-wide text-center text-zinc-600 dark:text-zinc-100 sssm:text-5xl sm:mt-12");
-    			attr(div, "class", "flex flex-col justify-center w-full px-12 md:px-24");
+    			attr(h1, "class", "mb-6 text-3xl font-semibold tracking-wide text-center text-zinc-600 sm:mt-12");
+    			attr(div, "class", "flex-1 px-12 md:px-24");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -44557,15 +44580,6 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     }
 
     function instance$1($$self, $$props, $$invalidate) {
-    	const colors = {
-    		General: "rose",
-    		Emoji: "orange",
-    		"Brands / Social": "emerald",
-    		"Maps / Flags": "sky",
-    		Thematic: "purple",
-    		"Archive / Unmaintained": "gray",
-    		Other: "gray"
-    	};
 
     	let iconlist = null;
     	let iconSets = null;
@@ -44623,7 +44637,6 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		currentIconSet,
     		filteredIconList,
     		curIcon,
-    		colors,
     		searchTerm,
     		setCurrentIconSet,
     		click_handler,
@@ -44834,7 +44847,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			create_component(route3.$$.fragment);
     			t4 = space();
     			create_component(footer.$$.fragment);
-    			attr(main, "class", "pt-8 dark:bg-zinc-800 min-h-[100vh] flex flex-col");
+    			attr(main, "class", "pt-8 bg-stone-100 min-h-[100vh] flex flex-col");
     		},
     		m(target, anchor) {
     			insert(target, main, anchor);
