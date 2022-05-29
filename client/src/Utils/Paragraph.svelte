@@ -1,10 +1,10 @@
-<p class="tracking-wide text-gray-700 text-lg ssssm:text-xl">
+<p class="tracking-wide text-zinc-600 dark:text-zinc-100">
     <slot></slot>
 </p>
 
 <style global lang="scss">
     p a {
-        @apply text-blue-500 cursor-pointer hover:text-blue-600 transition-all hover:underline
+        @apply text-yellow-400 cursor-pointer hover:text-yellow-600 transition-all hover:underline
     }
 
     code > div {

@@ -5271,8 +5271,7 @@ var app = (function () {
     			a = element("a");
     			t = text(t_value);
     			attr(a, "href", /*route*/ ctx[4][0]);
-    			attr(a, "class", "font-semibold text-blue-500");
-    			set_style(a, "font-size", "1.3rem");
+    			attr(a, "class", "font-semibold text-yellow-400");
     		},
     		m(target, anchor) {
     			insert(target, a, anchor);
@@ -5316,7 +5315,7 @@ var app = (function () {
     	};
     }
 
-    // (38:4) <Link to="/icon-sets" class="items-center hidden px-6 pt-3 pb-4 text-xl font-semibold tracking-wide text-white shadow-md ssm:flex bg-red-1000 rounded-md gap-6">
+    // (38:4) <Link to="/icon-sets" class="items-center rounded-md hidden px-6 pt-[0.9rem] pb-4 text-lg font-semibold tracking-wide text-zinc-800 shadow-md ssm:flex bg-yellow-400  gap-6">
     function create_default_slot$n(ctx) {
     	let t;
     	let svg;
@@ -5330,16 +5329,16 @@ var app = (function () {
     			path0 = svg_element("path");
     			path1 = svg_element("path");
     			attr(path0, "d", "M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691");
-    			attr(path0, "stroke", "white");
+    			attr(path0, "stroke", "currentColor");
     			attr(path0, "stroke-width", "2.6");
     			attr(path0, "stroke-linecap", "round");
     			attr(path0, "stroke-linejoin", "round");
     			attr(path1, "d", "M17.4286 8.33691L2.00002 8.33691");
-    			attr(path1, "stroke", "white");
+    			attr(path1, "stroke", "currentColor");
     			attr(path1, "stroke-width", "2.6");
     			attr(path1, "stroke-linecap", "round");
     			attr(path1, "stroke-linejoin", "round");
-    			attr(svg, "class", "flex-shrink-0 mt-1");
+    			attr(svg, "class", "flex-shrink-0 mt-1 text-zinc-800");
     			attr(svg, "width", "19");
     			attr(svg, "height", "17");
     			attr(svg, "viewBox", "0 0 19 17");
@@ -5380,7 +5379,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr(div, "class", "fixed z-40 top-0 left-0 w-full h-screen bg-white flex gap-16 flex-col items-center justify-center text-xl font-medium tracking-wide text-gray-700");
+    			attr(div, "class", "fixed z-40 top-0 left-0 w-full h-screen bg-zinc-200 flex gap-16 flex-col items-center justify-center text-xl font-medium tracking-wide text-zinc-600 dark:text-zinc-100");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -5472,7 +5471,7 @@ var app = (function () {
     			a = element("a");
     			t = text(t_value);
     			attr(a, "href", /*route*/ ctx[4][0]);
-    			attr(a, "class", "font-semibold text-blue-500");
+    			attr(a, "class", "font-semibold text-yellow-400");
     			set_style(a, "font-size", "1.3rem");
     		},
     		m(target, anchor) {
@@ -5536,7 +5535,7 @@ var app = (function () {
     	icon = new Icon({
     			props: {
     				icon: "gg:menu",
-    				class: "text-gray-700",
+    				class: "text-zinc-600 dark:text-zinc-100",
     				width: "1.8rem",
     				height: "1.8rem"
     			}
@@ -5552,7 +5551,7 @@ var app = (function () {
     	link = new Link$1({
     			props: {
     				to: "/icon-sets",
-    				class: "items-center hidden px-6 pt-3 pb-4 text-xl font-semibold tracking-wide text-white shadow-md ssm:flex bg-red-1000 rounded-md gap-6",
+    				class: "items-center rounded-md hidden px-6 pt-[0.9rem] pb-4 text-lg font-semibold tracking-wide text-zinc-800 shadow-md ssm:flex bg-yellow-400  gap-6",
     				$$slots: { default: [create_default_slot$n] },
     				$$scope: { ctx }
     			}
@@ -5583,7 +5582,7 @@ var app = (function () {
     			attr(button, "class", "block 1100:hidden");
     			attr(a, "href", "/");
     			attr(div0, "class", "flex items-center flex-shrink-0 gap-6 z-50");
-    			attr(div1, "class", "items-center hidden -mt-1 text-xl font-medium tracking-wide text-gray-700 gap-16 1100:flex");
+    			attr(div1, "class", "items-center hidden -mt-1 font-medium text-lg tracking-wide text-zinc-600 dark:text-zinc-100 gap-16 1100:flex");
     			attr(nav, "class", "flex items-center justify-between w-full px-3 390:px-8 ssm:px-12 mb-8");
     		},
     		m(target, anchor) {
@@ -5741,49 +5740,49 @@ var app = (function () {
 
     	icon0 = new Icon({
     			props: {
-    				icon: "fluent:home-24-filled",
-    				width: "24",
-    				height: "24"
+    				icon: "fluent:home-20-filled",
+    				width: "20",
+    				height: "20"
     			}
     		});
 
     	icon1 = new Icon({
     			props: {
-    				icon: "fluent:news-24-filled",
-    				width: "24",
-    				height: "24"
+    				icon: "fluent:news-20-filled",
+    				width: "20",
+    				height: "20"
     			}
     		});
 
     	icon2 = new Icon({
     			props: {
-    				icon: "fluent:icons-24-filled",
-    				width: "24",
-    				height: "24"
+    				icon: "fluent:icons-20-filled",
+    				width: "20",
+    				height: "20"
     			}
     		});
 
     	icon3 = new Icon({
     			props: {
-    				icon: "fluent:book-information-24-filled",
-    				width: "24",
-    				height: "24"
+    				icon: "fluent:book-information-20-filled",
+    				width: "20",
+    				height: "20"
     			}
     		});
 
     	icon4 = new Icon({
     			props: {
     				icon: "ant-design:github-filled",
-    				width: "24",
-    				height: "24"
+    				width: "20",
+    				height: "20"
     			}
     		});
 
     	icon5 = new Icon({
     			props: {
     				icon: "akar-icons:linkedin-fill",
-    				width: "24",
-    				height: "24"
+    				width: "20",
+    				height: "20"
     			}
     		});
 
@@ -5808,10 +5807,10 @@ var app = (function () {
     			t7 = text(" · ");
     			create_component(icon5.$$.fragment);
     			attr(div, "class", "flex gap-8");
-    			attr(a, "class", "text-white underline");
+    			attr(a, "class", "text-zinc-200 underline");
     			attr(a, "href", "/");
-    			attr(p, "class", "tracking-wide text-lg flex gap-2 items-center justify-center");
-    			attr(footer, "class", "py-4 px-12 w-full mt-16 text-white flex flex-col gap-4 md:flex-row justify-between items-center bg-blue-500");
+    			attr(p, "class", "tracking-wide flex gap-2 items-center justify-center");
+    			attr(footer, "class", "py-4 px-12 w-full mt-16 text-zinc-200 flex flex-col gap-4 md:flex-row justify-between items-center bg-yellow-400 dark:bg-zinc-800");
     		},
     		m(target, anchor) {
     			insert(target, footer, anchor);
@@ -5881,15 +5880,15 @@ var app = (function () {
     		c() {
     			div3 = element("div");
 
-    			div3.innerHTML = `<div class="inline-flex flex-col w-full ssm:w-auto"><div class="bg-white text-rose-500 pt-4 530:pt-6 px-6 530:px-10 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide rounded-t-2xl round  svelte-1emus99">Unified</div> 
-        <div class="bg-white text-gray-700 w-full ssm:w-auto block py-4 530:py-6 px-6 530:px-10 text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide rounded-b-2xl rounded-tr-2xl">Icons Framework</div></div> 
-    <p class="text-white text-xl sssm:text-xl ssm:text-2xl xl:text-3xl leading-7 sssm:leading-8 ssm:leading-10 tracking-wide mt-8">One library, over 100,000 vector icons.
-        <br class="hidden 700:inline"/>Modern replacement for icon fonts.  Fast, easy to use.</p> 
-    <form action="/search" class="mt-10 flex w-full md:w-9/12 lg:w-5/12 overflow-hidden rounded-md shadow-md"><input autocomplete="off" name="q" type="text" class="bg-white w-full px-6 py-3 ssm:py-5 text-xl ssm:text-2xl tracking-wide" placeholder="Search icons..."/> 
-        <button type="submit" class="bg-red-1000 py-4 px-6"><svg class="mt-1 w-6 h-6 ssm:w-8 ssm:h-8" width="32" height="28" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form> 
-    <img src="./assets/hero.svg" alt="hero design" class="absolute right-0 top-0 h-full hidden lg:block"/>`;
+    			div3.innerHTML = `<div class="inline-flex flex-col w-full ssm:w-auto"><div class="bg-zinc-800 text-yellow-400 pt-4 530:pt-6 px-6 530:px-10 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide rounded-t-2xl round  svelte-1bijpfq">Unified</div> 
+    <div class="bg-zinc-800 text-zinc-600 dark:text-zinc-100 w-full ssm:w-auto block py-4 530:py-6 px-6 530:px-10 text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide rounded-b-2xl rounded-tr-2xl">Icons Framework</div></div> 
+  <p class="text-zinc-800 text-xl sssm:text-xl ssm:text-2xl leading-7 sssm:leading-8 ssm:leading-10 tracking-wide mt-8">More than 100 icon sets, one library.
+    <br class="hidden 700:inline"/>Over 100,000 open source vector icons.</p> 
+  <form action="/search" class="mt-10 flex w-full md:w-9/12 lg:w-5/12 overflow-hidden rounded-md shadow-md"><input autocomplete="off" name="q" type="text" class="bg-zinc-200 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide" placeholder="Search icons..."/> 
+    <button type="submit" class="bg-yellow-500 py-4 px-6"><svg class="mt-1 w-6 h-6" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form> 
+  <img src="./assets/hero.svg" alt="hero design" class="absolute right-0 top-0 h-full hidden lg:block"/>`;
 
-    			attr(div3, "class", "w-full bg-blue-500 rounded-lg relative p-4 sssm:p-8 ssm:p-16 shadow-md");
+    			attr(div3, "class", "w-full bg-yellow-400 relative p-4 sssm:p-8 ssm:p-16 shadow-md");
     		},
     		m(target, anchor) {
     			insert(target, div3, anchor);
@@ -5922,7 +5921,7 @@ var app = (function () {
     		c() {
     			p = element("p");
     			if (default_slot) default_slot.c();
-    			attr(p, "class", "tracking-wide text-gray-700 text-lg ssssm:text-xl");
+    			attr(p, "class", "tracking-wide text-zinc-600 dark:text-zinc-100");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -6031,11 +6030,11 @@ var app = (function () {
     			div0 = element("div");
 
     			div0.innerHTML = `Thousands of<br/>icons, one<br/> 
-        <span class="text-rose-500">unified</span> framework.`;
+        <span class="text-yellow-400">unified</span> framework.`;
 
     			t5 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(div0, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-center !leading-tight whitespace-nowrap text-gray-700");
+    			attr(div0, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-center !leading-tight whitespace-nowrap text-zinc-600 dark:text-zinc-100");
     			attr(div1, "class", "w-full flex flex-col lg:flex-row gap-12 lg:gap-20 items-center px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -6188,7 +6187,7 @@ var app = (function () {
     			create_component(paragraph0.$$.fragment);
     			t4 = space();
     			div0 = element("div");
-    			div0.innerHTML = `<code class="break-words">&lt;<span style="all: inherit; color: rgb(49, 141, 225)">script</span> src=&quot;<span style="all: inherit; color: rgb(225, 62, 49); text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>&quot;&gt;&lt;/<span class="text-blue-500" style="all: inherit; color: rgb(49, 141, 225)">script</span>&gt;</code>`;
+    			div0.innerHTML = `<code class="break-words">&lt;<span style="all: inherit; color: rgb(49, 141, 225)">script</span> src=&quot;<span style="all: inherit; color: rgb(225, 62, 49); text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>&quot;&gt;&lt;/<span class="text-yellow-400" style="all: inherit; color: rgb(49, 141, 225)">script</span>&gt;</code>`;
     			t12 = space();
     			create_component(paragraph1.$$.fragment);
     			t13 = space();
@@ -6200,10 +6199,10 @@ var app = (function () {
 
     			t32 = space();
     			create_component(paragraph2.$$.fragment);
-    			attr(p, "class", "text-rose-500 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
-    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-gray-700 text-center mb-6 lg:mb-12");
-    			attr(div0, "class", "bg-gray-100 text-gray-700 py-4 px-5 rounded-md shadow-md mt-4 mb-8");
-    			attr(div1, "class", "bg-gray-100 text-gray-700 py-4 px-5 rounded-md shadow-md mt-4 mb-8");
+    			attr(p, "class", "text-yellow-400 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
+    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-zinc-100 text-center mb-6 lg:mb-12");
+    			attr(div0, "class", "bg-zinc-100 text-zinc-600 dark:text-zinc-100 py-4 px-5 shadow-md mt-4 mb-8");
+    			attr(div1, "class", "bg-zinc-100 text-zinc-600 dark:text-zinc-100 py-4 px-5 shadow-md mt-4 mb-8");
     			attr(div2, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -7590,7 +7589,7 @@ var app = (function () {
     }
 
     // (124:60) 
-    function create_if_block_5$4(ctx) {
+    function create_if_block_5$2(ctx) {
     	let div;
     	let icon;
     	let div_intro;
@@ -7643,7 +7642,7 @@ var app = (function () {
     }
 
     // (122:60) 
-    function create_if_block_4$4(ctx) {
+    function create_if_block_4$3(ctx) {
     	let div;
     	let p;
     	let t0;
@@ -8006,8 +8005,8 @@ var app = (function () {
     			t3 = text(t3_value);
     			t4 = text(" icons");
     			attr(div, "class", "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2");
-    			attr(h4, "class", "text-rose-500 font-medium text-3xl tracking-wider mt-16 absolute top-20 380:top-28 xl:top-56 whitespace-nowrap");
-    			attr(h5, "class", "text-gray-700 font-medium text-xl tracking-wider mt-16 absolute top-28 380:top-36 pt-2 xl:top-64 whitespace-nowrap");
+    			attr(h4, "class", "text-yellow-400 font-medium text-3xl tracking-wider mt-16 absolute top-20 380:top-28 xl:top-56 whitespace-nowrap");
+    			attr(h5, "class", "text-zinc-600 dark:text-zinc-100 font-medium text-xl tracking-wider mt-16 absolute top-28 380:top-36 pt-2 xl:top-64 whitespace-nowrap");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -8258,8 +8257,8 @@ var app = (function () {
     		create_if_block_1$7,
     		create_if_block_2$6,
     		create_if_block_3$5,
-    		create_if_block_4$4,
-    		create_if_block_5$4
+    		create_if_block_4$3,
+    		create_if_block_5$2
     	];
 
     	const if_blocks = [];
@@ -8296,7 +8295,7 @@ var app = (function () {
     				icon: "eva:chevron-left-outline",
     				width: "48",
     				height: "48",
-    				class: "text-blue-500 mt-16"
+    				class: "text-yellow-400 mt-16"
     			}
     		});
 
@@ -8316,7 +8315,7 @@ var app = (function () {
     				icon: "eva:chevron-right-outline",
     				width: "48",
     				height: "48",
-    				class: "text-blue-500 mt-16"
+    				class: "text-yellow-400 mt-16"
     			}
     		});
 
@@ -8349,18 +8348,18 @@ var app = (function () {
     			div13 = element("div");
 
     			div13.innerHTML = `<div class="flex gap-6 flex-col relative"><div class="arrow svelte-qrbof6"></div>                 
-                    <div class="bg-gray-100 shadow-md rounded-lg w-full flex flex-col"><h4 class="text-gray-700 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">API</h4> 
+                    <div class="bg-zinc-100 shadow-md w-full flex flex-col"><h4 class="text-zinc-600 dark:text-zinc-100 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">API</h4> 
                         <img src="./assets/iconsdemo.svg" alt="icons example w-full"/> 
-                        <p class="text-gray-700 text-xl md:text-2xl tracking-wide text-center m-6">100,000+ icons</p></div> 
-                    <div class="bg-gray-100 shadow-md rounded-lg w-full"><div class="flex flex-wrap justify-center gap-2 m-6"><div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">mdi:opacity</div> 
-                            <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">ion:ios-cart</div> 
-                            <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">mdi:flask</div> 
-                            <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">noto:anchor</div> 
-                            <div class="px-3 py-2 bg-blue-500 rounded-md shadow-md text-white font-medium text-lg tracking-wide">fxemoji:alien</div></div> 
-                        <p class="text-gray-700 text-xl md:text-2xl tracking-wide text-center m-6">Only icons used on page are downloaded</p></div> 
-                    <div class="bg-gray-100 shadow-md rounded-lg w-full"><h4 class="text-gray-700 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">Browser</h4> 
+                        <p class="text-zinc-600 dark:text-zinc-100 text-xl md:text-2xl tracking-wide text-center m-6">100,000+ icons</p></div> 
+                    <div class="bg-zinc-100 shadow-md w-full"><div class="flex flex-wrap justify-center gap-2 m-6"><div class="px-3 py-2 bg-yellow-400 shadow-md text-zinc-200 font-medium text-lg tracking-wide">mdi:opacity</div> 
+                            <div class="px-3 py-2 bg-yellow-400 shadow-md text-zinc-200 font-medium text-lg tracking-wide">ion:ios-cart</div> 
+                            <div class="px-3 py-2 bg-yellow-400 shadow-md text-zinc-200 font-medium text-lg tracking-wide">mdi:flask</div> 
+                            <div class="px-3 py-2 bg-yellow-400 shadow-md text-zinc-200 font-medium text-lg tracking-wide">noto:anchor</div> 
+                            <div class="px-3 py-2 bg-yellow-400 shadow-md text-zinc-200 font-medium text-lg tracking-wide">fxemoji:alien</div></div> 
+                        <p class="text-zinc-600 dark:text-zinc-100 text-xl md:text-2xl tracking-wide text-center m-6">Only icons used on page are downloaded</p></div> 
+                    <div class="bg-zinc-100 shadow-md w-full"><h4 class="text-zinc-600 dark:text-zinc-100 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">Browser</h4> 
                         <div class="w-full flex justify-center"><img src="./assets/iconsdemoresult.svg" alt="icons example" class="w-96"/></div> 
-                        <p class="text-gray-700 text-xl md:text-2xl tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon)</p></div></div>`;
+                        <p class="text-zinc-600 dark:text-zinc-100 text-xl md:text-2xl tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon)</p></div></div>`;
 
     			t30 = space();
     			div24 = element("div");
@@ -8385,7 +8384,7 @@ var app = (function () {
     			div21 = element("div");
     			div19 = element("div");
 
-    			div19.innerHTML = `<div class="w-3 h-3 rounded-full bg-rose-400"></div> 
+    			div19.innerHTML = `<div class="w-3 h-3 rounded-full bg-yellow-400"></div> 
                         <div class="w-3 h-3 rounded-full bg-orange-400"></div> 
                         <div class="w-3 h-3 rounded-full bg-emerald-400"></div>`;
 
@@ -8431,9 +8430,9 @@ var app = (function () {
     			h33.textContent = "Lightning fast";
     			t56 = space();
     			create_component(paragraph4.$$.fragment);
-    			attr(p0, "class", "text-rose-500 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
-    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-gray-700 text-center mb-6 lg:mb-12");
-    			attr(h30, "class", "text-blue-500 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
+    			attr(p0, "class", "text-yellow-400 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
+    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-zinc-100 text-center mb-6 lg:mb-12");
+    			attr(h30, "class", "text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
     			attr(div0, "class", "w-full sm:w-1/2");
     			attr(div13, "class", "w-full sm:w-1/2");
     			attr(div14, "class", "flex flex-col sm:flex-row gap-12 items-center");
@@ -8443,23 +8442,23 @@ var app = (function () {
     			set_style(span1, "color", "rgb(225, 62, 49)");
     			set_style(span1, "text-decoration", "underline");
     			set_style(span1, "text-decoration-thickness", "1px");
-    			attr(span2, "class", "text-blue-500");
+    			attr(span2, "class", "text-yellow-400");
     			set_style(span2, "all", "inherit");
     			set_style(span2, "color", "rgb(49, 141, 225)");
     			attr(code, "class", "break-words");
-    			attr(div15, "class", "bg-gray-100 text-gray-700 py-4 px-5 rounded-md shadow-md mt-4 mb-4");
-    			attr(div19, "class", "flex items-center gap-2 p-3 border-b border-gray-700");
+    			attr(div15, "class", "bg-zinc-100 text-zinc-600 dark:text-zinc-100 py-4 px-5 shadow-md mt-4 mb-4");
+    			attr(div19, "class", "flex items-center gap-2 p-3 border-b border-zinc-600");
     			attr(div20, "class", "w-full h-full items-center justify-center flex");
-    			attr(div21, "class", "w-full h-64 flex flex-col rounded-md border border-gray-700");
+    			attr(div21, "class", "w-full h-64 flex flex-col border border-zinc-600");
     			attr(div22, "class", "w-full sm:w-1/2");
     			attr(h31, "to", "");
     			attr(h31, "use", "");
-    			attr(h31, "class", "text-blue-500 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
+    			attr(h31, "class", "text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
     			attr(div23, "class", "w-full sm:w-1/2");
     			attr(div24, "class", "flex flex-col-reverse sm:flex-row gap-12 items-center");
     			attr(h32, "to", "");
     			attr(h32, "use", "");
-    			attr(h32, "class", "text-blue-500 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
+    			attr(h32, "class", "text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
     			attr(div25, "class", "w-full sm:w-1/2");
     			attr(div26, "class", "w-20 h-32 xl:w-64 xl:h-64");
     			attr(div27, "class", "flex relative h-full flex-col items-center");
@@ -8468,7 +8467,7 @@ var app = (function () {
     			attr(div30, "class", "w-full sm:w-1/2 -mb-12");
     			attr(h33, "to", "");
     			attr(h33, "use", "");
-    			attr(h33, "class", "text-blue-500 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
+    			attr(h33, "class", "text-yellow-400 font-semibold tracking-wide text-4xl xl:text-5xl mb-6 sm:mb-8");
     			attr(div31, "class", "w-full 530:sm:w-1/2");
     			attr(div32, "class", "flex flex-col-reverse sm:flex-row gap-12 items-center");
     			attr(div33, "class", "pt-20 w-full flex flex-col gap-24");
@@ -8782,36 +8781,2915 @@ var app = (function () {
     	}
     }
 
+    var ic = {
+    	name: "Google Material Icons",
+    	total: 10945,
+    	version: "1.0.28",
+    	author: {
+    		name: "Material Design Authors",
+    		url: "https://github.com/material-icons/material-icons"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/material-icons/material-icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"baseline-notifications-active",
+    		"outline-person-outline",
+    		"twotone-videocam-off"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var mdi = {
+    	name: "Material Design Icons",
+    	total: 6944,
+    	author: {
+    		name: "Austin Andrews",
+    		url: "https://github.com/Templarian/MaterialDesign"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/Templarian/MaterialDesign/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"account-check",
+    		"bell-alert-outline",
+    		"calendar-edit"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var ph = {
+    	name: "Phosphor",
+    	total: 6282,
+    	version: "1.4.2",
+    	author: {
+    		name: "Phosphor Icons",
+    		url: "https://github.com/phosphor-icons/phosphor-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/phosphor-icons/phosphor-icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"folder-notch-open-duotone",
+    		"check-square-offset-thin",
+    		"pencil-line-fill"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var ri = {
+    	name: "Remix Icon",
+    	total: 2271,
+    	version: "2.5.0",
+    	author: {
+    		name: "Remix Design",
+    		url: "https://github.com/Remix-Design/RemixIcon"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/Remix-Design/RemixIcon/blob/master/License"
+    	},
+    	samples: [
+    		"lock-2-line",
+    		"mark-pen-fill",
+    		"moon-line"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var carbon = {
+    	name: "Carbon",
+    	total: 1798,
+    	version: "11.3.0",
+    	author: {
+    		name: "IBM",
+    		url: "https://github.com/carbon-design-system/carbon/tree/main/packages/icons"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0"
+    	},
+    	samples: [
+    		"user-certification",
+    		"humidity",
+    		"edit-off"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "General",
+    	palette: false
+    };
+    var bi = {
+    	name: "Bootstrap Icons",
+    	total: 1668,
+    	version: "1.8.2",
+    	author: {
+    		name: "The Bootstrap Authors",
+    		url: "https://github.com/twbs/icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/twbs/icons/blob/main/LICENSE.md"
+    	},
+    	samples: [
+    		"graph-up",
+    		"card-image",
+    		"code-slash"
+    	],
+    	height: 16,
+    	category: "General",
+    	palette: false
+    };
+    var tabler = {
+    	name: "Tabler Icons",
+    	total: 1978,
+    	version: "1.68.0",
+    	author: {
+    		name: "Paweł Kuna",
+    		url: "https://github.com/tabler/tabler-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/tabler/tabler-icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"alien",
+    		"device-desktop",
+    		"photo"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var ion = {
+    	name: "IonIcons",
+    	total: 1332,
+    	version: "6.0.0",
+    	author: {
+    		name: "Ben Sperry",
+    		url: "https://github.com/ionic-team/ionicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/ionic-team/ionicons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"code-download-sharp",
+    		"contrast-outline",
+    		"checkmark-done"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "General",
+    	palette: false
+    };
+    var uil = {
+    	name: "Unicons",
+    	total: 1206,
+    	version: "4.0.1",
+    	author: {
+    		name: "Iconscout",
+    		url: "https://github.com/Iconscout/unicons"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/Iconscout/unicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"arrow-circle-right",
+    		"chat-bubble-user",
+    		"edit-alt"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var teenyicons = {
+    	name: "Teenyicons",
+    	total: 1200,
+    	version: "0.4.1",
+    	author: {
+    		name: "smhmd",
+    		url: "https://github.com/teenyicons/teenyicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/teenyicons/teenyicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"face-id-solid",
+    		"user-outline",
+    		"page-break-outline"
+    	],
+    	height: 15,
+    	category: "General",
+    	palette: false
+    };
+    var clarity = {
+    	name: "Clarity",
+    	total: 1103,
+    	author: {
+    		name: "VMware",
+    		url: "https://github.com/vmware/clarity"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/vmware/clarity-assets/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"help-outline-badged",
+    		"heart-broken-solid",
+    		"shield-outline-alerted"
+    	],
+    	height: 36,
+    	displayHeight: 18,
+    	category: "General",
+    	palette: false
+    };
+    var iconoir = {
+    	name: "Iconoir",
+    	total: 1091,
+    	version: "4.9.1",
+    	author: {
+    		name: "Luca Burgio",
+    		url: "https://github.com/lucaburgio/iconoir"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/lucaburgio/iconoir/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"chat-bubble-check-1",
+    		"edit",
+    		"terminal-simple"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var majesticons = {
+    	name: "Majesticons",
+    	total: 760,
+    	version: "2.1.1",
+    	author: {
+    		name: "Gerrit Halfmann",
+    		url: "https://github.com/halfmage/majesticons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/halfmage/majesticons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"chats-line",
+    		"home",
+    		"edit-pen-4-line"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var zondicons = {
+    	name: "Zondicons",
+    	total: 297,
+    	version: "0.1.0",
+    	author: {
+    		name: "Steve Schoger",
+    		url: "https://github.com/dukestreetstudio/zondicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/dukestreetstudio/zondicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"copy",
+    		"hand-stop",
+    		"mouse"
+    	],
+    	height: 20,
+    	category: "General",
+    	palette: false
+    };
+    var bx = {
+    	name: "BoxIcons",
+    	total: 797,
+    	version: "2.1.2",
+    	author: {
+    		name: "Atisa",
+    		url: "https://github.com/atisawd/boxicons"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"heart-circle",
+    		"last-page",
+    		"bar-chart-square"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var bxs = {
+    	name: "BoxIcons Solid",
+    	total: 650,
+    	version: "2.1.2",
+    	author: {
+    		name: "Atisa",
+    		url: "https://github.com/atisawd/boxicons"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"edit-alt",
+    		"tree-alt",
+    		"circle-half"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var gg = {
+    	name: "css.gg",
+    	total: 704,
+    	version: "2.0.0",
+    	author: {
+    		name: "Astrit",
+    		url: "https://github.com/astrit/css.gg"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/astrit/css.gg/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"align-left",
+    		"server",
+    		"overflow"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var cil = {
+    	name: "CoreUI Free",
+    	total: 554,
+    	version: "2.0.1",
+    	author: {
+    		name: "creativeLabs Łukasz Holeczek",
+    		url: "https://github.com/coreui/coreui-icons"
+    	},
+    	license: {
+    		title: "CC0 1.0",
+    		spdx: "CC0-1.0",
+    		url: "https://creativecommons.org/publicdomain/zero/1.0/"
+    	},
+    	samples: [
+    		"airplane-mode-off",
+    		"badge",
+    		"color-border"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "General",
+    	palette: false
+    };
+    var lucide = {
+    	name: "Lucide",
+    	total: 613,
+    	author: {
+    		name: "Lucide Contributors",
+    		url: "https://github.com/lucide-icons/lucide"
+    	},
+    	license: {
+    		title: "ISC",
+    		spdx: "ISC",
+    		url: "https://github.com/lucide-icons/lucide/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"check-circle",
+    		"award",
+    		"home"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var pixelarticons = {
+    	name: "Pixelarticons",
+    	total: 460,
+    	version: "1.5.0",
+    	author: {
+    		name: "Gerrit Halfmann",
+    		url: "https://github.com/halfmage/pixelarticons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/halfmage/pixelarticons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"drag-and-drop",
+    		"arrows-horizontal",
+    		"heart"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var ci = {
+    	name: "coolicons",
+    	total: 412,
+    	version: "2.5",
+    	author: {
+    		name: "Kryston Schwarze",
+    		url: "https://github.com/krystonschwarze/coolicons"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"building",
+    		"search-small-plus",
+    		"group"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var typcn = {
+    	name: "Typicons",
+    	total: 336,
+    	version: "2.1.2",
+    	author: {
+    		name: "Stephen Hutchings",
+    		url: "https://github.com/stephenhutchings/typicons.font"
+    	},
+    	license: {
+    		title: "CC BY SA 4.0",
+    		spdx: "CC-BY-SA-4.0",
+    		url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    	},
+    	samples: [
+    		"pin-outline",
+    		"cloud-storage",
+    		"bell"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var ep = {
+    	name: "Element Plus",
+    	total: 283,
+    	version: "1.1.4",
+    	author: {
+    		name: "Element Plus",
+    		url: "https://github.com/element-plus/element-plus-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/element-plus/element-plus-icons/blob/main/packages/svg/package.json"
+    	},
+    	samples: [
+    		"home-filled",
+    		"partly-cloudy",
+    		"avatar"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "General",
+    	palette: false
+    };
+    var fe = {
+    	name: "Feather Icon",
+    	total: 255,
+    	version: "1.0.2",
+    	author: {
+    		name: "Megumi Hano",
+    		url: "https://github.com/feathericon/feathericon"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/feathericon/feathericon/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"add-cart",
+    		"comments",
+    		"link-external"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var charm = {
+    	name: "Charm Icons",
+    	total: 250,
+    	version: "0.12.1",
+    	author: {
+    		name: "Jay Newey",
+    		url: "https://github.com/jaynewey/charm-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/jaynewey/charm-icons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"chart-line",
+    		"image",
+    		"thumb-up"
+    	],
+    	height: 16,
+    	category: "General",
+    	palette: false
+    };
+    var prime = {
+    	name: "Prime Icons",
+    	total: 238,
+    	author: {
+    		name: "PrimeTek",
+    		url: "https://github.com/primefaces/primeicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/primefaces/primeicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"book",
+    		"telegram",
+    		"volume-off"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var uiw = {
+    	name: "uiw icons",
+    	total: 214,
+    	version: "2.6.7",
+    	author: {
+    		name: "liwen0526",
+    		url: "https://github.com/uiwjs/icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/uiwjs/icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"cut",
+    		"like-o",
+    		"download"
+    	],
+    	height: 20,
+    	category: "General",
+    	palette: false
+    };
+    var uim = {
+    	name: "Unicons Monochrome",
+    	total: 296,
+    	version: "4.0.1",
+    	author: {
+    		name: "Iconscout",
+    		url: "https://github.com/Iconscout/unicons"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/Iconscout/unicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"airplay",
+    		"circle-layer",
+    		"lock-access"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var uit = {
+    	name: "Unicons Thin Line",
+    	total: 214,
+    	version: "4.0.1",
+    	author: {
+    		name: "Iconscout",
+    		url: "https://github.com/Iconscout/unicons"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/Iconscout/unicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"circuit",
+    		"favorite",
+    		"toggle-on"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var uis = {
+    	name: "Unicons Solid",
+    	total: 189,
+    	version: "4.0.1",
+    	author: {
+    		name: "Iconscout",
+    		url: "https://github.com/Iconscout/unicons"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/Iconscout/unicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"analysis",
+    		"check",
+    		"user-md"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var maki = {
+    	name: "Maki",
+    	total: 207,
+    	version: "7.1.0",
+    	author: {
+    		name: "Mapbox",
+    		url: "https://github.com/mapbox/maki"
+    	},
+    	license: {
+    		title: "CC0",
+    		spdx: "CC0-1.0",
+    		url: "https://creativecommons.org/publicdomain/zero/1.0/"
+    	},
+    	samples: [
+    		"entrance-alt1",
+    		"clothing-store",
+    		"grocery"
+    	],
+    	height: 15,
+    	category: "General",
+    	palette: false
+    };
+    var gridicons = {
+    	name: "Gridicons",
+    	total: 201,
+    	version: "3.4.0",
+    	author: {
+    		name: "Automattic",
+    		url: "https://github.com/Automattic/gridicons"
+    	},
+    	license: {
+    		title: "GPL 2.0",
+    		spdx: "GPL-2.0-only",
+    		url: "https://github.com/Automattic/gridicons/blob/trunk/LICENSE.md"
+    	},
+    	samples: [
+    		"code",
+    		"multiple-users",
+    		"types"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var mi = {
+    	name: "Mono Icons",
+    	total: 180,
+    	version: "1.3.1",
+    	author: {
+    		name: "Mono",
+    		url: "https://github.com/mono-company/mono-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/mono-company/mono-icons/blob/master/LICENSE.md"
+    	},
+    	samples: [
+    		"bar-chart",
+    		"cloud-upload",
+    		"log-out"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var quill = {
+    	name: "Quill Icons",
+    	total: 140,
+    	author: {
+    		name: "Casper Lourens",
+    		url: "https://www.figma.com/community/file/1034432054377533052/Quill-Iconset"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/yourtempo/tempo-quill-icons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"collapse",
+    		"desktop",
+    		"moon"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "General",
+    	palette: false
+    };
+    var gala = {
+    	name: "Gala Icons",
+    	total: 51,
+    	author: {
+    		name: "Jake Wells",
+    		url: "https://github.com/sisyphusion/gala-icons"
+    	},
+    	license: {
+    		title: "GPL",
+    		spdx: "GPL-3.0",
+    		url: "https://github.com/sisyphusion/gala-icons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"brochure",
+    		"remove",
+    		"chart"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "General",
+    	palette: false
+    };
+    var fluent = {
+    	name: "Fluent UI System Icons",
+    	total: 11378,
+    	version: "1.1.170",
+    	author: {
+    		name: "Microsoft Corporation",
+    		url: "https://github.com/microsoft/fluentui-system-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/microsoft/fluentui-system-icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"zoom-out-24-filled",
+    		"drink-coffee-24-regular",
+    		"photo-filter-24-regular"
+    	],
+    	displayHeight: 24,
+    	category: "General",
+    	palette: false
+    };
+    var jam = {
+    	name: "Jam Icons",
+    	total: 940,
+    	author: {
+    		name: "Michael Amprimo",
+    		url: "https://github.com/michaelampr/jam"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/michaelampr/jam/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"chevrons-square-up-right",
+    		"luggage-f",
+    		"rubber"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var codicon = {
+    	name: "Codicons",
+    	total: 411,
+    	version: "0.0.30",
+    	author: {
+    		name: "Microsoft Corporation",
+    		url: "https://github.com/microsoft/vscode-codicons"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://github.com/microsoft/vscode-codicons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"account",
+    		"bell-dot",
+    		"new-file"
+    	],
+    	displayHeight: 24,
+    	category: "General",
+    	palette: false
+    };
+    var pepicons = {
+    	name: "Pepicons",
+    	total: 410,
+    	version: "1.1.0",
+    	author: {
+    		name: "CyCraft",
+    		url: "https://github.com/CyCraft/pepicons"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://github.com/CyCraft/pepicons/blob/dev/LICENSE"
+    	},
+    	samples: [
+    		"bookmark-print",
+    		"moon",
+    		"pen-print"
+    	],
+    	displayHeight: 20,
+    	category: "General",
+    	palette: false
+    };
+    var bytesize = {
+    	name: "Bytesize Icons",
+    	total: 101,
+    	version: "1.4.0",
+    	author: {
+    		name: "Dan Klammer",
+    		url: "https://github.com/danklammer/bytesize-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/danklammer/bytesize-icons/blob/master/LICENSE.md"
+    	},
+    	samples: [
+    		"desktop",
+    		"code",
+    		"sign-out"
+    	],
+    	height: 32,
+    	displayHeight: 24,
+    	category: "General",
+    	palette: false
+    };
+    var ei = {
+    	name: "Evil Icons",
+    	total: 70,
+    	version: "1.10.1",
+    	author: {
+    		name: "Alexander Madyankin and Roman Shamin",
+    		url: "https://github.com/evil-icons/evil-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/evil-icons/evil-icons/blob/master/LICENSE.txt"
+    	},
+    	samples: [
+    		"paperclip",
+    		"like",
+    		"arrow-right"
+    	],
+    	height: 25,
+    	category: "General",
+    	palette: false
+    };
+    var octicon = {
+    	name: "Octicons",
+    	total: 499,
+    	version: "17.2.0",
+    	author: {
+    		name: "GitHub",
+    		url: "https://github.com/primer/octicons/"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/primer/octicons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"alert-24",
+    		"bell-slash-24",
+    		"hourglass-24"
+    	],
+    	displayHeight: 24,
+    	category: "General",
+    	palette: false
+    };
+    var ooui = {
+    	name: "OOUI",
+    	total: 322,
+    	version: "0.44.0",
+    	author: {
+    		name: "OOUI Team",
+    		url: "https://github.com/wikimedia/oojs-ui"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/wikimedia/oojs-ui/blob/master/LICENSE-MIT"
+    	},
+    	samples: [
+    		"search",
+    		"share",
+    		"restore"
+    	],
+    	height: 20,
+    	category: "General",
+    	palette: false
+    };
+    var nimbus = {
+    	name: "Nimbus",
+    	total: 134,
+    	version: "0.2.5",
+    	author: {
+    		name: "Linkedstore S.A.",
+    		url: "https://github.com/TiendaNube/nimbus-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/TiendaNube/nimbus-icons/blob/develop/LICENSE"
+    	},
+    	samples: [
+    		"barcode",
+    		"mail",
+    		"calendar"
+    	],
+    	height: 16,
+    	category: "General",
+    	palette: false
+    };
+    var openmoji = {
+    	name: "OpenMoji",
+    	total: 4027,
+    	author: {
+    		name: "OpenMoji",
+    		url: "https://github.com/hfg-gmuend/openmoji"
+    	},
+    	license: {
+    		title: "CC BY-SA 4.0",
+    		spdx: "CC-BY-SA-4.0",
+    		url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    	},
+    	samples: [
+    		"bicycle",
+    		"bow-and-arrow",
+    		"full-moon-face"
+    	],
+    	height: 18,
+    	category: "Emoji",
+    	palette: true
+    };
+    var twemoji = {
+    	name: "Twitter Emoji",
+    	total: 3668,
+    	author: {
+    		name: "Twitter",
+    		url: "https://github.com/twitter/twemoji"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"anguished-face",
+    		"duck",
+    		"crossed-swords"
+    	],
+    	height: 36,
+    	displayHeight: 18,
+    	category: "Emoji",
+    	palette: true
+    };
+    var noto = {
+    	name: "Noto Emoji",
+    	total: 3418,
+    	author: {
+    		name: "Google Inc",
+    		url: "https://github.com/googlefonts/noto-emoji"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/googlefonts/noto-emoji/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"beaming-face-with-smiling-eyes",
+    		"computer-mouse",
+    		"dove"
+    	],
+    	height: 16,
+    	category: "Emoji",
+    	palette: true
+    };
+    var emojione = {
+    	name: "Emoji One (Colored)",
+    	total: 1834,
+    	version: "2.3.0",
+    	author: {
+    		name: "Emoji One",
+    		url: "https://github.com/EmojiTwo/emojitwo"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"anxious-face-with-sweat",
+    		"cloud-with-snow",
+    		"studio-microphone"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Emoji",
+    	palette: true
+    };
+    var fxemoji = {
+    	name: "Firefox OS Emoji",
+    	total: 1034,
+    	version: "0.0.2",
+    	author: {
+    		name: "Mozilla",
+    		url: "https://github.com/mozilla/fxemoji"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://mozilla.github.io/fxemoji/LICENSE.md"
+    	},
+    	samples: [
+    		"foxweary",
+    		"loveletter",
+    		"openlock"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Emoji",
+    	palette: true
+    };
+    var bxl = {
+    	name: "BoxIcons Logo",
+    	total: 153,
+    	version: "2.1.2",
+    	author: {
+    		name: "Atisa",
+    		url: "https://github.com/atisawd/boxicons"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"patreon",
+    		"adobe",
+    		"vuejs"
+    	],
+    	height: 24,
+    	category: "Brands / Social",
+    	palette: false
+    };
+    var logos = {
+    	name: "SVG Logos",
+    	total: 1438,
+    	author: {
+    		name: "Gil Barbara",
+    		url: "https://github.com/gilbarbara/logos"
+    	},
+    	license: {
+    		title: "CC0",
+    		spdx: "CC0-1.0",
+    		url: "https://raw.githubusercontent.com/gilbarbara/logos/master/LICENSE.txt"
+    	},
+    	samples: [
+    		"angular-icon",
+    		"firefox",
+    		"google-drive"
+    	],
+    	category: "Brands / Social",
+    	palette: true
+    };
+    var cib = {
+    	name: "CoreUI Brands",
+    	total: 830,
+    	version: "2.0.1",
+    	author: {
+    		name: "creativeLabs Łukasz Holeczek",
+    		url: "https://github.com/coreui/coreui-icons"
+    	},
+    	license: {
+    		title: "CC0 1.0",
+    		spdx: "CC0-1.0",
+    		url: "https://creativecommons.org/publicdomain/zero/1.0/"
+    	},
+    	samples: [
+    		"cc-amazon-pay",
+    		"hotjar",
+    		"open-id"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Brands / Social",
+    	palette: false
+    };
+    var arcticons = {
+    	name: "Arcticons",
+    	total: 4238,
+    	author: {
+    		name: "Donno",
+    		url: "https://github.com/Donno/Arcticons"
+    	},
+    	license: {
+    		title: "CC BY-SA 4.0",
+    		spdx: "CC-BY-SA-4.0",
+    		url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    	},
+    	samples: [
+    		"paperlaunch",
+    		"gravadordevoz",
+    		"appstract"
+    	],
+    	height: 48,
+    	displayHeight: 24,
+    	category: "Brands / Social",
+    	palette: false
+    };
+    var brandico = {
+    	name: "Brandico",
+    	total: 45,
+    	author: {
+    		name: "Fontello",
+    		url: "https://github.com/fontello/brandico.font"
+    	},
+    	license: {
+    		title: "CC BY SA",
+    		spdx: "CC-BY-SA-3.0",
+    		url: "https://creativecommons.org/licenses/by-sa/3.0/"
+    	},
+    	samples: [
+    		"vimeo",
+    		"twitter-bird",
+    		"yandex"
+    	],
+    	category: "Brands / Social",
+    	palette: false
+    };
+    var cryptocurrency = {
+    	name: "Cryptocurrency Icons",
+    	total: 471,
+    	version: "0.18.0",
+    	author: {
+    		name: "Christopher Downer",
+    		url: "https://github.com/atomiclabs/cryptocurrency-icons"
+    	},
+    	license: {
+    		title: "CC0 1.0",
+    		spdx: "CC0-1.0",
+    		url: "https://creativecommons.org/publicdomain/zero/1.0/"
+    	},
+    	samples: [
+    		"btc",
+    		"ltc",
+    		"eth"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Brands / Social",
+    	palette: false
+    };
+    var flag = {
+    	name: "Flag Icons",
+    	total: 530,
+    	version: "6.4.3",
+    	author: {
+    		name: "Panayiotis Lipiridis",
+    		url: "https://github.com/lipis/flag-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/lipis/flag-icons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"fr-4x3",
+    		"kr-1x1",
+    		"ee-1x1"
+    	],
+    	category: "Maps / Flags",
+    	palette: true
+    };
+    var flagpack = {
+    	name: "Flagpack",
+    	total: 255,
+    	version: "2.0.0",
+    	author: {
+    		name: "Yummygum",
+    		url: "https://github.com/Yummygum/flagpack-core"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/Yummygum/flagpack-core/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"ci",
+    		"gb-eng",
+    		"wf"
+    	],
+    	height: 24,
+    	category: "Maps / Flags",
+    	palette: true
+    };
+    var cif = {
+    	name: "CoreUI Flags",
+    	total: 199,
+    	version: "2.0.1",
+    	author: {
+    		name: "creativeLabs Łukasz Holeczek",
+    		url: "https://github.com/coreui/coreui-icons"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"ee",
+    		"ca",
+    		"sk"
+    	],
+    	category: "Maps / Flags",
+    	palette: true
+    };
+    var gis = {
+    	name: "Font-GIS",
+    	total: 344,
+    	version: "1.0.5",
+    	author: {
+    		name: "Jean-Marc Viglino",
+    		url: "https://github.com/viglino/font-gis"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://github.com/Viglino/font-gis/blob/main/LICENSE-CC-BY.md"
+    	},
+    	samples: [
+    		"layer-o",
+    		"poi-o",
+    		"bbox"
+    	],
+    	height: 100,
+    	category: "Maps / Flags",
+    	palette: false
+    };
+    var map = {
+    	name: "Map Icons",
+    	total: 167,
+    	version: "3.0.2",
+    	author: {
+    		name: "Scott de Jonge",
+    		url: "https://github.com/scottdejonge/map-icons"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+    	},
+    	samples: [
+    		"restaurant",
+    		"real-estate-agency",
+    		"wheelchair"
+    	],
+    	height: 50,
+    	category: "Maps / Flags",
+    	palette: false
+    };
+    var geo = {
+    	name: "GeoGlyphs",
+    	total: 30,
+    	version: "0.0.10",
+    	author: {
+    		name: "Sam Matthews",
+    		url: "https://github.com/cugos/geoglyphs"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/cugos/geoglyphs/blob/main/LICENSE.md"
+    	},
+    	samples: [
+    		"turf-center",
+    		"turf-erased",
+    		"turf-point-on-line"
+    	],
+    	displayHeight: 24,
+    	category: "Maps / Flags",
+    	palette: false
+    };
+    var fad = {
+    	name: "FontAudio",
+    	total: 155,
+    	author: {
+    		name: "@fefanto",
+    		url: "https://github.com/fefanto/fontaudio"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"shuffle",
+    		"headphones",
+    		"rew"
+    	],
+    	height: 16,
+    	category: "Thematic",
+    	palette: false
+    };
+    var academicons = {
+    	name: "Academicons",
+    	total: 149,
+    	version: "1.9.2",
+    	author: {
+    		name: "James Walsh",
+    		url: "https://github.com/jpswalsh/academicons"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+    	},
+    	samples: [
+    		"conversation",
+    		"crossref-square",
+    		"stackoverflow"
+    	],
+    	height: 16,
+    	displayHeight: 24,
+    	category: "Thematic",
+    	palette: false
+    };
+    var wi = {
+    	name: "Weather Icons",
+    	total: 219,
+    	version: "2.0.12",
+    	author: {
+    		name: "Erik Flowers",
+    		url: "https://github.com/erikflowers/weather-icons"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+    	},
+    	samples: [
+    		"day-hail",
+    		"barometer",
+    		"day-windy"
+    	],
+    	height: 30,
+    	category: "Thematic",
+    	palette: false
+    };
+    var healthicons = {
+    	name: "Health Icons",
+    	total: 1731,
+    	version: "0.1.0",
+    	author: {
+    		name: "Resolve to Save Lives",
+    		url: "https://github.com/resolvetosavelives/healthicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/resolvetosavelives/healthicons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"cold-chain",
+    		"emergency-post",
+    		"asthma-outline"
+    	],
+    	height: 24,
+    	category: "Thematic",
+    	palette: false
+    };
+    var la = {
+    	name: "Line Awesome",
+    	total: 1544,
+    	version: "1.2.1",
+    	author: {
+    		name: "Icons8",
+    		url: "https://github.com/icons8/line-awesome"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://www.apache.org/licenses/LICENSE-2.0"
+    	},
+    	samples: [
+    		"archive-solid",
+    		"female-solid",
+    		"check-circle"
+    	],
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var eva = {
+    	name: "Eva Icons",
+    	total: 490,
+    	version: "1.1.3",
+    	author: {
+    		name: "Akveo",
+    		url: "https://github.com/akveo/eva-icons/"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/akveo/eva-icons/blob/master/LICENSE.txt"
+    	},
+    	samples: [
+    		"droplet-off-outline",
+    		"flash-fill",
+    		"printer-outline"
+    	],
+    	height: 24,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var dashicons = {
+    	name: "Dashicons",
+    	total: 342,
+    	version: "0.9.0",
+    	author: {
+    		name: "WordPress",
+    		url: "https://github.com/WordPress/dashicons"
+    	},
+    	license: {
+    		title: "GPL",
+    		spdx: "GPL-2.0-or-later",
+    		url: "https://github.com/WordPress/dashicons/blob/master/gpl.txt"
+    	},
+    	samples: [
+    		"shortcode",
+    		"businessperson",
+    		"editor-expand"
+    	],
+    	height: 20,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var entypo = {
+    	name: "Entypo+",
+    	total: 321,
+    	author: {
+    		name: "Daniel Bruce",
+    		url: "https://github.com/chancancode/entypo-plus"
+    	},
+    	license: {
+    		title: "CC BY-SA 4.0",
+    		spdx: "CC-BY-SA-4.0",
+    		url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    	},
+    	samples: [
+    		"bell",
+    		"image",
+    		"erase"
+    	],
+    	height: 20,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var foundation = {
+    	name: "Foundation",
+    	total: 283,
+    	version: "3.0.0",
+    	author: {
+    		name: "Zurb",
+    		url: "https://github.com/zurb/foundation-icon-fonts"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT"
+    	},
+    	samples: [
+    		"graph-trend",
+    		"indent-more",
+    		"lock"
+    	],
+    	height: 20,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var raphael = {
+    	name: "Raphael",
+    	total: 266,
+    	author: {
+    		name: "Dmitry Baranovskiy",
+    		url: "https://github.com/dmitrybaranovskiy/raphael"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT"
+    	},
+    	samples: [
+    		"home",
+    		"cloud",
+    		"parent"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var icons8 = {
+    	name: "Icons8 Windows 10 Icons",
+    	total: 234,
+    	version: "1.0.0",
+    	author: {
+    		name: "Icons8",
+    		url: "https://github.com/icons8/windows-10-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT"
+    	},
+    	samples: [
+    		"checked",
+    		"create-new",
+    		"group"
+    	],
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var iwwa = {
+    	name: "Innowatio Font",
+    	total: 105,
+    	version: "1.1.3",
+    	author: {
+    		name: "Innowatio",
+    		url: "https://github.com/innowatio/iwwa-icons"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://www.apache.org/licenses/LICENSE-2.0"
+    	},
+    	samples: [
+    		"tag",
+    		"settings",
+    		"connection-o"
+    	],
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var fa = {
+    	name: "Font Awesome 4",
+    	total: 678,
+    	version: "4.7.0",
+    	author: {
+    		name: "Dave Gandy",
+    		url: "https://github.com/FortAwesome/Font-Awesome/tree/fa-4"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+    	},
+    	samples: [
+    		"wrench",
+    		"bell-o",
+    		"user-o"
+    	],
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var fontisto = {
+    	name: "Fontisto",
+    	total: 615,
+    	version: "3.0.4",
+    	author: {
+    		name: "Kenan Gündoğan",
+    		url: "https://github.com/kenangundogan/fontisto"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/kenangundogan/fontisto/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"prescription",
+    		"heartbeat-alt",
+    		"rain"
+    	],
+    	height: 24,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var ps = {
+    	name: "PrestaShop Icons",
+    	total: 479,
+    	author: {
+    		name: "PrestaShop",
+    		url: "https://github.com/PrestaShop/prestashop-icon-font"
+    	},
+    	license: {
+    		title: "CC BY-NC 4.0",
+    		spdx: "CC-BY-NC-4.0",
+    		url: "https://creativecommons.org/licenses/by-nc/4.0/"
+    	},
+    	samples: [
+    		"bell",
+    		"girl",
+    		"home"
+    	],
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var subway = {
+    	name: "Subway Icon Set",
+    	total: 306,
+    	author: {
+    		name: "Mariusz Ostrowski",
+    		url: "https://github.com/mariuszostrowski/subway"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"call-2",
+    		"power-batton",
+    		"admin"
+    	],
+    	height: 16,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var oi = {
+    	name: "Open Iconic",
+    	total: 223,
+    	version: "1.1.1",
+    	author: {
+    		name: "Iconic",
+    		url: "https://github.com/icons8/line-awesome"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/iconic/open-iconic/blob/master/ICON-LICENSE"
+    	},
+    	samples: [
+    		"bug",
+    		"bullhorn",
+    		"chat"
+    	],
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var wpf = {
+    	name: "Icons8 Windows 8 Icons",
+    	total: 200,
+    	author: {
+    		name: "Icons8",
+    		url: "https://github.com/icons8/WPF-UI-Framework"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT"
+    	},
+    	samples: [
+    		"check-file",
+    		"add-image",
+    		"geo-fence"
+    	],
+    	height: 26,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var et = {
+    	name: "Elegant",
+    	total: 100,
+    	version: "1.0.1",
+    	author: {
+    		name: "Kenny Sing",
+    		url: "https://github.com/pprince/etlinefont-bower"
+    	},
+    	license: {
+    		title: "GPL 3.0",
+    		spdx: "GPL-3.0-or-later",
+    		url: "https://www.gnu.org/licenses/gpl.html"
+    	},
+    	samples: [
+    		"profile-female",
+    		"ribbon",
+    		"layers"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var el = {
+    	name: "Elusive Icons",
+    	total: 304,
+    	version: "2.0.0",
+    	author: {
+    		name: "Team Redux",
+    		url: "https://github.com/dovy/elusive-icons"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+    	},
+    	samples: [
+    		"headphones",
+    		"cog",
+    		"user"
+    	],
+    	height: 16,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    };
+    var vaadin = {
+    	name: "Vaadin Icons",
+    	total: 636,
+    	version: "4.3.2",
+    	author: {
+    		name: "Vaadin",
+    		url: "https://github.com/vaadin/web-components"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0"
+    	},
+    	samples: [
+    		"area-select",
+    		"file-picture",
+    		"plus-circle-o"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	palette: false,
+    	hidden: true
+    };
+    var whh = {
+    	name: "WebHostingHub Glyphs",
+    	total: 2125,
+    	author: {
+    		name: "WebHostingHub"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+    	},
+    	samples: [
+    		"addtags",
+    		"brightness",
+    		"circlecallincoming"
+    	],
+    	palette: false,
+    	hidden: true
+    };
+    var zmdi = {
+    	name: "Material Design Iconic Font",
+    	total: 777,
+    	author: {
+    		name: "MDI Community",
+    		url: "https://github.com/zavoloklom/material-design-iconic-font"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1"
+    	},
+    	samples: [
+    		"alarm-snooze",
+    		"cloud-off",
+    		"library"
+    	],
+    	palette: false,
+    	hidden: true
+    };
+    var ls = {
+    	name: "Ligature Symbols",
+    	total: 348,
+    	author: {
+    		name: "Kazuyuki Motoyama",
+    		url: "https://github.com/kudakurage/LigatureSymbols"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+    	},
+    	samples: [
+    		"bad",
+    		"search",
+    		"bag"
+    	],
+    	palette: false,
+    	hidden: true
+    };
+    var bpmn = {
+    	name: "BPMN",
+    	total: 112,
+    	version: "0.10.0",
+    	author: {
+    		name: "Camunda Services GmbH",
+    		url: "https://github.com/bpmn-io/bpmn-font"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://github.com/bpmn-io/bpmn-font/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"intermediate-event-catch-non-interrupting-escalation",
+    		"user",
+    		"lane-insert-above"
+    	],
+    	displayHeight: 24,
+    	palette: false,
+    	hidden: true
+    };
+    var vs = {
+    	name: "Vesper Icons",
+    	total: 159,
+    	version: "5.11.2",
+    	author: {
+    		name: "TableCheck",
+    		url: "https://github.com/kkvesper/vesper-icons"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+    	},
+    	samples: [
+    		"edit-page",
+    		"kakao-square",
+    		"person"
+    	],
+    	palette: false,
+    	hidden: true
+    };
+    var topcoat = {
+    	name: "TopCoat Icons",
+    	total: 89,
+    	version: "0.2.0",
+    	author: {
+    		name: "TopCoat",
+    		url: "https://github.com/topcoat/icons"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/topcoat/icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"wifi",
+    		"feedback",
+    		"pencil"
+    	],
+    	palette: false,
+    	hidden: true
+    };
+    var il = {
+    	name: "Icalicons",
+    	total: 84,
+    	version: "0.0.1",
+    	author: {
+    		name: "Icalia Labs"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT"
+    	},
+    	samples: [
+    		"calendar",
+    		"users",
+    		"conversation"
+    	],
+    	palette: false,
+    	hidden: true
+    };
+    var websymbol = {
+    	name: "Web Symbols Liga",
+    	total: 85,
+    	author: {
+    		name: "Just Be Nice studio"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+    	},
+    	samples: [
+    		"clock",
+    		"resize-full-circle",
+    		"tag"
+    	],
+    	palette: false,
+    	hidden: true
+    };
+    var fontelico = {
+    	name: "Fontelico",
+    	total: 34,
+    	author: {
+    		name: "Fontello",
+    		url: "https://github.com/fontello/fontelico.font"
+    	},
+    	license: {
+    		title: "CC BY SA",
+    		spdx: "CC-BY-SA-3.0",
+    		url: "https://creativecommons.org/licenses/by-sa/3.0/"
+    	},
+    	samples: [
+    		"spin5",
+    		"emo-sunglasses",
+    		"crown-plus"
+    	],
+    	displayHeight: 20,
+    	palette: false,
+    	hidden: true
+    };
+    var feather = {
+    	name: "Feather Icons",
+    	total: 286,
+    	author: {
+    		name: "Cole Bemis",
+    		url: "https://github.com/feathericons/feather"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/feathericons/feather/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"check-circle",
+    		"award",
+    		"home"
+    	],
+    	height: 24,
+    	palette: false,
+    	hidden: true
+    };
+    var importedCollections = {
+    	"material-symbols": {
+    	name: "Material Symbols",
+    	total: 7702,
+    	author: {
+    		name: "Google",
+    		url: "https://github.com/google/material-design-icons"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/google/material-design-icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"downloading",
+    		"privacy-tip",
+    		"filter-drama-outline"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    },
+    	ic: ic,
+    	mdi: mdi,
+    	ph: ph,
+    	ri: ri,
+    	carbon: carbon,
+    	bi: bi,
+    	tabler: tabler,
+    	ion: ion,
+    	uil: uil,
+    	teenyicons: teenyicons,
+    	clarity: clarity,
+    	iconoir: iconoir,
+    	majesticons: majesticons,
+    	zondicons: zondicons,
+    	"ant-design": {
+    	name: "Ant Design Icons",
+    	total: 789,
+    	version: "4.2.1",
+    	author: {
+    		name: "HeskeyBaozi",
+    		url: "https://github.com/ant-design/ant-design-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/ant-design/ant-design-icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"pushpin-filled",
+    		"pie-chart-outlined",
+    		"shopping-twotone"
+    	],
+    	height: 16,
+    	category: "General",
+    	palette: false
+    },
+    	bx: bx,
+    	bxs: bxs,
+    	gg: gg,
+    	cil: cil,
+    	lucide: lucide,
+    	pixelarticons: pixelarticons,
+    	"system-uicons": {
+    	name: "System UIcons",
+    	total: 430,
+    	author: {
+    		name: "Corey Ginnivan",
+    		url: "https://github.com/CoreyGinnivan/system-uicons"
+    	},
+    	license: {
+    		title: "Unlicense",
+    		spdx: "Unlicense",
+    		url: "https://github.com/CoreyGinnivan/system-uicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"bell",
+    		"message-writing",
+    		"write"
+    	],
+    	height: 21,
+    	category: "General",
+    	palette: false
+    },
+    	ci: ci,
+    	"akar-icons": {
+    	name: "Akar Icons",
+    	total: 398,
+    	version: "1.9.17",
+    	author: {
+    		name: "Arturo Wibawa",
+    		url: "https://github.com/artcoholic/akar-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/artcoholic/akar-icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"paper",
+    		"pencil",
+    		"location"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    },
+    	typcn: typcn,
+    	"radix-icons": {
+    	name: "Radix Icons",
+    	total: 318,
+    	version: "1.1.1",
+    	author: {
+    		name: "Modulz",
+    		url: "https://github.com/modulz/radix-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/radix-ui/icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"width",
+    		"checkbox",
+    		"code"
+    	],
+    	height: 15,
+    	category: "General",
+    	palette: false
+    },
+    	ep: ep,
+    	"mdi-light": {
+    	name: "Material Design Light",
+    	total: 267,
+    	author: {
+    		name: "Austin Andrews",
+    		url: "https://github.com/Templarian/MaterialDesignLight"
+    	},
+    	license: {
+    		title: "Open Font License",
+    		spdx: "OFL-1.1",
+    		url: "https://github.com/Templarian/MaterialDesignLight/blob/master/LICENSE.md"
+    	},
+    	samples: [
+    		"cart",
+    		"home",
+    		"login"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    },
+    	fe: fe,
+    	"eos-icons": {
+    	name: "EOS Icons",
+    	total: 253,
+    	version: "5.4.0",
+    	author: {
+    		name: "SUSE UX/UI team",
+    		url: "https://gitlab.com/SUSE-UIUX/eos-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://gitlab.com/SUSE-UIUX/eos-icons/-/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"modified-date-outlined",
+    		"arrow-rotate",
+    		"package"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    },
+    	"line-md": {
+    	name: "Material Line Icons",
+    	total: 254,
+    	version: "0.2.0",
+    	author: {
+    		name: "Vjacheslav Trushkin",
+    		url: "https://github.com/cyberalien/line-md"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/cyberalien/line-md/blob/master/license.txt"
+    	},
+    	samples: [
+    		"home",
+    		"edit-twotone",
+    		"image-twotone"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    },
+    	charm: charm,
+    	prime: prime,
+    	"heroicons-outline": {
+    	name: "HeroIcons Outline",
+    	total: 230,
+    	version: "1.0.6",
+    	author: {
+    		name: "Refactoring UI Inc",
+    		url: "https://github.com/tailwindlabs/heroicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/tailwindlabs/heroicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"color-swatch",
+    		"library",
+    		"receipt-refund"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    },
+    	"heroicons-solid": {
+    	name: "HeroIcons Solid",
+    	total: 230,
+    	version: "1.0.6",
+    	author: {
+    		name: "Refactoring UI Inc",
+    		url: "https://github.com/tailwindlabs/heroicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/tailwindlabs/heroicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"color-swatch",
+    		"library",
+    		"receipt-refund"
+    	],
+    	height: 20,
+    	category: "General",
+    	palette: false
+    },
+    	uiw: uiw,
+    	uim: uim,
+    	uit: uit,
+    	uis: uis,
+    	maki: maki,
+    	gridicons: gridicons,
+    	mi: mi,
+    	quill: quill,
+    	gala: gala,
+    	fluent: fluent,
+    	"icon-park-outline": {
+    	name: "IconPark Outline",
+    	total: 2657,
+    	version: "1.4.0",
+    	author: {
+    		name: "ByteDance",
+    		url: "https://github.com/bytedance/IconPark"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/bytedance/IconPark/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"add-one",
+    		"english-mustache",
+    		"basketball-clothes"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    },
+    	"icon-park-solid": {
+    	name: "IconPark Solid",
+    	total: 1937,
+    	version: "1.4.0",
+    	author: {
+    		name: "ByteDance",
+    		url: "https://github.com/bytedance/IconPark"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/bytedance/IconPark/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"add-one",
+    		"english-mustache",
+    		"basketball-clothes"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    },
+    	"icon-park-twotone": {
+    	name: "IconPark TwoTone",
+    	total: 1915,
+    	version: "1.4.0",
+    	author: {
+    		name: "ByteDance",
+    		url: "https://github.com/bytedance/IconPark"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/bytedance/IconPark/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"add-one",
+    		"english-mustache",
+    		"basketball-clothes"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    },
+    	"icon-park": {
+    	name: "IconPark",
+    	total: 2657,
+    	version: "1.4.0",
+    	author: {
+    		name: "ByteDance",
+    		url: "https://github.com/bytedance/IconPark"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/bytedance/IconPark/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"add-one",
+    		"english-mustache",
+    		"basketball-clothes"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: true
+    },
+    	"vscode-icons": {
+    	name: "VSCode Icons",
+    	total: 1123,
+    	version: "11.11.0",
+    	author: {
+    		name: "Roberto Huertas",
+    		url: "https://github.com/vscode-icons/vscode-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/vscode-icons/vscode-icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"file-type-actionscript2",
+    		"file-type-json",
+    		"file-type-manifest"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "General",
+    	palette: true
+    },
+    	jam: jam,
+    	codicon: codicon,
+    	pepicons: pepicons,
+    	bytesize: bytesize,
+    	ei: ei,
+    	"fa6-solid": {
+    	name: "Font Awesome Solid",
+    	total: 1387,
+    	version: "6.1.1",
+    	author: {
+    		name: "Dave Gandy",
+    		url: "https://github.com/FortAwesome/Font-Awesome"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"location-pin",
+    		"gem",
+    		"folder"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "General",
+    	palette: false
+    },
+    	"fa6-regular": {
+    	name: "Font Awesome Regular",
+    	total: 162,
+    	version: "6.1.1",
+    	author: {
+    		name: "Dave Gandy",
+    		url: "https://github.com/FortAwesome/Font-Awesome"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"message",
+    		"clock",
+    		"folder"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "General",
+    	palette: false
+    },
+    	octicon: octicon,
+    	ooui: ooui,
+    	nimbus: nimbus,
+    	openmoji: openmoji,
+    	twemoji: twemoji,
+    	noto: noto,
+    	"noto-v1": {
+    	name: "Noto Emoji (v1)",
+    	total: 2157,
+    	author: {
+    		name: "Google Inc",
+    		url: "https://github.com/googlefonts/noto-emoji"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/googlefonts/noto-emoji/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"face-with-open-mouth",
+    		"no-littering",
+    		"scissors"
+    	],
+    	height: 16,
+    	category: "Emoji",
+    	palette: true
+    },
+    	emojione: emojione,
+    	"emojione-monotone": {
+    	name: "Emoji One (Monotone)",
+    	total: 1403,
+    	version: "2.2.7",
+    	author: {
+    		name: "Emoji One",
+    		url: "https://github.com/EmojiTwo/emojitwo"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"face-with-tongue",
+    		"envelope",
+    		"frog-face"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Emoji",
+    	palette: false
+    },
+    	"emojione-v1": {
+    	name: "Emoji One (v1)",
+    	total: 1262,
+    	version: "1.5.2",
+    	author: {
+    		name: "Emoji One",
+    		url: "https://github.com/joypixels/emojione-legacy"
+    	},
+    	license: {
+    		title: "CC BY-SA 4.0",
+    		spdx: "CC-BY-SA-4.0",
+    		url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    	},
+    	samples: [
+    		"face-savoring-food",
+    		"panda-face",
+    		"artist-palette"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Emoji",
+    	palette: true
+    },
+    	fxemoji: fxemoji,
+    	bxl: bxl,
+    	logos: logos,
+    	"simple-icons": {
+    	name: "Simple Icons",
+    	total: 2251,
+    	version: "6.22.0",
+    	author: {
+    		name: "Simple Icons Collaborators",
+    		url: "https://github.com/simple-icons/simple-icons"
+    	},
+    	license: {
+    		title: "CC0 1.0",
+    		spdx: "CC0-1.0",
+    		url: "https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md"
+    	},
+    	samples: [
+    		"transferwise",
+    		"nintendo",
+    		"vuetify"
+    	],
+    	height: 24,
+    	category: "Brands / Social",
+    	palette: false
+    },
+    	cib: cib,
+    	"fa6-brands": {
+    	name: "Font Awesome Brands",
+    	total: 462,
+    	version: "6.1.1",
+    	author: {
+    		name: "Dave Gandy",
+    		url: "https://github.com/FortAwesome/Font-Awesome"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"strava",
+    		"css3",
+    		"y-combinator"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Brands / Social",
+    	palette: false
+    },
+    	arcticons: arcticons,
+    	"file-icons": {
+    	name: "File Icons",
+    	total: 930,
+    	author: {
+    		name: "John Gardner",
+    		url: "https://github.com/file-icons/icons"
+    	},
+    	license: {
+    		title: "ISC",
+    		spdx: "ISC",
+    		url: "https://github.com/file-icons/icons/blob/master/LICENSE.md"
+    	},
+    	samples: [
+    		"adobe",
+    		"chartjs",
+    		"dom"
+    	],
+    	height: 16,
+    	category: "Brands / Social",
+    	palette: false
+    },
+    	brandico: brandico,
+    	"entypo-social": {
+    	name: "Entypo+ Social",
+    	total: 76,
+    	author: {
+    		name: "Daniel Bruce",
+    		url: "https://github.com/chancancode/entypo-plus"
+    	},
+    	license: {
+    		title: "CC BY-SA 4.0",
+    		spdx: "CC-BY-SA-4.0",
+    		url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    	},
+    	samples: [
+    		"linkedin-with-circle",
+    		"twitter",
+    		"youtube"
+    	],
+    	height: 20,
+    	category: "Brands / Social",
+    	palette: false
+    },
+    	cryptocurrency: cryptocurrency,
+    	flag: flag,
+    	"circle-flags": {
+    	name: "Circle Flags",
+    	total: 394,
+    	version: "1.0.0",
+    	author: {
+    		name: "HatScripts",
+    		url: "https://github.com/HatScripts/circle-flags"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/HatScripts/circle-flags/blob/gh-pages/LICENSE"
+    	},
+    	samples: [
+    		"ee",
+    		"klingon",
+    		"jp"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Maps / Flags",
+    	palette: true
+    },
+    	flagpack: flagpack,
+    	cif: cif,
+    	gis: gis,
+    	map: map,
+    	geo: geo,
+    	fad: fad,
+    	academicons: academicons,
+    	wi: wi,
+    	healthicons: healthicons,
+    	"medical-icon": {
+    	name: "Medical Icons",
+    	total: 144,
+    	version: "1.0.0",
+    	author: {
+    		name: "Samuel Frémondière",
+    		url: "https://github.com/samcome/webfont-medical-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/samcome/webfont-medical-icons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"i-care-staff-area",
+    		"i-nursery",
+    		"immunizations"
+    	],
+    	category: "Thematic",
+    	palette: false
+    },
+    	la: la,
+    	eva: eva,
+    	dashicons: dashicons,
+    	"flat-color-icons": {
+    	name: "Flat Color Icons",
+    	total: 329,
+    	version: "1.0.2",
+    	author: {
+    		name: "Icons8",
+    		url: "https://github.com/icons8/flat-Color-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT"
+    	},
+    	samples: [
+    		"edit-image",
+    		"donate",
+    		"planner"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Archive / Unmaintained",
+    	palette: true
+    },
+    	entypo: entypo,
+    	foundation: foundation,
+    	raphael: raphael,
+    	icons8: icons8,
+    	iwwa: iwwa,
+    	"fa-solid": {
+    	name: "Font Awesome 5 Solid",
+    	total: 1001,
+    	version: "5.15.4",
+    	author: {
+    		name: "Dave Gandy",
+    		url: "https://github.com/FortAwesome/Font-Awesome"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"search-plus",
+    		"paste",
+    		"comment-dots"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    },
+    	"fa-regular": {
+    	name: "Font Awesome 5 Regular",
+    	total: 151,
+    	version: "5.15.4",
+    	author: {
+    		name: "Dave Gandy",
+    		url: "https://github.com/FortAwesome/Font-Awesome"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"bell",
+    		"comment",
+    		"hand-point-left"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    },
+    	"fa-brands": {
+    	name: "Font Awesome 5 Brands",
+    	total: 457,
+    	version: "5.15.4",
+    	author: {
+    		name: "Dave Gandy",
+    		url: "https://github.com/FortAwesome/Font-Awesome"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"amazon",
+    		"cc-visa",
+    		"chrome"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    },
+    	fa: fa,
+    	fontisto: fontisto,
+    	"icomoon-free": {
+    	name: "IcoMoon Free",
+    	total: 491,
+    	author: {
+    		name: "Keyamoon",
+    		url: "https://github.com/Keyamoon/IcoMoon-Free"
+    	},
+    	license: {
+    		title: "GPL",
+    		spdx: "GPL-3.0-or-later",
+    		url: "https://www.gnu.org/licenses/gpl.html"
+    	},
+    	samples: [
+    		"bubbles3",
+    		"forward",
+    		"volume-medium"
+    	],
+    	height: 16,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    },
+    	ps: ps,
+    	subway: subway,
+    	oi: oi,
+    	wpf: wpf,
+    	"simple-line-icons": {
+    	name: "Simple line icons",
+    	total: 189,
+    	version: "2.5.5",
+    	author: {
+    		name: "Sabbir Ahmed",
+    		url: "https://github.com/thesabbir/simple-line-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/thesabbir/simple-line-icons/blob/master/LICENSE.md"
+    	},
+    	samples: [
+    		"bubbles",
+    		"camrecorder",
+    		"cloud-upload"
+    	],
+    	height: 16,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    },
+    	et: et,
+    	el: el,
+    	vaadin: vaadin,
+    	"grommet-icons": {
+    	name: "Grommet Icons",
+    	total: 614,
+    	version: "4.7.0",
+    	author: {
+    		name: "Grommet",
+    		url: "https://github.com/grommet/grommet-icons"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://www.apache.org/licenses/LICENSE-2.0"
+    	},
+    	samples: [
+    		"user-expert",
+    		"action",
+    		"home"
+    	],
+    	height: 24,
+    	palette: false,
+    	hidden: true
+    },
+    	whh: whh,
+    	"si-glyph": {
+    	name: "SmartIcons Glyph",
+    	total: 799,
+    	version: "0.0.2",
+    	author: {
+    		name: "SmartIcons"
+    	},
+    	license: {
+    		title: "CC BY SA 4.0",
+    		spdx: "CC-BY-SA-4.0",
+    		url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    	},
+    	samples: [
+    		"circle-load-left",
+    		"basket-arrow-right",
+    		"slide-show"
+    	],
+    	palette: false,
+    	hidden: true
+    },
+    	zmdi: zmdi,
+    	ls: ls,
+    	bpmn: bpmn,
+    	"flat-ui": {
+    	name: "Flat UI Icons",
+    	total: 100,
+    	author: {
+    		name: "Designmodo, Inc.",
+    		url: "https://github.com/designmodo/Flat-UI"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/designmodo/Flat-UI/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"map",
+    		"graph",
+    		"imac"
+    	],
+    	palette: true,
+    	hidden: true
+    },
+    	vs: vs,
+    	topcoat: topcoat,
+    	il: il,
+    	websymbol: websymbol,
+    	fontelico: fontelico,
+    	feather: feather,
+    	"mono-icons": {
+    	name: "Mono Icons",
+    	total: 180,
+    	version: "1.3.1",
+    	author: {
+    		name: "Mono",
+    		url: "https://github.com/mono-company/mono-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/mono-company/mono-icons/blob/master/LICENSE.md"
+    	},
+    	samples: [
+    		"user",
+    		"log-in",
+    		"play"
+    	],
+    	height: 24,
+    	palette: false,
+    	hidden: true
+    }
+    };
+
+    /**
+     * @type {Record<string, import('@iconify/types').IconifyInfo>} collections
+     */
+    const collections = importedCollections;
+
     /* src/Homepage/IconList.svelte generated by Svelte v3.48.0 */
 
     function get_each_context$6(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[3] = list[i][0];
+    	child_ctx[2] = list[i][0];
     	child_ctx[0] = list[i][1];
-    	child_ctx[5] = i;
+    	child_ctx[4] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$4(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[6] = list[i];
+    	child_ctx[5] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[8] = list[i];
     	return child_ctx;
     }
 
-    // (30:36) {#each iconSet.sample_icon.split(',') as sampleIcon}
+    // (55:18) {#each iconSet.samples as sampleIcon}
     function create_each_block_2$1(ctx) {
     	let icon;
     	let current;
 
     	icon = new Icon({
     			props: {
-    				icon: `${/*iconSet*/ ctx[6].prefix}:${/*sampleIcon*/ ctx[9]}`,
+    				icon: `${/*iconSet*/ ctx[5].prefix}:${/*sampleIcon*/ ctx[8]}`,
     				class: "w-9 h-9 sssm:w-8 sssm:h-8"
     			}
     		});
@@ -8826,7 +11704,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			const icon_changes = {};
-    			if (dirty & /*iconSets*/ 1) icon_changes.icon = `${/*iconSet*/ ctx[6].prefix}:${/*sampleIcon*/ ctx[9]}`;
+    			if (dirty & /*iconSets*/ 1) icon_changes.icon = `${/*iconSet*/ ctx[5].prefix}:${/*sampleIcon*/ ctx[8]}`;
     			icon.$set(icon_changes);
     		},
     		i(local) {
@@ -8844,13 +11722,13 @@ var app = (function () {
     	};
     }
 
-    // (36:36) {#if iconSet.height}
+    // (69:18) {#if iconSet.height}
     function create_if_block$7(ctx) {
     	let div;
     	let icon;
     	let t0;
     	let p;
-    	let t1_value = /*iconSet*/ ctx[6].height + "";
+    	let t1_value = /*iconSet*/ ctx[5].height + "";
     	let t1;
     	let current;
 
@@ -8881,7 +11759,7 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if ((!current || dirty & /*iconSets*/ 1) && t1_value !== (t1_value = /*iconSet*/ ctx[6].height + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*iconSets*/ 1) && t1_value !== (t1_value = /*iconSet*/ ctx[5].height + "")) set_data(t1, t1_value);
     		},
     		i(local) {
     			if (current) return;
@@ -8899,7 +11777,7 @@ var app = (function () {
     	};
     }
 
-    // (26:20) {#each iconSets as iconSet}
+    // (43:10) {#each iconSets as iconSet}
     function create_each_block_1$4(ctx) {
     	let div4;
     	let div2;
@@ -8907,14 +11785,14 @@ var app = (function () {
     	let t0;
     	let div1;
     	let p0;
-    	let t1_value = /*iconSet*/ ctx[6].icon_count + "";
+    	let t1_value = /*iconSet*/ ctx[5].total + "";
     	let t1;
     	let t2;
     	let div1_class_value;
     	let t3;
     	let div3;
     	let a0;
-    	let t4_value = /*iconSet*/ ctx[6].name + "";
+    	let t4_value = /*iconSet*/ ctx[5].name + "";
     	let t4;
     	let a0_href_value;
     	let a0_class_value;
@@ -8922,13 +11800,13 @@ var app = (function () {
     	let p1;
     	let t6;
     	let a1;
-    	let t7_value = /*iconSet*/ ctx[6].author + "";
+    	let t7_value = /*iconSet*/ ctx[5].author.name + "";
     	let t7;
     	let a1_href_value;
     	let a1_class_value;
     	let t8;
     	let current;
-    	let each_value_2 = /*iconSet*/ ctx[6].sample_icon.split(',');
+    	let each_value_2 = /*iconSet*/ ctx[5].samples;
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value_2.length; i += 1) {
@@ -8939,7 +11817,7 @@ var app = (function () {
     		each_blocks[i] = null;
     	});
 
-    	let if_block = /*iconSet*/ ctx[6].height && create_if_block$7(ctx);
+    	let if_block = /*iconSet*/ ctx[5].height && create_if_block$7(ctx);
 
     	return {
     		c() {
@@ -8967,18 +11845,18 @@ var app = (function () {
     			a1 = element("a");
     			t7 = text(t7_value);
     			t8 = space();
-    			attr(div0, "class", "bg-" + /*colors*/ ctx[1][/*index*/ ctx[5]] + "-400 text-white w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3" + " svelte-wnymtn");
-    			attr(div1, "class", div1_class_value = "w-full h-full bg-" + /*colors*/ ctx[1][/*index*/ ctx[5]] + "-500 flex px-4 py-2 sssm:py-0 justify-between items-center text-white" + " svelte-wnymtn");
+    			attr(div0, "class", "bg-" + /*colors*/ ctx[1][/*index*/ ctx[4]] + "-400 text-zinc-200 w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3" + " svelte-wnymtn");
+    			attr(div1, "class", div1_class_value = "w-full h-full bg-" + /*colors*/ ctx[1][/*index*/ ctx[4]] + "-500 flex px-4 py-2 sssm:py-0 justify-between items-center text-zinc-200" + " svelte-wnymtn");
     			set_style(div1, "font-size", "1.2rem");
-    			attr(div2, "class", "flex flex-col flex-shrink-0 text-2xl font-medium tracking-wide text-white w-full sssm:w-36");
-    			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[6].prefix);
-    			attr(a0, "class", a0_class_value = "text-" + /*colors*/ ctx[1][/*index*/ ctx[5] % 7] + "-400 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-2xl font-medium" + " svelte-wnymtn");
+    			attr(div2, "class", "flex flex-col flex-shrink-0 text-2xl font-medium tracking-wide text-zinc-200 w-full sssm:w-36");
+    			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[5].prefix);
+    			attr(a0, "class", a0_class_value = "text-" + /*colors*/ ctx[1][/*index*/ ctx[4] % 7] + "-400 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-2xl font-medium" + " svelte-wnymtn");
     			attr(a1, "target", "_blank");
-    			attr(a1, "href", a1_href_value = /*iconSet*/ ctx[6].url || '/');
-    			attr(a1, "class", a1_class_value = "text-" + /*colors*/ ctx[1][/*index*/ ctx[5] % 7] + "-400" + " svelte-wnymtn");
-    			attr(p1, "class", "mt-3 overflow-hidden text-lg tracking-wide text-gray-400 whitespace-nowrap overflow-ellipsis w-11/12");
+    			attr(a1, "href", a1_href_value = /*iconSet*/ ctx[5].author.url || "/");
+    			attr(a1, "class", a1_class_value = "text-" + /*colors*/ ctx[1][/*index*/ ctx[4] % 7] + "-400" + " svelte-wnymtn");
+    			attr(p1, "class", "mt-3 overflow-hidden text-lg tracking-wide text-zinc-400 whitespace-nowrap overflow-ellipsis w-11/12");
     			attr(div3, "class", "flex flex-col justify-between px-4 py-3 w-full");
-    			attr(div4, "class", "flex flex-col sssm:flex-row flex-grow overflow-hidden rounded-lg shadow-md w-full");
+    			attr(div4, "class", "flex flex-col sssm:flex-row flex-grow overflow-hidden shadow-md w-full");
     		},
     		m(target, anchor) {
     			insert(target, div4, anchor);
@@ -9009,7 +11887,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			if (dirty & /*Object, iconSets*/ 1) {
-    				each_value_2 = /*iconSet*/ ctx[6].sample_icon.split(',');
+    				each_value_2 = /*iconSet*/ ctx[5].samples;
     				let i;
 
     				for (i = 0; i < each_value_2.length; i += 1) {
@@ -9035,9 +11913,9 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if ((!current || dirty & /*iconSets*/ 1) && t1_value !== (t1_value = /*iconSet*/ ctx[6].icon_count + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*iconSets*/ 1) && t1_value !== (t1_value = /*iconSet*/ ctx[5].total + "")) set_data(t1, t1_value);
 
-    			if (/*iconSet*/ ctx[6].height) {
+    			if (/*iconSet*/ ctx[5].height) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
@@ -9060,15 +11938,15 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if ((!current || dirty & /*iconSets*/ 1) && t4_value !== (t4_value = /*iconSet*/ ctx[6].name + "")) set_data(t4, t4_value);
+    			if ((!current || dirty & /*iconSets*/ 1) && t4_value !== (t4_value = /*iconSet*/ ctx[5].name + "")) set_data(t4, t4_value);
 
-    			if (!current || dirty & /*iconSets*/ 1 && a0_href_value !== (a0_href_value = "./icon-set/" + /*iconSet*/ ctx[6].prefix)) {
+    			if (!current || dirty & /*iconSets*/ 1 && a0_href_value !== (a0_href_value = "./icon-set/" + /*iconSet*/ ctx[5].prefix)) {
     				attr(a0, "href", a0_href_value);
     			}
 
-    			if ((!current || dirty & /*iconSets*/ 1) && t7_value !== (t7_value = /*iconSet*/ ctx[6].author + "")) set_data(t7, t7_value);
+    			if ((!current || dirty & /*iconSets*/ 1) && t7_value !== (t7_value = /*iconSet*/ ctx[5].author.name + "")) set_data(t7, t7_value);
 
-    			if (!current || dirty & /*iconSets*/ 1 && a1_href_value !== (a1_href_value = /*iconSet*/ ctx[6].url || '/')) {
+    			if (!current || dirty & /*iconSets*/ 1 && a1_href_value !== (a1_href_value = /*iconSet*/ ctx[5].author.url || "/")) {
     				attr(a1, "href", a1_href_value);
     			}
     		},
@@ -9100,11 +11978,11 @@ var app = (function () {
     	};
     }
 
-    // (20:8) {#each Object.entries(iconSets) as [name, iconSets], index}
+    // (29:4) {#each Object.entries(iconSets) as [name, iconSets], index}
     function create_each_block$6(ctx) {
     	let div2;
     	let div0;
-    	let t0_value = /*name*/ ctx[3] + "";
+    	let t0_value = /*name*/ ctx[2] + "";
     	let t0;
     	let div0_class_value;
     	let t1;
@@ -9137,9 +12015,9 @@ var app = (function () {
     			}
 
     			t2 = space();
-    			attr(div0, "class", div0_class_value = "bg-" + /*colors*/ ctx[1][/*index*/ ctx[5]] + "-500 p-8 md:p-12 py-6 md:py-8 text-white text-2xl md:text-3xl font-medium tracking-wide" + " svelte-wnymtn");
+    			attr(div0, "class", div0_class_value = "bg-" + /*colors*/ ctx[1][/*index*/ ctx[4]] + "-500 p-8 md:p-12 py-6 md:py-8 text-zinc-200 text-2xl md:text-3xl font-medium tracking-wide" + " svelte-wnymtn");
     			attr(div1, "class", "flex-wrap p-4 md:p-12 grid gap-4 icon-list svelte-wnymtn");
-    			attr(div2, "class", "w-full mb-6 overflow-hidden rounded-lg shadow-md");
+    			attr(div2, "class", "w-full mb-6 overflow-hidden shadow-md");
     		},
     		m(target, anchor) {
     			insert(target, div2, anchor);
@@ -9156,7 +12034,7 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if ((!current || dirty & /*iconSets*/ 1) && t0_value !== (t0_value = /*name*/ ctx[3] + "")) set_data(t0, t0_value);
+    			if ((!current || dirty & /*iconSets*/ 1) && t0_value !== (t0_value = /*name*/ ctx[2] + "")) set_data(t0, t0_value);
 
     			if (dirty & /*Object, iconSets, colors*/ 3) {
     				each_value_1 = /*iconSets*/ ctx[0];
@@ -9310,17 +12188,22 @@ var app = (function () {
     }
 
     function instance$r($$self, $$props, $$invalidate) {
-    	let iconSets = {};
+    	let iconSets = {
+    		General: [],
+    		"Brands / Social": [],
+    		Emoji: [],
+    		"Maps / Flags": [],
+    		Thematic: [],
+    		"Archive / Unmaintained": [],
+    		Other: []
+    	};
 
-    	async function getIconSet() {
-    		const res = await fetch('https://api.iconify.thecodeblog.net/fetch-iconsets');
-    		const data = await res.json();
-    		$$invalidate(0, iconSets = data.icon_sets);
-    		window.scrollTo({ top: 0, behavior: 'auto' });
+    	for (let [key, value] of Object.entries(collections)) {
+    		value.prefix = key;
+    		iconSets[value.category || "Other"] = [...iconSets[value.category || "Other"], value];
     	}
 
-    	getIconSet();
-    	const colors = ['rose', 'orange', 'emerald', 'sky', 'purple'];
+    	const colors = ["rose", "orange", "emerald", "sky", "purple", "gray", "teal"];
     	return [iconSets, colors];
     }
 
@@ -9396,8 +12279,8 @@ var app = (function () {
     			h2.textContent = "Iconify in different browsers";
     			t3 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(p, "class", "text-rose-500 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
-    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-gray-700 text-center mb-6 lg:mb-12");
+    			attr(p, "class", "text-yellow-400 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
+    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-zinc-100 text-center mb-6 lg:mb-12");
     			attr(div, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -9496,8 +12379,8 @@ var app = (function () {
     			h2.textContent = "Iconify under legal protection";
     			t3 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(p, "class", "text-rose-500 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
-    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-gray-700 text-center mb-6 lg:mb-12");
+    			attr(p, "class", "text-yellow-400 font-medium text-xl ssssm:text-2xl text-center tracking-wide");
+    			attr(h2, "class", "text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-zinc-100 text-center mb-6 lg:mb-12");
     			attr(div, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -9596,9 +12479,9 @@ var app = (function () {
     			t8 = space();
     			div3 = element("div");
     			attr(div0, "class", "flex flex-col px-3 390:px-8 ssm:px-12 gap-20 sm:gap-32");
-    			attr(div1, "class", "h-0 bg-rose-500 bg-orange-500 bg-emerald-500 bg-sky-400 bg-sky-500 bg-purple-400 bg-purple-500");
-    			attr(div2, "class", "h-0 text-rose-400 text-orange-400 text-emerald-400 text-sky-400 text-purple-400 text-rose-500 text-orange-500 text-emerald-500 text-sky-500 text-purple-500");
-    			attr(div3, "class", "h-0 border-rose-500 border-orange-500 border-emerald-500 border-sky-500 border-purple-500");
+    			attr(div1, "class", "h-0 bg-yellow-400 bg-orange-500 bg-emerald-500 bg-sky-400 bg-sky-500 bg-purple-400 bg-purple-500 bg-zinc-500 bg-teal-500 bg-zinc-400 bg-teal-400");
+    			attr(div2, "class", "h-0 text-yellow-400 text-orange-400 text-emerald-400 text-sky-400 text-purple-400 text-yellow-400 text-orange-500 text-emerald-500 text-sky-500 text-purple-500 text-zinc-500 text-teal-500 text-zinc-400 text-teal-400");
+    			attr(div3, "class", "h-0 border-yellow-400 border-orange-500 border-emerald-500 border-sky-500 border-purple-500 border-zinc-500 border-teal-500");
     		},
     		m(target, anchor) {
     			insert(target, div0, anchor);
@@ -9678,31 +12561,30 @@ var app = (function () {
 
     function get_each_context$5(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[6] = list[i][0];
+    	child_ctx[5] = list[i][0];
     	child_ctx[2] = list[i][1];
-    	child_ctx[8] = i;
+    	child_ctx[7] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[8] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (26:12) {#if (selectedCategory === null || selectedCategory === index) && (iconSets.filter(iconSet => !iconFilterTerm.trim() || iconSet.name.toLowerCase().includes(iconFilterTerm.trim().toLowerCase()))).length}
+    // (36:6) {#if (selectedCategory === null || selectedCategory === index) && iconSets.filter((iconSet) => !iconFilterTerm.trim() || iconSet.name               .toLowerCase()               .includes(iconFilterTerm.trim().toLowerCase())).length}
     function create_if_block$6(ctx) {
     	let div2;
     	let div0;
-    	let t0_value = /*name*/ ctx[6] + "";
+    	let t0_value = /*name*/ ctx[5] + "";
     	let t0;
-    	let div0_class_value;
     	let t1;
     	let div1;
     	let t2;
@@ -9733,9 +12615,9 @@ var app = (function () {
     			}
 
     			t2 = space();
-    			attr(div0, "class", div0_class_value = "bg-" + /*colors*/ ctx[3][/*index*/ ctx[8]] + "-500 p-8 md:p-12 py-6 md:py-8 text-white text-2xl md:text-3xl font-medium tracking-wide" + " svelte-wnymtn");
+    			attr(div0, "class", "bg-yellow-400 p-8 md:p-12 py-6 md:py-8 text-zinc-800 text-2xl font-medium tracking-wide");
     			attr(div1, "class", "flex-wrap p-4 md:p-12 grid gap-4 icon-list svelte-wnymtn");
-    			attr(div2, "class", "w-full mb-6 overflow-hidden rounded-lg shadow-md");
+    			attr(div2, "class", "w-full mb-6 overflow-hidden rounded-md shadow-md dark:bg-zinc-700 dark:bg-opacity-20");
     		},
     		m(target, anchor) {
     			insert(target, div2, anchor);
@@ -9752,9 +12634,9 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if ((!current || dirty & /*iconSets*/ 4) && t0_value !== (t0_value = /*name*/ ctx[6] + "")) set_data(t0, t0_value);
+    			if ((!current || dirty & /*iconSets*/ 4) && t0_value !== (t0_value = /*name*/ ctx[5] + "")) set_data(t0, t0_value);
 
-    			if (dirty & /*Object, iconSets, colors, iconFilterTerm*/ 14) {
+    			if (dirty & /*Object, iconSets, iconFilterTerm*/ 6) {
     				each_value_1 = /*iconSets*/ ctx[2];
     				let i;
 
@@ -9815,7 +12697,7 @@ var app = (function () {
     	};
     }
 
-    // (33:24) {#if !iconFilterTerm.trim() || iconSet.name.toLowerCase().includes(iconFilterTerm.trim().toLowerCase())}
+    // (51:14) {#if !iconFilterTerm.trim() || iconSet.name                   .toLowerCase()                   .includes(iconFilterTerm.trim().toLowerCase())}
     function create_if_block_1$6(ctx) {
     	let div4;
     	let div2;
@@ -9823,28 +12705,25 @@ var app = (function () {
     	let t0;
     	let div1;
     	let p0;
-    	let t1_value = /*iconSet*/ ctx[9].icon_count + "";
+    	let t1_value = /*iconSet*/ ctx[8].total + "";
     	let t1;
     	let t2;
-    	let div1_class_value;
     	let t3;
     	let div3;
     	let a0;
-    	let t4_value = /*iconSet*/ ctx[9].name + "";
+    	let t4_value = /*iconSet*/ ctx[8].name + "";
     	let t4;
     	let a0_href_value;
-    	let a0_class_value;
     	let t5;
     	let p1;
     	let t6;
     	let a1;
-    	let t7_value = /*iconSet*/ ctx[9].author + "";
+    	let t7_value = /*iconSet*/ ctx[8].author.name + "";
     	let t7;
     	let a1_href_value;
-    	let a1_class_value;
     	let t8;
     	let current;
-    	let each_value_2 = /*iconSet*/ ctx[9].sample_icon.split(',');
+    	let each_value_2 = /*iconSet*/ ctx[8].samples;
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value_2.length; i += 1) {
@@ -9855,7 +12734,7 @@ var app = (function () {
     		each_blocks[i] = null;
     	});
 
-    	let if_block = /*iconSet*/ ctx[9].height && create_if_block_2$5(ctx);
+    	let if_block = /*iconSet*/ ctx[8].height && create_if_block_2$5(ctx);
 
     	return {
     		c() {
@@ -9883,18 +12762,17 @@ var app = (function () {
     			a1 = element("a");
     			t7 = text(t7_value);
     			t8 = space();
-    			attr(div0, "class", "bg-" + /*colors*/ ctx[3][/*index*/ ctx[8]] + "-400 text-white w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3" + " svelte-wnymtn");
-    			attr(div1, "class", div1_class_value = "w-full h-full bg-" + /*colors*/ ctx[3][/*index*/ ctx[8]] + "-500 flex px-4 py-2 sssm:py-0 justify-between items-center text-white" + " svelte-wnymtn");
-    			set_style(div1, "font-size", "1.2rem");
-    			attr(div2, "class", "flex flex-col flex-shrink-0 text-2xl font-medium tracking-wide text-white w-full sssm:w-36");
-    			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[9].prefix);
-    			attr(a0, "class", a0_class_value = "text-" + /*colors*/ ctx[3][/*index*/ ctx[8] % 7] + "-400 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-2xl font-medium" + " svelte-wnymtn");
+    			attr(div0, "class", "bg-yellow-400 text-zinc-800 w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3");
+    			attr(div1, "class", "w-full h-full bg-yellow-500 flex px-4 py-2 sssm:py-0 justify-between items-center text-zinc-800");
+    			attr(div2, "class", "flex flex-col flex-shrink-0 font-medium tracking-wide text-zinc-800 w-full sssm:w-36");
+    			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[8].prefix);
+    			attr(a0, "class", "text-yellow-400 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium");
     			attr(a1, "target", "_blank");
-    			attr(a1, "href", a1_href_value = /*iconSet*/ ctx[9].url || '/');
-    			attr(a1, "class", a1_class_value = "text-" + /*colors*/ ctx[3][/*index*/ ctx[8] % 7] + "-400" + " svelte-wnymtn");
-    			attr(p1, "class", "mt-3 overflow-hidden text-lg tracking-wide text-gray-400 whitespace-nowrap overflow-ellipsis w-11/12");
+    			attr(a1, "href", a1_href_value = /*iconSet*/ ctx[8].author.url || "/");
+    			attr(a1, "class", "text-yellow-400");
+    			attr(p1, "class", "mt-3 overflow-hidden tracking-wide text-zinc-400 whitespace-nowrap overflow-ellipsis w-11/12");
     			attr(div3, "class", "flex flex-col justify-between px-4 py-3 w-full");
-    			attr(div4, "class", "flex flex-col sssm:flex-row flex-grow overflow-hidden rounded-lg shadow-md w-full");
+    			attr(div4, "class", "flex flex-col sssm:flex-row flex-grow overflow-hidden shadow-md w-full dark:bg-zinc-700 dark:bg-opacity-30 rounded-md");
     		},
     		m(target, anchor) {
     			insert(target, div4, anchor);
@@ -9925,7 +12803,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			if (dirty & /*Object, iconSets*/ 4) {
-    				each_value_2 = /*iconSet*/ ctx[9].sample_icon.split(',');
+    				each_value_2 = /*iconSet*/ ctx[8].samples;
     				let i;
 
     				for (i = 0; i < each_value_2.length; i += 1) {
@@ -9951,9 +12829,9 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if ((!current || dirty & /*iconSets*/ 4) && t1_value !== (t1_value = /*iconSet*/ ctx[9].icon_count + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*iconSets*/ 4) && t1_value !== (t1_value = /*iconSet*/ ctx[8].total + "")) set_data(t1, t1_value);
 
-    			if (/*iconSet*/ ctx[9].height) {
+    			if (/*iconSet*/ ctx[8].height) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
@@ -9976,15 +12854,15 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if ((!current || dirty & /*iconSets*/ 4) && t4_value !== (t4_value = /*iconSet*/ ctx[9].name + "")) set_data(t4, t4_value);
+    			if ((!current || dirty & /*iconSets*/ 4) && t4_value !== (t4_value = /*iconSet*/ ctx[8].name + "")) set_data(t4, t4_value);
 
-    			if (!current || dirty & /*iconSets*/ 4 && a0_href_value !== (a0_href_value = "./icon-set/" + /*iconSet*/ ctx[9].prefix)) {
+    			if (!current || dirty & /*iconSets*/ 4 && a0_href_value !== (a0_href_value = "./icon-set/" + /*iconSet*/ ctx[8].prefix)) {
     				attr(a0, "href", a0_href_value);
     			}
 
-    			if ((!current || dirty & /*iconSets*/ 4) && t7_value !== (t7_value = /*iconSet*/ ctx[9].author + "")) set_data(t7, t7_value);
+    			if ((!current || dirty & /*iconSets*/ 4) && t7_value !== (t7_value = /*iconSet*/ ctx[8].author.name + "")) set_data(t7, t7_value);
 
-    			if (!current || dirty & /*iconSets*/ 4 && a1_href_value !== (a1_href_value = /*iconSet*/ ctx[9].url || '/')) {
+    			if (!current || dirty & /*iconSets*/ 4 && a1_href_value !== (a1_href_value = /*iconSet*/ ctx[8].author.url || "/")) {
     				attr(a1, "href", a1_href_value);
     			}
     		},
@@ -10016,14 +12894,14 @@ var app = (function () {
     	};
     }
 
-    // (37:36) {#each iconSet.sample_icon.split(',') as sampleIcon}
+    // (63:22) {#each iconSet.samples as sampleIcon}
     function create_each_block_2(ctx) {
     	let icon;
     	let current;
 
     	icon = new Icon({
     			props: {
-    				icon: `${/*iconSet*/ ctx[9].prefix}:${/*sampleIcon*/ ctx[12]}`,
+    				icon: `${/*iconSet*/ ctx[8].prefix}:${/*sampleIcon*/ ctx[11]}`,
     				class: "w-9 h-9 sssm:w-8 sssm:h-8"
     			}
     		});
@@ -10038,7 +12916,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			const icon_changes = {};
-    			if (dirty & /*iconSets*/ 4) icon_changes.icon = `${/*iconSet*/ ctx[9].prefix}:${/*sampleIcon*/ ctx[12]}`;
+    			if (dirty & /*iconSets*/ 4) icon_changes.icon = `${/*iconSet*/ ctx[8].prefix}:${/*sampleIcon*/ ctx[11]}`;
     			icon.$set(icon_changes);
     		},
     		i(local) {
@@ -10056,13 +12934,13 @@ var app = (function () {
     	};
     }
 
-    // (43:36) {#if iconSet.height}
+    // (74:22) {#if iconSet.height}
     function create_if_block_2$5(ctx) {
     	let div;
     	let icon;
     	let t0;
     	let p;
-    	let t1_value = /*iconSet*/ ctx[9].height + "";
+    	let t1_value = /*iconSet*/ ctx[8].height + "";
     	let t1;
     	let current;
 
@@ -10093,7 +12971,7 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if ((!current || dirty & /*iconSets*/ 4) && t1_value !== (t1_value = /*iconSet*/ ctx[9].height + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*iconSets*/ 4) && t1_value !== (t1_value = /*iconSet*/ ctx[8].height + "")) set_data(t1, t1_value);
     		},
     		i(local) {
     			if (current) return;
@@ -10111,9 +12989,9 @@ var app = (function () {
     	};
     }
 
-    // (32:20) {#each iconSets as iconSet}
+    // (50:12) {#each iconSets as iconSet}
     function create_each_block_1$3(ctx) {
-    	let show_if = !/*iconFilterTerm*/ ctx[1].trim() || /*iconSet*/ ctx[9].name.toLowerCase().includes(/*iconFilterTerm*/ ctx[1].trim().toLowerCase());
+    	let show_if = !/*iconFilterTerm*/ ctx[1].trim() || /*iconSet*/ ctx[8].name.toLowerCase().includes(/*iconFilterTerm*/ ctx[1].trim().toLowerCase());
     	let if_block_anchor;
     	let current;
     	let if_block = show_if && create_if_block_1$6(ctx);
@@ -10129,7 +13007,7 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*iconFilterTerm, iconSets*/ 6) show_if = !/*iconFilterTerm*/ ctx[1].trim() || /*iconSet*/ ctx[9].name.toLowerCase().includes(/*iconFilterTerm*/ ctx[1].trim().toLowerCase());
+    			if (dirty & /*iconFilterTerm, iconSets*/ 6) show_if = !/*iconFilterTerm*/ ctx[1].trim() || /*iconSet*/ ctx[8].name.toLowerCase().includes(/*iconFilterTerm*/ ctx[1].trim().toLowerCase());
 
     			if (show_if) {
     				if (if_block) {
@@ -10170,9 +13048,9 @@ var app = (function () {
     	};
     }
 
-    // (25:8) {#each Object.entries(iconSets) as [name, iconSets], index}
+    // (35:4) {#each Object.entries(iconSets) as [name, iconSets], index}
     function create_each_block$5(ctx) {
-    	let show_if = (/*selectedCategory*/ ctx[0] === null || /*selectedCategory*/ ctx[0] === /*index*/ ctx[8]) && /*iconSets*/ ctx[2].filter(/*func*/ ctx[4]).length;
+    	let show_if = (/*selectedCategory*/ ctx[0] === null || /*selectedCategory*/ ctx[0] === /*index*/ ctx[7]) && /*iconSets*/ ctx[2].filter(/*func*/ ctx[3]).length;
     	let if_block_anchor;
     	let current;
     	let if_block = show_if && create_if_block$6(ctx);
@@ -10188,7 +13066,7 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*selectedCategory, iconSets, iconFilterTerm*/ 7) show_if = (/*selectedCategory*/ ctx[0] === null || /*selectedCategory*/ ctx[0] === /*index*/ ctx[8]) && /*iconSets*/ ctx[2].filter(/*func*/ ctx[4]).length;
+    			if (dirty & /*selectedCategory, iconSets, iconFilterTerm*/ 7) show_if = (/*selectedCategory*/ ctx[0] === null || /*selectedCategory*/ ctx[0] === /*index*/ ctx[7]) && /*iconSets*/ ctx[2].filter(/*func*/ ctx[3]).length;
 
     			if (show_if) {
     				if (if_block) {
@@ -10267,7 +13145,7 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, [dirty]) {
-    			if (dirty & /*Object, iconSets, colors, iconFilterTerm, selectedCategory*/ 15) {
+    			if (dirty & /*Object, iconSets, iconFilterTerm, selectedCategory*/ 7) {
     				each_value = Object.entries(/*iconSets*/ ctx[2]);
     				let i;
 
@@ -10320,18 +13198,22 @@ var app = (function () {
     }
 
     function instance$q($$self, $$props, $$invalidate) {
-    	let iconSets = {};
+    	let iconSets = {
+    		General: [],
+    		"Brands / Social": [],
+    		Emoji: [],
+    		"Maps / Flags": [],
+    		Thematic: [],
+    		"Archive / Unmaintained": [],
+    		Other: []
+    	};
 
-    	async function getIconSet() {
-    		const res = await fetch('https://api.iconify.thecodeblog.net/fetch-iconsets');
-    		const data = await res.json();
-    		$$invalidate(2, iconSets = data.icon_sets);
-    		count.set(data.count);
-    		window.scrollTo({ top: 0, behavior: 'auto' });
+    	for (let [key, value] of Object.entries(collections)) {
+    		value.prefix = key;
+    		iconSets[value.category || "Other"] = [...iconSets[value.category || "Other"], value];
     	}
 
-    	getIconSet();
-    	const colors = ['rose', 'orange', 'emerald', 'sky', 'purple'];
+    	count.set(Object.values(iconSets).flat().map(e => e.total).reduce((a, b) => a + b));
     	let { selectedCategory = null } = $$props;
     	let { iconFilterTerm } = $$props;
     	const func = iconSet => !iconFilterTerm.trim() || iconSet.name.toLowerCase().includes(iconFilterTerm.trim().toLowerCase());
@@ -10341,7 +13223,7 @@ var app = (function () {
     		if ('iconFilterTerm' in $$props) $$invalidate(1, iconFilterTerm = $$props.iconFilterTerm);
     	};
 
-    	return [selectedCategory, iconFilterTerm, iconSets, colors, func];
+    	return [selectedCategory, iconFilterTerm, iconSets, func];
     }
 
     class IconList$1 extends SvelteComponent {
@@ -10364,7 +13246,7 @@ var app = (function () {
         <br/><br/>
         Click icon set name to see all available icons.`;
 
-    			attr(p, "class", "text-center");
+    			attr(p, "class", "text-center text-base");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -10395,7 +13277,7 @@ var app = (function () {
     			h1.textContent = "Browse Icons";
     			t1 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(h1, "class", "mb-4 text-4xl font-semibold tracking-wide text-center text-blue-500 sm:mb-8 sm:text-6xl");
+    			attr(h1, "class", "mb-4 text-2xl font-semibold tracking-wide text-center text-yellow-400 sm:mb-8 sm:text-5xl mt-12");
     		},
     		m(target, anchor) {
     			insert(target, h1, anchor);
@@ -10446,7 +13328,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (35:8) {#each Object.entries(categories) as [color, category], index}
+    // (54:4) {#each Object.entries(categories) as [color, category], index}
     function create_each_block$4(ctx) {
     	let button;
     	let t_value = /*category*/ ctx[8] + "";
@@ -10464,9 +13346,9 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
 
-    			attr(button, "class", button_class_value = "" + ((/*selectedCategory*/ ctx[2] === null || /*selectedCategory*/ ctx[2] === /*index*/ ctx[10]
-    			? `bg-${/*color*/ ctx[7]}-500`
-    			: `border-2 border-${/*color*/ ctx[7]}-500 text-${/*color*/ ctx[7]}-500`) + " whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center shadow-md text-white font-medium sm:text-lg px-8 pb-0.5 rounded-full"));
+    			attr(button, "class", button_class_value = "" + ((/*selectedCategory*/ ctx[2] === /*index*/ ctx[10]
+    			? `bg-yellow-400 text-zinc-800`
+    			: `border-2 border-yellow-400 text-yellow-400`) + " whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center shadow-md font-medium px-8 rounded-md"));
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -10480,9 +13362,9 @@ var app = (function () {
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*selectedCategory*/ 4 && button_class_value !== (button_class_value = "" + ((/*selectedCategory*/ ctx[2] === null || /*selectedCategory*/ ctx[2] === /*index*/ ctx[10]
-    			? `bg-${/*color*/ ctx[7]}-500`
-    			: `border-2 border-${/*color*/ ctx[7]}-500 text-${/*color*/ ctx[7]}-500`) + " whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center shadow-md text-white font-medium sm:text-lg px-8 pb-0.5 rounded-full"))) {
+    			if (dirty & /*selectedCategory*/ 4 && button_class_value !== (button_class_value = "" + ((/*selectedCategory*/ ctx[2] === /*index*/ ctx[10]
+    			? `bg-yellow-400 text-zinc-800`
+    			: `border-2 border-yellow-400 text-yellow-400`) + " whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center shadow-md font-medium px-8 rounded-md"))) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -10518,9 +13400,9 @@ var app = (function () {
     	icon0 = new Icon({
     			props: {
     				icon: "fe:search",
-    				class: "text-gray-300",
-    				width: "32",
-    				height: "32"
+    				class: "text-zinc-300",
+    				width: "24",
+    				height: "24"
     			}
     		});
 
@@ -10534,9 +13416,9 @@ var app = (function () {
     	icon1 = new Icon({
     			props: {
     				icon: "fe:search",
-    				class: "text-gray-300",
-    				width: "32",
-    				height: "32"
+    				class: "text-zinc-300",
+    				width: "24",
+    				height: "24"
     			}
     		});
 
@@ -10567,18 +13449,18 @@ var app = (function () {
     			attr(input0, "name", "q");
     			attr(input0, "id", "q");
     			attr(input0, "type", "text");
-    			attr(input0, "class", "w-full text-xl tracking-wide text-gray-500 ");
+    			attr(input0, "class", "w-full tracking-wide text-zinc-500 bg-transparent");
     			attr(input0, "placeholder", input0_placeholder_value = "Search " + /*count_value*/ ctx[3].toLocaleString() + " icons");
-    			attr(div0, "class", "inline-flex items-center w-full p-4 overflow-hidden bg-white shadow-md gap-4 rounded-md");
+    			attr(div0, "class", "inline-flex items-center w-full p-4 overflow-hidden bg-zinc-200 dark:bg-zinc-700 rounded-md dark:bg-opacity-40 shadow-md gap-4 ");
     			attr(button, "type", "submit");
-    			attr(button, "class", "flex items-center justify-center h-16 sm:h-full px-12 text-xl font-semibold tracking-wide text-white bg-blue-500 shadow-md whitespace-nowrap rounded-md gap-6");
+    			attr(button, "class", "flex items-center justify-center h-16 sm:h-full px-12 rounded-md font-semibold tracking-wide text-yellow-400 border-2 border-yellow-400 shadow-md whitespace-nowrap gap-6");
     			attr(form, "action", "/search");
     			attr(form, "class", "flex flex-col w-full sm:h-16 mt-12 sm:flex-row gap-4");
     			attr(div1, "class", "flex flex-wrap gap-2");
     			attr(input1, "type", "text");
-    			attr(input1, "class", "w-full text-xl tracking-wide text-gray-500 ");
+    			attr(input1, "class", "w-full tracking-wide text-zinc-500 bg-transparent");
     			attr(input1, "placeholder", "Filter icon sets");
-    			attr(div2, "class", "inline-flex items-center p-4 overflow-hidden bg-white shadow-md gap-4 w-full md:w-96 flex-shrink-0 rounded-md");
+    			attr(div2, "class", "inline-flex items-center p-4 overflow-hidden bg-zinc-200 dark:bg-zinc-700 dark:bg-opacity-40 rounded-md shadow-md gap-4 w-full md:w-96 flex-shrink-0 ");
     			attr(div3, "class", "flex flex-col md:flex-row items-center justify-between w-full mt-4 gap-4");
     		},
     		m(target, anchor) {
@@ -10615,7 +13497,7 @@ var app = (function () {
     				attr(input0, "placeholder", input0_placeholder_value);
     			}
 
-    			if (dirty & /*selectedCategory, Object, categories, setSelectedCategory*/ 22) {
+    			if (dirty & /*selectedCategory, setSelectedCategory, Object, categories*/ 22) {
     				each_value = Object.entries(/*categories*/ ctx[4]);
     				let i;
 
@@ -10668,16 +13550,18 @@ var app = (function () {
 
     function instance$p($$self, $$props, $$invalidate) {
     	const categories = {
-    		rose: 'General',
-    		orange: 'Emoji',
-    		emerald: 'Brand / Social',
-    		sky: 'Maps',
-    		purple: 'Thematic'
+    		rose: "General",
+    		orange: "Brands / Social",
+    		emerald: "Emoji",
+    		sky: "Maps / Flags",
+    		purple: "Thematic",
+    		gray: "Archive / Unmaintained",
+    		teal: "Other"
     	};
 
     	let { setSelectedCategory } = $$props;
     	let { selectedCategory } = $$props;
-    	let { value = '' } = $$props;
+    	let { value = "" } = $$props;
     	let count_value;
 
     	count.subscribe(value => {
@@ -29998,7 +32882,7 @@ var app = (function () {
     }
 
     // (98:0) {#if numFonts}
-    function create_if_block_5$3(ctx) {
+    function create_if_block_5$1(ctx) {
     	let div;
     	let span0;
     	let t1;
@@ -30041,7 +32925,7 @@ var app = (function () {
     	let t2;
     	let t3;
     	let if_block3_anchor;
-    	let if_block0 = /*generator*/ ctx[2] && create_if_block_4$3(ctx);
+    	let if_block0 = /*generator*/ ctx[2] && create_if_block_4$2(ctx);
     	let if_block1 = /*author*/ ctx[0] && create_if_block_3$4(ctx);
     	let if_block2 = /*keywords*/ ctx[3] && create_if_block_2$4(ctx);
     	let if_block3 = /*themeColor*/ ctx[8] && create_if_block_1$5(ctx);
@@ -30076,7 +32960,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_4$3(ctx);
+    					if_block0 = create_if_block_4$2(ctx);
     					if_block0.c();
     					if_block0.m(t1.parentNode, t1);
     				}
@@ -30140,7 +33024,7 @@ var app = (function () {
     }
 
     // (108:2) {#if generator}
-    function create_if_block_4$3(ctx) {
+    function create_if_block_4$2(ctx) {
     	let div;
     	let span0;
     	let t1;
@@ -30298,7 +33182,7 @@ var app = (function () {
     	let if_block2 = /*frameRate*/ ctx[1] && create_if_block_8$1(ctx);
     	let if_block3 = /*numLayers*/ ctx[7] && create_if_block_7$1(ctx);
     	let if_block4 = /*numAssets*/ ctx[4] && create_if_block_6$1(ctx);
-    	let if_block5 = /*numFonts*/ ctx[5] && create_if_block_5$3(ctx);
+    	let if_block5 = /*numFonts*/ ctx[5] && create_if_block_5$1(ctx);
     	let if_block6 = /*hasMeta*/ ctx[10] && create_if_block$5(ctx);
 
     	return {
@@ -30410,7 +33294,7 @@ var app = (function () {
     				if (if_block5) {
     					if_block5.p(ctx, dirty);
     				} else {
-    					if_block5 = create_if_block_5$3(ctx);
+    					if_block5 = create_if_block_5$1(ctx);
     					if_block5.c();
     					if_block5.m(t7.parentNode, t7);
     				}
@@ -31218,7 +34102,7 @@ var app = (function () {
     }
 
     // (296:36) 
-    function create_if_block_5$2(ctx) {
+    function create_if_block_5(ctx) {
     	let div;
     	let popover;
     	let t;
@@ -31274,7 +34158,7 @@ var app = (function () {
     }
 
     // (267:30) 
-    function create_if_block_4$2(ctx) {
+    function create_if_block_4$1(ctx) {
     	let div;
     	let svg;
     	let path0;
@@ -31985,8 +34869,8 @@ var app = (function () {
     		create_if_block$4,
     		create_if_block_2$3,
     		create_if_block_3$3,
-    		create_if_block_4$2,
-    		create_if_block_5$2,
+    		create_if_block_4$1,
+    		create_if_block_5,
     		create_if_block_6,
     		create_if_block_7,
     		create_if_block_9,
@@ -33471,7 +36355,7 @@ var app = (function () {
     			code = element("code");
     			if (default_slot) default_slot.c();
     			attr(code, "class", "whitespace-pre-wrap break-all");
-    			attr(div, "class", "bg-gray-100 text-gray-700 py-4 px-5 rounded-md shadow-md my-4 overflow-scroll");
+    			attr(div, "class", "bg-zinc-100 text-zinc-600 dark:text-zinc-100 py-4 px-5 shadow-md my-4 overflow-scroll");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33544,7 +36428,7 @@ var app = (function () {
     	icon = new Icon({
     			props: {
     				icon: "mdi:link-variant",
-    				class: "text-blue-500 flex-shrink-0",
+    				class: "text-yellow-400 flex-shrink-0",
     				width: "24",
     				height: "24"
     			}
@@ -33561,7 +36445,7 @@ var app = (function () {
     			a = element("a");
     			if (default_slot) default_slot.c();
     			attr(a, "href", /*link*/ ctx[0]);
-    			attr(div, "class", "mt-10 flex items-center gap-1 text-lg ssssm:text-xl tracking-wide text-blue-500");
+    			attr(div, "class", "mt-10 flex items-center gap-1 text-lg ssssm:text-xl tracking-wide text-yellow-400");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -38068,7 +40952,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t0 = space();
     			button = element("button");
     			button.textContent = "Download SVG";
-    			attr(button, "class", "w-full p-4 text-xl font-medium tracking-wide text-white bg-blue-500 shadow-md rounded-md");
+    			attr(button, "class", "w-full p-4 text-xl font-medium tracking-wide text-zinc-200 bg-yellow-400 shadow-md ");
     		},
     		m(target, anchor) {
     			mount_component(codesnippet, target, anchor);
@@ -38535,7 +41419,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t1 = text(t1_value);
     			t2 = text(" x ");
     			t3 = text(t3_value);
-    			attr(p, "class", "font-medium text-gray-700 tracking-wide text-xl absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all");
+    			attr(p, "class", "font-medium text-zinc-600 dark:text-zinc-100 tracking-wide text-xl absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all");
     		},
     		m(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -38614,7 +41498,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t0 = text("Text with icon sample\n                    ");
     			create_component(icon.$$.fragment);
     			t1 = text("\n                    to show icon alignment in text.");
-    			attr(p, "class", "text-gray-700 tracking-wide text-2xl p-12 text-center");
+    			attr(p, "class", "text-zinc-600 dark:text-zinc-100 tracking-wide text-2xl p-12 text-center");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -38663,7 +41547,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		c() {
     			h2 = element("h2");
     			t = text(/*curIcon*/ ctx[0]);
-    			attr(h2, "class", "text-gray-700 font-semibold break-all text-5xl tracking-wide -mt-1");
+    			attr(h2, "class", "text-zinc-600 dark:text-zinc-100 font-semibold break-all text-5xl tracking-wide -mt-1");
     		},
     		m(target, anchor) {
     			insert(target, h2, anchor);
@@ -38692,7 +41576,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(path, "d", "M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47z");
     			attr(path, "fill", "currentColor");
     			attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr(svg, "class", "text-gray-400 absolute top-0 left-0");
+    			attr(svg, "class", "text-zinc-400 absolute top-0 left-0");
     			attr(svg, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr(svg, "aria-hidden", "true");
     			attr(svg, "role", "img");
@@ -38740,7 +41624,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "ic:round-content-copy",
     				width: "32",
     				height: "32",
-    				class: "text-gray-400"
+    				class: "text-zinc-400"
     			}
     		});
 
@@ -38897,8 +41781,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(span, "class", "-mt-0.5");
 
     			attr(button, "class", button_class_value = "transition-all flex gap-2 " + (/*currentTab*/ ctx[9] === /*index*/ ctx[30]
-    			? "font-medium bg-blue-500 text-white"
-    			: 'bg-white text-gray-400') + " tracking-wide px-3 items-center justify-center py-2 rounded-md shadow-md text-xl");
+    			? "font-medium bg-yellow-400 text-zinc-200"
+    			: 'bg-zinc-200 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-3 items-center justify-center py-2 shadow-md text-xl");
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -38918,8 +41802,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			ctx = new_ctx;
 
     			if (!current || dirty[0] & /*currentTab*/ 512 && button_class_value !== (button_class_value = "transition-all flex gap-2 " + (/*currentTab*/ ctx[9] === /*index*/ ctx[30]
-    			? "font-medium bg-blue-500 text-white"
-    			: 'bg-white text-gray-400') + " tracking-wide px-3 items-center justify-center py-2 rounded-md shadow-md text-xl")) {
+    			? "font-medium bg-yellow-400 text-zinc-200"
+    			: 'bg-zinc-200 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-3 items-center justify-center py-2 shadow-md text-xl")) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -39023,8 +41907,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(span, "class", "-mt-0.5");
 
     			attr(button, "class", button_class_value = "transition-all flex gap-2 " + (/*currentSubTab*/ ctx[10] == /*index*/ ctx[30]
-    			? "font-medium bg-blue-500 text-white"
-    			: 'bg-white text-gray-400') + " tracking-wide px-4 items-center justify-center py-2 rounded-md shadow-md text-xl");
+    			? "font-medium bg-yellow-400 text-zinc-200"
+    			: 'bg-zinc-200 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-4 items-center justify-center py-2 shadow-md text-xl");
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -39042,8 +41926,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			if (dirty[0] & /*currentTab*/ 512 && t0_value !== (t0_value = /*name*/ ctx[28] + "")) set_data(t0, t0_value);
 
     			if (dirty[0] & /*currentSubTab*/ 1024 && button_class_value !== (button_class_value = "transition-all flex gap-2 " + (/*currentSubTab*/ ctx[10] == /*index*/ ctx[30]
-    			? "font-medium bg-blue-500 text-white"
-    			: 'bg-white text-gray-400') + " tracking-wide px-4 items-center justify-center py-2 rounded-md shadow-md text-xl")) {
+    			? "font-medium bg-yellow-400 text-zinc-200"
+    			: 'bg-zinc-200 dark:bg-zinc-600 text-zinc-400') + " tracking-wide px-4 items-center justify-center py-2 shadow-md text-xl")) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -39199,7 +42083,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	icon0 = new Icon({
     			props: {
     				icon: "heroicons-solid:x",
-    				class: "text-gray-300",
+    				class: "text-zinc-300",
     				width: "24",
     				height: "24"
     			}
@@ -39249,7 +42133,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "fluent:auto-fit-width-20-filled",
     				width: "28",
     				height: "28",
-    				class: "text-gray-300"
+    				class: "text-zinc-300"
     			}
     		});
 
@@ -39258,7 +42142,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "fluent:auto-fit-height-20-filled",
     				width: "28",
     				height: "28",
-    				class: "text-gray-300"
+    				class: "text-zinc-300"
     			}
     		});
 
@@ -39267,7 +42151,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-horizontal",
     				width: "28",
     				height: "28",
-    				class: /*flipHoriz*/ ctx[6] ? "text-white" : "text-gray-300"
+    				class: /*flipHoriz*/ ctx[6] ? "text-zinc-200" : "text-zinc-300"
     			}
     		});
 
@@ -39276,7 +42160,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-vertical",
     				width: "28",
     				height: "28",
-    				class: /*flipVert*/ ctx[5] ? "text-white" : "text-gray-300"
+    				class: /*flipVert*/ ctx[5] ? "text-zinc-200" : "text-zinc-300"
     			}
     		});
 
@@ -39286,8 +42170,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				width: "28",
     				height: "28",
     				class: /*display*/ ctx[7] === "block"
-    				? "text-white"
-    				: "text-gray-300"
+    				? "text-zinc-200"
+    				: "text-zinc-300"
     			}
     		});
 
@@ -39297,8 +42181,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				width: "28",
     				height: "28",
     				class: /*display*/ ctx[7] === "inline"
-    				? "text-white"
-    				: "text-gray-300"
+    				? "text-zinc-200"
+    				: "text-zinc-300"
     			}
     		});
 
@@ -39357,7 +42241,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			div15 = element("div");
     			div4 = element("div");
     			div2 = element("div");
-    			div2.innerHTML = `<p class="tracking-wide text-gray-300 text-md font-medium">Color</p>`;
+    			div2.innerHTML = `<p class="tracking-wide text-zinc-300 text-md font-medium">Color</p>`;
     			t7 = space();
     			div3 = element("div");
     			create_component(icon1.$$.fragment);
@@ -39366,7 +42250,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t9 = space();
     			div8 = element("div");
     			div5 = element("div");
-    			div5.innerHTML = `<p class="tracking-wide text-gray-300 text-md font-medium">Size</p>`;
+    			div5.innerHTML = `<p class="tracking-wide text-zinc-300 text-md font-medium">Size</p>`;
     			t11 = space();
     			div6 = element("div");
     			create_component(icon2.$$.fragment);
@@ -39380,7 +42264,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t15 = space();
     			div10 = element("div");
     			div9 = element("div");
-    			div9.innerHTML = `<p class="tracking-wide text-gray-300 text-md font-medium">Flip</p>`;
+    			div9.innerHTML = `<p class="tracking-wide text-zinc-300 text-md font-medium">Flip</p>`;
     			t17 = space();
     			button1 = element("button");
     			create_component(icon4.$$.fragment);
@@ -39396,7 +42280,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t23 = space();
     			div12 = element("div");
     			div11 = element("div");
-    			div11.innerHTML = `<p class="tracking-wide text-gray-300 text-base font-medium">Display</p>`;
+    			div11.innerHTML = `<p class="tracking-wide text-zinc-300 text-base font-medium">Display</p>`;
     			t25 = space();
     			button3 = element("button");
     			create_component(icon6.$$.fragment);
@@ -39412,7 +42296,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t31 = space();
     			div14 = element("div");
     			div13 = element("div");
-    			div13.innerHTML = `<p class="tracking-wide text-gray-300 text-base font-medium">Rotate</p>`;
+    			div13.innerHTML = `<p class="tracking-wide text-zinc-300 text-base font-medium">Rotate</p>`;
     			t33 = space();
     			button5 = element("button");
     			svg0 = svg_element("svg");
@@ -39461,68 +42345,68 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			div17 = element("div");
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			attr(button0, "class", "absolute right-6 top-6");
-    			attr(div0, "class", "pt-12 pb-24 md:h-full relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center rounded-xl shadow-lg");
-    			attr(p0, "class", "text-blue-500 font-medium tracking-wide text-xl");
+    			attr(div0, "class", "pt-12 pb-24 md:h-full relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center rounded-xl shadow-lg dark:bg-zinc-600 dark:bg-opacity-40");
+    			attr(p0, "class", "text-yellow-400 font-medium tracking-wide text-xl");
     			attr(div1, "class", "flex gap-4 items-center");
-    			attr(div2, "class", "absolute -top-6 left-4 bg-white p-2");
+    			attr(div2, "class", "absolute -top-6 left-4 bg-zinc-200 dark:bg-zinc-700 p-2");
     			attr(input0, "size", "12");
     			attr(input0, "type", "text");
-    			attr(input0, "class", "text-gray-700 font-medium tracking-wide text-xl placeholder-gray-300");
+    			attr(input0, "class", "text-zinc-600 dark:text-zinc-100 bg-transparent font-medium tracking-wide text-xl placeholder-zinc-300");
     			attr(input0, "placeholder", "#000000");
     			attr(input0, "autocomplete", "off");
-    			attr(div3, "class", "flex flex-grow gap-2 p-3 items-center shadow-md rounded-md");
-    			attr(div4, "class", "p-4 flex flex-grow xl:flex-grow-0 gap-4 border-gray-200 border-2 rounded-md relative");
-    			attr(div5, "class", "absolute left-4 bg-white p-2 h-4 flex items-center");
+    			attr(div3, "class", "flex flex-grow gap-2 p-3 items-center shadow-md ");
+    			attr(div4, "class", "p-4 flex flex-grow xl:flex-grow-0 gap-4 border-zinc-200 border-2 relative");
+    			attr(div5, "class", "absolute left-4 bg-zinc-200 dark:bg-zinc-700 p-2 h-4 flex items-center");
     			set_style(div5, "top", "-0.6rem");
     			attr(input1, "size", "5");
     			attr(input1, "type", "text");
-    			attr(input1, "class", "text-gray-700 font-medium tracking-wide text-xl placeholder-gray-300");
+    			attr(input1, "class", "text-zinc-600 dark:text-zinc-100 bg-transparent font-medium tracking-wide text-xl placeholder-zinc-300");
     			attr(input1, "placeholder", "24");
     			attr(input1, "autocomplete", "off");
-    			attr(div6, "class", "flex flex-grow gap-2 p-3 items-center shadow-md rounded-md");
+    			attr(div6, "class", "flex flex-grow gap-2 p-3 items-center shadow-md ");
     			attr(input2, "size", "5");
     			attr(input2, "type", "text");
-    			attr(input2, "class", "text-gray-700 font-medium tracking-wide text-xl placeholder-gray-300");
+    			attr(input2, "class", "text-zinc-600 dark:text-zinc-100 bg-transparent font-medium tracking-wide text-xl placeholder-zinc-300");
     			attr(input2, "placeholder", "24");
     			attr(input2, "autocomplete", "off");
-    			attr(div7, "class", "flex flex-grow gap-2 p-3 items-center shadow-md rounded-md");
-    			attr(div8, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-gray-200 border-2 rounded-md relative");
-    			attr(div9, "class", "absolute left-4 bg-white p-2 h-4 flex items-center");
+    			attr(div7, "class", "flex flex-grow gap-2 p-3 items-center shadow-md ");
+    			attr(div8, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-zinc-200 border-2 relative");
+    			attr(div9, "class", "absolute left-4 bg-zinc-200 dark:bg-zinc-700 p-2 h-4 flex items-center");
     			set_style(div9, "top", "-0.6rem");
-    			attr(p4, "class", p4_class_value = "" + ((/*flipHoriz*/ ctx[6] ? "text-white" : "text-gray-300") + " font-medium tracking-wide text-xl"));
+    			attr(p4, "class", p4_class_value = "" + ((/*flipHoriz*/ ctx[6] ? "text-zinc-200" : "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button1, "class", button1_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*flipHoriz*/ ctx[6]
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all");
+    			attr(button1, "class", button1_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*flipHoriz*/ ctx[6]
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
-    			attr(p5, "class", p5_class_value = "" + ((/*flipVert*/ ctx[5] ? "text-white" : "text-gray-300") + " font-medium tracking-wide text-xl"));
+    			attr(p5, "class", p5_class_value = "" + ((/*flipVert*/ ctx[5] ? "text-zinc-200" : "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button2, "class", button2_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*flipVert*/ ctx[5]
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all");
+    			attr(button2, "class", button2_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*flipVert*/ ctx[5]
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
-    			attr(div10, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-gray-200 border-2 rounded-md relative");
-    			attr(div11, "class", "absolute left-4 bg-white p-2 h-4 flex items-center");
+    			attr(div10, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-zinc-200 border-2 relative");
+    			attr(div11, "class", "absolute left-4 bg-zinc-200 dark:bg-zinc-700 p-2 h-4 flex items-center");
     			set_style(div11, "top", "-0.6rem");
 
     			attr(p7, "class", p7_class_value = "" + ((/*display*/ ctx[7] === "block"
-    			? "text-white"
-    			: "text-gray-300") + " font-medium tracking-wide text-xl"));
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button3, "class", button3_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*display*/ ctx[7] === "block"
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all");
+    			attr(button3, "class", button3_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*display*/ ctx[7] === "block"
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
     			attr(p8, "class", p8_class_value = "" + ((/*display*/ ctx[7] === "inline"
-    			? "text-white"
-    			: "text-gray-300") + " font-medium tracking-wide text-xl"));
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button4, "class", button4_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*display*/ ctx[7] === "inline"
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all");
+    			attr(button4, "class", button4_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*display*/ ctx[7] === "inline"
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
-    			attr(div12, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-gray-200 border-2 rounded-md relative");
-    			attr(div13, "class", "absolute left-4 bg-white p-2 h-4 flex items-center");
+    			attr(div12, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-zinc-200 border-2 relative");
+    			attr(div13, "class", "absolute left-4 bg-zinc-200 dark:bg-zinc-700 p-2 h-4 flex items-center");
     			set_style(div13, "top", "-0.6rem");
     			attr(circle, "cx", "3");
     			attr(circle, "cy", "3");
@@ -39533,12 +42417,18 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg0, "viewBox", "0 0 6 6");
     			attr(svg0, "fill", "none");
     			attr(svg0, "xmlns", "http://www.w3.org/2000/svg");
-    			attr(svg0, "class", svg0_class_value = /*rotate*/ ctx[8] === 0 ? "text-white" : "text-gray-300");
-    			attr(p10, "class", p10_class_value = "" + ((/*rotate*/ ctx[8] === 0 ? "text-white" : "text-gray-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button5, "class", button5_class_value = "flex flex-grow relative z-10 gap-2 py-3 px-4 items-center shadow-md rounded-md " + (/*rotate*/ ctx[8] == 0
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all");
+    			attr(svg0, "class", svg0_class_value = /*rotate*/ ctx[8] === 0
+    			? "text-zinc-200"
+    			: "text-zinc-300");
+
+    			attr(p10, "class", p10_class_value = "" + ((/*rotate*/ ctx[8] === 0
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
+
+    			attr(button5, "class", button5_class_value = "flex flex-grow relative z-10 gap-2 py-3 px-4 items-center shadow-md " + (/*rotate*/ ctx[8] == 0
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
     			attr(path0, "d", "M12 6C13.5913 6 15.1174 6.63214 16.2426 7.75736C17.3679 8.88258 18 10.4087 18 12V14.5");
     			attr(path0, "stroke", "currentColor");
@@ -39559,16 +42449,16 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg1, "xmlns", "http://www.w3.org/2000/svg");
 
     			attr(svg1, "class", svg1_class_value = /*rotate*/ ctx[8] === 90
-    			? "text-white"
-    			: "text-gray-300");
+    			? "text-zinc-200"
+    			: "text-zinc-300");
 
     			attr(p11, "class", p11_class_value = "" + ((/*rotate*/ ctx[8] === 90
-    			? "text-white"
-    			: "text-gray-300") + " font-medium tracking-wide text-xl"));
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button6, "class", button6_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*rotate*/ ctx[8] === 90
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all");
+    			attr(button6, "class", button6_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 90
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
     			attr(path3, "d", "M11.998 6C13.5893 6 15.1155 6.63214 16.2407 7.75736C17.3659 8.88258 17.998 10.4087 17.998 12C17.998 13.5913 17.3659 15.1174 16.2407 16.2426C15.1155 17.3679 13.5893 18 11.998 18H9.49805");
     			attr(path3, "stroke", "currentColor");
@@ -39589,16 +42479,16 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg2, "xmlns", "http://www.w3.org/2000/svg");
 
     			attr(svg2, "class", svg2_class_value = /*rotate*/ ctx[8] === 180
-    			? "text-white"
-    			: "text-gray-300");
+    			? "text-zinc-200"
+    			: "text-zinc-300");
 
     			attr(p12, "class", p12_class_value = "" + ((/*rotate*/ ctx[8] === 180
-    			? "text-white"
-    			: "text-gray-300") + " font-medium tracking-wide text-xl"));
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button7, "class", button7_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*rotate*/ ctx[8] === 180
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all");
+    			attr(button7, "class", button7_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 180
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
     			attr(path6, "d", "M13.8 5.00002C15.224 5.00002 16.6161 5.42229 17.8001 6.21344C18.9841 7.00459 19.907 8.12907 20.4519 9.4447C20.9969 10.7603 21.1395 12.208 20.8617 13.6047C20.5838 15.0013 19.8981 16.2843 18.8912 17.2912C17.8842 18.2981 16.6013 18.9839 15.2046 19.2617C13.808 19.5395 12.3603 19.3969 11.0447 18.852C9.72905 18.307 8.60456 17.3842 7.81342 16.2001C7.02227 15.0161 6.6 13.624 6.6 12.2V9.20002");
     			attr(path6, "stroke", "currentColor");
@@ -39619,24 +42509,24 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg3, "xmlns", "http://www.w3.org/2000/svg");
 
     			attr(svg3, "class", svg3_class_value = /*rotate*/ ctx[8] === 270
-    			? "text-white"
-    			: "text-gray-300");
+    			? "text-zinc-200"
+    			: "text-zinc-300");
 
     			attr(p13, "class", p13_class_value = "" + ((/*rotate*/ ctx[8] === 270
-    			? "text-white"
-    			: "text-gray-300") + " font-medium tracking-wide text-xl"));
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"));
 
-    			attr(button8, "class", button8_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*rotate*/ ctx[8] === 270
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all");
+    			attr(button8, "class", button8_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 270
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all");
 
-    			attr(div14, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-gray-200 border-2 rounded-md relative");
+    			attr(div14, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-zinc-200 border-2 relative");
     			attr(div15, "class", "flex gap-4 mt-8 flex-wrap");
     			attr(div16, "class", "flex flex-wrap gap-2");
     			attr(div17, "class", "mt-8 mb-8");
     			attr(div18, "class", "mt-12");
     			attr(div19, "class", "w-full h-full overflow-visible md:overflow-auto pr-4 mt-8");
-    			attr(div20, "class", "w-full p-8 gap-8 flex flex-col md:flex-row overflow-auto md:overflow-hidden relative bg-white m-4 ssssm:m-12 700:m-24 rounded-xl shadow-xl");
+    			attr(div20, "class", "w-full p-8 gap-8 flex flex-col md:flex-row overflow-auto md:overflow-hidden relative bg-zinc-200 dark:bg-zinc-700 m-4 ssssm:m-12 700:m-24 rounded-xl shadow-xl");
     			set_style(div20, "height", "calc(100vh - 8rem)");
     			attr(div21, "class", "fixed z-[60] w-full h-screen flex items-center justify-center top-0 left-0 bg-black bg-opacity-20");
     		},
@@ -39858,138 +42748,142 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			const icon4_changes = {};
-    			if (dirty[0] & /*flipHoriz*/ 64) icon4_changes.class = /*flipHoriz*/ ctx[6] ? "text-white" : "text-gray-300";
+    			if (dirty[0] & /*flipHoriz*/ 64) icon4_changes.class = /*flipHoriz*/ ctx[6] ? "text-zinc-200" : "text-zinc-300";
     			icon4.$set(icon4_changes);
 
-    			if (!current || dirty[0] & /*flipHoriz*/ 64 && p4_class_value !== (p4_class_value = "" + ((/*flipHoriz*/ ctx[6] ? "text-white" : "text-gray-300") + " font-medium tracking-wide text-xl"))) {
+    			if (!current || dirty[0] & /*flipHoriz*/ 64 && p4_class_value !== (p4_class_value = "" + ((/*flipHoriz*/ ctx[6] ? "text-zinc-200" : "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p4, "class", p4_class_value);
     			}
 
-    			if (!current || dirty[0] & /*flipHoriz*/ 64 && button1_class_value !== (button1_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*flipHoriz*/ ctx[6]
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*flipHoriz*/ 64 && button1_class_value !== (button1_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*flipHoriz*/ ctx[6]
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button1, "class", button1_class_value);
     			}
 
     			const icon5_changes = {};
-    			if (dirty[0] & /*flipVert*/ 32) icon5_changes.class = /*flipVert*/ ctx[5] ? "text-white" : "text-gray-300";
+    			if (dirty[0] & /*flipVert*/ 32) icon5_changes.class = /*flipVert*/ ctx[5] ? "text-zinc-200" : "text-zinc-300";
     			icon5.$set(icon5_changes);
 
-    			if (!current || dirty[0] & /*flipVert*/ 32 && p5_class_value !== (p5_class_value = "" + ((/*flipVert*/ ctx[5] ? "text-white" : "text-gray-300") + " font-medium tracking-wide text-xl"))) {
+    			if (!current || dirty[0] & /*flipVert*/ 32 && p5_class_value !== (p5_class_value = "" + ((/*flipVert*/ ctx[5] ? "text-zinc-200" : "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p5, "class", p5_class_value);
     			}
 
-    			if (!current || dirty[0] & /*flipVert*/ 32 && button2_class_value !== (button2_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*flipVert*/ ctx[5]
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*flipVert*/ 32 && button2_class_value !== (button2_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*flipVert*/ ctx[5]
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button2, "class", button2_class_value);
     			}
 
     			const icon6_changes = {};
 
     			if (dirty[0] & /*display*/ 128) icon6_changes.class = /*display*/ ctx[7] === "block"
-    			? "text-white"
-    			: "text-gray-300";
+    			? "text-zinc-200"
+    			: "text-zinc-300";
 
     			icon6.$set(icon6_changes);
 
     			if (!current || dirty[0] & /*display*/ 128 && p7_class_value !== (p7_class_value = "" + ((/*display*/ ctx[7] === "block"
-    			? "text-white"
-    			: "text-gray-300") + " font-medium tracking-wide text-xl"))) {
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p7, "class", p7_class_value);
     			}
 
-    			if (!current || dirty[0] & /*display*/ 128 && button3_class_value !== (button3_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*display*/ ctx[7] === "block"
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*display*/ 128 && button3_class_value !== (button3_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*display*/ ctx[7] === "block"
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button3, "class", button3_class_value);
     			}
 
     			const icon7_changes = {};
 
     			if (dirty[0] & /*display*/ 128) icon7_changes.class = /*display*/ ctx[7] === "inline"
-    			? "text-white"
-    			: "text-gray-300";
+    			? "text-zinc-200"
+    			: "text-zinc-300";
 
     			icon7.$set(icon7_changes);
 
     			if (!current || dirty[0] & /*display*/ 128 && p8_class_value !== (p8_class_value = "" + ((/*display*/ ctx[7] === "inline"
-    			? "text-white"
-    			: "text-gray-300") + " font-medium tracking-wide text-xl"))) {
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p8, "class", p8_class_value);
     			}
 
-    			if (!current || dirty[0] & /*display*/ 128 && button4_class_value !== (button4_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*display*/ ctx[7] === "inline"
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*display*/ 128 && button4_class_value !== (button4_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*display*/ ctx[7] === "inline"
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button4, "class", button4_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && svg0_class_value !== (svg0_class_value = /*rotate*/ ctx[8] === 0 ? "text-white" : "text-gray-300")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && svg0_class_value !== (svg0_class_value = /*rotate*/ ctx[8] === 0
+    			? "text-zinc-200"
+    			: "text-zinc-300")) {
     				attr(svg0, "class", svg0_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && p10_class_value !== (p10_class_value = "" + ((/*rotate*/ ctx[8] === 0 ? "text-white" : "text-gray-300") + " font-medium tracking-wide text-xl"))) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && p10_class_value !== (p10_class_value = "" + ((/*rotate*/ ctx[8] === 0
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p10, "class", p10_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && button5_class_value !== (button5_class_value = "flex flex-grow relative z-10 gap-2 py-3 px-4 items-center shadow-md rounded-md " + (/*rotate*/ ctx[8] == 0
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && button5_class_value !== (button5_class_value = "flex flex-grow relative z-10 gap-2 py-3 px-4 items-center shadow-md " + (/*rotate*/ ctx[8] == 0
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button5, "class", button5_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && svg1_class_value !== (svg1_class_value = /*rotate*/ ctx[8] === 90
-    			? "text-white"
-    			: "text-gray-300")) {
+    			? "text-zinc-200"
+    			: "text-zinc-300")) {
     				attr(svg1, "class", svg1_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && p11_class_value !== (p11_class_value = "" + ((/*rotate*/ ctx[8] === 90
-    			? "text-white"
-    			: "text-gray-300") + " font-medium tracking-wide text-xl"))) {
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p11, "class", p11_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && button6_class_value !== (button6_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*rotate*/ ctx[8] === 90
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && button6_class_value !== (button6_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 90
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button6, "class", button6_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && svg2_class_value !== (svg2_class_value = /*rotate*/ ctx[8] === 180
-    			? "text-white"
-    			: "text-gray-300")) {
+    			? "text-zinc-200"
+    			: "text-zinc-300")) {
     				attr(svg2, "class", svg2_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && p12_class_value !== (p12_class_value = "" + ((/*rotate*/ ctx[8] === 180
-    			? "text-white"
-    			: "text-gray-300") + " font-medium tracking-wide text-xl"))) {
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p12, "class", p12_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && button7_class_value !== (button7_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*rotate*/ ctx[8] === 180
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && button7_class_value !== (button7_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 180
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button7, "class", button7_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && svg3_class_value !== (svg3_class_value = /*rotate*/ ctx[8] === 270
-    			? "text-white"
-    			: "text-gray-300")) {
+    			? "text-zinc-200"
+    			: "text-zinc-300")) {
     				attr(svg3, "class", svg3_class_value);
     			}
 
     			if (!current || dirty[0] & /*rotate*/ 256 && p13_class_value !== (p13_class_value = "" + ((/*rotate*/ ctx[8] === 270
-    			? "text-white"
-    			: "text-gray-300") + " font-medium tracking-wide text-xl"))) {
+    			? "text-zinc-200"
+    			: "text-zinc-300") + " font-medium tracking-wide text-xl"))) {
     				attr(p13, "class", p13_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && button8_class_value !== (button8_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md rounded-md " + (/*rotate*/ ctx[8] === 270
-    			? "bg-blue-500"
-    			: "bg-white hover:bg-gray-50") + " transition-all")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && button8_class_value !== (button8_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center shadow-md " + (/*rotate*/ ctx[8] === 270
+    			? "bg-yellow-400"
+    			: "bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-50") + " transition-all")) {
     				attr(button8, "class", button8_class_value);
     			}
 
@@ -40307,27 +43201,85 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i];
+    	child_ctx[18] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[24] = list[i];
+    	child_ctx[21] = list[i];
     	return child_ctx;
     }
 
-    // (104:6) {#if tag}
-    function create_if_block_5$1(ctx) {
+    // (91:2) {#if tags.length}
+    function create_if_block_3$1(ctx) {
+    	let div;
+    	let each_value_1 = /*tags*/ ctx[5].sort();
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    	}
+
+    	return {
+    		c() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr(div, "class", "flex flex-wrap justify-center mb-12 gap-2");
+    		},
+    		m(target, anchor) {
+    			insert(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+    		p(ctx, dirty) {
+    			if (dirty & /*currentTag, tags, setCurrentTag*/ 608) {
+    				each_value_1 = /*tags*/ ctx[5].sort();
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+    		d(detaching) {
+    			if (detaching) detach(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    }
+
+    // (94:6) {#if tag}
+    function create_if_block_4(ctx) {
     	let button;
-    	let t_value = /*tag*/ ctx[24] + "";
+    	let t_value = /*tag*/ ctx[21] + "";
     	let t;
     	let button_class_value;
     	let mounted;
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[17](/*tag*/ ctx[24]);
+    		return /*click_handler*/ ctx[12](/*tag*/ ctx[21]);
     	}
 
     	return {
@@ -40335,9 +43287,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			button = element("button");
     			t = text(t_value);
 
-    			attr(button, "class", button_class_value = "" + ((/*currentTag*/ ctx[8] === null || /*currentTag*/ ctx[8] === /*tag*/ ctx[24]
-    			? `bg-${/*colors*/ ctx[13][/*category*/ ctx[7]]}-500`
-    			: `border-2 border-${/*colors*/ ctx[13][/*category*/ ctx[7]]}-500 text-${/*colors*/ ctx[13][/*category*/ ctx[7]]}-500`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md flex-grow md:flex-grow-0"));
+    			attr(button, "class", button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[21]
+    			? `bg-yellow-400 text-zinc-800`
+    			: `border-2 border-yellow-400 text-yellow-400`) + " whitespace-nowrap rounded-md h-11 flex transition-all items-center justify-center shadow-md font-medium text-sm px-8 flex-grow md:flex-grow-0"));
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -40350,11 +43302,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		},
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*tags*/ 64 && t_value !== (t_value = /*tag*/ ctx[24] + "")) set_data(t, t_value);
+    			if (dirty & /*tags*/ 32 && t_value !== (t_value = /*tag*/ ctx[21] + "")) set_data(t, t_value);
 
-    			if (dirty & /*currentTag, tags, category*/ 448 && button_class_value !== (button_class_value = "" + ((/*currentTag*/ ctx[8] === null || /*currentTag*/ ctx[8] === /*tag*/ ctx[24]
-    			? `bg-${/*colors*/ ctx[13][/*category*/ ctx[7]]}-500`
-    			: `border-2 border-${/*colors*/ ctx[13][/*category*/ ctx[7]]}-500 text-${/*colors*/ ctx[13][/*category*/ ctx[7]]}-500`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md flex-grow md:flex-grow-0"))) {
+    			if (dirty & /*currentTag, tags*/ 96 && button_class_value !== (button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[21]
+    			? `bg-yellow-400 text-zinc-800`
+    			: `border-2 border-yellow-400 text-yellow-400`) + " whitespace-nowrap rounded-md h-11 flex transition-all items-center justify-center shadow-md font-medium text-sm px-8 flex-grow md:flex-grow-0"))) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -40366,10 +43318,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (103:4) {#each tags.sort() as tag}
+    // (93:4) {#each tags.sort() as tag}
     function create_each_block_1$1(ctx) {
     	let if_block_anchor;
-    	let if_block = /*tag*/ ctx[24] && create_if_block_5$1(ctx);
+    	let if_block = /*tag*/ ctx[21] && create_if_block_4(ctx);
 
     	return {
     		c() {
@@ -40381,11 +43333,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			insert(target, if_block_anchor, anchor);
     		},
     		p(ctx, dirty) {
-    			if (/*tag*/ ctx[24]) {
+    			if (/*tag*/ ctx[21]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_5$1(ctx);
+    					if_block = create_if_block_4(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -40401,15 +43353,15 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (153:2) {:else}
-    function create_else_block_2$1(ctx) {
+    // (146:2) {:else}
+    function create_else_block_1$1(ctx) {
     	let p;
 
     	return {
     		c() {
     			p = element("p");
     			p.textContent = "Nothing found :(";
-    			attr(p, "class", "text-3xl font-medium tracking-wide text-center text-gray-500");
+    			attr(p, "class", "text-3xl font-medium tracking-wide text-center text-zinc-500");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -40423,17 +43375,17 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (115:2) {#if iconlist === null || iconlist.length > 0}
-    function create_if_block_3$1(ctx) {
+    // (106:2) {#if filteredIconList === null || filteredIconList.length > 0}
+    function create_if_block_1$1(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block_4$1, create_else_block_1$1];
+    	const if_block_creators = [create_if_block_2$1, create_else_block$1];
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
-    		if (/*iconlist*/ ctx[2]) return 0;
+    		if (/*filteredIconList*/ ctx[8]) return 0;
     		return 1;
     	}
 
@@ -40493,8 +43445,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (140:4) {:else}
-    function create_else_block_1$1(ctx) {
+    // (133:4) {:else}
+    function create_else_block$1(ctx) {
     	let div;
     	let lottieplayer;
     	let current;
@@ -40539,11 +43491,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (116:4) {#if iconlist}
-    function create_if_block_4$1(ctx) {
+    // (107:4) {#if filteredIconList}
+    function create_if_block_2$1(ctx) {
     	let div;
     	let current;
-    	let each_value = /*iconlist*/ ctx[2];
+    	let each_value = /*filteredIconList*/ ctx[8];
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -40562,8 +43514,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				each_blocks[i].c();
     			}
 
-    			attr(div, "class", "w-full pb-8 grid gap-4");
-    			set_style(div, "grid-template-columns", "repeat(auto-fill, minmax(200px, 1fr))");
+    			attr(div, "class", "w-full pb-8 grid gap-3");
+    			set_style(div, "grid-template-columns", "repeat(auto-fill, minmax(140px, 1fr))");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -40575,8 +43527,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*currentIcon, iconSet, iconlist*/ 5) {
-    				each_value = /*iconlist*/ ctx[2];
+    			if (dirty & /*currentIcon, iconSet, filteredIconList*/ 257) {
+    				each_value = /*filteredIconList*/ ctx[8];
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -40627,13 +43579,13 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (121:8) {#each iconlist as icon}
+    // (112:8) {#each filteredIconList as icon}
     function create_each_block$1(ctx) {
     	let div;
     	let icon;
     	let t0;
     	let p;
-    	let t1_value = /*icon*/ ctx[21].name + "";
+    	let t1_value = (/*icon*/ ctx[18].name || /*icon*/ ctx[18]) + "";
     	let t1;
     	let t2;
     	let current;
@@ -40642,15 +43594,15 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	icon = new Icon({
     			props: {
-    				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[21].name}`,
-    				width: "48",
-    				height: "48",
-    				class: "text-gray-700"
+    				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[18].name || /*icon*/ ctx[18]}`,
+    				width: "32",
+    				height: "32",
+    				class: "text-zinc-600 dark:text-zinc-200"
     			}
     		});
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[18](/*icon*/ ctx[21]);
+    		return /*click_handler_1*/ ctx[13](/*icon*/ ctx[18]);
     	}
 
     	return {
@@ -40661,8 +43613,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			p = element("p");
     			t1 = text(t1_value);
     			t2 = space();
-    			attr(p, "class", "font-medium tracking-wide text-center text-gray-700");
-    			attr(div, "class", "flex flex-col items-center justify-between p-12 pb-4 bg-white shadow-md cursor-pointer transition-all hover:bg-gray-50 rounded-md gap-12");
+    			attr(p, "class", "font-medium text-xs tracking-wide text-center text-zinc-600 dark:text-zinc-500 mt-4");
+    			attr(div, "class", "flex flex-col items-center justify-between rounded-md bg-white dark:bg-zinc-700 dark:bg-opacity-40 cursor-pointer transition-all hover:bg-zinc-50 dark:hover:bg-opacity-60 p-4");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -40681,9 +43633,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			const icon_changes = {};
-    			if (dirty & /*iconSet, iconlist*/ 5) icon_changes.icon = `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[21].name}`;
+    			if (dirty & /*iconSet, filteredIconList*/ 257) icon_changes.icon = `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[18].name || /*icon*/ ctx[18]}`;
     			icon.$set(icon_changes);
-    			if ((!current || dirty & /*iconlist*/ 4) && t1_value !== (t1_value = /*icon*/ ctx[21].name + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*filteredIconList*/ 256) && t1_value !== (t1_value = (/*icon*/ ctx[18].name || /*icon*/ ctx[18]) + "")) set_data(t1, t1_value);
     		},
     		i(local) {
     			if (current) return;
@@ -40703,147 +43655,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (158:2) {#if hasMore}
-    function create_if_block_1$1(ctx) {
-    	let button;
-    	let current_block_type_index;
-    	let if_block;
-    	let current;
-    	let mounted;
-    	let dispose;
-    	const if_block_creators = [create_if_block_2$1, create_else_block$1];
-    	const if_blocks = [];
-
-    	function select_block_type_2(ctx, dirty) {
-    		if (/*isLoading*/ ctx[12]) return 0;
-    		return 1;
-    	}
-
-    	current_block_type_index = select_block_type_2(ctx);
-    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-
-    	return {
-    		c() {
-    			button = element("button");
-    			if_block.c();
-    			attr(button, "class", "flex items-center justify-center h-16 px-12 text-xl font-medium tracking-wide text-white bg-blue-500 shadow-md rounded-md");
-    		},
-    		m(target, anchor) {
-    			insert(target, button, anchor);
-    			if_blocks[current_block_type_index].m(button, null);
-    			current = true;
-
-    			if (!mounted) {
-    				dispose = listen(button, "click", /*click_handler_2*/ ctx[19]);
-    				mounted = true;
-    			}
-    		},
-    		p(ctx, dirty) {
-    			let previous_block_index = current_block_type_index;
-    			current_block_type_index = select_block_type_2(ctx);
-
-    			if (current_block_type_index !== previous_block_index) {
-    				group_outros();
-
-    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    					if_blocks[previous_block_index] = null;
-    				});
-
-    				check_outros();
-    				if_block = if_blocks[current_block_type_index];
-
-    				if (!if_block) {
-    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    					if_block.c();
-    				}
-
-    				transition_in(if_block, 1);
-    				if_block.m(button, null);
-    			}
-    		},
-    		i(local) {
-    			if (current) return;
-    			transition_in(if_block);
-    			current = true;
-    		},
-    		o(local) {
-    			transition_out(if_block);
-    			current = false;
-    		},
-    		d(detaching) {
-    			if (detaching) detach(button);
-    			if_blocks[current_block_type_index].d();
-    			mounted = false;
-    			dispose();
-    		}
-    	};
-    }
-
-    // (179:6) {:else}
-    function create_else_block$1(ctx) {
-    	let t;
-
-    	return {
-    		c() {
-    			t = text("Load More");
-    		},
-    		m(target, anchor) {
-    			insert(target, t, anchor);
-    		},
-    		i: noop,
-    		o: noop,
-    		d(detaching) {
-    			if (detaching) detach(t);
-    		}
-    	};
-    }
-
-    // (167:6) {#if isLoading}
-    function create_if_block_2$1(ctx) {
-    	let div;
-    	let lottieplayer;
-    	let current;
-
-    	lottieplayer = new LottiePlayer({
-    			props: {
-    				src: "/assets/loading_white.json",
-    				autoplay: true,
-    				loop: true,
-    				renderer: "svg",
-    				background: "transparent",
-    				height: 100,
-    				width: 100
-    			}
-    		});
-
-    	return {
-    		c() {
-    			div = element("div");
-    			create_component(lottieplayer.$$.fragment);
-    			attr(div, "class", "-mb-12");
-    		},
-    		m(target, anchor) {
-    			insert(target, div, anchor);
-    			mount_component(lottieplayer, div, null);
-    			current = true;
-    		},
-    		i(local) {
-    			if (current) return;
-    			transition_in(lottieplayer.$$.fragment, local);
-    			current = true;
-    		},
-    		o(local) {
-    			transition_out(lottieplayer.$$.fragment, local);
-    			current = false;
-    		},
-    		d(detaching) {
-    			if (detaching) detach(div);
-    			destroy_component(lottieplayer);
-    		}
-    	};
-    }
-
-    // (184:2) {#if curIcon}
+    // (151:2) {#if curIcon}
     function create_if_block$1(ctx) {
     	let usage;
     	let current;
@@ -40873,7 +43685,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     }
 
     function create_fragment$2(ctx) {
-    	let div2;
+    	let div1;
     	let h1;
     	let t0;
     	let span;
@@ -40886,12 +43698,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	let input;
     	let input_placeholder_value;
     	let t5;
-    	let div1;
     	let t6;
     	let current_block_type_index;
-    	let if_block0;
+    	let if_block1;
     	let t7;
-    	let t8;
     	let current;
     	let mounted;
     	let dispose;
@@ -40899,138 +43709,106 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	icon = new Icon({
     			props: {
     				icon: "fe:search",
-    				class: "text-gray-300",
-    				width: "32",
-    				height: "32"
+    				class: "text-zinc-300",
+    				width: "24",
+    				height: "24"
     			}
     		});
 
-    	let each_value_1 = /*tags*/ ctx[6].sort();
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value_1.length; i += 1) {
-    		each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
-    	}
-
-    	const if_block_creators = [create_if_block_3$1, create_else_block_2$1];
+    	let if_block0 = /*tags*/ ctx[5].length && create_if_block_3$1(ctx);
+    	const if_block_creators = [create_if_block_1$1, create_else_block_1$1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (/*iconlist*/ ctx[2] === null || /*iconlist*/ ctx[2].length > 0) return 0;
+    		if (/*filteredIconList*/ ctx[8] === null || /*filteredIconList*/ ctx[8].length > 0) return 0;
     		return 1;
     	}
 
     	current_block_type_index = select_block_type(ctx);
-    	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    	let if_block1 = /*hasMore*/ ctx[11] && create_if_block_1$1(ctx);
+    	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
     	let if_block2 = /*curIcon*/ ctx[1] && create_if_block$1();
 
     	return {
     		c() {
-    			div2 = element("div");
+    			div1 = element("div");
     			h1 = element("h1");
-    			t0 = text(/*name*/ ctx[4]);
+    			t0 = text(/*name*/ ctx[3]);
     			span = element("span");
     			t1 = text("v");
-    			t2 = text(/*version*/ ctx[3]);
+    			t2 = text(/*version*/ ctx[2]);
     			t3 = space();
     			div0 = element("div");
     			create_component(icon.$$.fragment);
     			t4 = space();
     			input = element("input");
     			t5 = space();
-    			div1 = element("div");
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
+    			if (if_block0) if_block0.c();
     			t6 = space();
-    			if_block0.c();
+    			if_block1.c();
     			t7 = space();
-    			if (if_block1) if_block1.c();
-    			t8 = space();
     			if (if_block2) if_block2.c();
-    			attr(span, "class", "ml-2 text-xl text-blue-500");
-    			attr(h1, "class", "mt-12 mb-6 text-5xl font-semibold tracking-wide text-center text-gray-700 flex flex-col items-center gap-6 sm:inline");
+    			attr(span, "class", "ml-2 text-base text-yellow-400");
+    			attr(h1, "class", "mt-12 mb-6 text-3xl font-semibold tracking-wide text-center text-zinc-600 dark:text-zinc-100 flex flex-col items-center gap-6 sm:inline");
     			attr(input, "type", "text");
     			attr(input, "id", "icon-search");
-    			attr(input, "class", "w-full text-xl tracking-wide text-gray-500 ");
-    			attr(input, "placeholder", input_placeholder_value = "Search " + /*iconCount*/ ctx[5] + " icons (Press '/' to focus)");
-    			attr(div0, "class", "inline-flex items-center w-full p-4 mx-auto mb-6 overflow-hidden bg-white shadow-md gap-4 rounded-md");
-    			attr(div1, "class", "flex flex-wrap justify-center mb-12 gap-2");
-    			attr(div2, "class", "flex flex-col justify-center w-full px-12 md:px-24");
+    			attr(input, "class", "w-full tracking-wide text-zinc-500 dark:text-zinc-200 bg-transparent");
+    			attr(input, "placeholder", input_placeholder_value = "Search " + /*iconCount*/ ctx[4] + " icons (Press '/' to focus)");
+    			attr(div0, "class", "inline-flex items-center w-full rounded-md p-4 mx-auto mb-6 overflow-hidden bg-white dark:bg-zinc-700 dark:bg-opacity-40 shadow-md gap-4 ");
+    			attr(div1, "class", "flex flex-1 flex-col w-full px-12 md:px-24");
     		},
     		m(target, anchor) {
-    			insert(target, div2, anchor);
-    			append(div2, h1);
+    			insert(target, div1, anchor);
+    			append(div1, h1);
     			append(h1, t0);
     			append(h1, span);
     			append(span, t1);
     			append(span, t2);
-    			append(div2, t3);
-    			append(div2, div0);
+    			append(div1, t3);
+    			append(div1, div0);
     			mount_component(icon, div0, null);
     			append(div0, t4);
     			append(div0, input);
-    			set_input_value(input, /*searchTerm*/ ctx[10]);
-    			append(div2, t5);
-    			append(div2, div1);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div1, null);
-    			}
-
-    			append(div2, t6);
-    			if_blocks[current_block_type_index].m(div2, null);
-    			append(div2, t7);
-    			if (if_block1) if_block1.m(div2, null);
-    			append(div2, t8);
-    			if (if_block2) if_block2.m(div2, null);
+    			set_input_value(input, /*searchTerm*/ ctx[7]);
+    			append(div1, t5);
+    			if (if_block0) if_block0.m(div1, null);
+    			append(div1, t6);
+    			if_blocks[current_block_type_index].m(div1, null);
+    			append(div1, t7);
+    			if (if_block2) if_block2.m(div1, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen(input, "input", /*input_input_handler*/ ctx[16]),
-    					listen(input, "input", /*inputOnChange*/ ctx[15])
+    					listen(input, "input", /*input_input_handler*/ ctx[11]),
+    					listen(input, "input", /*inputOnChange*/ ctx[10])
     				];
 
     				mounted = true;
     			}
     		},
     		p(ctx, [dirty]) {
-    			if (!current || dirty & /*name*/ 16) set_data(t0, /*name*/ ctx[4]);
-    			if (!current || dirty & /*version*/ 8) set_data(t2, /*version*/ ctx[3]);
+    			if (!current || dirty & /*name*/ 8) set_data(t0, /*name*/ ctx[3]);
+    			if (!current || dirty & /*version*/ 4) set_data(t2, /*version*/ ctx[2]);
 
-    			if (!current || dirty & /*iconCount*/ 32 && input_placeholder_value !== (input_placeholder_value = "Search " + /*iconCount*/ ctx[5] + " icons (Press '/' to focus)")) {
+    			if (!current || dirty & /*iconCount*/ 16 && input_placeholder_value !== (input_placeholder_value = "Search " + /*iconCount*/ ctx[4] + " icons (Press '/' to focus)")) {
     				attr(input, "placeholder", input_placeholder_value);
     			}
 
-    			if (dirty & /*searchTerm*/ 1024 && input.value !== /*searchTerm*/ ctx[10]) {
-    				set_input_value(input, /*searchTerm*/ ctx[10]);
+    			if (dirty & /*searchTerm*/ 128 && input.value !== /*searchTerm*/ ctx[7]) {
+    				set_input_value(input, /*searchTerm*/ ctx[7]);
     			}
 
-    			if (dirty & /*currentTag, tags, colors, category, getIconSet*/ 25024) {
-    				each_value_1 = /*tags*/ ctx[6].sort();
-    				let i;
-
-    				for (i = 0; i < each_value_1.length; i += 1) {
-    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    					} else {
-    						each_blocks[i] = create_each_block_1$1(child_ctx);
-    						each_blocks[i].c();
-    						each_blocks[i].m(div1, null);
-    					}
+    			if (/*tags*/ ctx[5].length) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+    				} else {
+    					if_block0 = create_if_block_3$1(ctx);
+    					if_block0.c();
+    					if_block0.m(div1, t6);
     				}
-
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
-    				}
-
-    				each_blocks.length = each_value_1.length;
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
     			}
 
     			let previous_block_index = current_block_type_index;
@@ -41046,40 +43824,17 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				});
 
     				check_outros();
-    				if_block0 = if_blocks[current_block_type_index];
+    				if_block1 = if_blocks[current_block_type_index];
 
-    				if (!if_block0) {
-    					if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    					if_block0.c();
-    				} else {
-    					if_block0.p(ctx, dirty);
-    				}
-
-    				transition_in(if_block0, 1);
-    				if_block0.m(div2, t7);
-    			}
-
-    			if (/*hasMore*/ ctx[11]) {
-    				if (if_block1) {
-    					if_block1.p(ctx, dirty);
-
-    					if (dirty & /*hasMore*/ 2048) {
-    						transition_in(if_block1, 1);
-    					}
-    				} else {
-    					if_block1 = create_if_block_1$1(ctx);
+    				if (!if_block1) {
+    					if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
     					if_block1.c();
-    					transition_in(if_block1, 1);
-    					if_block1.m(div2, t8);
+    				} else {
+    					if_block1.p(ctx, dirty);
     				}
-    			} else if (if_block1) {
-    				group_outros();
 
-    				transition_out(if_block1, 1, 1, () => {
-    					if_block1 = null;
-    				});
-
-    				check_outros();
+    				transition_in(if_block1, 1);
+    				if_block1.m(div1, t7);
     			}
 
     			if (/*curIcon*/ ctx[1]) {
@@ -41091,7 +43846,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     					if_block2 = create_if_block$1();
     					if_block2.c();
     					transition_in(if_block2, 1);
-    					if_block2.m(div2, null);
+    					if_block2.m(div1, null);
     				}
     			} else if (if_block2) {
     				group_outros();
@@ -41106,24 +43861,21 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		i(local) {
     			if (current) return;
     			transition_in(icon.$$.fragment, local);
-    			transition_in(if_block0);
     			transition_in(if_block1);
     			transition_in(if_block2);
     			current = true;
     		},
     		o(local) {
     			transition_out(icon.$$.fragment, local);
-    			transition_out(if_block0);
     			transition_out(if_block1);
     			transition_out(if_block2);
     			current = false;
     		},
     		d(detaching) {
-    			if (detaching) detach(div2);
+    			if (detaching) detach(div1);
     			destroy_component(icon);
-    			destroy_each(each_blocks, detaching);
+    			if (if_block0) if_block0.d();
     			if_blocks[current_block_type_index].d();
-    			if (if_block1) if_block1.d();
     			if (if_block2) if_block2.d();
     			mounted = false;
     			run_all(dispose);
@@ -41139,84 +43891,59 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		$$invalidate(1, curIcon = value);
     	});
 
-    	const colors = {
-    		General: "rose",
-    		Emoji: "orange",
-    		"Brands / Social": "emerald",
-    		Maps: "sky",
-    		Thematic: "purple"
-    	};
-
     	let iconlist = null;
     	let version = "";
     	let name = "";
     	let iconCount = 0;
     	let tags = [];
-    	let category = null;
     	let currentTag = null;
-    	let page = 1;
     	let searchTerm = null;
-    	let hasMore = false;
-    	let isLoading = false;
+    	let filteredIconList = null;
 
-    	async function getIconSet(tag, isNewTag) {
-    		if (isNewTag) {
-    			$$invalidate(2, iconlist = null);
-    			$$invalidate(9, page = 1);
-    			$$invalidate(11, hasMore = false);
-    		}
-
-    		$$invalidate(8, currentTag = tag || null);
-    		console.log(currentTag);
-    		const res = await fetch(`https://api.iconify.thecodeblog.net/fetch-iconlist/${iconSet}/${page}?${tag ? `tag=${tag.replace("&", "%26")}` : ""}${searchTerm ? `&q=${searchTerm.toLowerCase()}` : ""}`);
-    		const data = await res.json();
-
-    		$$invalidate(2, iconlist = data.icons.length
-    		? !isNewTag ? iconlist.concat(data.icons) : data.icons
-    		: []);
-
-    		$$invalidate(3, version = data.version || "1.0.0");
-    		$$invalidate(4, name = data.name);
-    		$$invalidate(5, iconCount = data.icon_count);
-    		$$invalidate(6, tags = data.tags);
-    		$$invalidate(7, category = data.category);
-    		$$invalidate(11, hasMore = data.hasMore);
-    		$$invalidate(12, isLoading = false);
+    	async function getIconSet() {
+    		const res = await fetch(`https:cors-anywhere.thecodeblog.net/icon-sets.iconify.design/assets/collection.${iconSet}.js`);
+    		let data = await res.text();
+    		data = JSON.parse(data.match(/=(.+);/)[1]);
+    		iconlist = data.icons;
+    		$$invalidate(2, version = data.info.version || "1.0.0");
+    		$$invalidate(3, name = data.info.name);
+    		$$invalidate(4, iconCount = data.info.total);
+    		$$invalidate(5, tags = data.tags || []);
+    		data.info.category;
     		currentIconSet.set(name);
+    		$$invalidate(8, filteredIconList = iconlist);
     	}
 
-    	getIconSet(null, true);
+    	getIconSet();
 
-    	document.addEventListener("keypress", e => {
-    		if (e.code === "Slash") {
-    			document.getElementById("icon-search").focus();
-    			e.preventDefault();
+    	const setCurrentTag = tag => {
+    		if (currentTag !== tag) {
+    			$$invalidate(6, currentTag = tag);
+
+    			$$invalidate(8, filteredIconList = iconlist.filter(icon => {
+    				return icon.tags.includes(tag);
+    			}));
+    		} else {
+    			$$invalidate(6, currentTag = null);
+    			$$invalidate(8, filteredIconList = iconlist);
     		}
-    	});
-
-    	let timer = 0;
+    	};
 
     	const inputOnChange = function (e) {
-    		console.log("fuck");
-    		clearTimeout(timer);
-    		timer = setTimeout(() => getIconSet(currentTag, true), 500);
+    		$$invalidate(8, filteredIconList = iconlist.filter(icon => {
+    			return (icon.name || icon).toLowerCase().includes(e.target.value.toLowerCase());
+    		}));
     	};
 
     	function input_input_handler() {
     		searchTerm = this.value;
-    		$$invalidate(10, searchTerm);
+    		$$invalidate(7, searchTerm);
     	}
 
-    	const click_handler = tag => getIconSet(currentTag !== tag ? tag : null, true);
+    	const click_handler = tag => setCurrentTag(tag);
 
     	const click_handler_1 = icon => {
-    		currentIcon.set(`${iconSet}:${icon.name}`);
-    	};
-
-    	const click_handler_2 = () => {
-    		$$invalidate(9, page += 1);
-    		$$invalidate(12, isLoading = true);
-    		getIconSet(currentTag);
+    		currentIcon.set(`${iconSet}:${icon.name || icon}`);
     	};
 
     	$$self.$$set = $$props => {
@@ -41226,24 +43953,18 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	return [
     		iconSet,
     		curIcon,
-    		iconlist,
     		version,
     		name,
     		iconCount,
     		tags,
-    		category,
     		currentTag,
-    		page,
     		searchTerm,
-    		hasMore,
-    		isLoading,
-    		colors,
-    		getIconSet,
+    		filteredIconList,
+    		setCurrentTag,
     		inputOnChange,
     		input_input_handler,
     		click_handler,
-    		click_handler_1,
-    		click_handler_2
+    		click_handler_1
     	];
     }
 
@@ -41258,20 +43979,21 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[14] = list[i];
+    	child_ctx[12] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[17] = list[i];
+    	child_ctx[15] = list[i][0];
+    	child_ctx[16] = list[i][1];
     	return child_ctx;
     }
 
-    // (61:4) {#if iconSets}
-    function create_if_block_5(ctx) {
+    // (75:2) {#if iconSets}
+    function create_if_block_3(ctx) {
     	let div;
-    	let each_value_1 = /*iconSets*/ ctx[1];
+    	let each_value_1 = Object.entries(/*iconSets*/ ctx[0]);
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -41296,8 +44018,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*currentIconSet, iconSets, colors, getIconSet*/ 658) {
-    				each_value_1 = /*iconSets*/ ctx[1];
+    			if (dirty & /*currentIconSet, Object, iconSets, colors, console, setCurrentIconSet*/ 83) {
+    				each_value_1 = Object.entries(/*iconSets*/ ctx[0]);
     				let i;
 
     				for (i = 0; i < each_value_1.length; i += 1) {
@@ -41326,17 +44048,17 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (63:12) {#each iconSets as iconSet}
+    // (77:6) {#each Object.entries(iconSets) as [name, iconSet]}
     function create_each_block_1(ctx) {
     	let button;
-    	let t_value = /*iconSet*/ ctx[17].name + "";
+    	let t_value = /*iconSet*/ ctx[16].name + "";
     	let t;
     	let button_class_value;
     	let mounted;
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[10](/*iconSet*/ ctx[17]);
+    		return /*click_handler*/ ctx[7](/*name*/ ctx[15]);
     	}
 
     	return {
@@ -41344,9 +44066,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			button = element("button");
     			t = text(t_value);
 
-    			attr(button, "class", button_class_value = "" + ((/*currentIconSet*/ ctx[4] === null || /*currentIconSet*/ ctx[4] === /*iconSet*/ ctx[17].prefix
-    			? `bg-${/*colors*/ ctx[7][/*iconSet*/ ctx[17].category]}-500`
-    			: `border-2 border-${/*colors*/ ctx[7][/*iconSet*/ ctx[17].category]}-500 text-${/*colors*/ ctx[7][/*iconSet*/ ctx[17].category]}-500`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-md sssm:text-lg px-4 flex-grow sssm:px-8 pb-0.5 rounded-md"));
+    			attr(button, "class", button_class_value = "" + ((/*currentIconSet*/ ctx[1] === null || /*currentIconSet*/ ctx[1] === /*name*/ ctx[15]
+    			? `bg-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other'] || console.log(/*iconSet*/ ctx[16].category)}-500`
+    			: `border-2 border-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other']}-500 text-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other']}-500`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-zinc-200 font-medium text-md sssm:text-lg px-4 flex-grow sssm:px-8 pb-0.5"));
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -41359,11 +44081,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		},
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*iconSets*/ 2 && t_value !== (t_value = /*iconSet*/ ctx[17].name + "")) set_data(t, t_value);
+    			if (dirty & /*iconSets*/ 1 && t_value !== (t_value = /*iconSet*/ ctx[16].name + "")) set_data(t, t_value);
 
-    			if (dirty & /*currentIconSet, iconSets*/ 18 && button_class_value !== (button_class_value = "" + ((/*currentIconSet*/ ctx[4] === null || /*currentIconSet*/ ctx[4] === /*iconSet*/ ctx[17].prefix
-    			? `bg-${/*colors*/ ctx[7][/*iconSet*/ ctx[17].category]}-500`
-    			: `border-2 border-${/*colors*/ ctx[7][/*iconSet*/ ctx[17].category]}-500 text-${/*colors*/ ctx[7][/*iconSet*/ ctx[17].category]}-500`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-md sssm:text-lg px-4 flex-grow sssm:px-8 pb-0.5 rounded-md"))) {
+    			if (dirty & /*currentIconSet, iconSets*/ 3 && button_class_value !== (button_class_value = "" + ((/*currentIconSet*/ ctx[1] === null || /*currentIconSet*/ ctx[1] === /*name*/ ctx[15]
+    			? `bg-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other'] || console.log(/*iconSet*/ ctx[16].category)}-500`
+    			: `border-2 border-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other']}-500 text-${/*colors*/ ctx[4][/*iconSet*/ ctx[16].category || 'Other']}-500`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-zinc-200 font-medium text-md sssm:text-lg px-4 flex-grow sssm:px-8 pb-0.5"))) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -41375,15 +44097,15 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (91:4) {:else}
-    function create_else_block_2(ctx) {
+    // (133:2) {:else}
+    function create_else_block_1(ctx) {
     	let p;
 
     	return {
     		c() {
     			p = element("p");
     			p.textContent = "Nothing found :(";
-    			attr(p, "class", "text-3xl font-medium tracking-wide text-center text-gray-500");
+    			attr(p, "class", "text-3xl font-medium tracking-wide text-center text-zinc-500");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -41397,17 +44119,17 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (68:4) {#if iconlist === null || iconlist.length > 0}
-    function create_if_block_3(ctx) {
+    // (95:2) {#if filteredIconList === null || filteredIconList.length > 0}
+    function create_if_block_1(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block_4, create_else_block_1];
+    	const if_block_creators = [create_if_block_2, create_else_block];
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
-    		if (/*iconlist*/ ctx[0]) return 0;
+    		if (/*filteredIconList*/ ctx[2]) return 0;
     		return 1;
     	}
 
@@ -41467,8 +44189,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (78:8) {:else}
-    function create_else_block_1(ctx) {
+    // (120:4) {:else}
+    function create_else_block(ctx) {
     	let div;
     	let lottieplayer;
     	let current;
@@ -41513,11 +44235,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (69:8) {#if iconlist}
-    function create_if_block_4(ctx) {
+    // (96:4) {#if filteredIconList}
+    function create_if_block_2(ctx) {
     	let div;
     	let current;
-    	let each_value = /*iconlist*/ ctx[0];
+    	let each_value = /*filteredIconList*/ ctx[2];
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -41549,8 +44271,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*curIconSet, iconSets, iconlist, currentIcon*/ 3) {
-    				each_value = /*iconlist*/ ctx[0];
+    			if (dirty & /*currentIcon, filteredIconList*/ 4) {
+    				each_value = /*filteredIconList*/ ctx[2];
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -41601,33 +44323,30 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (71:16) {#each iconlist as icon}
+    // (101:8) {#each filteredIconList as icon}
     function create_each_block(ctx) {
     	let button;
     	let icon;
     	let t0;
     	let p;
-    	let t1_value = /*icon*/ ctx[14].icon_set + "";
+    	let t1_value = /*icon*/ ctx[12] + "";
     	let t1;
     	let t2;
-    	let t3_value = /*icon*/ ctx[14].name + "";
-    	let t3;
-    	let t4;
     	let current;
     	let mounted;
     	let dispose;
 
     	icon = new Icon({
     			props: {
-    				icon: `${/*icon*/ ctx[14].icon_set}:${/*icon*/ ctx[14].name}`,
+    				icon: `${/*icon*/ ctx[12]}`,
     				width: "56",
     				height: "56",
-    				class: "text-gray-700"
+    				class: "text-zinc-600 dark:text-zinc-100"
     			}
     		});
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[11](/*icon*/ ctx[14]);
+    		return /*click_handler_1*/ ctx[8](/*icon*/ ctx[12]);
     	}
 
     	return {
@@ -41637,11 +44356,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t0 = space();
     			p = element("p");
     			t1 = text(t1_value);
-    			t2 = text(":");
-    			t3 = text(t3_value);
-    			t4 = space();
-    			attr(p, "class", "font-medium tracking-wide text-center text-gray-700");
-    			attr(button, "class", "flex flex-col items-center justify-between p-12 pb-4 bg-white shadow-md transition-all hover:bg-gray-50 rounded-md gap-12");
+    			t2 = space();
+    			attr(p, "class", "font-medium tracking-wide text-center text-zinc-600 dark:text-zinc-100");
+    			attr(button, "class", "flex flex-col items-center justify-between p-12 pb-4 bg-zinc-200 shadow-md transition-all hover:bg-zinc-50 gap-12");
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -41649,9 +44366,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			append(button, t0);
     			append(button, p);
     			append(p, t1);
-    			append(p, t2);
-    			append(p, t3);
-    			append(button, t4);
+    			append(button, t2);
     			current = true;
 
     			if (!mounted) {
@@ -41662,10 +44377,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			const icon_changes = {};
-    			if (dirty & /*iconlist*/ 1) icon_changes.icon = `${/*icon*/ ctx[14].icon_set}:${/*icon*/ ctx[14].name}`;
+    			if (dirty & /*filteredIconList*/ 4) icon_changes.icon = `${/*icon*/ ctx[12]}`;
     			icon.$set(icon_changes);
-    			if ((!current || dirty & /*iconlist*/ 1) && t1_value !== (t1_value = /*icon*/ ctx[14].icon_set + "")) set_data(t1, t1_value);
-    			if ((!current || dirty & /*iconlist*/ 1) && t3_value !== (t3_value = /*icon*/ ctx[14].name + "")) set_data(t3, t3_value);
+    			if ((!current || dirty & /*filteredIconList*/ 4) && t1_value !== (t1_value = /*icon*/ ctx[12] + "")) set_data(t1, t1_value);
     		},
     		i(local) {
     			if (current) return;
@@ -41685,147 +44399,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (94:4) {#if hasMore}
-    function create_if_block_1(ctx) {
-    	let button;
-    	let current_block_type_index;
-    	let if_block;
-    	let current;
-    	let mounted;
-    	let dispose;
-    	const if_block_creators = [create_if_block_2, create_else_block];
-    	const if_blocks = [];
-
-    	function select_block_type_2(ctx, dirty) {
-    		if (/*isLoading*/ ctx[5]) return 0;
-    		return 1;
-    	}
-
-    	current_block_type_index = select_block_type_2(ctx);
-    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-
-    	return {
-    		c() {
-    			button = element("button");
-    			if_block.c();
-    			attr(button, "class", "flex items-center justify-center h-16 px-12 text-xl font-medium tracking-wide text-white bg-blue-500 shadow-md rounded-md");
-    		},
-    		m(target, anchor) {
-    			insert(target, button, anchor);
-    			if_blocks[current_block_type_index].m(button, null);
-    			current = true;
-
-    			if (!mounted) {
-    				dispose = listen(button, "click", /*click_handler_2*/ ctx[12]);
-    				mounted = true;
-    			}
-    		},
-    		p(ctx, dirty) {
-    			let previous_block_index = current_block_type_index;
-    			current_block_type_index = select_block_type_2(ctx);
-
-    			if (current_block_type_index !== previous_block_index) {
-    				group_outros();
-
-    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    					if_blocks[previous_block_index] = null;
-    				});
-
-    				check_outros();
-    				if_block = if_blocks[current_block_type_index];
-
-    				if (!if_block) {
-    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    					if_block.c();
-    				}
-
-    				transition_in(if_block, 1);
-    				if_block.m(button, null);
-    			}
-    		},
-    		i(local) {
-    			if (current) return;
-    			transition_in(if_block);
-    			current = true;
-    		},
-    		o(local) {
-    			transition_out(if_block);
-    			current = false;
-    		},
-    		d(detaching) {
-    			if (detaching) detach(button);
-    			if_blocks[current_block_type_index].d();
-    			mounted = false;
-    			dispose();
-    		}
-    	};
-    }
-
-    // (109:12) {:else}
-    function create_else_block(ctx) {
-    	let t;
-
-    	return {
-    		c() {
-    			t = text("Load More");
-    		},
-    		m(target, anchor) {
-    			insert(target, t, anchor);
-    		},
-    		i: noop,
-    		o: noop,
-    		d(detaching) {
-    			if (detaching) detach(t);
-    		}
-    	};
-    }
-
-    // (96:12) {#if isLoading}
-    function create_if_block_2(ctx) {
-    	let div;
-    	let lottieplayer;
-    	let current;
-
-    	lottieplayer = new LottiePlayer({
-    			props: {
-    				src: "/assets/loading_white.json",
-    				autoplay: true,
-    				loop: true,
-    				renderer: "svg",
-    				background: "transparent",
-    				height: 100,
-    				width: 100
-    			}
-    		});
-
-    	return {
-    		c() {
-    			div = element("div");
-    			create_component(lottieplayer.$$.fragment);
-    			attr(div, "class", "-mb-12");
-    		},
-    		m(target, anchor) {
-    			insert(target, div, anchor);
-    			mount_component(lottieplayer, div, null);
-    			current = true;
-    		},
-    		i(local) {
-    			if (current) return;
-    			transition_in(lottieplayer.$$.fragment, local);
-    			current = true;
-    		},
-    		o(local) {
-    			transition_out(lottieplayer.$$.fragment, local);
-    			current = false;
-    		},
-    		d(detaching) {
-    			if (detaching) detach(div);
-    			destroy_component(lottieplayer);
-    		}
-    	};
-    }
-
-    // (114:4) {#if curIcon}
+    // (138:2) {#if curIcon}
     function create_if_block(ctx) {
     	let usage;
     	let current;
@@ -41862,36 +44436,32 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	let current_block_type_index;
     	let if_block1;
     	let t5;
-    	let t6;
     	let current;
-    	let if_block0 = /*iconSets*/ ctx[1] && create_if_block_5(ctx);
-    	const if_block_creators = [create_if_block_3, create_else_block_2];
+    	let if_block0 = /*iconSets*/ ctx[0] && create_if_block_3(ctx);
+    	const if_block_creators = [create_if_block_1, create_else_block_1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (/*iconlist*/ ctx[0] === null || /*iconlist*/ ctx[0].length > 0) return 0;
+    		if (/*filteredIconList*/ ctx[2] === null || /*filteredIconList*/ ctx[2].length > 0) return 0;
     		return 1;
     	}
 
     	current_block_type_index = select_block_type(ctx);
     	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    	let if_block2 = /*hasMore*/ ctx[3] && create_if_block_1(ctx);
-    	let if_block3 = /*curIcon*/ ctx[6] && create_if_block();
+    	let if_block2 = /*curIcon*/ ctx[3] && create_if_block();
 
     	return {
     		c() {
     			div = element("div");
     			h1 = element("h1");
-    			h1.textContent = `Search results for "${/*searchTerm*/ ctx[8]}"`;
+    			h1.textContent = `Search results for "${/*searchTerm*/ ctx[5]}"`;
     			t3 = space();
     			if (if_block0) if_block0.c();
     			t4 = space();
     			if_block1.c();
     			t5 = space();
     			if (if_block2) if_block2.c();
-    			t6 = space();
-    			if (if_block3) if_block3.c();
-    			attr(h1, "class", "mb-6 text-3xl font-semibold tracking-wide text-center text-gray-700 sssm:text-5xl sm:mt-12");
+    			attr(h1, "class", "mb-6 text-3xl font-semibold tracking-wide text-center text-zinc-600 dark:text-zinc-100 sssm:text-5xl sm:mt-12");
     			attr(div, "class", "flex flex-col justify-center w-full px-12 md:px-24");
     		},
     		m(target, anchor) {
@@ -41903,16 +44473,14 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			if_blocks[current_block_type_index].m(div, null);
     			append(div, t5);
     			if (if_block2) if_block2.m(div, null);
-    			append(div, t6);
-    			if (if_block3) if_block3.m(div, null);
     			current = true;
     		},
     		p(ctx, [dirty]) {
-    			if (/*iconSets*/ ctx[1]) {
+    			if (/*iconSets*/ ctx[0]) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_5(ctx);
+    					if_block0 = create_if_block_3(ctx);
     					if_block0.c();
     					if_block0.m(div, t4);
     				}
@@ -41947,18 +44515,16 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				if_block1.m(div, t5);
     			}
 
-    			if (/*hasMore*/ ctx[3]) {
+    			if (/*curIcon*/ ctx[3]) {
     				if (if_block2) {
-    					if_block2.p(ctx, dirty);
-
-    					if (dirty & /*hasMore*/ 8) {
+    					if (dirty & /*curIcon*/ 8) {
     						transition_in(if_block2, 1);
     					}
     				} else {
-    					if_block2 = create_if_block_1(ctx);
+    					if_block2 = create_if_block();
     					if_block2.c();
     					transition_in(if_block2, 1);
-    					if_block2.m(div, t6);
+    					if_block2.m(div, null);
     				}
     			} else if (if_block2) {
     				group_outros();
@@ -41969,39 +44535,16 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     				check_outros();
     			}
-
-    			if (/*curIcon*/ ctx[6]) {
-    				if (if_block3) {
-    					if (dirty & /*curIcon*/ 64) {
-    						transition_in(if_block3, 1);
-    					}
-    				} else {
-    					if_block3 = create_if_block();
-    					if_block3.c();
-    					transition_in(if_block3, 1);
-    					if_block3.m(div, null);
-    				}
-    			} else if (if_block3) {
-    				group_outros();
-
-    				transition_out(if_block3, 1, 1, () => {
-    					if_block3 = null;
-    				});
-
-    				check_outros();
-    			}
     		},
     		i(local) {
     			if (current) return;
     			transition_in(if_block1);
     			transition_in(if_block2);
-    			transition_in(if_block3);
     			current = true;
     		},
     		o(local) {
     			transition_out(if_block1);
     			transition_out(if_block2);
-    			transition_out(if_block3);
     			current = false;
     		},
     		d(detaching) {
@@ -42009,97 +44552,82 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			if (if_block0) if_block0.d();
     			if_blocks[current_block_type_index].d();
     			if (if_block2) if_block2.d();
-    			if (if_block3) if_block3.d();
     		}
     	};
     }
 
     function instance$1($$self, $$props, $$invalidate) {
     	const colors = {
-    		General: 'rose',
-    		Emoji: 'orange',
-    		'Brands / Social': 'emerald',
-    		Maps: 'sky',
-    		Thematic: 'purple'
+    		General: "rose",
+    		Emoji: "orange",
+    		"Brands / Social": "emerald",
+    		"Maps / Flags": "sky",
+    		Thematic: "purple",
+    		"Archive / Unmaintained": "gray",
+    		Other: "gray"
     	};
 
     	let iconlist = null;
     	let iconSets = null;
-    	let currentPage = 1;
     	const urlParams = new URLSearchParams(window.location.search);
-    	const searchTerm = urlParams.get('q');
-    	let hasMore = false;
-    	let currentIconSet$1 = null;
-    	let isLoading = false;
+    	const searchTerm = urlParams.get("q");
+    	let currentIconSet = null;
+    	let filteredIconList = null;
     	let curIcon = null;
 
     	currentIcon.subscribe(value => {
-    		$$invalidate(6, curIcon = value);
+    		$$invalidate(3, curIcon = value);
     	});
 
-    	async function getIconSet(iconSet, isNewSets) {
-    		if (isNewSets) {
-    			$$invalidate(0, iconlist = null);
-    			$$invalidate(3, hasMore = false);
-    			$$invalidate(2, currentPage = 1);
-    		}
-
-    		$$invalidate(4, currentIconSet$1 = iconSet || null);
-    		const res = await fetch(`https://api.iconify.thecodeblog.net/search-icons?q=${searchTerm}&page=${currentPage}${iconSet ? `&icon_set=${iconSet}` : ''}`);
+    	async function getIconSet() {
+    		const res = await fetch(`https://cors-anywhere.thecodeblog.net/api.iconify.design/search?query=${searchTerm}&limit=9999`);
     		const data = await res.json();
 
     		if (data.icons.length) {
-    			$$invalidate(0, iconlist = !isNewSets ? iconlist.concat(data.icons) : data.icons);
+    			iconlist = data.icons;
     		} else {
-    			$$invalidate(0, iconlist = []);
+    			iconlist = [];
     		}
 
-    		$$invalidate(1, iconSets = data.icon_sets);
-    		$$invalidate(3, hasMore = data.hasMore);
-    		$$invalidate(5, isLoading = false);
+    		$$invalidate(0, iconSets = data.collections);
+    		$$invalidate(2, filteredIconList = iconlist);
     	}
 
-    	getIconSet(null, true);
+    	getIconSet();
 
-    	document.addEventListener('keypress', e => {
-    		if (e.code === 'Slash') {
-    			document.querySelector('input').focus();
+    	document.addEventListener("keypress", e => {
+    		if (e.code === "Slash") {
+    			document.querySelector("input").focus();
     			e.preventDefault();
     		}
     	});
 
-    	const click_handler = iconSet => getIconSet(
-    		currentIconSet$1 !== iconSet.prefix
-    		? iconSet.prefix
-    		: null,
-    		true
-    	);
-
-    	const click_handler_1 = icon => {
-    		currentIconSet.set(iconSets.filter(e => e.prefix === icon.icon_set)[0].name);
-    		currentIcon.set(`${icon.icon_set}:${icon.name}`);
+    	const setCurrentIconSet = iconSet => {
+    		if (currentIconSet !== iconSet) {
+    			$$invalidate(1, currentIconSet = iconSet);
+    			$$invalidate(2, filteredIconList = iconlist.filter(e => e.split(":").shift() === iconSet));
+    		} else {
+    			$$invalidate(1, currentIconSet = null);
+    			$$invalidate(2, filteredIconList = iconlist);
+    		}
     	};
 
-    	const click_handler_2 = () => {
-    		$$invalidate(2, currentPage += 1);
-    		$$invalidate(5, isLoading = true);
-    		getIconSet(currentIconSet$1);
+    	const click_handler = name => setCurrentIconSet(name);
+
+    	const click_handler_1 = icon => {
+    		currentIcon.set(icon);
     	};
 
     	return [
-    		iconlist,
     		iconSets,
-    		currentPage,
-    		hasMore,
-    		currentIconSet$1,
-    		isLoading,
+    		currentIconSet,
+    		filteredIconList,
     		curIcon,
     		colors,
     		searchTerm,
-    		getIconSet,
+    		setCurrentIconSet,
     		click_handler,
-    		click_handler_1,
-    		click_handler_2
+    		click_handler_1
     	];
     }
 
@@ -42140,13 +44668,13 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (23:2) <Route path="/icon-set/:iconSet" let:params>
+    // (32:4) <Route path="/icon-set/:iconSet" let:params>
     function create_default_slot_3(ctx) {
     	let iconlist;
     	let current;
 
     	iconlist = new IconList({
-    			props: { iconSet: /*params*/ ctx[0].iconSet }
+    			props: { iconSet: /*params*/ ctx[1].iconSet }
     		});
 
     	return {
@@ -42159,7 +44687,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		},
     		p(ctx, dirty) {
     			const iconlist_changes = {};
-    			if (dirty & /*params*/ 1) iconlist_changes.iconSet = /*params*/ ctx[0].iconSet;
+    			if (dirty & /*params*/ 2) iconlist_changes.iconSet = /*params*/ ctx[1].iconSet;
     			iconlist.$set(iconlist_changes);
     		},
     		i(local) {
@@ -42177,7 +44705,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (26:2) <Route path="/icon-sets">
+    // (35:4) <Route path="/icon-sets">
     function create_default_slot_2(ctx) {
     	let browse;
     	let current;
@@ -42206,7 +44734,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (29:2) <Route path="/search">
+    // (38:4) <Route path="/search">
     function create_default_slot_1(ctx) {
     	let searchall;
     	let current;
@@ -42235,7 +44763,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (17:0) <Router>
+    // (26:0) <Router>
     function create_default_slot(ctx) {
     	let main;
     	let navbar;
@@ -42266,8 +44794,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				$$slots: {
     					default: [
     						create_default_slot_3,
-    						({ params }) => ({ 0: params }),
-    						({ params }) => params ? 1 : 0
+    						({ params }) => ({ 1: params }),
+    						({ params }) => params ? 2 : 0
     					]
     				},
     				$$scope: { ctx }
@@ -42306,7 +44834,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			create_component(route3.$$.fragment);
     			t4 = space();
     			create_component(footer.$$.fragment);
-    			attr(main, "class", "pt-8");
+    			attr(main, "class", "pt-8 dark:bg-zinc-800 min-h-[100vh] flex flex-col");
     		},
     		m(target, anchor) {
     			insert(target, main, anchor);
@@ -42326,28 +44854,28 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		p(ctx, dirty) {
     			const route0_changes = {};
 
-    			if (dirty & /*$$scope*/ 2) {
+    			if (dirty & /*$$scope*/ 4) {
     				route0_changes.$$scope = { dirty, ctx };
     			}
 
     			route0.$set(route0_changes);
     			const route1_changes = {};
 
-    			if (dirty & /*$$scope, params*/ 3) {
+    			if (dirty & /*$$scope, params*/ 6) {
     				route1_changes.$$scope = { dirty, ctx };
     			}
 
     			route1.$set(route1_changes);
     			const route2_changes = {};
 
-    			if (dirty & /*$$scope*/ 2) {
+    			if (dirty & /*$$scope*/ 4) {
     				route2_changes.$$scope = { dirty, ctx };
     			}
 
     			route2.$set(route2_changes);
     			const route3_changes = {};
 
-    			if (dirty & /*$$scope*/ 2) {
+    			if (dirty & /*$$scope*/ 4) {
     				route3_changes.$$scope = { dirty, ctx };
     			}
 
@@ -42406,7 +44934,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		p(ctx, [dirty]) {
     			const router_changes = {};
 
-    			if (dirty & /*$$scope*/ 2) {
+    			if (dirty & /*$$scope*/ 4) {
     				router_changes.$$scope = { dirty, ctx };
     			}
 
@@ -42431,6 +44959,16 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	window.onload = () => {
     		window.scrollTo({ top: 0 });
     	};
+
+    	let theme = localStorage.theme;
+
+    	if (theme === "dark" || !theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    		document.documentElement.classList.add("dark");
+    		localStorage.theme = "dark";
+    	} else {
+    		document.documentElement.classList.remove("dark");
+    		localStorage.theme = "light";
+    	}
 
     	return [];
     }

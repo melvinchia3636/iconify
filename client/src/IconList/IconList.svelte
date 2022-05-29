@@ -3,7 +3,6 @@
   import { LottiePlayer } from "@lottiefiles/svelte-lottie-player";
   import Usage from "./Usage.svelte";
   import { currentIcon, currentIconSet } from "./stores";
-  import { onMount } from "svelte";
 
   export let iconSet;
 
@@ -28,111 +27,105 @@
   let tags = [];
   let category = null;
   let currentTag = null;
-  let page = 1;
   let searchTerm = null;
-  let hasMore = false;
-  let isLoading = false;
+  let filteredIconList = null;
 
-  async function getIconSet(tag, isNewTag) {
-    if (isNewTag) {
-      iconlist = null;
-      page = 1;
-      hasMore = false;
-    }
-    currentTag = tag || null;
-    console.log(currentTag);
+  async function getIconSet() {
     const res = await fetch(
-      `https://api.iconify.thecodeblog.net/fetch-iconlist/${iconSet}/${page}?${
-        tag ? `tag=${tag.replace("&", "%26")}` : ""
-      }${searchTerm ? `&q=${searchTerm.toLowerCase()}` : ""}`
+      `https:cors-anywhere.thecodeblog.net/icon-sets.iconify.design/assets/collection.${iconSet}.js`
     );
-    const data = await res.json();
-    iconlist = data.icons.length
-      ? !isNewTag
-        ? iconlist.concat(data.icons)
-        : data.icons
-      : [];
-    version = data.version || "1.0.0";
-    name = data.name;
-    iconCount = data.icon_count;
-    tags = data.tags;
-    category = data.category;
-    hasMore = data.hasMore;
-    isLoading = false;
+    let data = await res.text();
+    data = JSON.parse(data.match(/=(.+);/)[1]);
+    iconlist = data.icons;
+    version = data.info.version || "1.0.0";
+    name = data.info.name;
+    iconCount = data.info.total;
+    tags = data.tags || [];
+    category = data.info.category;
     currentIconSet.set(name);
+    filteredIconList = iconlist;
   }
 
-  getIconSet(null, true);
+  getIconSet();
 
-  document.addEventListener("keypress", (e) => {
-    if (e.code === "Slash") {
-      document.getElementById("icon-search").focus();
-      e.preventDefault();
+  const setCurrentTag = (tag) => {
+    if (currentTag !== tag) {
+      currentTag = tag;
+      filteredIconList = iconlist.filter((icon) => {
+        return icon.tags.includes(tag);
+      });
+    } else {
+      currentTag = null;
+      filteredIconList = iconlist;
     }
-  });
-
-  let timer = 0;
+  };
 
   const inputOnChange = function (e) {
-    console.log("fuck");
-    clearTimeout(timer);
-    timer = setTimeout(() => getIconSet(currentTag, true), 500);
+    filteredIconList = iconlist.filter((icon) => {
+      return (icon.name || icon)
+        .toLowerCase()
+        .includes(e.target.value.toLowerCase());
+    });
   };
 </script>
 
-<div class="flex flex-col justify-center w-full px-12 md:px-24">
+<div class="flex flex-1 flex-col w-full px-12 md:px-24">
   <h1
-    class="mt-12 mb-6 text-5xl font-semibold tracking-wide text-center text-gray-700 flex flex-col items-center gap-6 sm:inline"
+    class="mt-12 mb-6 text-3xl font-semibold tracking-wide text-center text-zinc-600 dark:text-zinc-100 flex flex-col items-center gap-6 sm:inline"
   >
-    {name}<span class="ml-2 text-xl text-blue-500">v{version}</span>
+    {name}<span class="ml-2 text-base text-yellow-400">v{version}</span>
   </h1>
   <div
-    class="inline-flex items-center w-full p-4 mx-auto mb-6 overflow-hidden bg-white shadow-md gap-4 rounded-md"
+    class="inline-flex items-center w-full rounded-md p-4 mx-auto mb-6 overflow-hidden bg-white dark:bg-zinc-700 dark:bg-opacity-40 shadow-md gap-4 "
   >
-    <Icon icon="fe:search" class="text-gray-300" width="32" height="32" />
+    <Icon icon="fe:search" class="text-zinc-300" width="24" height="24" />
     <input
       bind:value={searchTerm}
       on:input={inputOnChange}
       type="text"
       id="icon-search"
-      class="w-full text-xl tracking-wide text-gray-500 "
+      class="w-full tracking-wide text-zinc-500 dark:text-zinc-200 bg-transparent"
       placeholder="Search {iconCount} icons (Press '/' to focus)"
     />
   </div>
+  {#if tags.length}
   <div class="flex flex-wrap justify-center mb-12 gap-2">
     {#each tags.sort() as tag}
       {#if tag}
         <button
-          on:click={() => getIconSet(currentTag !== tag ? tag : null, true)}
-          class="{currentTag === null || currentTag === tag
-            ? `bg-${colors[category]}-500`
-            : `border-2 border-${colors[category]}-500 text-${colors[category]}-500`} whitespace-nowrap h-11 flex transition-all items-center justify-center shadow-md text-white font-medium text-lg px-8 pb-0.5 rounded-md flex-grow md:flex-grow-0"
+          on:click={() => setCurrentTag(tag)}
+          class="{currentTag === tag
+            ? `bg-yellow-400 text-zinc-800`
+            : `border-2 border-yellow-400 text-yellow-400`} whitespace-nowrap rounded-md h-11 flex transition-all items-center justify-center shadow-md font-medium text-sm px-8 flex-grow md:flex-grow-0"
           >{tag}</button
         >
       {/if}
     {/each}
   </div>
-  {#if iconlist === null || iconlist.length > 0}
-    {#if iconlist}
+  {/if}
+  {#if filteredIconList === null || filteredIconList.length > 0}
+    {#if filteredIconList}
       <div
-        class="w-full pb-8 grid gap-4"
-        style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))"
+        class="w-full pb-8 grid gap-3"
+        style="grid-template-columns: repeat(auto-fill, minmax(140px, 1fr))"
       >
-        {#each iconlist as icon}
+        {#each filteredIconList as icon}
           <div
             on:click={() => {
-              currentIcon.set(`${iconSet}:${icon.name}`);
+              currentIcon.set(`${iconSet}:${icon.name || icon}`);
             }}
-            class="flex flex-col items-center justify-between p-12 pb-4 bg-white shadow-md cursor-pointer transition-all hover:bg-gray-50 rounded-md gap-12"
+            class="flex flex-col items-center justify-between rounded-md bg-white dark:bg-zinc-700 dark:bg-opacity-40 cursor-pointer transition-all hover:bg-zinc-50 dark:hover:bg-opacity-60  p-4"
           >
             <Icon
-              icon={`${iconSet}:${icon.name}`}
-              width="48"
-              height="48"
-              class="text-gray-700"
+              icon={`${iconSet}:${icon.name || icon}`}
+              width="32"
+              height="32"
+              class="text-zinc-600 dark:text-zinc-200"
             />
-            <p class="font-medium tracking-wide text-center text-gray-700">
-              {icon.name}
+            <p
+              class="font-medium text-xs tracking-wide text-center text-zinc-600 dark:text-zinc-500 mt-4"
+            >
+              {icon.name || icon}
             </p>
           </div>
         {/each}
@@ -151,35 +144,9 @@
       </div>
     {/if}
   {:else}
-    <p class="text-3xl font-medium tracking-wide text-center text-gray-500">
+    <p class="text-3xl font-medium tracking-wide text-center text-zinc-500">
       Nothing found :(
     </p>
-  {/if}
-  {#if hasMore}
-    <button
-      on:click={() => {
-        page += 1;
-        isLoading = true;
-        getIconSet(currentTag);
-      }}
-      class="flex items-center justify-center h-16 px-12 text-xl font-medium tracking-wide text-white bg-blue-500 shadow-md rounded-md"
-    >
-      {#if isLoading}
-        <div class="-mb-12">
-          <LottiePlayer
-            src="/assets/loading_white.json"
-            autoplay={true}
-            loop={true}
-            renderer="svg"
-            background="transparent"
-            height={100}
-            width={100}
-          />
-        </div>
-      {:else}
-        Load More
-      {/if}
-    </button>
   {/if}
   {#if curIcon}
     <Usage />

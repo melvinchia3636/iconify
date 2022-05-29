@@ -3,8 +3,8 @@
 </script>
 
 <div class="w-full px-0 md:px-16">
-    <p class="text-rose-500 font-medium text-xl ssssm:text-2xl text-center tracking-wide">License</p>
-    <h2 class="text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-gray-700 text-center mb-6 lg:mb-12">Iconify under legal protection</h2>
+    <p class="text-yellow-400 font-medium text-xl ssssm:text-2xl text-center tracking-wide">License</p>
+    <h2 class="text-4xl ssssm:text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-semibold tracking-wide text-zinc-600 dark:text-zinc-100 text-center mb-6 lg:mb-12">Iconify under legal protection</h2>
     <Paragraph>
         <p class="text-lg ssssm:text-xl">
             Iconify SVG framework is dual licensed under <a>Apache 2.0 license</a> and <a>GPL 2.0 license</a>. You may select, at your option, one of the above-listed licenses.
