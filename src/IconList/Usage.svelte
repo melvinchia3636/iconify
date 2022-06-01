@@ -109,18 +109,13 @@
     <button
       on:click={() => currentIcon.set(null)}
       class="absolute right-6 top-6"
-      ><Icon
-        icon="heroicons-solid:x"
-        class="text-stone-600"
-        width="24"
-        height="24"
-      /></button
+      ><Icon icon="heroicons-solid:x" class="" width="24" height="24" /></button
     >
     <div
       class="pt-12 pb-24 md:h-full relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center border-2 border-stone-600"
     >
       {#if display === "inline"}
-        <p class="text-stone-600 tracking-wide text-lg p-12 text-center">
+        <p class=" tracking-wide text-lg p-12 text-center">
           Text with icon sample
           <Icon
             icon={curIcon}
@@ -141,7 +136,7 @@
           to show icon alignment in text.
         </p>
         <p
-          class="font-medium text-stone-600 tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all"
+          class="font-medium  tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all"
         >
           Inline text
         </p>
@@ -163,7 +158,7 @@
             : '172px'}"
         />
         <p
-          class="font-medium text-stone-600 tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all"
+          class="font-medium  tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all"
         >
           {width && !isNaN(width) ? width : "24"} x {height && !isNaN(height)
             ? height
@@ -172,12 +167,10 @@
       {/if}
     </div>
     <div class="w-full h-full overflow-visible md:overflow-auto pr-4 mt-8">
-      <p class="text-stone-600 font-medium tracking-wide mb-2">{curIconSet}</p>
+      <p class=" font-medium tracking-wide mb-2">{curIconSet}</p>
       <div class="flex gap-4 items-center">
         {#if curIcon}
-          <h2
-            class="text-stone-600 font-semibold break-all text-4xl tracking-wide -mt-1"
-          >
+          <h2 class=" font-semibold break-all text-4xl tracking-wide -mt-1">
             {curIcon}
           </h2>
         {/if}
@@ -230,9 +223,7 @@
           class="p-4 py-2 flex flex-grow xl:flex-grow-0 gap-4 border-stone-600 border-2 relative"
         >
           <div class="absolute -top-[1.3rem] left-4 bg-stone-100 p-2">
-            <p class="tracking-wide text-stone-600 text-md font-medium">
-              Color
-            </p>
+            <p class="tracking-wide  text-md font-medium">Color</p>
           </div>
           <div class="flex flex-grow gap-2 items-center">
             <Icon
@@ -245,7 +236,7 @@
               bind:value={color}
               size="12"
               type="text"
-              class="text-stone-600 bg-transparent font-medium tracking-wide placeholder-stone-300"
+              class=" bg-transparent font-medium tracking-wide placeholder-stone-300"
               placeholder="#000000"
               autocomplete="off"
             />
@@ -258,19 +249,19 @@
             class="absolute left-4 bg-stone-100 p-2 h-4 flex items-center"
             style="top: -0.6rem"
           >
-            <p class="tracking-wide text-stone-600 text-md font-medium">Size</p>
+            <p class="tracking-wide  text-md font-medium">Size</p>
           </div>
           <div class="flex flex-grow gap-2 items-center  ">
             <Icon
               icon="fluent:auto-fit-width-20-filled"
               width="28"
               height="28"
-              class="text-stone-600"
+              class=""
             />
             <input
               size="5"
               type="text"
-              class="text-stone-600 bg-transparent font-medium tracking-wide placeholder-stone-300"
+              class=" bg-transparent font-medium tracking-wide placeholder-stone-300"
               bind:value={width}
               placeholder="24"
               autocomplete="off"
@@ -281,12 +272,12 @@
               icon="fluent:auto-fit-height-20-filled"
               width="28"
               height="28"
-              class="text-stone-600"
+              class=""
             />
             <input
               size="5"
               type="text"
-              class="text-stone-600 bg-transparent font-medium tracking-wide placeholder-stone-300"
+              class=" bg-transparent font-medium tracking-wide placeholder-stone-300"
               bind:value={height}
               placeholder="24"
               autocomplete="off"
@@ -300,7 +291,7 @@
             class="absolute left-4 bg-stone-100 p-2 h-4 flex items-center"
             style="top: -0.6rem"
           >
-            <p class="tracking-wide text-stone-600 text-md font-medium">Flip</p>
+            <p class="tracking-wide  text-md font-medium">Flip</p>
           </div>
           <button
             on:click={() => (flipHoriz = !flipHoriz)}
@@ -312,12 +303,12 @@
               icon="mdi:flip-horizontal"
               width="28"
               height="28"
-              class={flipHoriz ? "text-stone-100" : "text-stone-600"}
+              class={flipHoriz ? "text-stone-100" : ""}
             />
             <p
               class="{flipHoriz
                 ? 'text-stone-100'
-                : 'text-stone-600'} font-medium tracking-wide"
+                : ''} font-medium tracking-wide"
             >
               Horizontal
             </p>
@@ -332,12 +323,12 @@
               icon="mdi:flip-vertical"
               width="28"
               height="28"
-              class={flipVert ? "text-stone-100" : "text-stone-600"}
+              class={flipVert ? "text-stone-100" : ""}
             />
             <p
               class="{flipVert
                 ? 'text-stone-100'
-                : 'text-stone-600'} font-medium tracking-wide"
+                : ''} font-medium tracking-wide"
             >
               Vertical
             </p>
@@ -350,9 +341,7 @@
             class="absolute left-4 bg-stone-100 p-2 h-4 flex items-center"
             style="top: -0.6rem"
           >
-            <p class="tracking-wide text-stone-600 text-base font-medium">
-              Display
-            </p>
+            <p class="tracking-wide  text-base font-medium">Display</p>
           </div>
           <button
             on:click={() => (display = "block")}
@@ -365,12 +354,12 @@
               icon="mdi:flip-horizontal"
               width="28"
               height="28"
-              class={display === "block" ? "text-stone-100" : "text-stone-600"}
+              class={display === "block" ? "text-stone-100" : ""}
             />
             <p
               class="{display === 'block'
                 ? 'text-stone-100'
-                : 'text-stone-600'} font-medium tracking-wide"
+                : ''} font-medium tracking-wide"
             >
               Block
             </p>
@@ -386,12 +375,12 @@
               icon="mdi:flip-vertical"
               width="28"
               height="28"
-              class={display === "inline" ? "text-stone-100" : "text-stone-600"}
+              class={display === "inline" ? "text-stone-100" : ""}
             />
             <p
               class="{display === 'inline'
                 ? 'text-stone-100'
-                : 'text-stone-600'} font-medium tracking-wide"
+                : ''} font-medium tracking-wide"
             >
               Inline
             </p>
@@ -404,9 +393,7 @@
             class="absolute left-4 bg-stone-100 p-2 h-4 flex items-center"
             style="top: -0.6rem"
           >
-            <p class="tracking-wide text-stone-600 text-base font-medium">
-              Rotate
-            </p>
+            <p class="tracking-wide  text-base font-medium">Rotate</p>
           </div>
           <button
             on:click={() => (rotate = 0)}
@@ -421,14 +408,14 @@
               viewBox="0 0 6 6"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class={rotate === 0 ? "text-stone-100" : "text-stone-600"}
+              class={rotate === 0 ? "text-stone-100" : ""}
             >
               <circle cx="3" cy="3" r="3" fill="currentColor" />
             </svg>
             <p
               class="{rotate === 0
                 ? 'text-stone-100'
-                : 'text-stone-600'} font-medium tracking-wide"
+                : ''} font-medium tracking-wide"
             >
               0°
             </p>
@@ -446,7 +433,7 @@
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class={rotate === 90 ? "text-stone-100" : "text-stone-600"}
+              class={rotate === 90 ? "text-stone-100" : ""}
             >
               <path
                 d="M12 6C13.5913 6 15.1174 6.63214 16.2426 7.75736C17.3679 8.88258 18 10.4087 18 12V14.5"
@@ -470,7 +457,7 @@
             <p
               class="{rotate === 90
                 ? 'text-stone-100'
-                : 'text-stone-600'} font-medium tracking-wide"
+                : ''} font-medium tracking-wide"
             >
               90°
             </p>
@@ -488,7 +475,7 @@
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class={rotate === 180 ? "text-stone-100" : "text-stone-600"}
+              class={rotate === 180 ? "text-stone-100" : ""}
             >
               <path
                 d="M11.998 6C13.5893 6 15.1155 6.63214 16.2407 7.75736C17.3659 8.88258 17.998 10.4087 17.998 12C17.998 13.5913 17.3659 15.1174 16.2407 16.2426C15.1155 17.3679 13.5893 18 11.998 18H9.49805"
@@ -512,7 +499,7 @@
             <p
               class="{rotate === 180
                 ? 'text-stone-100'
-                : 'text-stone-600'} font-medium tracking-wide"
+                : ''} font-medium tracking-wide"
             >
               180°
             </p>
@@ -530,7 +517,7 @@
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class={rotate === 270 ? "text-stone-100" : "text-stone-600"}
+              class={rotate === 270 ? "text-stone-100" : ""}
             >
               <path
                 d="M13.8 5.00002C15.224 5.00002 16.6161 5.42229 17.8001 6.21344C18.9841 7.00459 19.907 8.12907 20.4519 9.4447C20.9969 10.7603 21.1395 12.208 20.8617 13.6047C20.5838 15.0013 19.8981 16.2843 18.8912 17.2912C17.8842 18.2981 16.6013 18.9839 15.2046 19.2617C13.808 19.5395 12.3603 19.3969 11.0447 18.852C9.72905 18.307 8.60456 17.3842 7.81342 16.2001C7.02227 15.0161 6.6 13.624 6.6 12.2V9.20002"
@@ -554,7 +541,7 @@
             <p
               class="{rotate === 270
                 ? 'text-stone-100'
-                : 'text-stone-600'} font-medium tracking-wide"
+                : ''} font-medium tracking-wide"
             >
               270°
             </p>
@@ -571,7 +558,7 @@
               }}
               class="transition-all flex gap-2 {currentTab === index
                 ? 'font-medium bg-stone-600 text-stone-100'
-                : 'text-stone-600'} border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2"
+                : ''} border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2"
             >
               <Icon icon={tab.icon} width="20" height="20" />
               <span class="-mt-0.5">{tab.name}</span>
@@ -587,7 +574,7 @@
                 }}
                 class="transition-all flex gap-2 {currentSubTab == index
                   ? 'font-medium bg-stone-600 text-stone-100'
-                  : 'text-stone-600'} border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2"
+                  : ''} border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2"
               >
                 <span class="-mt-0.5">{name}</span>
               </button>

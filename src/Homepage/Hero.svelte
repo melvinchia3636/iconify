@@ -1,20 +1,18 @@
-<div
-  class="w-full relative p-4 sssm:p-8 ssm:p-16 "
->
+<div class="w-full relative p-4 sssm:p-8 ssm:p-16 ">
   <div class="inline-flex flex-col w-full ssm:w-auto">
     <div
-      class="text-stone-600 bg-stone-100 !border-b-0 -mb-[4px] pt-4 530:pt-6 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide"
+      class=" bg-stone-100 !border-b-0 -mb-[4px] pt-4 530:pt-6 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide"
     >
       Unified
     </div>
     <div
-      class="text-stone-600 bg-stone-100 w-full ssm:w-auto block text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide"
+      class=" bg-stone-100 w-full ssm:w-auto block text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide"
     >
       Icons Framework
     </div>
   </div>
   <p
-    class="text-stone-600 text-xl sssm:text-xl ssm:text-2xl leading-7 sssm:leading-8 ssm:leading-10 tracking-wide mt-8"
+    class=" text-xl sssm:text-xl ssm:text-2xl leading-7 sssm:leading-8 ssm:leading-10 tracking-wide mt-8"
   >
     More than 100 icon sets, one library.
     <br class="hidden 700:inline" />Over 100,000 open source vector icons.
@@ -27,7 +25,7 @@
       autocomplete="off"
       name="q"
       type="text"
-      class="bg-transparent text-stone-600 placeholder-stone-600 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide"
+      class="bg-transparent  placeholder-stone-600 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide"
       placeholder="Search icons..."
     />
     <button type="submit" class="bg-stone-600 py-4 px-6">

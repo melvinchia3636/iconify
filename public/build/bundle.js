@@ -5237,7 +5237,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (33:12) {:else}
+    // (41:6) {:else}
     function create_else_block_1$4(ctx) {
     	let a;
     	let t_value = /*name*/ ctx[5] + "";
@@ -5260,7 +5260,7 @@ var app = (function () {
     	};
     }
 
-    // (31:12) {#if route.includes(pathname)}
+    // (35:6) {#if route.includes(pathname)}
     function create_if_block_2$7(ctx) {
     	let a;
     	let t_value = /*name*/ ctx[5] + "";
@@ -5284,7 +5284,7 @@ var app = (function () {
     	};
     }
 
-    // (30:8) {#each navOptions as [route, name]}
+    // (34:4) {#each navOptions as [route, name]}
     function create_each_block_1$5(ctx) {
     	let if_block_anchor;
 
@@ -5315,7 +5315,7 @@ var app = (function () {
     	};
     }
 
-    // (38:4) <Link to="/icon-sets" class="items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide text-stone-600 ssm:flex border-2 border-stone-600 gap-6">
+    // (46:2) <Link     to="/icon-sets"     class="items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6"   >
     function create_default_slot$n(ctx) {
     	let t;
     	let svg;
@@ -5324,7 +5324,7 @@ var app = (function () {
 
     	return {
     		c() {
-    			t = text("Browse Icons\n        ");
+    			t = text("Browse Icons\n    ");
     			svg = svg_element("svg");
     			path0 = svg_element("path");
     			path1 = svg_element("path");
@@ -5359,7 +5359,7 @@ var app = (function () {
     	};
     }
 
-    // (45:4) {#if isNavOpen}
+    // (75:2) {#if isNavOpen}
     function create_if_block$9(ctx) {
     	let div;
     	let div_transition;
@@ -5379,7 +5379,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr(div, "class", "fixed z-40 top-0 left-0 w-full h-screen bg-stone-600 flex gap-16 flex-col items-center justify-center text-lg font-medium tracking-wide text-stone-600");
+    			attr(div, "class", "fixed z-40 top-0 left-0 w-full h-screen bg-stone-600 flex gap-16 flex-col items-center justify-center text-lg font-medium tracking-wide ");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -5437,7 +5437,7 @@ var app = (function () {
     	};
     }
 
-    // (50:16) {:else}
+    // (85:8) {:else}
     function create_else_block$4(ctx) {
     	let a;
     	let t_value = /*name*/ ctx[5] + "";
@@ -5460,7 +5460,7 @@ var app = (function () {
     	};
     }
 
-    // (48:16) {#if route.includes(pathname)}
+    // (81:8) {#if route.includes(pathname)}
     function create_if_block_1$8(ctx) {
     	let a;
     	let t_value = /*name*/ ctx[5] + "";
@@ -5471,7 +5471,7 @@ var app = (function () {
     			a = element("a");
     			t = text(t_value);
     			attr(a, "href", /*route*/ ctx[4][0]);
-    			attr(a, "class", "font-semibold text-stone-600");
+    			attr(a, "class", "font-semibold ");
     			set_style(a, "font-size", "1.3rem");
     		},
     		m(target, anchor) {
@@ -5485,7 +5485,7 @@ var app = (function () {
     	};
     }
 
-    // (47:12) {#each navOptions as [route, name]}
+    // (80:6) {#each navOptions as [route, name]}
     function create_each_block$8(ctx) {
     	let if_block_anchor;
 
@@ -5535,7 +5535,7 @@ var app = (function () {
     	icon = new Icon({
     			props: {
     				icon: "gg:menu",
-    				class: "text-stone-600",
+    				class: "",
     				width: "1.8rem",
     				height: "1.8rem"
     			}
@@ -5551,7 +5551,7 @@ var app = (function () {
     	link = new Link$1({
     			props: {
     				to: "/icon-sets",
-    				class: "items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide text-stone-600 ssm:flex border-2 border-stone-600 gap-6",
+    				class: "items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6",
     				$$slots: { default: [create_default_slot$n] },
     				$$scope: { ctx }
     			}
@@ -5582,7 +5582,7 @@ var app = (function () {
     			attr(button, "class", "block 1100:hidden");
     			attr(a, "href", "/");
     			attr(div0, "class", "flex items-center flex-shrink-0 gap-6 z-50");
-    			attr(div1, "class", "items-center hidden -mt-1 font-medium tracking-wide text-stone-600 gap-16 1100:flex");
+    			attr(div1, "class", "items-center hidden -mt-1 font-medium tracking-wide gap-16 1100:flex");
     			attr(nav, "class", "flex items-center justify-between w-full px-3 390:px-8 ssm:px-12 mb-8");
     		},
     		m(target, anchor) {
@@ -5691,13 +5691,13 @@ var app = (function () {
     }
 
     function instance$v($$self, $$props, $$invalidate) {
-    	const pathname = `/${new URL(document.URL).pathname.split('/')[1]}`;
+    	const pathname = `/${new URL(document.URL).pathname.split("/")[1]}`;
 
     	const navOptions = [
-    		[['/'], 'Home'],
-    		[['/icon-sets', '/icon-set', '/search'], 'Icons'],
-    		[['https://docs.iconify.design/'], 'Documentation'],
-    		[['https://github.com/iconify'], 'Github']
+    		[["/"], "Home"],
+    		[["/icon-sets", "/icon-set", "/search"], "Icons"],
+    		[["https://docs.iconify.design/"], "Documentation"],
+    		[["https://github.com/iconify"], "Github"]
     	];
 
     	let isNavOpen = false;
@@ -5804,7 +5804,7 @@ var app = (function () {
     			t5 = text("© 2020, 2021 Iconify OÜ · ");
     			a = element("a");
     			a.textContent = "About";
-    			t7 = text(" · ");
+    			t7 = text("\n    · ");
     			create_component(icon5.$$.fragment);
     			attr(div, "class", "flex gap-8");
     			attr(a, "class", "text-stone-100 underline");
@@ -5880,11 +5880,11 @@ var app = (function () {
     		c() {
     			div3 = element("div");
 
-    			div3.innerHTML = `<div class="inline-flex flex-col w-full ssm:w-auto"><div class="text-stone-600 bg-stone-100 !border-b-0 -mb-[4px] pt-4 530:pt-6 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide">Unified</div> 
-    <div class="text-stone-600 bg-stone-100 w-full ssm:w-auto block text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide">Icons Framework</div></div> 
-  <p class="text-stone-600 text-xl sssm:text-xl ssm:text-2xl leading-7 sssm:leading-8 ssm:leading-10 tracking-wide mt-8">More than 100 icon sets, one library.
+    			div3.innerHTML = `<div class="inline-flex flex-col w-full ssm:w-auto"><div class="bg-stone-100 !border-b-0 -mb-[4px] pt-4 530:pt-6 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide">Unified</div> 
+    <div class="bg-stone-100 w-full ssm:w-auto block text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide">Icons Framework</div></div> 
+  <p class="text-xl sssm:text-xl ssm:text-2xl leading-7 sssm:leading-8 ssm:leading-10 tracking-wide mt-8">More than 100 icon sets, one library.
     <br class="hidden 700:inline"/>Over 100,000 open source vector icons.</p> 
-  <form action="/search" class="mt-10 flex w-full md:w-9/12 border-2 border-stone-600 lg:w-5/12 overflow-hidden"><input autocomplete="off" name="q" type="text" class="bg-transparent text-stone-600 placeholder-stone-600 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide" placeholder="Search icons..."/> 
+  <form action="/search" class="mt-10 flex w-full md:w-9/12 border-2 border-stone-600 lg:w-5/12 overflow-hidden"><input autocomplete="off" name="q" type="text" class="bg-transparent placeholder-stone-600 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide" placeholder="Search icons..."/> 
     <button type="submit" class="bg-stone-600 py-4 px-6"><svg class="mt-1 w-5 h-5" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form> 
   <img src="./assets/hero.svg" alt="hero design" class="absolute right-0 top-0 h-full hidden lg:block"/>`;
 
@@ -5921,7 +5921,7 @@ var app = (function () {
     		c() {
     			p = element("p");
     			if (default_slot) default_slot.c();
-    			attr(p, "class", "tracking-wide text-stone-600");
+    			attr(p, "class", "tracking-wide ");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -5990,13 +5990,19 @@ var app = (function () {
     		c() {
     			p = element("p");
 
-    			p.innerHTML = `There are many excellent icon sets available. Each has its own custom syntax, some are available only as fonts and almost all of them load entire set even if you are displaying just few icons.
-            <br/><br/>
-            Iconify tries to combine all those icon sets. Iconify is a unified open source icon framework that makes it possible to use many icons from different icon sets on same page or in same application using one syntax.
-            <br/><br/>
-            Iconify combines pixel perfect rendering of SVG with ease of use of glyph fonts, while offering more choice than any glyph font or SVG framework.
-            <br/><br/>
-            You can use Font Awesome, Material Design Icons, Unicons, Dashicons and many other icon sets on same page or application using one syntax.`;
+    			p.innerHTML = `There are many excellent icon sets available. Each has its own custom
+      syntax, some are available only as fonts and almost all of them load
+      entire set even if you are displaying just few icons.
+      <br/><br/>
+      Iconify tries to combine all those icon sets. Iconify is a unified open source
+      icon framework that makes it possible to use many icons from different icon
+      sets on same page or in same application using one syntax.
+      <br/><br/>
+      Iconify combines pixel perfect rendering of SVG with ease of use of glyph fonts,
+      while offering more choice than any glyph font or SVG framework.
+      <br/><br/>
+      You can use Font Awesome, Material Design Icons, Unicons, Dashicons and many
+      other icon sets on same page or application using one syntax.`;
 
     			attr(p, "class", "");
     		},
@@ -6030,11 +6036,11 @@ var app = (function () {
     			div0 = element("div");
 
     			div0.innerHTML = `Thousands of<br/>icons, one<br/> 
-        <span class="text-stone-600">unified</span> framework.`;
+    <span class="">unified</span> framework.`;
 
     			t5 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(div0, "class", "text-5xl font-semibold tracking-wide text-center !leading-tight whitespace-nowrap text-stone-600");
+    			attr(div0, "class", "text-5xl font-semibold tracking-wide text-center !leading-tight whitespace-nowrap ");
     			attr(div1, "class", "w-full flex flex-col lg:flex-row gap-12 lg:gap-20 items-center px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -6084,7 +6090,10 @@ var app = (function () {
     	return {
     		c() {
     			div = element("div");
-    			div.textContent = `Iconify is very easy to use: add one ${'<script>'} tag in head section of your document or before ${'</body>'} to include Iconify:`;
+
+    			div.textContent = `Iconify is very easy to use: add one ${"<script>"} tag in head section of your
+      document or before ${"</body>"} to include Iconify:`;
+
     			attr(div, "class", "");
     		},
     		m(target, anchor) {
@@ -6097,7 +6106,7 @@ var app = (function () {
     	};
     }
 
-    // (16:4) <Paragraph>
+    // (24:2) <Paragraph>
     function create_default_slot_1$f(ctx) {
     	let div;
 
@@ -6117,14 +6126,19 @@ var app = (function () {
     	};
     }
 
-    // (28:4) <Paragraph>
+    // (42:2) <Paragraph>
     function create_default_slot$l(ctx) {
     	let div;
 
     	return {
     		c() {
     			div = element("div");
-    			div.innerHTML = `If you do not want to use script, Iconify is available as <a>React</a>, <a>Vue</a>, <a>Svelte</a> and <a>Ember components</a>. Also there are tools available for developers to render SVG (<a>for PHP</a>, <a>for Node</a>) and to <a>convert icons</a>.`;
+
+    			div.innerHTML = `If you do not want to use script, Iconify is available as <a>React</a>,
+      <a>Vue</a>, <a>Svelte</a> and <a>Ember components</a>. Also there are
+      tools available for developers to render SVG (<a>for PHP</a>,
+      <a>for Node</a>) and to <a>convert icons</a>.`;
+
     			attr(div, "class", "");
     		},
     		m(target, anchor) {
@@ -6187,22 +6201,22 @@ var app = (function () {
     			create_component(paragraph0.$$.fragment);
     			t4 = space();
     			div0 = element("div");
-    			div0.innerHTML = `<code class="break-words">&lt;<span style="all: inherit">script</span> src=&quot;<span style="all: inherit text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>&quot;&gt;&lt;/<span class="text-stone-600" style="all: inherit">script</span>&gt;</code>`;
+    			div0.innerHTML = `<code class="break-words">&lt;<span style="all: inherit">script</span> src=&quot;<span style="all: inherit text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>&quot;&gt;&lt;/<span class="" style="all: inherit">script</span>&gt;</code>`;
     			t12 = space();
     			create_component(paragraph1.$$.fragment);
     			t13 = space();
     			div1 = element("div");
 
     			div1.innerHTML = `<code>&lt;<span style="all: inherit">span</span> class=&quot;<span style="all: inherit">iconify</span>&quot; data-icon=&quot;<span style="all: inherit">fa:home</span>&quot;&gt;&lt;/<span style="all: inherit">span</span>&gt;
-            <br/>
-            &lt;<span style="all: inherit">span</span> class=&quot;<span style="all: inherit">iconify</span>&quot; data-icon=&quot;<span style="all: inherit">noto:bird&quot;</span>&gt;&lt;/<span style="all: inherit">span</span>&gt;</code>`;
+      <br/>
+      &lt;<span style="all: inherit">span</span> class=&quot;<span style="all: inherit">iconify</span>&quot; data-icon=&quot;<span style="all: inherit">noto:bird&quot;</span>&gt;&lt;/<span style="all: inherit">span</span>&gt;</code>`;
 
     			t32 = space();
     			create_component(paragraph2.$$.fragment);
-    			attr(p, "class", "text-stone-600 font-medium text-xl mb-2 text-center tracking-wide");
-    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-stone-600 text-center mb-6 lg:mb-12");
-    			attr(div0, "class", "border-2 border-stone-600 text-stone-600 py-4 px-5 mt-4 mb-8");
-    			attr(div1, "class", "border-2 border-stone-600 text-stone-600 py-4 px-5 mt-4 mb-8");
+    			attr(p, "class", "font-medium text-xl mb-2 text-center tracking-wide");
+    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
+    			attr(div0, "class", "border-2 border-stone-600 py-4 px-5 mt-4 mb-8");
+    			attr(div1, "class", "border-2 border-stone-600 py-4 px-5 mt-4 mb-8");
     			attr(div2, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -7516,7 +7530,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (47:4) <Paragraph>
+    // (51:2) <Paragraph>
     function create_default_slot_5$8(ctx) {
     	let div;
 
@@ -7524,9 +7538,16 @@ var app = (function () {
     		c() {
     			div = element("div");
 
-    			div.innerHTML = `Iconify icons collection includes <a href="/icon-sets">over 100,000 icons</a> from popular fonts and emoji sets: <a>Font Awesome 4 and 5</a>, <a>Material Design Icons</a>, <a>IonIcons</a>, <a>Vaadin Icons</a>, <a>Entypo+</a> and many many more. You can use them all on same page without loading multiple glyph fonts. Only icons used on page will be loaded instead of entire fonts.
-            <br/><br/>
-            Icon designers can publish their own icon sets too. Iconify offers open source tools to clean up and publish custom icon sets.`;
+    			div.innerHTML = `Iconify icons collection includes <a href="/icon-sets">over 100,000 icons</a>
+      from popular fonts and emoji sets: <a>Font Awesome 4 and 5</a>,
+      <a>Material Design Icons</a>, <a>IonIcons</a>, <a>Vaadin Icons</a>,
+      <a>Entypo+</a>
+      and many many more. You can use them all on same page without loading
+      multiple glyph fonts. Only icons used on page will be loaded instead of
+      entire fonts.
+      <br/><br/>
+      Icon designers can publish their own icon sets too. Iconify offers open source
+      tools to clean up and publish custom icon sets.`;
 
     			attr(div, "class", "");
     		},
@@ -7540,7 +7561,7 @@ var app = (function () {
     	};
     }
 
-    // (58:16) <Paragraph>
+    // (73:8) <Paragraph>
     function create_default_slot_4$b(ctx) {
     	let div;
 
@@ -7548,13 +7569,21 @@ var app = (function () {
     		c() {
     			div = element("div");
 
-    			div.innerHTML = `Fonts and other SVG frameworks load entire collections. Even if you are using only 10-20 icons, your visitors are forced to load them all.
-                        <br/><br/>
-                        Iconify works differently. Very differently! Iconify loads only icons used on page. Icons are loaded as external resources that are cached by browser, not embedded into each page. No other SVG framework can do that.
-                        <br/><br/>
-                        What is advantage of this unique approach to handling icons? You are no longer limited to one collection. You can use them all on same page without having to load megabytes of data!
-                        <br/><br/>
-                        See <a href="/icon-sets">icon collections page</a> for list of available icons.`;
+    			div.innerHTML = `Fonts and other SVG frameworks load entire collections. Even if you
+            are using only 10-20 icons, your visitors are forced to load them
+            all.
+            <br/><br/>
+            Iconify works differently. Very differently! Iconify loads only icons
+            used on page. Icons are loaded as external resources that are cached
+            by browser, not embedded into each page. No other SVG framework can do
+            that.
+            <br/><br/>
+            What is advantage of this unique approach to handling icons? You are
+            no longer limited to one collection. You can use them all on same page
+            without having to load megabytes of data!
+            <br/><br/>
+            See <a href="/icon-sets">icon collections page</a> for list of available
+            icons.`;
 
     			attr(div, "class", "text-base");
     		},
@@ -7568,7 +7597,7 @@ var app = (function () {
     	};
     }
 
-    // (104:24) <TypedJs strings={svg_examples} contentType={null} backDelay={2000} typeSpeed={10} on:stringTyped={incrementSVGExampleCount} style="all: inherit;" loop={true}>
+    // (172:12) <TypedJs               strings={svg_examples}               contentType={null}               backDelay={2000}               typeSpeed={10}               on:stringTyped={incrementSVGExampleCount}               style="all: inherit;"               loop={true}             >
     function create_default_slot_3$c(ctx) {
     	let span;
 
@@ -7588,7 +7617,7 @@ var app = (function () {
     	};
     }
 
-    // (124:60) 
+    // (224:48) 
     function create_if_block_5$2(ctx) {
     	let div;
     	let icon;
@@ -7641,7 +7670,7 @@ var app = (function () {
     	};
     }
 
-    // (122:60) 
+    // (213:48) 
     function create_if_block_4$3(ctx) {
     	let div;
     	let p;
@@ -7705,7 +7734,7 @@ var app = (function () {
     	};
     }
 
-    // (120:60) 
+    // (209:48) 
     function create_if_block_3$5(ctx) {
     	let div;
     	let icon;
@@ -7757,7 +7786,7 @@ var app = (function () {
     	};
     }
 
-    // (118:60) 
+    // (201:48) 
     function create_if_block_2$6(ctx) {
     	let div;
     	let icon;
@@ -7809,7 +7838,7 @@ var app = (function () {
     	};
     }
 
-    // (116:24) {#if current_svg_example === 1}
+    // (192:12) {#if current_svg_example === 1}
     function create_if_block_1$7(ctx) {
     	let div;
     	let icon;
@@ -7862,7 +7891,7 @@ var app = (function () {
     	};
     }
 
-    // (132:16) <Paragraph>
+    // (241:8) <Paragraph>
     function create_default_slot_2$c(ctx) {
     	let div;
     	let t0;
@@ -7875,7 +7904,7 @@ var app = (function () {
     	let br4;
     	let br5;
     	let t3;
-    	let t4_value = '</body>' + "";
+    	let t4_value = "</body>" + "";
     	let t4;
     	let t5;
     	let br6;
@@ -7887,21 +7916,21 @@ var app = (function () {
     	return {
     		c() {
     			div = element("div");
-    			t0 = text("Syntax is similar to glyph fonts. Write a placeholder element, Iconify will replace it with SVG.\n                        ");
+    			t0 = text("Syntax is similar to glyph fonts. Write a placeholder element,\n            Iconify will replace it with SVG.\n            ");
     			br0 = element("br");
     			br1 = element("br");
-    			t1 = text("\n                        Use span or i or any other HTML tag with class=\"iconify\". If you want an icon to behave like text, aligned slightly below baseline, use class=\"iconify-inline\".\n                        ");
+    			t1 = text("\n            Use span or i or any other HTML tag with class=\"iconify\". If you want\n            an icon to behave like text, aligned slightly below baseline, use class=\"iconify-inline\".\n            ");
     			br2 = element("br");
     			br3 = element("br");
-    			t2 = text("\n                        Icons are easy to style with CSS: size is set by font-size, color for monotone icons is set by text color. Just like glyph fonts.\n                        ");
+    			t2 = text("\n            Icons are easy to style with CSS: size is set by font-size, color for\n            monotone icons is set by text color. Just like glyph fonts.\n            ");
     			br4 = element("br");
     			br5 = element("br");
-    			t3 = text("\n                        Do not forget to add Iconify script tag in head section of your document or before ");
+    			t3 = text("\n            Do not forget to add Iconify script tag in head section of your document\n            or before ");
     			t4 = text(t4_value);
-    			t5 = text("!\n                        ");
+    			t5 = text("!\n            ");
     			br6 = element("br");
     			br7 = element("br");
-    			t6 = text("\n                        See ");
+    			t6 = text("\n            See ");
     			a = element("a");
     			a.textContent = "how to use Iconify";
     			t8 = text(" tutorial.");
@@ -7935,7 +7964,7 @@ var app = (function () {
     	};
     }
 
-    // (150:16) <Paragraph>
+    // (265:8) <Paragraph>
     function create_default_slot_1$e(ctx) {
     	let t0;
     	let br0;
@@ -7944,10 +7973,10 @@ var app = (function () {
 
     	return {
     		c() {
-    			t0 = text("One script to access thousands of icons from popular collections: FontAwesome, Material Design, Vaadin Icons, Emoji One, Twemoji, Icons8 sets and many more.\n                    ");
+    			t0 = text("One script to access thousands of icons from popular collections:\n          FontAwesome, Material Design, Vaadin Icons, Emoji One, Twemoji, Icons8\n          sets and many more.\n          ");
     			br0 = element("br");
     			br1 = element("br");
-    			t1 = text("\n                    You can use Iconify with custom and commercial icon sets too.");
+    			t1 = text("\n          You can use Iconify with custom and commercial icon sets too.");
     		},
     		m(target, anchor) {
     			insert(target, t0, anchor);
@@ -7965,7 +7994,7 @@ var app = (function () {
     	};
     }
 
-    // (163:24) {#if index == current_icon_set}
+    // (287:12) {#if index == current_icon_set}
     function create_if_block$8(ctx) {
     	let div;
     	let icon;
@@ -8003,10 +8032,10 @@ var app = (function () {
     			t2 = space();
     			h5 = element("h5");
     			t3 = text(t3_value);
-    			t4 = text(" icons");
+    			t4 = text(" icons\n              ");
     			attr(div, "class", "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2");
-    			attr(h4, "class", "text-stone-600 font-medium text-3xl tracking-wider mt-16 absolute top-20 380:top-28 xl:top-56 whitespace-nowrap");
-    			attr(h5, "class", "text-stone-600 font-medium text-xl tracking-wider mt-16 absolute top-28 380:top-36 pt-2 xl:top-64 whitespace-nowrap");
+    			attr(h4, "class", "font-medium text-3xl tracking-wider mt-16 absolute top-20 380:top-28 xl:top-56 whitespace-nowrap");
+    			attr(h5, "class", "font-medium text-xl tracking-wider mt-16 absolute top-28 380:top-36 pt-2 xl:top-64 whitespace-nowrap");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -8069,7 +8098,7 @@ var app = (function () {
     	};
     }
 
-    // (162:20) {#each icon_sets as icon_set, index}
+    // (286:10) {#each icon_sets as icon_set, index}
     function create_each_block$7(ctx) {
     	let if_block_anchor;
     	let current;
@@ -8125,7 +8154,7 @@ var app = (function () {
     	};
     }
 
-    // (181:16) <Paragraph>
+    // (337:8) <Paragraph>
     function create_default_slot$k(ctx) {
     	let div;
 
@@ -8133,11 +8162,15 @@ var app = (function () {
     		c() {
     			div = element("div");
 
-    			div.innerHTML = `Icons are loaded from Iconify API in bulk, reducing number of queries. Script is small and fast. Placeholders are replaced with SVG images in fraction of second.
-                        <br/><br/>
-                        Iconify API is hosted on network of servers spread across the globe. Visitors are always connected to closest server, reducing loading time to fraction of second.
-                        <br/><br/>
-                        If you want to, you can <a>create your own Iconify API server</a>!`;
+    			div.innerHTML = `Icons are loaded from Iconify API in bulk, reducing number of
+            queries. Script is small and fast. Placeholders are replaced with
+            SVG images in fraction of second.
+            <br/><br/>
+            Iconify API is hosted on network of servers spread across the globe.
+            Visitors are always connected to closest server, reducing loading time
+            to fraction of second.
+            <br/><br/>
+            If you want to, you can <a>create your own Iconify API server</a>!`;
 
     			attr(div, "class", "text-base");
     		},
@@ -8295,7 +8328,7 @@ var app = (function () {
     				icon: "eva:chevron-left-outline",
     				width: "48",
     				height: "48",
-    				class: "text-stone-600 mt-16"
+    				class: " mt-16"
     			}
     		});
 
@@ -8315,7 +8348,7 @@ var app = (function () {
     				icon: "eva:chevron-right-outline",
     				width: "48",
     				height: "48",
-    				class: "text-stone-600 mt-16"
+    				class: " mt-16"
     			}
     		});
 
@@ -8347,19 +8380,19 @@ var app = (function () {
     			t7 = space();
     			div13 = element("div");
 
-    			div13.innerHTML = `<div class="flex gap-6 flex-col relative"><div class="arrow svelte-qrbof6"></div>                 
-                    <div class="border-2 border-stone-600 w-full flex flex-col"><h4 class="text-stone-600 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">API</h4> 
-                        <img src="./assets/iconsdemo.svg" alt="icons example w-full"/> 
-                        <p class="text-stone-600 text-lg tracking-wide text-center m-6">100,000+ icons</p></div> 
-                    <div class="border-2 border-stone-600 w-full"><div class="flex flex-wrap justify-center gap-2 m-6"><div class="px-3 py-2 border-2 border-stone-600 text-stone-600 font-medium text-lg tracking-wide">mdi:opacity</div> 
-                            <div class="px-3 py-2 border-2 border-stone-600 text-stone-600 font-medium text-lg tracking-wide">ion:ios-cart</div> 
-                            <div class="px-3 py-2 border-2 border-stone-600 text-stone-600 font-medium text-lg tracking-wide">mdi:flask</div> 
-                            <div class="px-3 py-2 border-2 border-stone-600 text-stone-600 font-medium text-lg tracking-wide">noto:anchor</div> 
-                            <div class="px-3 py-2 border-2 border-stone-600 text-stone-600 font-medium text-lg tracking-wide">fxemoji:alien</div></div> 
-                        <p class="text-stone-600 text-lg tracking-wide text-center m-6">Only icons used on page are downloaded</p></div> 
-                    <div class="border-2 border-stone-600 w-full"><h4 class="text-stone-600 text-2xl md:text-3xl tracking-wide text-center font-medium m-6">Browser</h4> 
-                        <div class="w-full flex justify-center"><img src="./assets/iconsdemoresult.svg" alt="icons example" class="w-96"/></div> 
-                        <p class="text-stone-600 text-lg tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon)</p></div></div>`;
+    			div13.innerHTML = `<div class="flex gap-6 flex-col relative"><div class="arrow svelte-1hy5s2q"></div> 
+          <div class="border-2 border-stone-600 w-full flex flex-col"><h4 class="text-2xl md:text-3xl tracking-wide text-center font-medium m-6">API</h4> 
+            <img src="./assets/iconsdemo.svg" alt="icons example w-full"/> 
+            <p class="text-lg tracking-wide text-center m-6">100,000+ icons</p></div> 
+          <div class="border-2 border-stone-600 w-full"><div class="flex flex-wrap justify-center gap-2 m-6"><div class="px-3 py-2 border-2 border-stone-600 font-medium text-lg tracking-wide">mdi:opacity</div> 
+              <div class="px-3 py-2 border-2 border-stone-600 font-medium text-lg tracking-wide">ion:ios-cart</div> 
+              <div class="px-3 py-2 border-2 border-stone-600 font-medium text-lg tracking-wide">mdi:flask</div> 
+              <div class="px-3 py-2 border-2 border-stone-600 font-medium text-lg tracking-wide">noto:anchor</div> 
+              <div class="px-3 py-2 border-2 border-stone-600 font-medium text-lg tracking-wide">fxemoji:alien</div></div> 
+            <p class="text-lg tracking-wide text-center m-6">Only icons used on page are downloaded</p></div> 
+          <div class="border-2 border-stone-600 w-full"><h4 class="text-2xl md:text-3xl tracking-wide text-center font-medium m-6">Browser</h4> 
+            <div class="w-full flex justify-center"><img src="./assets/iconsdemoresult.svg" alt="icons example" class="w-96"/></div> 
+            <p class="text-lg tracking-wide text-center m-6">5 icons = ~2.5 Kb of data (~0.5 Kb per icon)</p></div></div>`;
 
     			t30 = space();
     			div24 = element("div");
@@ -8369,13 +8402,13 @@ var app = (function () {
     			t31 = text("<");
     			span0 = element("span");
     			span0.textContent = "script";
-    			t33 = text(" src=\"");
+    			t33 = text("\n            src=\"");
     			span1 = element("span");
     			span1.textContent = "https://code.iconify.design/2/2.1.0/iconify.min.js";
     			t35 = text("\"></");
     			span2 = element("span");
     			span2.textContent = "script";
-    			t37 = text(">\n                        ");
+    			t37 = text(">\n            ");
     			br0 = element("br");
     			br1 = element("br");
     			t38 = space();
@@ -8385,8 +8418,8 @@ var app = (function () {
     			div19 = element("div");
 
     			div19.innerHTML = `<div class="w-3 h-3 rounded-full bg-rose-600"></div> 
-                        <div class="w-3 h-3 rounded-full bg-orange-400"></div> 
-                        <div class="w-3 h-3 rounded-full bg-green-600"></div>`;
+            <div class="w-3 h-3 rounded-full bg-orange-400"></div> 
+            <div class="w-3 h-3 rounded-full bg-green-600"></div>`;
 
     			t42 = space();
     			div20 = element("div");
@@ -8430,9 +8463,9 @@ var app = (function () {
     			h33.textContent = "Lightning fast";
     			t56 = space();
     			create_component(paragraph4.$$.fragment);
-    			attr(p0, "class", "text-stone-600 font-medium text-xl mb-2 text-center tracking-wide");
-    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-stone-600 text-center mb-6 lg:mb-12");
-    			attr(h30, "class", "text-stone-600 font-semibold tracking-wide text-3xl mb-6 sm:mb-8");
+    			attr(p0, "class", "font-medium text-xl mb-2 text-center tracking-wide");
+    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
+    			attr(h30, "class", "font-semibold tracking-wide text-3xl mb-6 sm:mb-8");
     			attr(div0, "class", "w-full sm:w-1/2");
     			attr(div13, "class", "w-full sm:w-1/2");
     			attr(div14, "class", "flex flex-col sm:flex-row gap-12 items-center");
@@ -8442,23 +8475,23 @@ var app = (function () {
     			set_style(span1, "color", "rgb(225, 62, 49)");
     			set_style(span1, "text-decoration", "underline");
     			set_style(span1, "text-decoration-thickness", "1px");
-    			attr(span2, "class", "text-stone-600");
+    			attr(span2, "class", "");
     			set_style(span2, "all", "inherit");
     			set_style(span2, "color", "rgb(49, 141, 225)");
     			attr(code, "class", "break-words");
-    			attr(div15, "class", "border-2 border-stone-600 text-stone-600 py-4 px-5 mt-4 mb-4");
+    			attr(div15, "class", "border-2 border-stone-600 py-4 px-5 mt-4 mb-4");
     			attr(div19, "class", "flex items-center gap-2 p-3 border-b border-stone-600");
     			attr(div20, "class", "w-full h-full items-center justify-center flex");
     			attr(div21, "class", "w-full h-64 flex flex-col border border-stone-600");
     			attr(div22, "class", "w-full sm:w-1/2");
     			attr(h31, "to", "");
     			attr(h31, "use", "");
-    			attr(h31, "class", "text-stone-600 font-semibold tracking-wide text-3xl mb-6 sm:mb-8");
+    			attr(h31, "class", "font-semibold tracking-wide text-3xl mb-6 sm:mb-8");
     			attr(div23, "class", "w-full sm:w-1/2");
     			attr(div24, "class", "flex flex-col-reverse sm:flex-row gap-12 items-center");
     			attr(h32, "to", "");
     			attr(h32, "use", "");
-    			attr(h32, "class", "text-stone-600 font-semibold tracking-wide text-3xl mb-6 sm:mb-8");
+    			attr(h32, "class", "font-semibold tracking-wide text-3xl mb-6 sm:mb-8");
     			attr(div25, "class", "w-full sm:w-1/2");
     			attr(div26, "class", "w-20 h-32 xl:w-64 xl:h-64");
     			attr(div27, "class", "flex relative h-full flex-col items-center");
@@ -8467,7 +8500,7 @@ var app = (function () {
     			attr(div30, "class", "w-full sm:w-1/2 -mb-12");
     			attr(h33, "to", "");
     			attr(h33, "use", "");
-    			attr(h33, "class", "text-stone-600 font-semibold tracking-wide text-3xl mb-6 sm:mb-8");
+    			attr(h33, "class", "font-semibold tracking-wide text-3xl mb-6 sm:mb-8");
     			attr(div31, "class", "w-full 530:sm:w-1/2");
     			attr(div32, "class", "flex flex-col-reverse sm:flex-row gap-12 items-center");
     			attr(div33, "class", "pt-20 w-full flex flex-col gap-24");
@@ -11842,15 +11875,15 @@ var app = (function () {
     			a1 = element("a");
     			t7 = text(t7_value);
     			t8 = space();
-    			attr(div0, "class", "w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3 text-stone-600");
-    			attr(div1, "class", "w-full h-full border-t-2 border-stone-600 flex p-4 py-4 sssm:py-0 justify-between items-center text-stone-600 text-smr");
+    			attr(div0, "class", "w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3 ");
+    			attr(div1, "class", "w-full h-full border-t-2 border-stone-600 flex p-4 py-4 sssm:py-0 justify-between items-center text-smr");
     			attr(div2, "class", "flex flex-col flex-shrink-0 border-r-2 border-stone-600 font-medium tracking-wide text-stone-800 w-full sssm:w-36");
     			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[5].prefix);
-    			attr(a0, "class", "text-stone-600 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium");
+    			attr(a0, "class", "w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium");
     			attr(a1, "target", "_blank");
     			attr(a1, "href", a1_href_value = /*iconSet*/ ctx[5].author.url || "/");
     			attr(a1, "class", "underline");
-    			attr(p1, "class", "mt-3 overflow-hidden tracking-wide text-stone-600 whitespace-nowrap overflow-ellipsis w-11/12");
+    			attr(p1, "class", "mt-3 overflow-hidden tracking-wide whitespace-nowrap overflow-ellipsis w-11/12");
     			attr(div3, "class", "flex flex-col justify-between px-4 py-3 w-full");
     			attr(div4, "class", "flex flex-col sssm:flex-row flex-grow overflow-hidden w-full border-2 border-stone-600");
     		},
@@ -12217,22 +12250,31 @@ var app = (function () {
     			div = element("div");
 
     			div.innerHTML = `Iconify supports all modern browsers.
-            <br/><br/>
-            Older browsers that are supported:
-            <br/><br/> 
-            <ul class="list-disc"><li class="ml-8">Internet Explorer 9 and newer.</li> 
-                <li class="ml-8">iOS Safari for iOS 8 and newer.</li> 
-                <li class="ml-8">Opera Mini and UC Browser are not supported.</li></ul> 
-            <br/>
-            IE 9, 10 and iOS 8 Safari do not support some modern functions that Iconify relies on. Iconify will automatically load polyfills for those browsers. All newer browsers do not require those polyfills.
-            <br/><br/>
-            Goal of Iconify is to offer unified icon framework for multiple platforms. Currently Iconify is available only as JavaScript library for browsers, React and Angular components.
-            <br/><br/>
-            If you use HTML or CSS syntax, Iconify loads icons from Iconify API. To use Iconify without relying on Iconify API there is possibility to <a>host custom API</a> and <a>bundle icons with custom scripts</a>.
-            <br/><br/>
-            Additionally you can copy or download SVG code. You can use it in editors (if you are using Sketch, check out <a>Iconify plug-in for Sketch</a>) or embed SVG directly into pages instead of using Iconify JavaScript.
-            <br/><br/>
-            See <a href="/">about</a> page to learn more about Iconify and project goals.`;
+      <br/><br/>
+      Older browsers that are supported:
+      <br/><br/> 
+      <ul class="list-disc"><li class="ml-8">Internet Explorer 9 and newer.</li> 
+        <li class="ml-8">iOS Safari for iOS 8 and newer.</li> 
+        <li class="ml-8">Opera Mini and UC Browser are not supported.</li></ul> 
+      <br/>
+      IE 9, 10 and iOS 8 Safari do not support some modern functions that Iconify
+      relies on. Iconify will automatically load polyfills for those browsers. All
+      newer browsers do not require those polyfills.
+      <br/><br/>
+      Goal of Iconify is to offer unified icon framework for multiple platforms.
+      Currently Iconify is available only as JavaScript library for browsers, React
+      and Angular components.
+      <br/><br/>
+      If you use HTML or CSS syntax, Iconify loads icons from Iconify API. To use
+      Iconify without relying on Iconify API there is possibility to
+      <a>host custom API</a>
+      and <a>bundle icons with custom scripts</a>.
+      <br/><br/>
+      Additionally you can copy or download SVG code. You can use it in editors (if
+      you are using Sketch, check out <a>Iconify plug-in for Sketch</a>) or
+      embed SVG directly into pages instead of using Iconify JavaScript.
+      <br/><br/>
+      See <a href="/">about</a> page to learn more about Iconify and project goals.`;
 
     			attr(div, "class", "text-base");
     		},
@@ -12272,8 +12314,8 @@ var app = (function () {
     			h2.textContent = "Iconify in different browsers";
     			t3 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(p, "class", "text-stone-600 font-medium text-xl mb-2 text-center tracking-wide");
-    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-stone-600 text-center mb-6 lg:mb-12");
+    			attr(p, "class", "font-medium text-xl mb-2 text-center tracking-wide");
+    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
     			attr(div, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -12326,13 +12368,18 @@ var app = (function () {
     		c() {
     			p = element("p");
 
-    			p.innerHTML = `Iconify SVG framework is dual licensed under <a>Apache 2.0 license</a> and <a>GPL 2.0 license</a>. You may select, at your option, one of the above-listed licenses.
-            <br/><br/>
-            Apache 2.0 license allows pretty much anything, including commercial use.
-            <br/><br/>
-            GPL 2.0 license allows use with more restrictive popular open source projects.
-            <br/><br/>
-            This license does not apply to icons. Icons are released under different licenses, see each collection for details. Icon collections available by default are all licensed under some kind of open source or free license, making it possible to use them in Iconify project.`;
+    			p.innerHTML = `Iconify SVG framework is dual licensed under <a>Apache 2.0 license</a> and
+      <a>GPL 2.0 license</a>. You may select, at your option, one of the
+      above-listed licenses.
+      <br/><br/>
+      Apache 2.0 license allows pretty much anything, including commercial use.
+      <br/><br/>
+      GPL 2.0 license allows use with more restrictive popular open source projects.
+      <br/><br/>
+      This license does not apply to icons. Icons are released under different licenses,
+      see each collection for details. Icon collections available by default are
+      all licensed under some kind of open source or free license, making it possible
+      to use them in Iconify project.`;
 
     			attr(p, "class", "text-base");
     		},
@@ -12372,8 +12419,8 @@ var app = (function () {
     			h2.textContent = "Iconify under legal protection";
     			t3 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(p, "class", "text-stone-600 font-medium text-xl mb-2 text-center tracking-wide");
-    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-stone-600 text-center mb-6 lg:mb-12");
+    			attr(p, "class", "font-medium text-xl mb-2 text-center tracking-wide");
+    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
     			attr(div, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -12527,29 +12574,29 @@ var app = (function () {
 
     function get_each_context$5(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[5] = list[i][0];
+    	child_ctx[4] = list[i][0];
     	child_ctx[2] = list[i][1];
-    	child_ctx[7] = i;
+    	child_ctx[6] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[7] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[11] = list[i];
+    	child_ctx[10] = list[i];
     	return child_ctx;
     }
 
-    // (36:6) {#if (selectedCategory === null || selectedCategory === index) && iconSets.filter((iconSet) => !iconFilterTerm.trim() || iconSet.name               .toLowerCase()               .includes(iconFilterTerm.trim().toLowerCase())).length}
+    // (39:6) {#if (selectedCategory === null || selectedCategory === index) && iconSets.filter((iconSet) => !iconFilterTerm.trim() || iconSet.name               .toLowerCase()               .includes(iconFilterTerm.trim().toLowerCase())).length}
     function create_if_block$6(ctx) {
     	let div2;
     	let div0;
-    	let t0_value = /*name*/ ctx[5] + "";
+    	let t0_value = /*name*/ ctx[4] + "";
     	let t0;
     	let t1;
     	let div1;
@@ -12600,7 +12647,7 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if ((!current || dirty & /*iconSets*/ 4) && t0_value !== (t0_value = /*name*/ ctx[5] + "")) set_data(t0, t0_value);
+    			if ((!current || dirty & /*iconSets*/ 4) && t0_value !== (t0_value = /*name*/ ctx[4] + "")) set_data(t0, t0_value);
 
     			if (dirty & /*Object, iconSets, iconFilterTerm*/ 6) {
     				each_value_1 = /*iconSets*/ ctx[2];
@@ -12663,7 +12710,7 @@ var app = (function () {
     	};
     }
 
-    // (51:14) {#if !iconFilterTerm.trim() || iconSet.name                   .toLowerCase()                   .includes(iconFilterTerm.trim().toLowerCase())}
+    // (54:14) {#if !iconFilterTerm.trim() || iconSet.name                   .toLowerCase()                   .includes(iconFilterTerm.trim().toLowerCase())}
     function create_if_block_1$6(ctx) {
     	let div4;
     	let div2;
@@ -12671,25 +12718,25 @@ var app = (function () {
     	let t0;
     	let div1;
     	let p0;
-    	let t1_value = /*iconSet*/ ctx[8].total + "";
+    	let t1_value = /*iconSet*/ ctx[7].total + "";
     	let t1;
     	let t2;
     	let t3;
     	let div3;
     	let a0;
-    	let t4_value = /*iconSet*/ ctx[8].name + "";
+    	let t4_value = /*iconSet*/ ctx[7].name + "";
     	let t4;
     	let a0_href_value;
     	let t5;
     	let p1;
     	let t6;
     	let a1;
-    	let t7_value = /*iconSet*/ ctx[8].author.name + "";
+    	let t7_value = /*iconSet*/ ctx[7].author.name + "";
     	let t7;
     	let a1_href_value;
     	let t8;
     	let current;
-    	let each_value_2 = /*iconSet*/ ctx[8].samples;
+    	let each_value_2 = /*iconSet*/ ctx[7].samples;
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value_2.length; i += 1) {
@@ -12700,7 +12747,7 @@ var app = (function () {
     		each_blocks[i] = null;
     	});
 
-    	let if_block = /*iconSet*/ ctx[8].height && create_if_block_2$5(ctx);
+    	let if_block = /*iconSet*/ ctx[7].height && create_if_block_2$5(ctx);
 
     	return {
     		c() {
@@ -12728,15 +12775,15 @@ var app = (function () {
     			a1 = element("a");
     			t7 = text(t7_value);
     			t8 = space();
-    			attr(div0, "class", "w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3 text-stone-600");
-    			attr(div1, "class", "w-full h-full border-t-2 border-stone-600 flex p-4 py-4 sssm:py-0 justify-between items-center text-stone-600 text-smr");
+    			attr(div0, "class", "w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3 ");
+    			attr(div1, "class", "w-full h-full border-t-2 border-stone-600 flex p-4 py-4 sssm:py-0 justify-between items-center text-smr");
     			attr(div2, "class", "flex flex-col flex-shrink-0 border-r-2 border-stone-600 font-medium tracking-wide text-stone-800 w-full sssm:w-36");
-    			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[8].prefix);
-    			attr(a0, "class", "text-stone-600 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium");
+    			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[7].prefix);
+    			attr(a0, "class", "w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium");
     			attr(a1, "target", "_blank");
-    			attr(a1, "href", a1_href_value = /*iconSet*/ ctx[8].author.url || "/");
+    			attr(a1, "href", a1_href_value = /*iconSet*/ ctx[7].author.url || "/");
     			attr(a1, "class", "underline");
-    			attr(p1, "class", "mt-3 overflow-hidden tracking-wide text-stone-600 whitespace-nowrap overflow-ellipsis w-11/12");
+    			attr(p1, "class", "mt-3 overflow-hidden tracking-wide whitespace-nowrap overflow-ellipsis w-11/12");
     			attr(div3, "class", "flex flex-col justify-between px-4 py-3 w-full");
     			attr(div4, "class", "flex flex-col sssm:flex-row flex-grow overflow-hidden w-full border-2 border-stone-600");
     		},
@@ -12769,7 +12816,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			if (dirty & /*Object, iconSets*/ 4) {
-    				each_value_2 = /*iconSet*/ ctx[8].samples;
+    				each_value_2 = /*iconSet*/ ctx[7].samples;
     				let i;
 
     				for (i = 0; i < each_value_2.length; i += 1) {
@@ -12795,9 +12842,9 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if ((!current || dirty & /*iconSets*/ 4) && t1_value !== (t1_value = /*iconSet*/ ctx[8].total + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*iconSets*/ 4) && t1_value !== (t1_value = /*iconSet*/ ctx[7].total + "")) set_data(t1, t1_value);
 
-    			if (/*iconSet*/ ctx[8].height) {
+    			if (/*iconSet*/ ctx[7].height) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
@@ -12820,15 +12867,15 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if ((!current || dirty & /*iconSets*/ 4) && t4_value !== (t4_value = /*iconSet*/ ctx[8].name + "")) set_data(t4, t4_value);
+    			if ((!current || dirty & /*iconSets*/ 4) && t4_value !== (t4_value = /*iconSet*/ ctx[7].name + "")) set_data(t4, t4_value);
 
-    			if (!current || dirty & /*iconSets*/ 4 && a0_href_value !== (a0_href_value = "./icon-set/" + /*iconSet*/ ctx[8].prefix)) {
+    			if (!current || dirty & /*iconSets*/ 4 && a0_href_value !== (a0_href_value = "./icon-set/" + /*iconSet*/ ctx[7].prefix)) {
     				attr(a0, "href", a0_href_value);
     			}
 
-    			if ((!current || dirty & /*iconSets*/ 4) && t7_value !== (t7_value = /*iconSet*/ ctx[8].author.name + "")) set_data(t7, t7_value);
+    			if ((!current || dirty & /*iconSets*/ 4) && t7_value !== (t7_value = /*iconSet*/ ctx[7].author.name + "")) set_data(t7, t7_value);
 
-    			if (!current || dirty & /*iconSets*/ 4 && a1_href_value !== (a1_href_value = /*iconSet*/ ctx[8].author.url || "/")) {
+    			if (!current || dirty & /*iconSets*/ 4 && a1_href_value !== (a1_href_value = /*iconSet*/ ctx[7].author.url || "/")) {
     				attr(a1, "href", a1_href_value);
     			}
     		},
@@ -12860,14 +12907,14 @@ var app = (function () {
     	};
     }
 
-    // (63:22) {#each iconSet.samples as sampleIcon}
+    // (66:22) {#each iconSet.samples as sampleIcon}
     function create_each_block_2(ctx) {
     	let icon;
     	let current;
 
     	icon = new Icon({
     			props: {
-    				icon: `${/*iconSet*/ ctx[8].prefix}:${/*sampleIcon*/ ctx[11]}`,
+    				icon: `${/*iconSet*/ ctx[7].prefix}:${/*sampleIcon*/ ctx[10]}`,
     				class: "w-9 h-9 sssm:w-8 sssm:h-8"
     			}
     		});
@@ -12882,7 +12929,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			const icon_changes = {};
-    			if (dirty & /*iconSets*/ 4) icon_changes.icon = `${/*iconSet*/ ctx[8].prefix}:${/*sampleIcon*/ ctx[11]}`;
+    			if (dirty & /*iconSets*/ 4) icon_changes.icon = `${/*iconSet*/ ctx[7].prefix}:${/*sampleIcon*/ ctx[10]}`;
     			icon.$set(icon_changes);
     		},
     		i(local) {
@@ -12900,13 +12947,13 @@ var app = (function () {
     	};
     }
 
-    // (74:22) {#if iconSet.height}
+    // (77:22) {#if iconSet.height}
     function create_if_block_2$5(ctx) {
     	let div;
     	let icon;
     	let t0;
     	let p;
-    	let t1_value = /*iconSet*/ ctx[8].height + "";
+    	let t1_value = /*iconSet*/ ctx[7].height + "";
     	let t1;
     	let current;
 
@@ -12937,7 +12984,7 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if ((!current || dirty & /*iconSets*/ 4) && t1_value !== (t1_value = /*iconSet*/ ctx[8].height + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*iconSets*/ 4) && t1_value !== (t1_value = /*iconSet*/ ctx[7].height + "")) set_data(t1, t1_value);
     		},
     		i(local) {
     			if (current) return;
@@ -12955,9 +13002,9 @@ var app = (function () {
     	};
     }
 
-    // (50:12) {#each iconSets as iconSet}
+    // (53:12) {#each iconSets as iconSet}
     function create_each_block_1$3(ctx) {
-    	let show_if = !/*iconFilterTerm*/ ctx[1].trim() || /*iconSet*/ ctx[8].name.toLowerCase().includes(/*iconFilterTerm*/ ctx[1].trim().toLowerCase());
+    	let show_if = !/*iconFilterTerm*/ ctx[1].trim() || /*iconSet*/ ctx[7].name.toLowerCase().includes(/*iconFilterTerm*/ ctx[1].trim().toLowerCase());
     	let if_block_anchor;
     	let current;
     	let if_block = show_if && create_if_block_1$6(ctx);
@@ -12973,7 +13020,7 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*iconFilterTerm, iconSets*/ 6) show_if = !/*iconFilterTerm*/ ctx[1].trim() || /*iconSet*/ ctx[8].name.toLowerCase().includes(/*iconFilterTerm*/ ctx[1].trim().toLowerCase());
+    			if (dirty & /*iconFilterTerm, iconSets*/ 6) show_if = !/*iconFilterTerm*/ ctx[1].trim() || /*iconSet*/ ctx[7].name.toLowerCase().includes(/*iconFilterTerm*/ ctx[1].trim().toLowerCase());
 
     			if (show_if) {
     				if (if_block) {
@@ -13014,9 +13061,9 @@ var app = (function () {
     	};
     }
 
-    // (35:4) {#each Object.entries(iconSets) as [name, iconSets], index}
+    // (38:4) {#each Object.entries(iconSets) as [name, iconSets], index}
     function create_each_block$5(ctx) {
-    	let show_if = (/*selectedCategory*/ ctx[0] === null || /*selectedCategory*/ ctx[0] === /*index*/ ctx[7]) && /*iconSets*/ ctx[2].filter(/*func*/ ctx[3]).length;
+    	let show_if = (/*selectedCategory*/ ctx[0] === null || /*selectedCategory*/ ctx[0] === /*index*/ ctx[6]) && /*iconSets*/ ctx[2].filter(/*func*/ ctx[3]).length;
     	let if_block_anchor;
     	let current;
     	let if_block = show_if && create_if_block$6(ctx);
@@ -13032,7 +13079,7 @@ var app = (function () {
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*selectedCategory, iconSets, iconFilterTerm*/ 7) show_if = (/*selectedCategory*/ ctx[0] === null || /*selectedCategory*/ ctx[0] === /*index*/ ctx[7]) && /*iconSets*/ ctx[2].filter(/*func*/ ctx[3]).length;
+    			if (dirty & /*selectedCategory, iconSets, iconFilterTerm*/ 7) show_if = (/*selectedCategory*/ ctx[0] === null || /*selectedCategory*/ ctx[0] === /*index*/ ctx[6]) && /*iconSets*/ ctx[2].filter(/*func*/ ctx[3]).length;
 
     			if (show_if) {
     				if (if_block) {
@@ -13208,11 +13255,13 @@ var app = (function () {
     		c() {
     			p = element("p");
 
-    			p.innerHTML = `All icon sets listed below are released by their authors with some kind of free or open source license. Collections include popular icon sets, icon fonts and several Emoji sets.
-        <br/><br/>
-        Click icon set name to see all available icons.`;
+    			p.innerHTML = `All icon sets listed below are released by their authors with some kind of
+    free or open source license. Collections include popular icon sets, icon
+    fonts and several Emoji sets.
+    <br/><br/>
+    Click icon set name to see all available icons.`;
 
-    			attr(p, "class", "text-center text-base text-stone-600");
+    			attr(p, "class", "text-center text-base ");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -13243,7 +13292,7 @@ var app = (function () {
     			h1.textContent = "Browse Icons";
     			t1 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(h1, "class", "mb-4 text-2xl font-semibold tracking-wide text-center text-stone-600 sm:mb-8 sm:text-5xl mt-12");
+    			attr(h1, "class", "mb-4 text-2xl font-semibold tracking-wide text-center sm:mb-8 sm:text-5xl mt-12");
     		},
     		m(target, anchor) {
     			insert(target, h1, anchor);
@@ -13314,7 +13363,7 @@ var app = (function () {
 
     			attr(button, "class", button_class_value = "" + ((/*selectedCategory*/ ctx[2] === /*index*/ ctx[10]
     			? `bg-stone-600 text-stone-100`
-    			: `text-stone-600`) + " border-2 border-stone-600 whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center font-medium px-8"));
+    			: ``) + " border-2 border-stone-600 whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center font-medium px-8"));
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -13330,7 +13379,7 @@ var app = (function () {
 
     			if (dirty & /*selectedCategory*/ 4 && button_class_value !== (button_class_value = "" + ((/*selectedCategory*/ ctx[2] === /*index*/ ctx[10]
     			? `bg-stone-600 text-stone-100`
-    			: `text-stone-600`) + " border-2 border-stone-600 whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center font-medium px-8"))) {
+    			: ``) + " border-2 border-stone-600 whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center font-medium px-8"))) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -13366,7 +13415,7 @@ var app = (function () {
     	icon0 = new Icon({
     			props: {
     				icon: "uil:search",
-    				class: "text-stone-600",
+    				class: "",
     				width: "24",
     				height: "24"
     			}
@@ -13382,7 +13431,7 @@ var app = (function () {
     	icon1 = new Icon({
     			props: {
     				icon: "octicon:filter-16",
-    				class: "text-stone-600",
+    				class: "",
     				width: "24",
     				height: "24"
     			}
@@ -13415,16 +13464,16 @@ var app = (function () {
     			attr(input0, "name", "q");
     			attr(input0, "id", "q");
     			attr(input0, "type", "text");
-    			attr(input0, "class", "w-full tracking-wide text-stone-600 placeholder-stone-600 bg-transparent");
+    			attr(input0, "class", "w-full tracking-wide placeholder-stone-600 bg-transparent");
     			attr(input0, "placeholder", input0_placeholder_value = "Search " + /*count_value*/ ctx[3].toLocaleString() + " icons");
     			attr(div0, "class", "inline-flex items-center w-full p-4 overflow-hidden border-2 border-stone-600 gap-4 ");
     			attr(button, "type", "submit");
-    			attr(button, "class", "flex items-center justify-center h-16 sm:h-full px-12 font-semibold tracking-wide text-stone-600 border-2 border-stone-600 whitespace-nowrap gap-6");
+    			attr(button, "class", "flex items-center justify-center h-16 sm:h-full px-12 font-semibold tracking-wide border-2 border-stone-600 whitespace-nowrap gap-6");
     			attr(form, "action", "/search");
     			attr(form, "class", "flex flex-col w-full sm:h-16 mt-12 sm:flex-row gap-2");
     			attr(div1, "class", "flex flex-wrap gap-2");
     			attr(input1, "type", "text");
-    			attr(input1, "class", "w-full tracking-wide text-stone-600 placeholder-stone-600 bg-transparent");
+    			attr(input1, "class", "w-full tracking-wide placeholder-stone-600 bg-transparent");
     			attr(input1, "placeholder", "Filter icon sets");
     			attr(div2, "class", "inline-flex items-center p-4 overflow-hidden border-2 border-stone-600 gap-3 w-full md:w-96 flex-shrink-0");
     			attr(div3, "class", "flex flex-col md:flex-row items-start justify-between w-full mt-4 gap-4");
@@ -13579,15 +13628,24 @@ var app = (function () {
     		c() {
     			p = element("p");
 
-    			p.innerHTML = `Icon sets are automatically kept up to date, making sure you always have access to the newest icons.
-        <br/><br/>
-        If you are author of icon set that you would like to be published on Iconify, please <a>open an issue at GitHub repository for icon sets</a>. Icon set must be your own original work, it must have open source license and it must be published on GitHub or NPM.
-        <br/><br/>
-        Goal of Iconify is to make using icons as simple as possible, while offering huge number of icons.
-        <br/><br/>
-        Currently you can use icons in your projects as JavaScript library for browsers, React, Vue and Svelte components. Plug-ins for Sketch and Figma are available to make life of designers easier. <a>Iconify Icon Finder</a> will be available soon to help developers add icon piclers to their projects, such as website builders and website customisers.
-        <br/><br/>
-        See <a>about Iconify page</a> to learn more about Iconify project.`;
+    			p.innerHTML = `Icon sets are automatically kept up to date, making sure you always have
+    access to the newest icons.
+    <br/><br/>
+    If you are author of icon set that you would like to be published on Iconify,
+    please <a>open an issue at GitHub repository for icon sets</a>. Icon set
+    must be your own original work, it must have open source license and it must
+    be published on GitHub or NPM.
+    <br/><br/>
+    Goal of Iconify is to make using icons as simple as possible, while offering
+    huge number of icons.
+    <br/><br/>
+    Currently you can use icons in your projects as JavaScript library for browsers,
+    React, Vue and Svelte components. Plug-ins for Sketch and Figma are available
+    to make life of designers easier. <a>Iconify Icon Finder</a> will be
+    available soon to help developers add icon piclers to their projects, such
+    as website builders and website customisers.
+    <br/><br/>
+    See <a>about Iconify page</a> to learn more about Iconify project.`;
 
     			attr(p, "class", "mt-8");
     		},
@@ -32425,38 +32483,38 @@ var app = (function () {
     			t12 = space();
     			div5 = element("div");
     			input6 = element("input");
-    			attr(strong0, "class", "svelte-potnje");
+    			attr(strong0, "class", "svelte-w9go3q");
     			attr(input0, "type", "range");
     			attr(input0, "min", "0");
     			attr(input0, "max", "255");
-    			attr(input0, "class", "svelte-potnje");
-    			attr(input1, "class", "text-input svelte-potnje");
+    			attr(input0, "class", "svelte-w9go3q");
+    			attr(input1, "class", "text-input svelte-w9go3q");
     			attr(input1, "type", "number");
-    			attr(div0, "class", "color-component svelte-potnje");
-    			attr(strong1, "class", "svelte-potnje");
+    			attr(div0, "class", "color-component svelte-w9go3q");
+    			attr(strong1, "class", "svelte-w9go3q");
     			attr(input2, "type", "range");
     			attr(input2, "min", "0");
     			attr(input2, "max", "255");
-    			attr(input2, "class", "svelte-potnje");
-    			attr(input3, "class", "text-input svelte-potnje");
+    			attr(input2, "class", "svelte-w9go3q");
+    			attr(input3, "class", "text-input svelte-w9go3q");
     			attr(input3, "type", "number");
-    			attr(div1, "class", "color-component svelte-potnje");
-    			attr(strong2, "class", "svelte-potnje");
+    			attr(div1, "class", "color-component svelte-w9go3q");
+    			attr(strong2, "class", "svelte-w9go3q");
     			attr(input4, "type", "range");
     			attr(input4, "min", "0");
     			attr(input4, "max", "255");
-    			attr(input4, "class", "svelte-potnje");
-    			attr(input5, "class", "text-input svelte-potnje");
+    			attr(input4, "class", "svelte-w9go3q");
+    			attr(input5, "class", "text-input svelte-w9go3q");
     			attr(input5, "type", "number");
-    			attr(div2, "class", "color-component svelte-potnje");
-    			attr(div3, "class", "color-selectors svelte-potnje");
-    			attr(div4, "class", "preview svelte-potnje");
+    			attr(div2, "class", "color-component svelte-w9go3q");
+    			attr(div3, "class", "color-selectors svelte-w9go3q");
+    			attr(div4, "class", "preview svelte-w9go3q");
     			set_style(div4, "background", /*rgb*/ ctx[4]);
-    			attr(input6, "class", "text-input svelte-potnje");
+    			attr(input6, "class", "text-input svelte-w9go3q");
     			attr(input6, "type", "text");
     			input6.value = /*hex*/ ctx[3];
-    			attr(div6, "class", "color-preview svelte-potnje");
-    			attr(div7, "class", "color-picker svelte-potnje");
+    			attr(div6, "class", "color-preview svelte-w9go3q");
+    			attr(div7, "class", "color-picker svelte-w9go3q");
     		},
     		m(target, anchor) {
     			insert(target, div7, anchor);
@@ -32683,9 +32741,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*version*/ ctx[9]);
-    			attr(span0, "class", "label svelte-54ndm9");
-    			attr(span1, "class", "value svelte-54ndm9");
-    			attr(div, "class", "property svelte-54ndm9");
+    			attr(span0, "class", "label svelte-1gm5gmt");
+    			attr(span1, "class", "value svelte-1gm5gmt");
+    			attr(div, "class", "property svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32703,7 +32761,7 @@ var app = (function () {
     	};
     }
 
-    // (70:0) {#if numFrames}
+    // (71:0) {#if numFrames}
     function create_if_block_9$1(ctx) {
     	let div;
     	let span0;
@@ -32719,9 +32777,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*numFrames*/ ctx[6]);
-    			attr(span0, "class", "label svelte-54ndm9");
-    			attr(span1, "class", "value svelte-54ndm9");
-    			attr(div, "class", "property svelte-54ndm9");
+    			attr(span0, "class", "label svelte-1gm5gmt");
+    			attr(span1, "class", "value svelte-1gm5gmt");
+    			attr(div, "class", "property svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32739,7 +32797,7 @@ var app = (function () {
     	};
     }
 
-    // (77:0) {#if frameRate}
+    // (78:0) {#if frameRate}
     function create_if_block_8$1(ctx) {
     	let div;
     	let span0;
@@ -32755,9 +32813,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*frameRate*/ ctx[1]);
-    			attr(span0, "class", "label svelte-54ndm9");
-    			attr(span1, "class", "value svelte-54ndm9");
-    			attr(div, "class", "property svelte-54ndm9");
+    			attr(span0, "class", "label svelte-1gm5gmt");
+    			attr(span1, "class", "value svelte-1gm5gmt");
+    			attr(div, "class", "property svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32775,7 +32833,7 @@ var app = (function () {
     	};
     }
 
-    // (84:0) {#if numLayers}
+    // (85:0) {#if numLayers}
     function create_if_block_7$1(ctx) {
     	let div;
     	let span0;
@@ -32791,9 +32849,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*numLayers*/ ctx[7]);
-    			attr(span0, "class", "label svelte-54ndm9");
-    			attr(span1, "class", "value svelte-54ndm9");
-    			attr(div, "class", "property svelte-54ndm9");
+    			attr(span0, "class", "label svelte-1gm5gmt");
+    			attr(span1, "class", "value svelte-1gm5gmt");
+    			attr(div, "class", "property svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32811,7 +32869,7 @@ var app = (function () {
     	};
     }
 
-    // (91:0) {#if numAssets}
+    // (92:0) {#if numAssets}
     function create_if_block_6$1(ctx) {
     	let div;
     	let span0;
@@ -32827,9 +32885,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*numAssets*/ ctx[4]);
-    			attr(span0, "class", "label svelte-54ndm9");
-    			attr(span1, "class", "value svelte-54ndm9");
-    			attr(div, "class", "property svelte-54ndm9");
+    			attr(span0, "class", "label svelte-1gm5gmt");
+    			attr(span1, "class", "value svelte-1gm5gmt");
+    			attr(div, "class", "property svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32847,7 +32905,7 @@ var app = (function () {
     	};
     }
 
-    // (98:0) {#if numFonts}
+    // (99:0) {#if numFonts}
     function create_if_block_5$1(ctx) {
     	let div;
     	let span0;
@@ -32863,9 +32921,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*numFonts*/ ctx[5]);
-    			attr(span0, "class", "label svelte-54ndm9");
-    			attr(span1, "class", "value svelte-54ndm9");
-    			attr(div, "class", "property svelte-54ndm9");
+    			attr(span0, "class", "label svelte-1gm5gmt");
+    			attr(span1, "class", "value svelte-1gm5gmt");
+    			attr(div, "class", "property svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32883,7 +32941,7 @@ var app = (function () {
     	};
     }
 
-    // (105:0) {#if hasMeta}
+    // (106:0) {#if hasMeta}
     function create_if_block$5(ctx) {
     	let hr;
     	let t0;
@@ -32989,7 +33047,7 @@ var app = (function () {
     	};
     }
 
-    // (108:2) {#if generator}
+    // (109:2) {#if generator}
     function create_if_block_4$2(ctx) {
     	let div;
     	let span0;
@@ -33005,9 +33063,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*generator*/ ctx[2]);
-    			attr(span0, "class", "label svelte-54ndm9");
-    			attr(span1, "class", "value svelte-54ndm9");
-    			attr(div, "class", "property svelte-54ndm9");
+    			attr(span0, "class", "label svelte-1gm5gmt");
+    			attr(span1, "class", "value svelte-1gm5gmt");
+    			attr(div, "class", "property svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33025,7 +33083,7 @@ var app = (function () {
     	};
     }
 
-    // (115:2) {#if author}
+    // (116:2) {#if author}
     function create_if_block_3$4(ctx) {
     	let div;
     	let span0;
@@ -33041,9 +33099,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*author*/ ctx[0]);
-    			attr(span0, "class", "label svelte-54ndm9");
-    			attr(span1, "class", "value svelte-54ndm9");
-    			attr(div, "class", "property svelte-54ndm9");
+    			attr(span0, "class", "label svelte-1gm5gmt");
+    			attr(span1, "class", "value svelte-1gm5gmt");
+    			attr(div, "class", "property svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33061,7 +33119,7 @@ var app = (function () {
     	};
     }
 
-    // (122:2) {#if keywords}
+    // (123:2) {#if keywords}
     function create_if_block_2$4(ctx) {
     	let div;
     	let span0;
@@ -33077,9 +33135,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*keywords*/ ctx[3]);
-    			attr(span0, "class", "label svelte-54ndm9");
-    			attr(span1, "class", "value svelte-54ndm9");
-    			attr(div, "class", "property svelte-54ndm9");
+    			attr(span0, "class", "label svelte-1gm5gmt");
+    			attr(span1, "class", "value svelte-1gm5gmt");
+    			attr(div, "class", "property svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33097,7 +33155,7 @@ var app = (function () {
     	};
     }
 
-    // (129:2) {#if themeColor}
+    // (130:2) {#if themeColor}
     function create_if_block_1$5(ctx) {
     	let div;
     	let span0;
@@ -33113,9 +33171,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*themeColor*/ ctx[8]);
-    			attr(span0, "class", "label svelte-54ndm9");
-    			attr(span1, "class", "value svelte-54ndm9");
-    			attr(div, "class", "property svelte-54ndm9");
+    			attr(span0, "class", "label svelte-1gm5gmt");
+    			attr(span1, "class", "value svelte-1gm5gmt");
+    			attr(div, "class", "property svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33170,7 +33228,7 @@ var app = (function () {
     			t7 = space();
     			if (if_block6) if_block6.c();
     			if_block6_anchor = empty();
-    			attr(h4, "class", "svelte-54ndm9");
+    			attr(h4, "class", "svelte-1gm5gmt");
     		},
     		m(target, anchor) {
     			insert(target, h4, anchor);
@@ -33400,13 +33458,13 @@ var app = (function () {
     			if (content_slot) content_slot.c();
     			t1 = space();
     			div1 = element("div");
-    			attr(div1, "class", "arrow svelte-1i83hqr");
+    			attr(div1, "class", "arrow svelte-cq7jp3");
     			set_style(div1, "border-color", /*color*/ ctx[0] + " transparent transparent transparent");
-    			attr(div2, "class", "popover-content svelte-1i83hqr");
+    			attr(div2, "class", "popover-content svelte-cq7jp3");
     			toggle_class(div2, "hidden", !/*_open*/ ctx[4]);
     			toggle_class(div2, "left-align", /*_alignment*/ ctx[3] !== -1);
     			toggle_class(div2, "right-align", /*_alignment*/ ctx[3] === -1);
-    			attr(div3, "class", "popover svelte-1i83hqr");
+    			attr(div3, "class", "popover svelte-cq7jp3");
     		},
     		m(target, anchor) {
     			insert(target, div3, anchor);
@@ -33697,14 +33755,14 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (425:32) 
+    // (426:32) 
     function create_if_block_13(ctx) {
     	let div;
 
     	return {
     		c() {
     			div = element("div");
-    			attr(div, "class", "spacer svelte-y4y35s");
+    			attr(div, "class", "spacer svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33718,7 +33776,7 @@ var app = (function () {
     	};
     }
 
-    // (418:39) 
+    // (419:39) 
     function create_if_block_12(ctx) {
     	let div;
     	let svg;
@@ -33747,8 +33805,8 @@ var app = (function () {
     			attr(rect, "transform", "matrix(-1 0 0 1 7.7 3.4)");
     			attr(rect, "width", "5.7");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
-    			attr(div, "class", "btn svelte-y4y35s");
+    			toggle_class(svg, "svelte-9yox50", true);
+    			attr(div, "class", "btn svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33764,7 +33822,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		i: noop,
     		o: noop,
@@ -33776,7 +33834,7 @@ var app = (function () {
     	};
     }
 
-    // (408:35) 
+    // (409:35) 
     function create_if_block_11(ctx) {
     	let div;
     	let svg;
@@ -33805,8 +33863,8 @@ var app = (function () {
     			attr(rect, "transform", "matrix(1 0 0 -1 16.286 20.571)");
     			attr(rect, "width", "5.714");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
-    			attr(div, "class", "btn svelte-y4y35s");
+    			toggle_class(svg, "svelte-9yox50", true);
+    			attr(div, "class", "btn svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33822,7 +33880,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		i: noop,
     		o: noop,
@@ -33834,7 +33892,7 @@ var app = (function () {
     	};
     }
 
-    // (396:31) 
+    // (397:31) 
     function create_if_block_10(ctx) {
     	let div;
     	let input;
@@ -33847,9 +33905,9 @@ var app = (function () {
     			div = element("div");
     			input = element("input");
     			t = space();
-    			attr(input, "class", "frame-number svelte-y4y35s");
+    			attr(input, "class", "frame-number svelte-9yox50");
     			attr(input, "type", "text");
-    			attr(div, "class", " svelte-y4y35s");
+    			attr(div, "class", " svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33884,7 +33942,7 @@ var app = (function () {
     	};
     }
 
-    // (371:30) 
+    // (372:30) 
     function create_if_block_9(ctx) {
     	let div;
     	let popover;
@@ -33907,7 +33965,7 @@ var app = (function () {
     			div = element("div");
     			create_component(popover.$$.fragment);
     			t = space();
-    			attr(div, "class", " svelte-y4y35s");
+    			attr(div, "class", " svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33940,7 +33998,7 @@ var app = (function () {
     	};
     }
 
-    // (349:30) 
+    // (350:30) 
     function create_if_block_7(ctx) {
     	let div;
     	let t;
@@ -33960,7 +34018,7 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			t = space();
-    			attr(div, "class", "btn svelte-y4y35s");
+    			attr(div, "class", "btn svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33996,7 +34054,7 @@ var app = (function () {
     	};
     }
 
-    // (315:34) 
+    // (316:34) 
     function create_if_block_6(ctx) {
     	let div;
     	let popover;
@@ -34023,7 +34081,7 @@ var app = (function () {
     			div = element("div");
     			create_component(popover.$$.fragment);
     			t = space();
-    			attr(div, "class", " svelte-y4y35s");
+    			attr(div, "class", " svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34067,7 +34125,7 @@ var app = (function () {
     	};
     }
 
-    // (296:36) 
+    // (297:36) 
     function create_if_block_5(ctx) {
     	let div;
     	let popover;
@@ -34090,7 +34148,7 @@ var app = (function () {
     			div = element("div");
     			create_component(popover.$$.fragment);
     			t = space();
-    			attr(div, "class", " svelte-y4y35s");
+    			attr(div, "class", " svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34123,7 +34181,7 @@ var app = (function () {
     	};
     }
 
-    // (267:30) 
+    // (268:30) 
     function create_if_block_4$1(ctx) {
     	let div;
     	let svg;
@@ -34154,8 +34212,8 @@ var app = (function () {
     			attr(path1, "stroke", "#8795A1");
     			attr(path1, "stroke-width", ".26");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
-    			attr(div, "class", "btn svelte-y4y35s");
+    			toggle_class(svg, "svelte-9yox50", true);
+    			attr(div, "class", "btn svelte-9yox50");
     			toggle_class(div, "active", /*loop*/ ctx[7]);
     		},
     		m(target, anchor) {
@@ -34176,7 +34234,7 @@ var app = (function () {
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
 
     			if (dirty[0] & /*loop*/ 128) {
     				toggle_class(div, "active", /*loop*/ ctx[7]);
@@ -34192,7 +34250,7 @@ var app = (function () {
     	};
     }
 
-    // (251:34) 
+    // (252:34) 
     function create_if_block_3$3(ctx) {
     	let input;
     	let input_style_value;
@@ -34202,7 +34260,7 @@ var app = (function () {
     	return {
     		c() {
     			input = element("input");
-    			attr(input, "class", "progress svelte-y4y35s");
+    			attr(input, "class", "progress svelte-9yox50");
     			attr(input, "type", "range");
     			attr(input, "min", "0");
     			attr(input, "step", "1");
@@ -34257,7 +34315,7 @@ var app = (function () {
     	};
     }
 
-    // (242:30) 
+    // (243:30) 
     function create_if_block_2$3(ctx) {
     	let div;
     	let svg;
@@ -34280,8 +34338,8 @@ var app = (function () {
     			t = space();
     			attr(path, "d", "M2 3.667A1.67 1.67 0 0 1 3.667 2h16.666A1.67 1.67 0 0 1 22 3.667v16.666A1.67 1.67 0 0 1 20.333\n            22H3.667A1.67 1.67 0 0 1 2 20.333z");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
-    			attr(div, "class", "btn svelte-y4y35s");
+    			toggle_class(svg, "svelte-9yox50", true);
+    			attr(div, "class", "btn svelte-9yox50");
     			toggle_class(div, "active", /*isStopped*/ ctx[16]);
     		},
     		m(target, anchor) {
@@ -34301,7 +34359,7 @@ var app = (function () {
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
 
     			if (dirty[0] & /*isStopped*/ 65536) {
     				toggle_class(div, "active", /*isStopped*/ ctx[16]);
@@ -34317,7 +34375,7 @@ var app = (function () {
     	};
     }
 
-    // (229:4) {#if item === 'playpause'}
+    // (230:4) {#if item === 'playpause'}
     function create_if_block$4(ctx) {
     	let div;
     	let t;
@@ -34337,7 +34395,7 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			t = space();
-    			attr(div, "class", "btn svelte-y4y35s");
+    			attr(div, "class", "btn svelte-9yox50");
     			toggle_class(div, "active", /*isPlaying*/ ctx[18] || /*isPaused*/ ctx[17]);
     		},
     		m(target, anchor) {
@@ -34383,7 +34441,7 @@ var app = (function () {
     	};
     }
 
-    // (374:10) 
+    // (375:10) 
     function create_target_slot_2(ctx) {
     	let div;
     	let svg;
@@ -34409,8 +34467,8 @@ var app = (function () {
     			attr(path1, "clip-rule", "evenodd");
     			attr(path1, "d", "M12 10c.55 0 1 .42 1 .94v6.12c0 .52-.45.94-1 .94s-1-.42-1-.94v-6.12c0-.52.45-.94 1-.94zM12 6a1 1 0\n                011 1v.42a1 1 0 11-2 0V7a1 1 0 011-1z");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
-    			attr(div, "class", "btn svelte-y4y35s");
+    			toggle_class(svg, "svelte-9yox50", true);
+    			attr(div, "class", "btn svelte-9yox50");
     			attr(div, "slot", "target");
     		},
     		m(target, anchor) {
@@ -34421,7 +34479,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		d(detaching) {
     			if (detaching) detach(div);
@@ -34429,7 +34487,7 @@ var app = (function () {
     	};
     }
 
-    // (391:10) 
+    // (392:10) 
     function create_content_slot_2(ctx) {
     	let div;
     	let info;
@@ -34444,7 +34502,7 @@ var app = (function () {
     			div = element("div");
     			create_component(info.$$.fragment);
     			attr(div, "slot", "content");
-    			attr(div, "class", "popover popover-info svelte-y4y35s");
+    			attr(div, "class", "popover popover-info svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34472,7 +34530,7 @@ var app = (function () {
     	};
     }
 
-    // (360:8) {:else}
+    // (361:8) {:else}
     function create_else_block_1$3(ctx) {
     	let svg;
     	let path;
@@ -34490,7 +34548,7 @@ var app = (function () {
     			attr(path, "d", "M21 8a1 1 0 102 0V4a3 3 0 00-3-3h-4a1 1 0 100 2h4a1 1 0 011 1v4zM1 8a1 1 0 102 0V4a1 1 0 011-1h4a1 1 0\n              100-2H4a3 3 0 00-3 3v4zm15 15h4a3 3 0 003-3v-4a1 1 0 10-2 0v4a1 1 0 01-1 1h-4a1 1 0 100 2zM4 23h4a1 1 0\n              100-2H4a1 1 0 01-1-1v-4a1 1 0 10-2 0v4a3 3 0 003 3z");
     			attr(path, "stroke-width", ".2");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		m(target, anchor) {
     			insert(target, svg, anchor);
@@ -34498,7 +34556,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		d(detaching) {
     			if (detaching) detach(svg);
@@ -34506,7 +34564,7 @@ var app = (function () {
     	};
     }
 
-    // (351:8) {#if isZoomed}
+    // (352:8) {#if isZoomed}
     function create_if_block_8(ctx) {
     	let svg;
     	let path;
@@ -34524,7 +34582,7 @@ var app = (function () {
     			attr(path, "d", "M7 22a1 1 0 102 0v-4a3 3 0 00-3-3H2a1 1 0 100 2h4a1 1 0 011 1v4zm8 0a1 1 0 102 0v-4a1 1 0 011-1h4a1 1 0\n              100-2h-4a3 3 0 00-3 3v4zM2 9h4a3 3 0 003-3V2a1 1 0 10-2 0v4a1 1 0 01-1 1H2a1 1 0 100 2zm16 0h4a1 1 0\n              100-2h-4a1 1 0 01-1-1V2a1 1 0 10-2 0v4a3 3 0 003 3z");
     			attr(path, "stroke-width", ".2");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		m(target, anchor) {
     			insert(target, svg, anchor);
@@ -34532,7 +34590,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		d(detaching) {
     			if (detaching) detach(svg);
@@ -34540,7 +34598,7 @@ var app = (function () {
     	};
     }
 
-    // (322:10) 
+    // (323:10) 
     function create_target_slot_1(ctx) {
     	let div;
     	let svg;
@@ -34574,8 +34632,8 @@ var app = (function () {
     			attr(path2, "stroke", "#8795a1");
     			attr(path2, "stroke-width", ".215");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
-    			attr(div, "class", "btn svelte-y4y35s");
+    			toggle_class(svg, "svelte-9yox50", true);
+    			attr(div, "class", "btn svelte-9yox50");
     			attr(div, "slot", "target");
     		},
     		m(target, anchor) {
@@ -34588,7 +34646,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		d(detaching) {
     			if (detaching) detach(div);
@@ -34596,7 +34654,7 @@ var app = (function () {
     	};
     }
 
-    // (341:10) 
+    // (342:10) 
     function create_content_slot_1(ctx) {
     	let div;
     	let h5;
@@ -34626,14 +34684,14 @@ var app = (function () {
     			t6 = space();
     			i = element("i");
     			i.textContent = "Scroll with mousewheel to find exact frame";
-    			attr(h5, "class", "svelte-y4y35s");
+    			attr(h5, "class", "svelte-9yox50");
     			attr(a0, "href", "#downloadsvg");
-    			attr(a0, "class", "svelte-y4y35s");
+    			attr(a0, "class", "svelte-9yox50");
     			attr(a1, "href", "#downloadsvg");
-    			attr(a1, "class", "svelte-y4y35s");
-    			attr(i, "class", "note svelte-y4y35s");
+    			attr(a1, "class", "svelte-9yox50");
+    			attr(i, "class", "note svelte-9yox50");
     			attr(div, "slot", "content");
-    			attr(div, "class", "popover popover-snapshot svelte-y4y35s");
+    			attr(div, "class", "popover popover-snapshot svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34667,7 +34725,7 @@ var app = (function () {
     	};
     }
 
-    // (299:10) 
+    // (300:10) 
     function create_target_slot(ctx) {
     	let div;
     	let svg;
@@ -34686,8 +34744,8 @@ var app = (function () {
     			path = svg_element("path");
     			attr(path, "d", "M12 3.1L6.1 8.6a7.6 7.6 0 00-2.2 4 7.2 7.2 0 00.4 4.4 7.9 7.9 0 003 3.5 8.7 8.7 0 004.7 1.3c1.6 0\n                3.2-.5 4.6-1.3s2.4-2 3-3.5a7.2 7.2 0 00.5-4.5 7.6 7.6 0 00-2.2-4L12 3.2zM12 0l7.5 7a9.8 9.8 0 013 5.1\n                9.3 9.3 0 01-.6 5.8c-.9 1.8-2.2 3.3-4 4.4A11.2 11.2 0 0112 24a11.2 11.2 0\n                01-6-1.7c-1.7-1-3-2.6-3.9-4.4a9.3 9.3 0 01-.6-5.8c.4-2 1.5-3.7 3-5L12 0zM6 14h12c0 1.5-.7 3-1.8 4s-2.6\n                1.6-4.2 1.6S9 19 7.8 18s-1.7-2.5-1.7-4z");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
-    			attr(div, "class", "btn svelte-y4y35s");
+    			toggle_class(svg, "svelte-9yox50", true);
+    			attr(div, "class", "btn svelte-9yox50");
     			attr(div, "slot", "target");
     		},
     		m(target, anchor) {
@@ -34697,7 +34755,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		d(detaching) {
     			if (detaching) detach(div);
@@ -34705,7 +34763,7 @@ var app = (function () {
     	};
     }
 
-    // (310:10) 
+    // (311:10) 
     function create_content_slot(ctx) {
     	let div;
     	let colorpicker;
@@ -34718,7 +34776,7 @@ var app = (function () {
     			div = element("div");
     			create_component(colorpicker.$$.fragment);
     			attr(div, "slot", "content");
-    			attr(div, "class", "popover popover-background svelte-y4y35s");
+    			attr(div, "class", "popover popover-background svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34746,7 +34804,7 @@ var app = (function () {
     	};
     }
 
-    // (236:8) {:else}
+    // (237:8) {:else}
     function create_else_block$3(ctx) {
     	let svg;
     	let path;
@@ -34763,7 +34821,7 @@ var app = (function () {
     			path = svg_element("path");
     			attr(path, "d", "M2 3.4C2 1.9 3.5 1 4.8 1.8l16.5 9.6c1.2.7 1.2 2.5 0 3.2L4.8 24.2C3.5 25 2 24.1 2 22.6V3.4z");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		m(target, anchor) {
     			insert(target, svg, anchor);
@@ -34771,7 +34829,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		d(detaching) {
     			if (detaching) detach(svg);
@@ -34779,7 +34837,7 @@ var app = (function () {
     	};
     }
 
-    // (231:8) {#if isPlaying}
+    // (232:8) {#if isPlaying}
     function create_if_block_1$4(ctx) {
     	let svg;
     	let rect0;
@@ -34807,7 +34865,7 @@ var app = (function () {
     			attr(rect1, "x", "2");
     			attr(rect1, "y", ".5");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		m(target, anchor) {
     			insert(target, svg, anchor);
@@ -34816,7 +34874,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-y4y35s", true);
+    			toggle_class(svg, "svelte-9yox50", true);
     		},
     		d(detaching) {
     			if (detaching) detach(svg);
@@ -34824,7 +34882,7 @@ var app = (function () {
     	};
     }
 
-    // (228:2) {#each layout as item}
+    // (229:2) {#each layout as item}
     function create_each_block$3(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -34958,7 +35016,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr(div, "class", "lottie-player-controls svelte-y4y35s");
+    			attr(div, "class", "lottie-player-controls svelte-9yox50");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -35236,7 +35294,7 @@ var app = (function () {
     		c() {
     			div = element("div");
     			div.textContent = "⚠️";
-    			attr(div, "class", "lottie-player-error svelte-1n5qc19");
+    			attr(div, "class", "lottie-player-error svelte-1aiskgp");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -35247,7 +35305,7 @@ var app = (function () {
     	};
     }
 
-    // (562:4) {#if controls}
+    // (563:4) {#if controls}
     function create_if_block$3(ctx) {
     	let controls_1;
     	let current;
@@ -35341,9 +35399,9 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			set_style(div0, "background", /*background*/ ctx[1]);
-    			attr(div0, "class", "svelte-1n5qc19");
+    			attr(div0, "class", "svelte-1aiskgp");
     			toggle_class(div0, "animation", true);
-    			attr(div1, "class", "lottie-player svelte-1n5qc19");
+    			attr(div1, "class", "lottie-player svelte-1aiskgp");
     			toggle_class(div1, "with-controls", /*controls*/ ctx[2]);
     			toggle_class(div1, "is-zoomed", /*isZoomed*/ ctx[29]);
 
@@ -36321,7 +36379,7 @@ var app = (function () {
     			code = element("code");
     			if (default_slot) default_slot.c();
     			attr(code, "class", "whitespace-pre-wrap break-all");
-    			attr(div, "class", "border-2 border-stone-600 text-stone-600 py-4 px-5 my-4 overflow-scroll");
+    			attr(div, "class", "border-2 border-stone-600 py-4 px-5 my-4 overflow-scroll");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -36394,7 +36452,7 @@ var app = (function () {
     	icon = new Icon({
     			props: {
     				icon: "mdi:link-variant",
-    				class: "text-stone-600 flex-shrink-0",
+    				class: " flex-shrink-0",
     				width: "24",
     				height: "24"
     			}
@@ -36411,7 +36469,7 @@ var app = (function () {
     			a = element("a");
     			if (default_slot) default_slot.c();
     			attr(a, "href", /*link*/ ctx[0]);
-    			attr(div, "class", "mt-10 flex items-center gap-2 tracking-wide text-stone-600");
+    			attr(div, "class", "mt-10 flex items-center gap-2 tracking-wide ");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -36535,7 +36593,7 @@ var app = (function () {
     	};
     }
 
-    // (20:0) <CodeSnippet>
+    // (20:0) <CodeSnippet   >
     function create_default_slot_1$d(ctx) {
     	let t_value = `<IconifyIcon @icon="${/*icon*/ ctx[7]}"${isColor(/*color*/ ctx[0])
 	? ` @color="${colornameFromHex(/*color*/ ctx[0])}"`
@@ -36573,7 +36631,7 @@ var app = (function () {
     	};
     }
 
-    // (21:0) <MoreInfo link="https://google.com">
+    // (29:0) <MoreInfo link="https://google.com">
     function create_default_slot$f(ctx) {
     	let t;
 
@@ -36778,7 +36836,7 @@ var app = (function () {
 
     	return {
     		c() {
-    			t = text("Iconify SVG framework makes using icons as easy as icon fonts. To use \"13-plus in HTML, add this code to the document:");
+    			t = text("Iconify SVG framework makes using icons as easy as icon fonts. To use\n  \"13-plus in HTML, add this code to the document:");
     		},
     		m(target, anchor) {
     			insert(target, t, anchor);
@@ -36789,7 +36847,7 @@ var app = (function () {
     	};
     }
 
-    // (19:0) <CodeSnippet>
+    // (22:0) <CodeSnippet   >
     function create_default_slot_3$a(ctx) {
     	let t_value = `<span class="iconify${/*display*/ ctx[6] === "inline" ? "-inline" : ""}" data-icon="${/*icon*/ ctx[7]}"${isColor(/*color*/ ctx[0])
 	? ` style="color:${colornameFromHex(/*color*/ ctx[0])}`
@@ -36835,7 +36893,7 @@ var app = (function () {
     	};
     }
 
-    // (20:0) <Paragraph>
+    // (37:0) <Paragraph>
     function create_default_slot_2$a(ctx) {
     	let t0;
     	let br;
@@ -36843,9 +36901,9 @@ var app = (function () {
 
     	return {
     		c() {
-    			t0 = text("Iconify SVG framework will load icon data from Iconify API and replace that placeholder with SVG.\n    ");
+    			t0 = text("Iconify SVG framework will load icon data from Iconify API and replace that\n  placeholder with SVG.\n  ");
     			br = element("br");
-    			t1 = text("\n    Make sure you import Iconify SVG framework:");
+    			t1 = text("\n  Make sure you import Iconify SVG framework:");
     		},
     		m(target, anchor) {
     			insert(target, t0, anchor);
@@ -36861,9 +36919,9 @@ var app = (function () {
     	};
     }
 
-    // (25:0) <CodeSnippet>
+    // (43:0) <CodeSnippet   >
     function create_default_slot_1$c(ctx) {
-    	let t_value = '<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>' + "";
+    	let t_value = '<script src="https://code.iconify.design/2/2.1.0/iconify.min.js" ✂prettier:content✂="">{}</script>' + "";
     	let t;
 
     	return {
@@ -36880,7 +36938,7 @@ var app = (function () {
     	};
     }
 
-    // (26:0) <MoreInfo>
+    // (46:0) <MoreInfo>
     function create_default_slot$e(ctx) {
     	let t;
 
@@ -37084,7 +37142,7 @@ var app = (function () {
 
     	return {
     		c() {
-    			t = text("Add code below to your stylesheet to use icon as background image or as pseudo element's content:");
+    			t = text("Add code below to your stylesheet to use icon as background image or as pseudo\n  element's content:");
     		},
     		m(target, anchor) {
     			insert(target, t, anchor);
@@ -37095,7 +37153,7 @@ var app = (function () {
     	};
     }
 
-    // (42:0) <CodeSnippet>
+    // (53:0) <CodeSnippet   >
     function create_default_slot_2$9(ctx) {
     	let t0;
     	let t1;
@@ -37123,7 +37181,7 @@ var app = (function () {
     	};
     }
 
-    // (43:0) <CodeSnippet>
+    // (56:0) <CodeSnippet   >
     function create_default_slot_1$b(ctx) {
     	let t0;
     	let t1;
@@ -37151,7 +37209,7 @@ var app = (function () {
     	};
     }
 
-    // (45:0) <MoreInfo link="http://www.iconify.design">
+    // (60:0) <MoreInfo link="http://www.iconify.design">
     function create_default_slot$d(ctx) {
     	let t;
 
@@ -37377,7 +37435,7 @@ var app = (function () {
     	};
     }
 
-    // (17:0) <CodeSnippet>
+    // (18:0) <CodeSnippet>
     function create_default_slot_5$7(ctx) {
     	let t;
 
@@ -37394,7 +37452,7 @@ var app = (function () {
     	};
     }
 
-    // (18:0) <Paragraph>
+    // (19:0) <Paragraph>
     function create_default_slot_4$8(ctx) {
     	let t;
 
@@ -37411,7 +37469,7 @@ var app = (function () {
     	};
     }
 
-    // (19:0) <CodeSnippet>
+    // (20:0) <CodeSnippet>
     function create_default_slot_3$8(ctx) {
     	let t0;
     	let t1_value = `{ Icon }` + "";
@@ -37438,7 +37496,7 @@ var app = (function () {
     	};
     }
 
-    // (20:0) <Paragraph>
+    // (21:0) <Paragraph>
     function create_default_slot_2$8(ctx) {
     	let t;
 
@@ -37455,7 +37513,7 @@ var app = (function () {
     	};
     }
 
-    // (21:0) <CodeSnippet>
+    // (22:0) <CodeSnippet   >
     function create_default_slot_1$a(ctx) {
     	let t_value = `<Icon icon="${/*icon*/ ctx[7]}"${isColor(/*color*/ ctx[0])
 	? ` color="${colornameFromHex(/*color*/ ctx[0])}"`
@@ -37489,7 +37547,7 @@ var app = (function () {
     	};
     }
 
-    // (23:0) <MoreInfo link="https://iconify.design">
+    // (32:0) <MoreInfo link="https://iconify.design"   >
     function create_default_slot$c(ctx) {
     	let t;
 
@@ -37753,7 +37811,7 @@ var app = (function () {
     	};
     }
 
-    // (24:0) <CodeSnippet>
+    // (26:0) <CodeSnippet   >
     function create_default_slot_5$6(ctx) {
     	let t0;
     	let t1_value = /*icon*/ ctx[0]?.split(":")[0] + "";
@@ -37778,7 +37836,7 @@ var app = (function () {
     	};
     }
 
-    // (25:0) <Paragraph>
+    // (31:0) <Paragraph>
     function create_default_slot_4$7(ctx) {
     	let t;
 
@@ -37795,7 +37853,7 @@ var app = (function () {
     	};
     }
 
-    // (26:0) <CodeSnippet>
+    // (32:0) <CodeSnippet>
     function create_default_slot_3$7(ctx) {
     	let t0;
     	let t1_value = `{ Icon }` + "";
@@ -37815,7 +37873,7 @@ var app = (function () {
     		c() {
     			t0 = text("import ");
     			t1 = text(t1_value);
-    			t2 = text(" from '@iconify/react';\nimport icon");
+    			t2 = text(" from '@iconify/react'; import icon");
     			t3 = text(t3_value);
     			t4 = text(" from '@iconify/icons-");
     			t5 = text(t5_value);
@@ -37853,7 +37911,7 @@ var app = (function () {
     	};
     }
 
-    // (30:0) <Paragraph>
+    // (41:0) <Paragraph>
     function create_default_slot_2$7(ctx) {
     	let t;
 
@@ -37870,7 +37928,7 @@ var app = (function () {
     	};
     }
 
-    // (31:0) <CodeSnippet>
+    // (42:0) <CodeSnippet   >
     function create_default_slot_1$9(ctx) {
     	let t_value = `<Icon icon={icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func_1$3).join("")}}${isColor(/*color*/ ctx[1])
 	? ` color="${colornameFromHex(/*color*/ ctx[1])}"`
@@ -37904,7 +37962,7 @@ var app = (function () {
     	};
     }
 
-    // (33:0) <MoreInfo link="https://iconify.design">
+    // (56:0) <MoreInfo link="https://iconify.design"   >
     function create_default_slot$b(ctx) {
     	let t;
 
@@ -38246,7 +38304,7 @@ var app = (function () {
     	};
     }
 
-    // (22:0) <CodeSnippet>
+    // (22:0) <CodeSnippet   >
     function create_default_slot_1$8(ctx) {
     	let t_value = `<Icon icon="${/*icon*/ ctx[7]}"${isColor(/*color*/ ctx[0])
 	? ` color="${colornameFromHex(/*color*/ ctx[0])}"`
@@ -38280,7 +38338,7 @@ var app = (function () {
     	};
     }
 
-    // (23:0) <MoreInfo>
+    // (31:0) <MoreInfo>
     function create_default_slot$a(ctx) {
     	let t;
 
@@ -38543,7 +38601,7 @@ var app = (function () {
     	};
     }
 
-    // (24:0) <CodeSnippet>
+    // (26:0) <CodeSnippet   >
     function create_default_slot_5$4(ctx) {
     	let t;
 
@@ -38560,7 +38618,7 @@ var app = (function () {
     	};
     }
 
-    // (25:0) <Paragraph>
+    // (29:0) <Paragraph>
     function create_default_slot_4$5(ctx) {
     	let t;
 
@@ -38577,7 +38635,7 @@ var app = (function () {
     	};
     }
 
-    // (26:0) <CodeSnippet>
+    // (30:0) <CodeSnippet>
     function create_default_slot_3$5(ctx) {
     	let t0;
     	let t1_value = /*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$2).join("") + "";
@@ -38592,7 +38650,7 @@ var app = (function () {
 
     	return {
     		c() {
-    			t0 = text("import Icon from '@iconify/svelte';\nimport icon");
+    			t0 = text("import Icon from '@iconify/svelte'; import icon");
     			t1 = text(t1_value);
     			t2 = text(" from '@iconify/icons-");
     			t3 = text(t3_value);
@@ -38626,7 +38684,7 @@ var app = (function () {
     	};
     }
 
-    // (30:0) <Paragraph>
+    // (39:0) <Paragraph>
     function create_default_slot_2$5(ctx) {
     	let t;
 
@@ -38643,7 +38701,7 @@ var app = (function () {
     	};
     }
 
-    // (31:0) <CodeSnippet>
+    // (40:0) <CodeSnippet   >
     function create_default_slot_1$7(ctx) {
     	let t_value = `<Icon icon={icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func_1$2).join("")}}${isColor(/*color*/ ctx[1])
 	? ` color="${colornameFromHex(/*color*/ ctx[1])}"`
@@ -38677,7 +38735,7 @@ var app = (function () {
     	};
     }
 
-    // (32:0) <MoreInfo>
+    // (53:0) <MoreInfo>
     function create_default_slot$9(ctx) {
     	let t;
 
@@ -39061,7 +39119,7 @@ var app = (function () {
     	};
     }
 
-    // (30:0) <CodeSnippet>
+    // (30:0) <CodeSnippet   >
     function create_default_slot_1$6(ctx) {
     	let t_value = `<Icon icon="${/*icon*/ ctx[7]}"${isColor(/*color*/ ctx[0])
 	? ` color="${colornameFromHex(/*color*/ ctx[0])}"`
@@ -39071,9 +39129,7 @@ var app = (function () {
 	? ` :horizontalFlip="true"`
 	: ""}${/*flipVertical*/ ctx[4] ? ` :verticalFlip="true"` : ""}${/*rotate*/ ctx[5]
 	? ` :rotate="${/*rotate*/ ctx[5] / 90}"`
-	: ""}${/*display*/ ctx[6] === "inline"
-	? " :inline=\"true\""
-	: ""} />` + "";
+	: ""}${/*display*/ ctx[6] === "inline" ? ' :inline="true"' : ""} />` + "";
 
     	let t;
 
@@ -39093,9 +39149,7 @@ var app = (function () {
 			? ` :horizontalFlip="true"`
 			: ""}${/*flipVertical*/ ctx[4] ? ` :verticalFlip="true"` : ""}${/*rotate*/ ctx[5]
 			? ` :rotate="${/*rotate*/ ctx[5] / 90}"`
-			: ""}${/*display*/ ctx[6] === "inline"
-			? " :inline=\"true\""
-			: ""} />` + "")) set_data(t, t_value);
+			: ""}${/*display*/ ctx[6] === "inline" ? ' :inline="true"' : ""} />` + "")) set_data(t, t_value);
     		},
     		d(detaching) {
     			if (detaching) detach(t);
@@ -39103,7 +39157,7 @@ var app = (function () {
     	};
     }
 
-    // (31:0) <MoreInfo>
+    // (39:0) <MoreInfo>
     function create_default_slot$8(ctx) {
     	let t;
 
@@ -39525,7 +39579,7 @@ var app = (function () {
     	};
     }
 
-    // (30:0) <CodeSnippet>
+    // (30:0) <CodeSnippet   >
     function create_default_slot_1$5(ctx) {
     	let t_value = `<Icon icon="${/*icon*/ ctx[7]}"${isColor(/*color*/ ctx[0])
 	? ` color="${colornameFromHex(/*color*/ ctx[0])}"`
@@ -39535,9 +39589,7 @@ var app = (function () {
 	? ` :horizontalFlip="true"`
 	: ""}${/*flipVertical*/ ctx[4] ? ` :verticalFlip="true"` : ""}${/*rotate*/ ctx[5]
 	? ` :rotate="${/*rotate*/ ctx[5] / 90}"`
-	: ""}${/*display*/ ctx[6] === "inline"
-	? " :inline=\"true\""
-	: ""} />` + "";
+	: ""}${/*display*/ ctx[6] === "inline" ? ' :inline="true"' : ""} />` + "";
 
     	let t;
 
@@ -39557,9 +39609,7 @@ var app = (function () {
 			? ` :horizontalFlip="true"`
 			: ""}${/*flipVertical*/ ctx[4] ? ` :verticalFlip="true"` : ""}${/*rotate*/ ctx[5]
 			? ` :rotate="${/*rotate*/ ctx[5] / 90}"`
-			: ""}${/*display*/ ctx[6] === "inline"
-			? " :inline=\"true\""
-			: ""} />` + "")) set_data(t, t_value);
+			: ""}${/*display*/ ctx[6] === "inline" ? ' :inline="true"' : ""} />` + "")) set_data(t, t_value);
     		},
     		d(detaching) {
     			if (detaching) detach(t);
@@ -39567,7 +39617,7 @@ var app = (function () {
     	};
     }
 
-    // (31:0) <MoreInfo>
+    // (39:0) <MoreInfo>
     function create_default_slot$7(ctx) {
     	let t;
 
@@ -39878,7 +39928,7 @@ var app = (function () {
     	};
     }
 
-    // (24:0) <CodeSnippet>
+    // (26:0) <CodeSnippet   >
     function create_default_slot_7$1(ctx) {
     	let t0;
     	let t1_value = /*icon*/ ctx[0]?.split(":")[0] + "";
@@ -39903,7 +39953,7 @@ var app = (function () {
     	};
     }
 
-    // (25:0) <Paragraph>
+    // (31:0) <Paragraph>
     function create_default_slot_6$1(ctx) {
     	let t;
 
@@ -39920,7 +39970,7 @@ var app = (function () {
     	};
     }
 
-    // (26:0) <CodeSnippet>
+    // (32:0) <CodeSnippet>
     function create_default_slot_5$1(ctx) {
     	let t_value = `import { Icon } from '@iconify/vue2';
 import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} from '@iconify/icons-${/*icon*/ ctx[0]?.split(":")[0]}/${/*icon*/ ctx[0]?.split(":")[1]}';` + "";
@@ -39944,7 +39994,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} fr
     	};
     }
 
-    // (30:0) <Paragraph>
+    // (42:0) <Paragraph>
     function create_default_slot_4$2(ctx) {
     	let t;
 
@@ -39961,7 +40011,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} fr
     	};
     }
 
-    // (31:0) <CodeSnippet>
+    // (43:0) <CodeSnippet>
     function create_default_slot_3$2(ctx) {
     	let t_value = `export default {
 	components: {
@@ -40005,7 +40055,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} fr
     	};
     }
 
-    // (45:0) <Paragraph>
+    // (61:0) <Paragraph>
     function create_default_slot_2$2(ctx) {
     	let t;
 
@@ -40022,7 +40072,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} fr
     	};
     }
 
-    // (46:0) <CodeSnippet>
+    // (62:0) <CodeSnippet   >
     function create_default_slot_1$4(ctx) {
     	let t_value = `<Icon :icon="icons.icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func_2$1).join("")}"${isColor(/*color*/ ctx[1])
 	? ` color="${colornameFromHex(/*color*/ ctx[1])}"`
@@ -40032,9 +40082,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} fr
 	? ` :horizontalFlip="true"`
 	: ""}${/*flipVertical*/ ctx[5] ? ` :verticalFlip="true"` : ""}${/*rotate*/ ctx[6]
 	? ` :rotate="${/*rotate*/ ctx[6] / 90}"`
-	: ""}${/*display*/ ctx[7] === "inline"
-	? " :inline=\"true\""
-	: ""} />` + "";
+	: ""}${/*display*/ ctx[7] === "inline" ? ' :inline="true"' : ""} />` + "";
 
     	let t;
 
@@ -40054,9 +40102,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} fr
 			? ` :horizontalFlip="true"`
 			: ""}${/*flipVertical*/ ctx[5] ? ` :verticalFlip="true"` : ""}${/*rotate*/ ctx[6]
 			? ` :rotate="${/*rotate*/ ctx[6] / 90}"`
-			: ""}${/*display*/ ctx[7] === "inline"
-			? " :inline=\"true\""
-			: ""} />` + "")) set_data(t, t_value);
+			: ""}${/*display*/ ctx[7] === "inline" ? ' :inline="true"' : ""} />` + "")) set_data(t, t_value);
     		},
     		d(detaching) {
     			if (detaching) detach(t);
@@ -40064,7 +40110,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} fr
     	};
     }
 
-    // (47:0) <MoreInfo>
+    // (75:0) <MoreInfo>
     function create_default_slot$6(ctx) {
     	let t;
 
@@ -40386,7 +40432,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} fr
     	};
     }
 
-    // (24:0) <CodeSnippet>
+    // (26:0) <CodeSnippet   >
     function create_default_slot_7(ctx) {
     	let t0;
     	let t1_value = /*icon*/ ctx[0]?.split(":")[0] + "";
@@ -40411,7 +40457,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} fr
     	};
     }
 
-    // (25:0) <Paragraph>
+    // (31:0) <Paragraph>
     function create_default_slot_6(ctx) {
     	let t;
 
@@ -40428,7 +40474,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func$1).join("")} fr
     	};
     }
 
-    // (26:0) <CodeSnippet>
+    // (32:0) <CodeSnippet>
     function create_default_slot_5(ctx) {
     	let t_value = `import { Icon } from '@iconify/vue';
 import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from '@iconify-icons/${/*icon*/ ctx[0]?.split(":")[0]}/${/*icon*/ ctx[0]?.split(":")[1]}';` + "";
@@ -40452,7 +40498,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (30:0) <Paragraph>
+    // (42:0) <Paragraph>
     function create_default_slot_4$1(ctx) {
     	let t;
 
@@ -40469,7 +40515,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (31:0) <CodeSnippet>
+    // (43:0) <CodeSnippet>
     function create_default_slot_3$1(ctx) {
     	let t_value = `export default {
 	components: {
@@ -40513,7 +40559,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (45:0) <Paragraph>
+    // (61:0) <Paragraph>
     function create_default_slot_2$1(ctx) {
     	let t;
 
@@ -40530,7 +40576,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (46:0) <CodeSnippet>
+    // (62:0) <CodeSnippet   >
     function create_default_slot_1$3(ctx) {
     	let t_value = `<Icon :icon="icons.icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func_2).join("")}"${isColor(/*color*/ ctx[1])
 	? ` color="${colornameFromHex(/*color*/ ctx[1])}"`
@@ -40540,9 +40586,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 	? ` :horizontalFlip="true"`
 	: ""}${/*flipVertical*/ ctx[5] ? ` :verticalFlip="true"` : ""}${/*rotate*/ ctx[6]
 	? ` :rotate="${/*rotate*/ ctx[6] / 90}"`
-	: ""}${/*display*/ ctx[7] === "inline"
-	? " :inline=\"true\""
-	: ""} />` + "";
+	: ""}${/*display*/ ctx[7] === "inline" ? ' :inline="true"' : ""} />` + "";
 
     	let t;
 
@@ -40562,9 +40606,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 			? ` :horizontalFlip="true"`
 			: ""}${/*flipVertical*/ ctx[5] ? ` :verticalFlip="true"` : ""}${/*rotate*/ ctx[6]
 			? ` :rotate="${/*rotate*/ ctx[6] / 90}"`
-			: ""}${/*display*/ ctx[7] === "inline"
-			? " :inline=\"true\""
-			: ""} />` + "")) set_data(t, t_value);
+			: ""}${/*display*/ ctx[7] === "inline" ? ' :inline="true"' : ""} />` + "")) set_data(t, t_value);
     		},
     		d(detaching) {
     			if (detaching) detach(t);
@@ -40572,7 +40614,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (47:0) <MoreInfo>
+    // (75:0) <MoreInfo>
     function create_default_slot$5(ctx) {
     	let t;
 
@@ -40918,7 +40960,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t0 = space();
     			button = element("button");
     			button.textContent = "Download SVG";
-    			attr(button, "class", "w-full p-4 text-xl font-medium tracking-wide text-stone-600 bg-stone-600 ");
+    			attr(button, "class", "w-full p-4 text-xl font-medium tracking-wide bg-stone-600 ");
     		},
     		m(target, anchor) {
     			mount_component(codesnippet, target, anchor);
@@ -40986,7 +41028,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	let curSVG = "";
 
     	const click_handler = () => {
-    		saveSvg(curSVG, icon.split(":")[1] + '.svg');
+    		saveSvg(curSVG, icon.split(":")[1] + ".svg");
     	};
 
     	$$self.$$set = $$props => {
@@ -41076,7 +41118,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	return {
     		c() {
-    			t = text("You can use this as background image or as content for pseudo element in stylesheet.");
+    			t = text("You can use this as background image or as content for pseudo element in\n  stylesheet.");
     		},
     		m(target, anchor) {
     			insert(target, t, anchor);
@@ -41087,7 +41129,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (17:0) <CodeSnippet>
+    // (20:0) <CodeSnippet>
     function create_default_slot$3(ctx) {
     	let t0;
     	let t1_value = encodeURI(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">${/*SVG*/ ctx[0]}</svg>`) + "";
@@ -41209,7 +41251,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	return {
     		c() {
-    			t = text("This SVG contains extra empty rectangle that matches viewBox. It is needed to keep icon dimensions when importing icon in software that ignores viewBox attribute.");
+    			t = text("This SVG contains extra empty rectangle that matches viewBox. It is needed to\n  keep icon dimensions when importing icon in software that ignores viewBox\n  attribute.");
     		},
     		m(target, anchor) {
     			insert(target, t, anchor);
@@ -41220,7 +41262,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (17:0) <CodeSnippet>
+    // (21:0) <CodeSnippet>
     function create_default_slot$2(ctx) {
     	let t_value = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" />${/*SVG*/ ctx[0]}</svg>` + "";
     	let t;
@@ -41343,7 +41385,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	return child_ctx;
     }
 
-    // (148:6) {:else}
+    // (143:6) {:else}
     function create_else_block_1$2(ctx) {
     	let icon;
     	let t0;
@@ -41385,7 +41427,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t1 = text(t1_value);
     			t2 = text(" x ");
     			t3 = text(t3_value);
-    			attr(p, "class", "font-medium text-stone-600 tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all");
+    			attr(p, "class", "font-medium tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all");
     		},
     		m(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -41436,7 +41478,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (122:6) {#if display === "inline"}
+    // (117:6) {#if display === "inline"}
     function create_if_block_3$2(ctx) {
     	let p0;
     	let t0;
@@ -41469,8 +41511,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t2 = space();
     			p1 = element("p");
     			p1.textContent = "Inline text";
-    			attr(p0, "class", "text-stone-600 tracking-wide text-lg p-12 text-center");
-    			attr(p1, "class", "font-medium text-stone-600 tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all");
+    			attr(p0, "class", "tracking-wide text-lg p-12 text-center");
+    			attr(p1, "class", "font-medium tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all");
     		},
     		m(target, anchor) {
     			insert(target, p0, anchor);
@@ -41514,7 +41556,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (177:8) {#if curIcon}
+    // (172:8) {#if curIcon}
     function create_if_block_2$2(ctx) {
     	let h2;
     	let t;
@@ -41523,7 +41565,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		c() {
     			h2 = element("h2");
     			t = text(/*curIcon*/ ctx[0]);
-    			attr(h2, "class", "text-stone-600 font-semibold break-all text-4xl tracking-wide -mt-1");
+    			attr(h2, "class", "font-semibold break-all text-4xl tracking-wide -mt-1");
     		},
     		m(target, anchor) {
     			insert(target, h2, anchor);
@@ -41538,7 +41580,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (207:12) {:else}
+    // (200:12) {:else}
     function create_else_block$2(ctx) {
     	let svg;
     	let path;
@@ -41588,7 +41630,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (195:12) {#if !isCopied}
+    // (188:12) {#if !isCopied}
     function create_if_block_1$2(ctx) {
     	let div;
     	let icon;
@@ -41640,7 +41682,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (184:8) <CopyToClipboard           text={curIcon}           on:copy={() => {             isCopied = true;             setTimeout(() => {               isCopied = false;             }, 1000);           }}           let:copy         >
+    // (177:8) <CopyToClipboard           text={curIcon}           on:copy={() => {             isCopied = true;             setTimeout(() => {               isCopied = false;             }, 1000);           }}           let:copy         >
     function create_default_slot$1(ctx) {
     	let button;
     	let current_block_type_index;
@@ -41720,7 +41762,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (566:10) {#each tabs as tab, index}
+    // (553:10) {#each tabs as tab, index}
     function create_each_block_1$2(ctx) {
     	let button;
     	let icon;
@@ -41758,7 +41800,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     			attr(button, "class", button_class_value = "transition-all flex gap-2 " + (/*currentTab*/ ctx[9] === /*index*/ ctx[30]
     			? 'font-medium bg-stone-600 text-stone-100'
-    			: 'text-stone-600') + " border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2");
+    			: '') + " border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2");
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -41779,7 +41821,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     			if (!current || dirty[0] & /*currentTab*/ 512 && button_class_value !== (button_class_value = "transition-all flex gap-2 " + (/*currentTab*/ ctx[9] === /*index*/ ctx[30]
     			? 'font-medium bg-stone-600 text-stone-100'
-    			: 'text-stone-600') + " border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2")) {
+    			: '') + " border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2")) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -41801,7 +41843,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (581:8) {#if tabs[currentTab].subtabs}
+    // (568:8) {#if tabs[currentTab].subtabs}
     function create_if_block$2(ctx) {
     	let div;
     	let each_value = /*tabs*/ ctx[12][/*currentTab*/ ctx[9]].subtabs;
@@ -41859,7 +41901,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (583:12) {#each tabs[currentTab].subtabs as [name], index}
+    // (570:12) {#each tabs[currentTab].subtabs as [name], index}
     function create_each_block$2(ctx) {
     	let button;
     	let span;
@@ -41884,7 +41926,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     			attr(button, "class", button_class_value = "transition-all flex gap-2 " + (/*currentSubTab*/ ctx[10] == /*index*/ ctx[30]
     			? 'font-medium bg-stone-600 text-stone-100'
-    			: 'text-stone-600') + " border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2");
+    			: '') + " border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2");
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -41903,7 +41945,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     			if (dirty[0] & /*currentSubTab*/ 1024 && button_class_value !== (button_class_value = "transition-all flex gap-2 " + (/*currentSubTab*/ ctx[10] == /*index*/ ctx[30]
     			? 'font-medium bg-stone-600 text-stone-100'
-    			: 'text-stone-600') + " border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2")) {
+    			: '') + " border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2")) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -42059,7 +42101,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	icon0 = new Icon({
     			props: {
     				icon: "heroicons-solid:x",
-    				class: "text-stone-600",
+    				class: "",
     				width: "24",
     				height: "24"
     			}
@@ -42109,7 +42151,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "fluent:auto-fit-width-20-filled",
     				width: "28",
     				height: "28",
-    				class: "text-stone-600"
+    				class: ""
     			}
     		});
 
@@ -42118,7 +42160,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "fluent:auto-fit-height-20-filled",
     				width: "28",
     				height: "28",
-    				class: "text-stone-600"
+    				class: ""
     			}
     		});
 
@@ -42127,9 +42169,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-horizontal",
     				width: "28",
     				height: "28",
-    				class: /*flipHoriz*/ ctx[6]
-    				? "text-stone-100"
-    				: "text-stone-600"
+    				class: /*flipHoriz*/ ctx[6] ? "text-stone-100" : ""
     			}
     		});
 
@@ -42138,9 +42178,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-vertical",
     				width: "28",
     				height: "28",
-    				class: /*flipVert*/ ctx[5]
-    				? "text-stone-100"
-    				: "text-stone-600"
+    				class: /*flipVert*/ ctx[5] ? "text-stone-100" : ""
     			}
     		});
 
@@ -42149,9 +42187,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-horizontal",
     				width: "28",
     				height: "28",
-    				class: /*display*/ ctx[7] === "block"
-    				? "text-stone-100"
-    				: "text-stone-600"
+    				class: /*display*/ ctx[7] === "block" ? "text-stone-100" : ""
     			}
     		});
 
@@ -42160,9 +42196,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-vertical",
     				width: "28",
     				height: "28",
-    				class: /*display*/ ctx[7] === "inline"
-    				? "text-stone-100"
-    				: "text-stone-600"
+    				class: /*display*/ ctx[7] === "inline" ? "text-stone-100" : ""
     			}
     		});
 
@@ -42221,7 +42255,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			div15 = element("div");
     			div4 = element("div");
     			div2 = element("div");
-    			div2.innerHTML = `<p class="tracking-wide text-stone-600 text-md font-medium">Color</p>`;
+    			div2.innerHTML = `<p class="tracking-wide text-md font-medium">Color</p>`;
     			t7 = space();
     			div3 = element("div");
     			create_component(icon1.$$.fragment);
@@ -42230,7 +42264,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t9 = space();
     			div8 = element("div");
     			div5 = element("div");
-    			div5.innerHTML = `<p class="tracking-wide text-stone-600 text-md font-medium">Size</p>`;
+    			div5.innerHTML = `<p class="tracking-wide text-md font-medium">Size</p>`;
     			t11 = space();
     			div6 = element("div");
     			create_component(icon2.$$.fragment);
@@ -42244,7 +42278,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t15 = space();
     			div10 = element("div");
     			div9 = element("div");
-    			div9.innerHTML = `<p class="tracking-wide text-stone-600 text-md font-medium">Flip</p>`;
+    			div9.innerHTML = `<p class="tracking-wide text-md font-medium">Flip</p>`;
     			t17 = space();
     			button1 = element("button");
     			create_component(icon4.$$.fragment);
@@ -42260,7 +42294,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t23 = space();
     			div12 = element("div");
     			div11 = element("div");
-    			div11.innerHTML = `<p class="tracking-wide text-stone-600 text-base font-medium">Display</p>`;
+    			div11.innerHTML = `<p class="tracking-wide text-base font-medium">Display</p>`;
     			t25 = space();
     			button3 = element("button");
     			create_component(icon6.$$.fragment);
@@ -42276,7 +42310,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t31 = space();
     			div14 = element("div");
     			div13 = element("div");
-    			div13.innerHTML = `<p class="tracking-wide text-stone-600 text-base font-medium">Rotate</p>`;
+    			div13.innerHTML = `<p class="tracking-wide text-base font-medium">Rotate</p>`;
     			t33 = space();
     			button5 = element("button");
     			svg0 = svg_element("svg");
@@ -42326,12 +42360,12 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			attr(button0, "class", "absolute right-6 top-6");
     			attr(div0, "class", "pt-12 pb-24 md:h-full relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center border-2 border-stone-600");
-    			attr(p0, "class", "text-stone-600 font-medium tracking-wide mb-2");
+    			attr(p0, "class", "font-medium tracking-wide mb-2");
     			attr(div1, "class", "flex gap-4 items-center");
     			attr(div2, "class", "absolute -top-[1.3rem] left-4 bg-stone-100 p-2");
     			attr(input0, "size", "12");
     			attr(input0, "type", "text");
-    			attr(input0, "class", "text-stone-600 bg-transparent font-medium tracking-wide placeholder-stone-300");
+    			attr(input0, "class", "bg-transparent font-medium tracking-wide placeholder-stone-300");
     			attr(input0, "placeholder", "#000000");
     			attr(input0, "autocomplete", "off");
     			attr(div3, "class", "flex flex-grow gap-2 items-center");
@@ -42340,45 +42374,29 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			set_style(div5, "top", "-0.6rem");
     			attr(input1, "size", "5");
     			attr(input1, "type", "text");
-    			attr(input1, "class", "text-stone-600 bg-transparent font-medium tracking-wide placeholder-stone-300");
+    			attr(input1, "class", "bg-transparent font-medium tracking-wide placeholder-stone-300");
     			attr(input1, "placeholder", "24");
     			attr(input1, "autocomplete", "off");
     			attr(div6, "class", "flex flex-grow gap-2 items-center ");
     			attr(input2, "size", "5");
     			attr(input2, "type", "text");
-    			attr(input2, "class", "text-stone-600 bg-transparent font-medium tracking-wide placeholder-stone-300");
+    			attr(input2, "class", "bg-transparent font-medium tracking-wide placeholder-stone-300");
     			attr(input2, "placeholder", "24");
     			attr(input2, "autocomplete", "off");
     			attr(div7, "class", "flex flex-grow gap-2 p-3 items-center ");
     			attr(div8, "class", "p-4 py-2 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-stone-600 border-2 relative");
     			attr(div9, "class", "absolute left-4 bg-stone-100 p-2 h-4 flex items-center");
     			set_style(div9, "top", "-0.6rem");
-
-    			attr(p4, "class", p4_class_value = "" + ((/*flipHoriz*/ ctx[6]
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"));
-
+    			attr(p4, "class", p4_class_value = "" + ((/*flipHoriz*/ ctx[6] ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button1, "class", button1_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*flipHoriz*/ ctx[6] ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
-
-    			attr(p5, "class", p5_class_value = "" + ((/*flipVert*/ ctx[5]
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"));
-
+    			attr(p5, "class", p5_class_value = "" + ((/*flipVert*/ ctx[5] ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button2, "class", button2_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*flipVert*/ ctx[5] ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
     			attr(div10, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-stone-600 border-2 relative");
     			attr(div11, "class", "absolute left-4 bg-stone-100 p-2 h-4 flex items-center");
     			set_style(div11, "top", "-0.6rem");
-
-    			attr(p7, "class", p7_class_value = "" + ((/*display*/ ctx[7] === 'block'
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"));
-
+    			attr(p7, "class", p7_class_value = "" + ((/*display*/ ctx[7] === 'block' ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button3, "class", button3_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*display*/ ctx[7] === 'block' ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
-
-    			attr(p8, "class", p8_class_value = "" + ((/*display*/ ctx[7] === 'inline'
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"));
-
+    			attr(p8, "class", p8_class_value = "" + ((/*display*/ ctx[7] === 'inline' ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button4, "class", button4_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*display*/ ctx[7] === 'inline' ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
     			attr(div12, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-stone-600 border-2 relative");
     			attr(div13, "class", "absolute left-4 bg-stone-100 p-2 h-4 flex items-center");
@@ -42392,15 +42410,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg0, "viewBox", "0 0 6 6");
     			attr(svg0, "fill", "none");
     			attr(svg0, "xmlns", "http://www.w3.org/2000/svg");
-
-    			attr(svg0, "class", svg0_class_value = /*rotate*/ ctx[8] === 0
-    			? "text-stone-100"
-    			: "text-stone-600");
-
-    			attr(p10, "class", p10_class_value = "" + ((/*rotate*/ ctx[8] === 0
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"));
-
+    			attr(svg0, "class", svg0_class_value = /*rotate*/ ctx[8] === 0 ? "text-stone-100" : "");
+    			attr(p10, "class", p10_class_value = "" + ((/*rotate*/ ctx[8] === 0 ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button5, "class", button5_class_value = "flex flex-grow relative z-10 gap-2 py-3 px-4 items-center " + (/*rotate*/ ctx[8] == 0 ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
     			attr(path0, "d", "M12 6C13.5913 6 15.1174 6.63214 16.2426 7.75736C17.3679 8.88258 18 10.4087 18 12V14.5");
     			attr(path0, "stroke", "currentColor");
@@ -42419,15 +42430,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg1, "viewBox", "0 0 24 24");
     			attr(svg1, "fill", "none");
     			attr(svg1, "xmlns", "http://www.w3.org/2000/svg");
-
-    			attr(svg1, "class", svg1_class_value = /*rotate*/ ctx[8] === 90
-    			? "text-stone-100"
-    			: "text-stone-600");
-
-    			attr(p11, "class", p11_class_value = "" + ((/*rotate*/ ctx[8] === 90
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"));
-
+    			attr(svg1, "class", svg1_class_value = /*rotate*/ ctx[8] === 90 ? "text-stone-100" : "");
+    			attr(p11, "class", p11_class_value = "" + ((/*rotate*/ ctx[8] === 90 ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button6, "class", button6_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 90 ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
     			attr(path3, "d", "M11.998 6C13.5893 6 15.1155 6.63214 16.2407 7.75736C17.3659 8.88258 17.998 10.4087 17.998 12C17.998 13.5913 17.3659 15.1174 16.2407 16.2426C15.1155 17.3679 13.5893 18 11.998 18H9.49805");
     			attr(path3, "stroke", "currentColor");
@@ -42446,15 +42450,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg2, "viewBox", "0 0 24 24");
     			attr(svg2, "fill", "none");
     			attr(svg2, "xmlns", "http://www.w3.org/2000/svg");
-
-    			attr(svg2, "class", svg2_class_value = /*rotate*/ ctx[8] === 180
-    			? "text-stone-100"
-    			: "text-stone-600");
-
-    			attr(p12, "class", p12_class_value = "" + ((/*rotate*/ ctx[8] === 180
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"));
-
+    			attr(svg2, "class", svg2_class_value = /*rotate*/ ctx[8] === 180 ? "text-stone-100" : "");
+    			attr(p12, "class", p12_class_value = "" + ((/*rotate*/ ctx[8] === 180 ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button7, "class", button7_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 180 ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
     			attr(path6, "d", "M13.8 5.00002C15.224 5.00002 16.6161 5.42229 17.8001 6.21344C18.9841 7.00459 19.907 8.12907 20.4519 9.4447C20.9969 10.7603 21.1395 12.208 20.8617 13.6047C20.5838 15.0013 19.8981 16.2843 18.8912 17.2912C17.8842 18.2981 16.6013 18.9839 15.2046 19.2617C13.808 19.5395 12.3603 19.3969 11.0447 18.852C9.72905 18.307 8.60456 17.3842 7.81342 16.2001C7.02227 15.0161 6.6 13.624 6.6 12.2V9.20002");
     			attr(path6, "stroke", "currentColor");
@@ -42473,15 +42470,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg3, "viewBox", "0 0 24 24");
     			attr(svg3, "fill", "none");
     			attr(svg3, "xmlns", "http://www.w3.org/2000/svg");
-
-    			attr(svg3, "class", svg3_class_value = /*rotate*/ ctx[8] === 270
-    			? "text-stone-100"
-    			: "text-stone-600");
-
-    			attr(p13, "class", p13_class_value = "" + ((/*rotate*/ ctx[8] === 270
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"));
-
+    			attr(svg3, "class", svg3_class_value = /*rotate*/ ctx[8] === 270 ? "text-stone-100" : "");
+    			attr(p13, "class", p13_class_value = "" + ((/*rotate*/ ctx[8] === 270 ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button8, "class", button8_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 270 ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
     			attr(div14, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-stone-600 border-2 relative");
     			attr(div15, "class", "flex gap-6 mt-8 flex-wrap");
@@ -42711,16 +42701,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			const icon4_changes = {};
-
-    			if (dirty[0] & /*flipHoriz*/ 64) icon4_changes.class = /*flipHoriz*/ ctx[6]
-    			? "text-stone-100"
-    			: "text-stone-600";
-
+    			if (dirty[0] & /*flipHoriz*/ 64) icon4_changes.class = /*flipHoriz*/ ctx[6] ? "text-stone-100" : "";
     			icon4.$set(icon4_changes);
 
-    			if (!current || dirty[0] & /*flipHoriz*/ 64 && p4_class_value !== (p4_class_value = "" + ((/*flipHoriz*/ ctx[6]
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"))) {
+    			if (!current || dirty[0] & /*flipHoriz*/ 64 && p4_class_value !== (p4_class_value = "" + ((/*flipHoriz*/ ctx[6] ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
     				attr(p4, "class", p4_class_value);
     			}
 
@@ -42729,16 +42713,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			const icon5_changes = {};
-
-    			if (dirty[0] & /*flipVert*/ 32) icon5_changes.class = /*flipVert*/ ctx[5]
-    			? "text-stone-100"
-    			: "text-stone-600";
-
+    			if (dirty[0] & /*flipVert*/ 32) icon5_changes.class = /*flipVert*/ ctx[5] ? "text-stone-100" : "";
     			icon5.$set(icon5_changes);
 
-    			if (!current || dirty[0] & /*flipVert*/ 32 && p5_class_value !== (p5_class_value = "" + ((/*flipVert*/ ctx[5]
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"))) {
+    			if (!current || dirty[0] & /*flipVert*/ 32 && p5_class_value !== (p5_class_value = "" + ((/*flipVert*/ ctx[5] ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
     				attr(p5, "class", p5_class_value);
     			}
 
@@ -42747,16 +42725,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			const icon6_changes = {};
-
-    			if (dirty[0] & /*display*/ 128) icon6_changes.class = /*display*/ ctx[7] === "block"
-    			? "text-stone-100"
-    			: "text-stone-600";
-
+    			if (dirty[0] & /*display*/ 128) icon6_changes.class = /*display*/ ctx[7] === "block" ? "text-stone-100" : "";
     			icon6.$set(icon6_changes);
 
-    			if (!current || dirty[0] & /*display*/ 128 && p7_class_value !== (p7_class_value = "" + ((/*display*/ ctx[7] === 'block'
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"))) {
+    			if (!current || dirty[0] & /*display*/ 128 && p7_class_value !== (p7_class_value = "" + ((/*display*/ ctx[7] === 'block' ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
     				attr(p7, "class", p7_class_value);
     			}
 
@@ -42765,16 +42737,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			const icon7_changes = {};
-
-    			if (dirty[0] & /*display*/ 128) icon7_changes.class = /*display*/ ctx[7] === "inline"
-    			? "text-stone-100"
-    			: "text-stone-600";
-
+    			if (dirty[0] & /*display*/ 128) icon7_changes.class = /*display*/ ctx[7] === "inline" ? "text-stone-100" : "";
     			icon7.$set(icon7_changes);
 
-    			if (!current || dirty[0] & /*display*/ 128 && p8_class_value !== (p8_class_value = "" + ((/*display*/ ctx[7] === 'inline'
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"))) {
+    			if (!current || dirty[0] & /*display*/ 128 && p8_class_value !== (p8_class_value = "" + ((/*display*/ ctx[7] === 'inline' ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
     				attr(p8, "class", p8_class_value);
     			}
 
@@ -42782,15 +42748,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				attr(button4, "class", button4_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && svg0_class_value !== (svg0_class_value = /*rotate*/ ctx[8] === 0
-    			? "text-stone-100"
-    			: "text-stone-600")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && svg0_class_value !== (svg0_class_value = /*rotate*/ ctx[8] === 0 ? "text-stone-100" : "")) {
     				attr(svg0, "class", svg0_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && p10_class_value !== (p10_class_value = "" + ((/*rotate*/ ctx[8] === 0
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"))) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && p10_class_value !== (p10_class_value = "" + ((/*rotate*/ ctx[8] === 0 ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
     				attr(p10, "class", p10_class_value);
     			}
 
@@ -42798,15 +42760,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				attr(button5, "class", button5_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && svg1_class_value !== (svg1_class_value = /*rotate*/ ctx[8] === 90
-    			? "text-stone-100"
-    			: "text-stone-600")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && svg1_class_value !== (svg1_class_value = /*rotate*/ ctx[8] === 90 ? "text-stone-100" : "")) {
     				attr(svg1, "class", svg1_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && p11_class_value !== (p11_class_value = "" + ((/*rotate*/ ctx[8] === 90
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"))) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && p11_class_value !== (p11_class_value = "" + ((/*rotate*/ ctx[8] === 90 ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
     				attr(p11, "class", p11_class_value);
     			}
 
@@ -42814,15 +42772,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				attr(button6, "class", button6_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && svg2_class_value !== (svg2_class_value = /*rotate*/ ctx[8] === 180
-    			? "text-stone-100"
-    			: "text-stone-600")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && svg2_class_value !== (svg2_class_value = /*rotate*/ ctx[8] === 180 ? "text-stone-100" : "")) {
     				attr(svg2, "class", svg2_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && p12_class_value !== (p12_class_value = "" + ((/*rotate*/ ctx[8] === 180
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"))) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && p12_class_value !== (p12_class_value = "" + ((/*rotate*/ ctx[8] === 180 ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
     				attr(p12, "class", p12_class_value);
     			}
 
@@ -42830,15 +42784,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				attr(button7, "class", button7_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && svg3_class_value !== (svg3_class_value = /*rotate*/ ctx[8] === 270
-    			? "text-stone-100"
-    			: "text-stone-600")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && svg3_class_value !== (svg3_class_value = /*rotate*/ ctx[8] === 270 ? "text-stone-100" : "")) {
     				attr(svg3, "class", svg3_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && p13_class_value !== (p13_class_value = "" + ((/*rotate*/ ctx[8] === 270
-    			? 'text-stone-100'
-    			: 'text-stone-600') + " font-medium tracking-wide"))) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && p13_class_value !== (p13_class_value = "" + ((/*rotate*/ ctx[8] === 270 ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
     				attr(p13, "class", p13_class_value);
     			}
 
@@ -43170,7 +43120,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	return child_ctx;
     }
 
-    // (107:2) {#if tags.length}
+    // (115:2) {#if tags.length}
     function create_if_block_3$1(ctx) {
     	let div;
     	let each_value_1 = /*tags*/ ctx[5].sort();
@@ -43228,7 +43178,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (110:6) {#if tag}
+    // (118:8) {#if tag}
     function create_if_block_4(ctx) {
     	let button;
     	let t_value = /*tag*/ ctx[21] + "";
@@ -43248,7 +43198,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     			attr(button, "class", button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[21]
     			? `bg-stone-600 text-stone-200`
-    			: `border-2 border-stone-600 text-stone-600`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"));
+    			: `border-2 border-stone-600 `) + " whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"));
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -43265,7 +43215,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     			if (dirty & /*currentTag, tags*/ 96 && button_class_value !== (button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[21]
     			? `bg-stone-600 text-stone-200`
-    			: `border-2 border-stone-600 text-stone-600`) + " whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"))) {
+    			: `border-2 border-stone-600 `) + " whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"))) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -43277,7 +43227,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (109:4) {#each tags.sort() as tag}
+    // (117:6) {#each tags.sort() as tag}
     function create_each_block_1$1(ctx) {
     	let if_block_anchor;
     	let if_block = /*tag*/ ctx[21] && create_if_block_4(ctx);
@@ -43312,7 +43262,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (187:2) {:else}
+    // (193:2) {:else}
     function create_else_block_1$1(ctx) {
     	let p;
 
@@ -43320,7 +43270,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		c() {
     			p = element("p");
     			p.textContent = "Nothing found :(";
-    			attr(p, "class", "text-xl font-medium tracking-wide text-center text-stone-600");
+    			attr(p, "class", "text-xl font-medium tracking-wide text-center ");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -43334,7 +43284,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (122:2) {#if filteredIconList === null || filteredIconList.length > 0}
+    // (130:2) {#if filteredIconList === null || filteredIconList.length > 0}
     function create_if_block_1$1(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -43404,7 +43354,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (174:4) {:else}
+    // (180:4) {:else}
     function create_else_block$1(ctx) {
     	let div;
     	let lottieplayer;
@@ -43450,7 +43400,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (123:4) {#if filteredIconList}
+    // (131:4) {#if filteredIconList}
     function create_if_block_2$1(ctx) {
     	let div;
     	let current;
@@ -43474,7 +43424,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			attr(div, "class", "w-full pb-8 grid gap-3");
-    			set_style(div, "grid-template-columns", "repeat(auto-fill, minmax(120px, 1fr))");
+    			set_style(div, "grid-template-columns", "repeat(auto-fill, minmax(200px, 1fr))");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -43538,13 +43488,13 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (128:8) {#each filteredIconList as icon}
+    // (161:8) {#each filteredIconList as icon}
     function create_each_block$1(ctx) {
     	let div;
     	let icon;
     	let t0;
     	let p;
-    	let t1_value = (/*icon*/ ctx[18].name || /*icon*/ ctx[18]).replace(/-/g, ' ') + "";
+    	let t1_value = (/*icon*/ ctx[18].name || /*icon*/ ctx[18]) + "";
     	let t1;
     	let t2;
     	let current;
@@ -43554,9 +43504,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	icon = new Icon({
     			props: {
     				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[18].name || /*icon*/ ctx[18]}`,
-    				width: "32",
-    				height: "32",
-    				class: "text-stone-600"
+    				width: "24",
+    				height: "24",
+    				class: " flex-shrink-0"
     			}
     		});
 
@@ -43572,8 +43522,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			p = element("p");
     			t1 = text(t1_value);
     			t2 = space();
-    			attr(p, "class", "font-medium text-[0.7rem] tracking-wide text-center text-stone-600 mt-4 -mb-0.5");
-    			attr(div, "class", "flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 dark:hover:bg-opacity-60 p-4");
+    			attr(p, "class", "font-medium text-sm tracking-wide truncate ml-3 -mb-0.5");
+    			attr(div, "class", "flex items-center cursor-pointer transition-all hover:bg-stone-200 p-4");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -43594,7 +43544,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			const icon_changes = {};
     			if (dirty & /*iconSet, filteredIconList*/ 257) icon_changes.icon = `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[18].name || /*icon*/ ctx[18]}`;
     			icon.$set(icon_changes);
-    			if ((!current || dirty & /*filteredIconList*/ 256) && t1_value !== (t1_value = (/*icon*/ ctx[18].name || /*icon*/ ctx[18]).replace(/-/g, ' ') + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*filteredIconList*/ 256) && t1_value !== (t1_value = (/*icon*/ ctx[18].name || /*icon*/ ctx[18]) + "")) set_data(t1, t1_value);
     		},
     		i(local) {
     			if (current) return;
@@ -43614,7 +43564,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (192:2) {#if curIcon}
+    // (198:2) {#if curIcon}
     function create_if_block$1(ctx) {
     	let usage;
     	let current;
@@ -43668,7 +43618,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	icon = new Icon({
     			props: {
     				icon: "uil:search",
-    				class: "text-stone-600",
+    				class: "",
     				width: "24",
     				height: "24"
     			}
@@ -43706,11 +43656,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			if_block1.c();
     			t7 = space();
     			if (if_block2) if_block2.c();
-    			attr(span, "class", "ml-2 text-base text-stone-600");
-    			attr(h1, "class", "mt-12 mb-6 text-3xl font-semibold tracking-wide text-center text-stone-600 flex flex-col items-center gap-6 sm:inline");
+    			attr(span, "class", "ml-2 text-base ");
+    			attr(h1, "class", "mt-12 mb-6 text-3xl font-semibold tracking-wide text-center flex flex-col items-center gap-6 sm:inline");
     			attr(input, "type", "text");
     			attr(input, "id", "icon-search");
-    			attr(input, "class", "w-full tracking-wide text-stone-600 placeholder-stone-600 bg-transparent");
+    			attr(input, "class", "w-full tracking-wide placeholder-stone-600 bg-transparent");
     			attr(input, "placeholder", input_placeholder_value = "Search " + /*iconCount*/ ctx[4] + " icons (Press '/' to focus)");
     			attr(div0, "class", "inline-flex items-center w-full p-4 mx-auto mb-6 overflow-hidden border-2 border-stone-600 gap-4");
     			attr(div1, "class", "flex flex-1 flex-col w-full px-12 md:px-24");
@@ -43961,7 +43911,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	return child_ctx;
     }
 
-    // (75:2) {#if iconSets}
+    // (73:2) {#if iconSets}
     function create_if_block_3(ctx) {
     	let div;
     	let each_value_1 = Object.entries(/*iconSets*/ ctx[0]);
@@ -44019,7 +43969,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (77:6) {#each Object.entries(iconSets) as [name, iconSet]}
+    // (75:6) {#each Object.entries(iconSets) as [name, iconSet]}
     function create_each_block_1(ctx) {
     	let button;
     	let t_value = /*iconSet*/ ctx[16].name + "";
@@ -44039,7 +43989,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     			attr(button, "class", button_class_value = "" + ((/*currentIconSet*/ ctx[1] === /*name*/ ctx[15]
     			? `bg-stone-600`
-    			: `text-stone-600`) + " border-2 border-stone-600 whitespace-nowrap h-11 flex transition-all items-center justify-center text-stone-600 font-medium px-4 flex-grow sssm:px-8 pb-0.5"));
+    			: ``) + " border-2 border-stone-600 whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium px-4 flex-grow sssm:px-8 pb-0.5"));
     		},
     		m(target, anchor) {
     			insert(target, button, anchor);
@@ -44056,7 +44006,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     			if (dirty & /*currentIconSet, iconSets*/ 3 && button_class_value !== (button_class_value = "" + ((/*currentIconSet*/ ctx[1] === /*name*/ ctx[15]
     			? `bg-stone-600`
-    			: `text-stone-600`) + " border-2 border-stone-600 whitespace-nowrap h-11 flex transition-all items-center justify-center text-stone-600 font-medium px-4 flex-grow sssm:px-8 pb-0.5"))) {
+    			: ``) + " border-2 border-stone-600 whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium px-4 flex-grow sssm:px-8 pb-0.5"))) {
     				attr(button, "class", button_class_value);
     			}
     		},
@@ -44068,7 +44018,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (128:2) {:else}
+    // (121:2) {:else}
     function create_else_block_1(ctx) {
     	let p;
 
@@ -44090,7 +44040,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (88:2) {#if filteredIconList === null || filteredIconList.length > 0}
+    // (86:2) {#if filteredIconList === null || filteredIconList.length > 0}
     function create_if_block_1(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -44160,7 +44110,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (115:4) {:else}
+    // (108:4) {:else}
     function create_else_block(ctx) {
     	let div;
     	let lottieplayer;
@@ -44206,7 +44156,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (89:4) {#if filteredIconList}
+    // (87:4) {#if filteredIconList}
     function create_if_block_2(ctx) {
     	let div;
     	let current;
@@ -44294,7 +44244,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (94:8) {#each filteredIconList as icon}
+    // (92:8) {#each filteredIconList as icon}
     function create_each_block(ctx) {
     	let div;
     	let icon;
@@ -44312,7 +44262,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: /*icon*/ ctx[12],
     				width: "32",
     				height: "32",
-    				class: "text-stone-600"
+    				class: ""
     			}
     		});
 
@@ -44328,8 +44278,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			p = element("p");
     			t1 = text(t1_value);
     			t2 = space();
-    			attr(p, "class", "font-medium text-xs tracking-wide text-center text-stone-600 mt-4 -mb-0.5");
-    			attr(div, "class", "flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 dark:hover:bg-opacity-60 p-4");
+    			attr(p, "class", "font-medium text-xs tracking-wide text-center mt-4 -mb-0.5");
+    			attr(div, "class", "flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 p-4");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -44370,7 +44320,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (133:2) {#if curIcon}
+    // (126:2) {#if curIcon}
     function create_if_block(ctx) {
     	let usage;
     	let current;
@@ -44432,7 +44382,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			if_block1.c();
     			t5 = space();
     			if (if_block2) if_block2.c();
-    			attr(h1, "class", "mb-6 text-3xl font-semibold tracking-wide text-center text-stone-600 sm:mt-12");
+    			attr(h1, "class", "mb-6 text-3xl font-semibold tracking-wide text-center sm:mt-12");
     			attr(div, "class", "flex-1 px-12 md:px-24");
     		},
     		m(target, anchor) {
@@ -44629,7 +44579,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (32:4) <Route path="/icon-set/:iconSet" let:params>
+    // (35:4) <Route path="/icon-set/:iconSet" let:params>
     function create_default_slot_3(ctx) {
     	let iconlist;
     	let current;
@@ -44666,7 +44616,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (35:4) <Route path="/icon-sets">
+    // (38:4) <Route path="/icon-sets">
     function create_default_slot_2(ctx) {
     	let browse;
     	let current;
@@ -44695,7 +44645,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (38:4) <Route path="/search">
+    // (41:4) <Route path="/search">
     function create_default_slot_1(ctx) {
     	let searchall;
     	let current;
@@ -44724,7 +44674,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (26:0) <Router>
+    // (29:0) <Router>
     function create_default_slot(ctx) {
     	let main;
     	let navbar;

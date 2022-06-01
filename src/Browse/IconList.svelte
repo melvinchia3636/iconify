@@ -22,9 +22,12 @@
     ];
   }
 
-  count.set(Object.values(iconSets).flat().map(e => e.total).reduce((a, b) => a+b));
-
-  const colors = ["rose", "orange", "emerald", "sky", "purple", "gray", "teal"];
+  count.set(
+    Object.values(iconSets)
+      .flat()
+      .map((e) => e.total)
+      .reduce((a, b) => a + b)
+  );
 
   export let selectedCategory = null;
   export let iconFilterTerm;
@@ -58,7 +61,7 @@
                     class="flex flex-col flex-shrink-0 border-r-2 border-stone-600 font-medium tracking-wide text-stone-800 w-full sssm:w-36"
                   >
                     <div
-                      class="w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3 text-stone-600"
+                      class="w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3 "
                     >
                       {#each iconSet.samples as sampleIcon}
                         <Icon
@@ -68,7 +71,7 @@
                       {/each}
                     </div>
                     <div
-                      class="w-full h-full border-t-2 border-stone-600 flex p-4 py-4 sssm:py-0 justify-between items-center text-stone-600 text-smr"
+                      class="w-full h-full border-t-2 border-stone-600 flex p-4 py-4 sssm:py-0 justify-between items-center  text-smr"
                     >
                       <p>{iconSet.total}</p>
                       {#if iconSet.height}
@@ -86,11 +89,11 @@
                   <div class="flex flex-col justify-between px-4 py-3 w-full">
                     <a
                       href="./icon-set/{iconSet.prefix}"
-                      class="text-stone-600 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium"
+                      class=" w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium"
                       >{iconSet.name}</a
                     >
                     <p
-                      class="mt-3 overflow-hidden tracking-wide text-stone-600 whitespace-nowrap overflow-ellipsis w-11/12"
+                      class="mt-3 overflow-hidden tracking-wide  whitespace-nowrap overflow-ellipsis w-11/12"
                     >
                       By <a
                         target="_blank"

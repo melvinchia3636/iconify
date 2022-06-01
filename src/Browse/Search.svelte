@@ -30,19 +30,19 @@
   <div
     class="inline-flex items-center w-full p-4 overflow-hidden border-2 border-stone-600 gap-4 "
   >
-    <Icon icon="uil:search" class="text-stone-600" width="24" height="24" />
+    <Icon icon="uil:search" class="" width="24" height="24" />
     <input
       autocomplete="off"
       name="q"
       id="q"
       type="text"
-      class="w-full tracking-wide text-stone-600 placeholder-stone-600 bg-transparent"
+      class="w-full tracking-wide  placeholder-stone-600 bg-transparent"
       placeholder="Search {count_value.toLocaleString()} icons"
     />
   </div>
   <button
     type="submit"
-    class="flex items-center justify-center h-16 sm:h-full px-12 font-semibold tracking-wide text-stone-600 border-2 border-stone-600  whitespace-nowrap  gap-6"
+    class="flex items-center justify-center h-16 sm:h-full px-12 font-semibold tracking-wide  border-2 border-stone-600  whitespace-nowrap  gap-6"
   >
     Search Icons
   </button>
@@ -57,7 +57,7 @@
           setSelectedCategory(selectedCategory == index ? null : index)}
         class="{selectedCategory === index
           ? `bg-stone-600 text-stone-100`
-          : `text-stone-600`} border-2 border-stone-600 whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center font-medium px-8"
+          : ``} border-2 border-stone-600 whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center font-medium px-8"
         >{category}</button
       >
     {/each}
@@ -65,11 +65,11 @@
   <div
     class="inline-flex items-center p-4 overflow-hidden border-2 border-stone-600 gap-3 w-full md:w-96 flex-shrink-0"
   >
-    <Icon icon="octicon:filter-16" class="text-stone-600" width="24" height="24" />
+    <Icon icon="octicon:filter-16" class="" width="24" height="24" />
     <input
       type="text"
       bind:value
-      class="w-full tracking-wide text-stone-600 placeholder-stone-600 bg-transparent"
+      class="w-full tracking-wide  placeholder-stone-600 bg-transparent"
       placeholder="Filter icon sets"
     />
   </div>

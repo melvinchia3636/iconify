@@ -1,5 +1,5 @@
-const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: ['./src/**/*.html', './src/**/*.svelte'],
+const purgecss = require("@fullhuman/postcss-purgecss")({
+  content: ["./src/**/*.html", "./src/**/*.svelte"],
 
   whitelistPatterns: [/svelte-/],
 
@@ -9,5 +9,5 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 const dev = process.env.ROLLUP_WATCH;
 
 module.exports = {
-  plugins: [require('tailwindcss'), ...(!dev ? [purgecss] : [])],
+  plugins: [require("tailwindcss"), ...(!dev ? [purgecss] : [])],
 };
