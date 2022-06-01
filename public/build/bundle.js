@@ -5379,7 +5379,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr(div, "class", "fixed z-40 top-0 left-0 w-full h-screen bg-stone-600 flex gap-16 flex-col items-center justify-center text-lg font-medium tracking-wide ");
+    			attr(div, "class", "fixed z-40 top-0 left-0 w-full h-screen bg-stone-50 flex gap-16 flex-col items-center justify-center text-lg font-medium tracking-wide ");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -5471,8 +5471,7 @@ var app = (function () {
     			a = element("a");
     			t = text(t_value);
     			attr(a, "href", /*route*/ ctx[4][0]);
-    			attr(a, "class", "font-semibold ");
-    			set_style(a, "font-size", "1.3rem");
+    			attr(a, "class", "font-semibold relative after:w-1/2 after:border-b-2 after:absolute after:border-stone-600 after:bottom-0 after:left-1/2 after:-translate-x-1/2");
     		},
     		m(target, anchor) {
     			insert(target, a, anchor);
@@ -5583,7 +5582,7 @@ var app = (function () {
     			attr(a, "href", "/");
     			attr(div0, "class", "flex items-center flex-shrink-0 gap-6 z-50");
     			attr(div1, "class", "items-center hidden -mt-1 font-medium tracking-wide gap-16 1100:flex");
-    			attr(nav, "class", "flex items-center justify-between w-full px-3 390:px-8 ssm:px-12 mb-8");
+    			attr(nav, "class", "flex items-center justify-between w-full px-8 ssm:px-12 mb-8");
     		},
     		m(target, anchor) {
     			insert(target, nav, anchor);
@@ -5742,7 +5741,8 @@ var app = (function () {
     			props: {
     				icon: "fluent:home-20-filled",
     				width: "20",
-    				height: "20"
+    				height: "20",
+    				color: "rgb(255,255,244)"
     			}
     		});
 
@@ -5750,7 +5750,8 @@ var app = (function () {
     			props: {
     				icon: "fluent:news-20-filled",
     				width: "20",
-    				height: "20"
+    				height: "20",
+    				color: "rgb(255,255,244)"
     			}
     		});
 
@@ -5758,7 +5759,8 @@ var app = (function () {
     			props: {
     				icon: "fluent:icons-20-filled",
     				width: "20",
-    				height: "20"
+    				height: "20",
+    				color: "rgb(255,255,244)"
     			}
     		});
 
@@ -5766,7 +5768,8 @@ var app = (function () {
     			props: {
     				icon: "fluent:book-information-20-filled",
     				width: "20",
-    				height: "20"
+    				height: "20",
+    				color: "rgb(255,255,244)"
     			}
     		});
 
@@ -5774,7 +5777,8 @@ var app = (function () {
     			props: {
     				icon: "ant-design:github-filled",
     				width: "20",
-    				height: "20"
+    				height: "20",
+    				color: "rgb(255,255,244)"
     			}
     		});
 
@@ -5782,7 +5786,8 @@ var app = (function () {
     			props: {
     				icon: "akar-icons:linkedin-fill",
     				width: "20",
-    				height: "20"
+    				height: "20",
+    				color: "rgb(255,255,244)"
     			}
     		});
 
@@ -5809,8 +5814,8 @@ var app = (function () {
     			attr(div, "class", "flex gap-8");
     			attr(a, "class", "text-stone-100 underline");
     			attr(a, "href", "/");
-    			attr(p, "class", "tracking-wide flex gap-2 items-center justify-center");
-    			attr(footer, "class", "py-4 px-12 w-full mt-16 text-stone-100 flex flex-col gap-4 md:flex-row justify-between items-center bg-stone-600");
+    			attr(p, "class", "tracking-wide flex gap-2 items-center justify-center svelte-1i9x27e");
+    			attr(footer, "class", "text-sm ssssm:text-base py-4 px-12 w-full mt-16 text-stone-100 flex flex-col gap-4 md:flex-row justify-between items-center bg-stone-600");
     		},
     		m(target, anchor) {
     			insert(target, footer, anchor);
@@ -5880,15 +5885,15 @@ var app = (function () {
     		c() {
     			div3 = element("div");
 
-    			div3.innerHTML = `<div class="inline-flex flex-col w-full ssm:w-auto"><div class="bg-stone-100 !border-b-0 -mb-[4px] pt-4 530:pt-6 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide">Unified</div> 
+    			div3.innerHTML = `<div class="inline-flex flex-col w-full ssm:w-auto"><div class="bg-stone-100 !border-b-0 -mb-[4px] pb-2 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide">Unified</div> 
     <div class="bg-stone-100 w-full ssm:w-auto block text-2xl 390:text-3xl 530:text-4xl 700:text-5xl xl:text-6xl font-medium tracking-wide">Icons Framework</div></div> 
-  <p class="text-xl sssm:text-xl ssm:text-2xl leading-7 sssm:leading-8 ssm:leading-10 tracking-wide mt-8">More than 100 icon sets, one library.
+  <p class="text-sm sssm:text-lg ssm:text-xl md:text-2xl leading-7 tracking-wide mt-8">More than 100 icon sets, one library.
     <br class="hidden 700:inline"/>Over 100,000 open source vector icons.</p> 
-  <form action="/search" class="mt-10 flex w-full md:w-9/12 border-2 border-stone-600 lg:w-5/12 overflow-hidden"><input autocomplete="off" name="q" type="text" class="bg-transparent placeholder-stone-600 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide" placeholder="Search icons..."/> 
-    <button type="submit" class="bg-stone-600 py-4 px-6"><svg class="mt-1 w-5 h-5" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form> 
+  <form action="/search" class="mt-10 flex w-full md:w-9/12 border-2 border-stone-600 lg:w-5/12 overflow-hidden"><input autocomplete="off" name="q" type="text" class="bg-transparent placeholder-stone-600 w-full px-6 py-3 ssm:py-5 text-base ssm:text-xl tracking-wide" placeholder="Search icons..."/> 
+    <button type="submit" class="bg-stone-600 py-4 px-6 h-full"><svg class="mt-1 w-5 h-5" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form> 
   <img src="./assets/hero.svg" alt="hero design" class="absolute right-0 top-0 h-full hidden lg:block"/>`;
 
-    			attr(div3, "class", "w-full relative p-4 sssm:p-8 ssm:p-16 ");
+    			attr(div3, "class", "w-full relative sssm:p-8 sm:p-16 ");
     		},
     		m(target, anchor) {
     			insert(target, div3, anchor);
@@ -5921,7 +5926,7 @@ var app = (function () {
     		c() {
     			p = element("p");
     			if (default_slot) default_slot.c();
-    			attr(p, "class", "tracking-wide ");
+    			attr(p, "class", "tracking-wide text-sm ssm:text-base");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -6035,12 +6040,12 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
 
-    			div0.innerHTML = `Thousands of<br/>icons, one<br/> 
+    			div0.innerHTML = `Thousands of<br class="hidden sm:inline-block"/>icons, one<br class="hidden sssm:inline-block"/> 
     <span class="">unified</span> framework.`;
 
     			t5 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(div0, "class", "text-5xl font-semibold tracking-wide text-center !leading-tight whitespace-nowrap ");
+    			attr(div0, "class", "text-3xl sssm:text-4xl xl:text-5xl font-semibold tracking-wide text-center !leading-tight sm:whitespace-nowrap ");
     			attr(div1, "class", "w-full flex flex-col lg:flex-row gap-12 lg:gap-20 items-center px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -6201,20 +6206,20 @@ var app = (function () {
     			create_component(paragraph0.$$.fragment);
     			t4 = space();
     			div0 = element("div");
-    			div0.innerHTML = `<code class="break-words">&lt;<span style="all: inherit">script</span> src=&quot;<span style="all: inherit text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>&quot;&gt;&lt;/<span class="" style="all: inherit">script</span>&gt;</code>`;
+    			div0.innerHTML = `<code class="break-words text-sm ssm:text-base">&lt;<span style="all: inherit">script</span> src=&quot;<span style="all: inherit text-decoration: underline; text-decoration-thickness: 1px;">https://code.iconify.design/2/2.1.0/iconify.min.js</span>&quot;&gt;&lt;/<span class="" style="all: inherit">script</span>&gt;</code>`;
     			t12 = space();
     			create_component(paragraph1.$$.fragment);
     			t13 = space();
     			div1 = element("div");
 
-    			div1.innerHTML = `<code>&lt;<span style="all: inherit">span</span> class=&quot;<span style="all: inherit">iconify</span>&quot; data-icon=&quot;<span style="all: inherit">fa:home</span>&quot;&gt;&lt;/<span style="all: inherit">span</span>&gt;
+    			div1.innerHTML = `<code class="text-sm ssm:text-base break-all">&lt;<span style="all: inherit">span</span> class=&quot;<span style="all: inherit">iconify</span>&quot; data-icon=&quot;<span style="all: inherit">fa:home</span>&quot;&gt;&lt;/<span style="all: inherit">span</span>&gt;
       <br/>
       &lt;<span style="all: inherit">span</span> class=&quot;<span style="all: inherit">iconify</span>&quot; data-icon=&quot;<span style="all: inherit">noto:bird&quot;</span>&gt;&lt;/<span style="all: inherit">span</span>&gt;</code>`;
 
     			t32 = space();
     			create_component(paragraph2.$$.fragment);
-    			attr(p, "class", "font-medium text-xl mb-2 text-center tracking-wide");
-    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
+    			attr(p, "class", "font-medium text-base sm:text-xl mb-2 text-center tracking-wide");
+    			attr(h2, "class", "text-3xl sssm:text-4xl sm:text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
     			attr(div0, "class", "border-2 border-stone-600 py-4 px-5 mt-4 mb-8");
     			attr(div1, "class", "border-2 border-stone-600 py-4 px-5 mt-4 mb-8");
     			attr(div2, "class", "w-full px-0 md:px-16");
@@ -7584,8 +7589,6 @@ var app = (function () {
             <br/><br/>
             See <a href="/icon-sets">icon collections page</a> for list of available
             icons.`;
-
-    			attr(div, "class", "text-base");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -7935,7 +7938,6 @@ var app = (function () {
     			a.textContent = "how to use Iconify";
     			t8 = text(" tutorial.");
     			attr(a, "href", "https://docs.iconify.design");
-    			attr(div, "class", "text-base");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -8171,8 +8173,6 @@ var app = (function () {
             to fraction of second.
             <br/><br/>
             If you want to, you can <a>create your own Iconify API server</a>!`;
-
-    			attr(div, "class", "text-base");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -8463,8 +8463,8 @@ var app = (function () {
     			h33.textContent = "Lightning fast";
     			t56 = space();
     			create_component(paragraph4.$$.fragment);
-    			attr(p0, "class", "font-medium text-xl mb-2 text-center tracking-wide");
-    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
+    			attr(p0, "class", "font-medium text-base sm:text-xl mb-2 text-center tracking-wide");
+    			attr(h2, "class", "text-3xl sssm:text-4xl sm:text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
     			attr(h30, "class", "font-semibold tracking-wide text-3xl mb-6 sm:mb-8");
     			attr(div0, "class", "w-full sm:w-1/2");
     			attr(div13, "class", "w-full sm:w-1/2");
@@ -11877,7 +11877,7 @@ var app = (function () {
     			t8 = space();
     			attr(div0, "class", "w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3 ");
     			attr(div1, "class", "w-full h-full border-t-2 border-stone-600 flex p-4 py-4 sssm:py-0 justify-between items-center text-smr");
-    			attr(div2, "class", "flex flex-col flex-shrink-0 border-r-2 border-stone-600 font-medium tracking-wide text-stone-800 w-full sssm:w-36");
+    			attr(div2, "class", "flex flex-col flex-shrink-0 border-b-2 sssm:border-b-0 sssm:border-r-2 border-stone-600 font-medium tracking-wide text-stone-800 w-full sssm:w-36");
     			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[5].prefix);
     			attr(a0, "class", "w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium");
     			attr(a1, "target", "_blank");
@@ -12275,8 +12275,6 @@ var app = (function () {
       embed SVG directly into pages instead of using Iconify JavaScript.
       <br/><br/>
       See <a href="/">about</a> page to learn more about Iconify and project goals.`;
-
-    			attr(div, "class", "text-base");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -12314,8 +12312,8 @@ var app = (function () {
     			h2.textContent = "Iconify in different browsers";
     			t3 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(p, "class", "font-medium text-xl mb-2 text-center tracking-wide");
-    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
+    			attr(p, "class", "font-medium text-base sm:text-xl mb-2 text-center tracking-wide");
+    			attr(h2, "class", "text-3xl sssm:text-4xl sm:text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
     			attr(div, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -12380,8 +12378,6 @@ var app = (function () {
       see each collection for details. Icon collections available by default are
       all licensed under some kind of open source or free license, making it possible
       to use them in Iconify project.`;
-
-    			attr(p, "class", "text-base");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -12419,8 +12415,8 @@ var app = (function () {
     			h2.textContent = "Iconify under legal protection";
     			t3 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(p, "class", "font-medium text-xl mb-2 text-center tracking-wide");
-    			attr(h2, "class", "text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
+    			attr(p, "class", "font-medium text-base sm:text-xl mb-2 text-center tracking-wide");
+    			attr(h2, "class", "text-3xl sssm:text-4xl sm:text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12");
     			attr(div, "class", "w-full px-0 md:px-16");
     		},
     		m(target, anchor) {
@@ -12506,7 +12502,7 @@ var app = (function () {
     			create_component(compatibility.$$.fragment);
     			t5 = space();
     			create_component(license.$$.fragment);
-    			attr(div, "class", "flex flex-col px-3 390:px-8 ssm:px-12 gap-20 sm:gap-32");
+    			attr(div, "class", "flex flex-col px-8 ssm:px-12 gap-20 sm:gap-32");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -12777,7 +12773,7 @@ var app = (function () {
     			t8 = space();
     			attr(div0, "class", "w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3 ");
     			attr(div1, "class", "w-full h-full border-t-2 border-stone-600 flex p-4 py-4 sssm:py-0 justify-between items-center text-smr");
-    			attr(div2, "class", "flex flex-col flex-shrink-0 border-r-2 border-stone-600 font-medium tracking-wide text-stone-800 w-full sssm:w-36");
+    			attr(div2, "class", "flex flex-col flex-shrink-0 border-b-2 sssm:border-b-0 sssm:border-r-2 border-stone-600 font-medium tracking-wide text-stone-800 w-full sssm:w-36");
     			attr(a0, "href", a0_href_value = "./icon-set/" + /*iconSet*/ ctx[7].prefix);
     			attr(a0, "class", "w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden tracking-wide text-xl font-medium");
     			attr(a1, "target", "_blank");
@@ -13261,7 +13257,7 @@ var app = (function () {
     <br/><br/>
     Click icon set name to see all available icons.`;
 
-    			attr(p, "class", "text-center text-base ");
+    			attr(p, "class", "text-center");
     		},
     		m(target, anchor) {
     			insert(target, p, anchor);
@@ -13292,7 +13288,7 @@ var app = (function () {
     			h1.textContent = "Browse Icons";
     			t1 = space();
     			create_component(paragraph.$$.fragment);
-    			attr(h1, "class", "mb-4 text-2xl font-semibold tracking-wide text-center sm:mb-8 sm:text-5xl mt-12");
+    			attr(h1, "class", "mb-4 text-3xl sssm:text-4xl xl:text-5xl font-semibold tracking-wide text-center sm:mb-8 mt-12");
     		},
     		m(target, anchor) {
     			insert(target, h1, anchor);
@@ -40960,7 +40956,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t0 = space();
     			button = element("button");
     			button.textContent = "Download SVG";
-    			attr(button, "class", "w-full p-4 text-xl font-medium tracking-wide bg-stone-600 ");
+    			attr(button, "class", "w-full p-4 text-lg font-medium tracking-wide text-stone-100 bg-stone-600 ");
     		},
     		m(target, anchor) {
     			mount_component(codesnippet, target, anchor);
@@ -41770,6 +41766,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	let span;
     	let t1_value = /*tab*/ ctx[31].name + "";
     	let t1;
+    	let span_class_value;
     	let t2;
     	let button_class_value;
     	let current;
@@ -41780,7 +41777,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			props: {
     				icon: /*tab*/ ctx[31].icon,
     				width: "20",
-    				height: "20"
+    				height: "20",
+    				class: /*currentTab*/ ctx[9] == /*index*/ ctx[30]
+    				? 'active'
+    				: ''
     			}
     		});
 
@@ -41796,7 +41796,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			span = element("span");
     			t1 = text(t1_value);
     			t2 = space();
-    			attr(span, "class", "-mt-0.5");
+
+    			attr(span, "class", span_class_value = "-mt-0.5 " + (/*currentTab*/ ctx[9] == /*index*/ ctx[30]
+    			? 'text-stone-100'
+    			: ''));
 
     			attr(button, "class", button_class_value = "transition-all flex gap-2 " + (/*currentTab*/ ctx[9] === /*index*/ ctx[30]
     			? 'font-medium bg-stone-600 text-stone-100'
@@ -41818,6 +41821,19 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		},
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
+    			const icon_changes = {};
+
+    			if (dirty[0] & /*currentTab*/ 512) icon_changes.class = /*currentTab*/ ctx[9] == /*index*/ ctx[30]
+    			? 'active'
+    			: '';
+
+    			icon.$set(icon_changes);
+
+    			if (!current || dirty[0] & /*currentTab*/ 512 && span_class_value !== (span_class_value = "-mt-0.5 " + (/*currentTab*/ ctx[9] == /*index*/ ctx[30]
+    			? 'text-stone-100'
+    			: ''))) {
+    				attr(span, "class", span_class_value);
+    			}
 
     			if (!current || dirty[0] & /*currentTab*/ 512 && button_class_value !== (button_class_value = "transition-all flex gap-2 " + (/*currentTab*/ ctx[9] === /*index*/ ctx[30]
     			? 'font-medium bg-stone-600 text-stone-100'
@@ -41843,7 +41859,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (568:8) {#if tabs[currentTab].subtabs}
+    // (572:8) {#if tabs[currentTab].subtabs}
     function create_if_block$2(ctx) {
     	let div;
     	let each_value = /*tabs*/ ctx[12][/*currentTab*/ ctx[9]].subtabs;
@@ -41901,12 +41917,13 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (570:12) {#each tabs[currentTab].subtabs as [name], index}
+    // (574:12) {#each tabs[currentTab].subtabs as [name], index}
     function create_each_block$2(ctx) {
     	let button;
     	let span;
     	let t0_value = /*name*/ ctx[28] + "";
     	let t0;
+    	let span_class_value;
     	let t1;
     	let button_class_value;
     	let mounted;
@@ -41922,7 +41939,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			span = element("span");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr(span, "class", "-mt-0.5");
+
+    			attr(span, "class", span_class_value = "-mt-0.5 " + (/*currentSubTab*/ ctx[10] == /*index*/ ctx[30]
+    			? 'text-stone-100'
+    			: ''));
 
     			attr(button, "class", button_class_value = "transition-all flex gap-2 " + (/*currentSubTab*/ ctx[10] == /*index*/ ctx[30]
     			? 'font-medium bg-stone-600 text-stone-100'
@@ -41942,6 +41962,12 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			if (dirty[0] & /*currentTab*/ 512 && t0_value !== (t0_value = /*name*/ ctx[28] + "")) set_data(t0, t0_value);
+
+    			if (dirty[0] & /*currentSubTab*/ 1024 && span_class_value !== (span_class_value = "-mt-0.5 " + (/*currentSubTab*/ ctx[10] == /*index*/ ctx[30]
+    			? 'text-stone-100'
+    			: ''))) {
+    				attr(span, "class", span_class_value);
+    			}
 
     			if (dirty[0] & /*currentSubTab*/ 1024 && button_class_value !== (button_class_value = "transition-all flex gap-2 " + (/*currentSubTab*/ ctx[10] == /*index*/ ctx[30]
     			? 'font-medium bg-stone-600 text-stone-100'
@@ -42169,7 +42195,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-horizontal",
     				width: "28",
     				height: "28",
-    				class: /*flipHoriz*/ ctx[6] ? "text-stone-100" : ""
+    				class: /*flipHoriz*/ ctx[6] ? "active" : ""
     			}
     		});
 
@@ -42178,7 +42204,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-vertical",
     				width: "28",
     				height: "28",
-    				class: /*flipVert*/ ctx[5] ? "text-stone-100" : ""
+    				class: /*flipVert*/ ctx[5] ? "active" : ""
     			}
     		});
 
@@ -42187,7 +42213,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-horizontal",
     				width: "28",
     				height: "28",
-    				class: /*display*/ ctx[7] === "block" ? "text-stone-100" : ""
+    				class: /*display*/ ctx[7] === "block" ? "active" : ""
     			}
     		});
 
@@ -42196,7 +42222,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				icon: "mdi:flip-vertical",
     				width: "28",
     				height: "28",
-    				class: /*display*/ ctx[7] === "inline" ? "text-stone-100" : ""
+    				class: /*display*/ ctx[7] === "inline" ? "active" : ""
     			}
     		});
 
@@ -42359,7 +42385,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			div17 = element("div");
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			attr(button0, "class", "absolute right-6 top-6");
-    			attr(div0, "class", "pt-12 pb-24 md:h-full relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center border-2 border-stone-600");
+    			attr(div0, "class", "pt-12 m-8 pb-24 relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center border-2 border-stone-600");
     			attr(p0, "class", "font-medium tracking-wide mb-2");
     			attr(div1, "class", "flex gap-4 items-center");
     			attr(div2, "class", "absolute -top-[1.3rem] left-4 bg-stone-100 p-2");
@@ -42410,7 +42436,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg0, "viewBox", "0 0 6 6");
     			attr(svg0, "fill", "none");
     			attr(svg0, "xmlns", "http://www.w3.org/2000/svg");
-    			attr(svg0, "class", svg0_class_value = /*rotate*/ ctx[8] === 0 ? "text-stone-100" : "");
+    			attr(svg0, "class", svg0_class_value = /*rotate*/ ctx[8] === 0 ? "active" : "");
     			attr(p10, "class", p10_class_value = "" + ((/*rotate*/ ctx[8] === 0 ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button5, "class", button5_class_value = "flex flex-grow relative z-10 gap-2 py-3 px-4 items-center " + (/*rotate*/ ctx[8] == 0 ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
     			attr(path0, "d", "M12 6C13.5913 6 15.1174 6.63214 16.2426 7.75736C17.3679 8.88258 18 10.4087 18 12V14.5");
@@ -42430,7 +42456,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg1, "viewBox", "0 0 24 24");
     			attr(svg1, "fill", "none");
     			attr(svg1, "xmlns", "http://www.w3.org/2000/svg");
-    			attr(svg1, "class", svg1_class_value = /*rotate*/ ctx[8] === 90 ? "text-stone-100" : "");
+    			attr(svg1, "class", svg1_class_value = /*rotate*/ ctx[8] === 90 ? "active-stroke" : "");
     			attr(p11, "class", p11_class_value = "" + ((/*rotate*/ ctx[8] === 90 ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button6, "class", button6_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 90 ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
     			attr(path3, "d", "M11.998 6C13.5893 6 15.1155 6.63214 16.2407 7.75736C17.3659 8.88258 17.998 10.4087 17.998 12C17.998 13.5913 17.3659 15.1174 16.2407 16.2426C15.1155 17.3679 13.5893 18 11.998 18H9.49805");
@@ -42450,7 +42476,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg2, "viewBox", "0 0 24 24");
     			attr(svg2, "fill", "none");
     			attr(svg2, "xmlns", "http://www.w3.org/2000/svg");
-    			attr(svg2, "class", svg2_class_value = /*rotate*/ ctx[8] === 180 ? "text-stone-100" : "");
+    			attr(svg2, "class", svg2_class_value = /*rotate*/ ctx[8] === 180 ? "active-stroke" : "");
     			attr(p12, "class", p12_class_value = "" + ((/*rotate*/ ctx[8] === 180 ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button7, "class", button7_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 180 ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
     			attr(path6, "d", "M13.8 5.00002C15.224 5.00002 16.6161 5.42229 17.8001 6.21344C18.9841 7.00459 19.907 8.12907 20.4519 9.4447C20.9969 10.7603 21.1395 12.208 20.8617 13.6047C20.5838 15.0013 19.8981 16.2843 18.8912 17.2912C17.8842 18.2981 16.6013 18.9839 15.2046 19.2617C13.808 19.5395 12.3603 19.3969 11.0447 18.852C9.72905 18.307 8.60456 17.3842 7.81342 16.2001C7.02227 15.0161 6.6 13.624 6.6 12.2V9.20002");
@@ -42470,16 +42496,16 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(svg3, "viewBox", "0 0 24 24");
     			attr(svg3, "fill", "none");
     			attr(svg3, "xmlns", "http://www.w3.org/2000/svg");
-    			attr(svg3, "class", svg3_class_value = /*rotate*/ ctx[8] === 270 ? "text-stone-100" : "");
+    			attr(svg3, "class", svg3_class_value = /*rotate*/ ctx[8] === 270 ? "active-stroke" : "");
     			attr(p13, "class", p13_class_value = "" + ((/*rotate*/ ctx[8] === 270 ? 'text-stone-100' : '') + " font-medium tracking-wide"));
     			attr(button8, "class", button8_class_value = "flex flex-grow relative z-10 gap-2 p-3 items-center " + (/*rotate*/ ctx[8] === 270 ? 'bg-stone-600' : '') + " border-2 border-stone-600 transition-all");
     			attr(div14, "class", "p-4 flex flex-grow flex-wrap xl:flex-grow-0 gap-3 border-stone-600 border-2 relative");
     			attr(div15, "class", "flex gap-6 mt-8 flex-wrap");
     			attr(div16, "class", "flex flex-wrap gap-2");
-    			attr(div17, "class", "mt-8 mb-8");
+    			attr(div17, "class", "mt-8");
     			attr(div18, "class", "mt-12");
-    			attr(div19, "class", "w-full h-full overflow-visible md:overflow-auto pr-4 mt-8");
-    			attr(div20, "class", "w-full p-8 gap-8 flex flex-col md:flex-row overflow-auto md:overflow-hidden relative bg-stone-100 m-4 ssssm:m-12 700:m-24");
+    			attr(div19, "class", "w-full overflow-visible md:overflow-auto pr-4 mt-8 mr-8 pb-8");
+    			attr(div20, "class", "w-full gap-8 flex flex-col md:flex-row overflow-auto md:overflow-hidden relative bg-stone-100 m-4 ssssm:m-12 700:m-24");
     			set_style(div20, "height", "calc(100vh - 8rem)");
     			attr(div21, "class", "fixed z-[60] w-full h-screen flex items-center justify-center top-0 left-0 bg-black bg-opacity-20");
     		},
@@ -42701,7 +42727,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			const icon4_changes = {};
-    			if (dirty[0] & /*flipHoriz*/ 64) icon4_changes.class = /*flipHoriz*/ ctx[6] ? "text-stone-100" : "";
+    			if (dirty[0] & /*flipHoriz*/ 64) icon4_changes.class = /*flipHoriz*/ ctx[6] ? "active" : "";
     			icon4.$set(icon4_changes);
 
     			if (!current || dirty[0] & /*flipHoriz*/ 64 && p4_class_value !== (p4_class_value = "" + ((/*flipHoriz*/ ctx[6] ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
@@ -42713,7 +42739,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			const icon5_changes = {};
-    			if (dirty[0] & /*flipVert*/ 32) icon5_changes.class = /*flipVert*/ ctx[5] ? "text-stone-100" : "";
+    			if (dirty[0] & /*flipVert*/ 32) icon5_changes.class = /*flipVert*/ ctx[5] ? "active" : "";
     			icon5.$set(icon5_changes);
 
     			if (!current || dirty[0] & /*flipVert*/ 32 && p5_class_value !== (p5_class_value = "" + ((/*flipVert*/ ctx[5] ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
@@ -42725,7 +42751,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			const icon6_changes = {};
-    			if (dirty[0] & /*display*/ 128) icon6_changes.class = /*display*/ ctx[7] === "block" ? "text-stone-100" : "";
+    			if (dirty[0] & /*display*/ 128) icon6_changes.class = /*display*/ ctx[7] === "block" ? "active" : "";
     			icon6.$set(icon6_changes);
 
     			if (!current || dirty[0] & /*display*/ 128 && p7_class_value !== (p7_class_value = "" + ((/*display*/ ctx[7] === 'block' ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
@@ -42737,7 +42763,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			const icon7_changes = {};
-    			if (dirty[0] & /*display*/ 128) icon7_changes.class = /*display*/ ctx[7] === "inline" ? "text-stone-100" : "";
+    			if (dirty[0] & /*display*/ 128) icon7_changes.class = /*display*/ ctx[7] === "inline" ? "active" : "";
     			icon7.$set(icon7_changes);
 
     			if (!current || dirty[0] & /*display*/ 128 && p8_class_value !== (p8_class_value = "" + ((/*display*/ ctx[7] === 'inline' ? 'text-stone-100' : '') + " font-medium tracking-wide"))) {
@@ -42748,7 +42774,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				attr(button4, "class", button4_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && svg0_class_value !== (svg0_class_value = /*rotate*/ ctx[8] === 0 ? "text-stone-100" : "")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && svg0_class_value !== (svg0_class_value = /*rotate*/ ctx[8] === 0 ? "active" : "")) {
     				attr(svg0, "class", svg0_class_value);
     			}
 
@@ -42760,7 +42786,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				attr(button5, "class", button5_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && svg1_class_value !== (svg1_class_value = /*rotate*/ ctx[8] === 90 ? "text-stone-100" : "")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && svg1_class_value !== (svg1_class_value = /*rotate*/ ctx[8] === 90 ? "active-stroke" : "")) {
     				attr(svg1, "class", svg1_class_value);
     			}
 
@@ -42772,7 +42798,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				attr(button6, "class", button6_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && svg2_class_value !== (svg2_class_value = /*rotate*/ ctx[8] === 180 ? "text-stone-100" : "")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && svg2_class_value !== (svg2_class_value = /*rotate*/ ctx[8] === 180 ? "active-stroke" : "")) {
     				attr(svg2, "class", svg2_class_value);
     			}
 
@@ -42784,7 +42810,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				attr(button7, "class", button7_class_value);
     			}
 
-    			if (!current || dirty[0] & /*rotate*/ 256 && svg3_class_value !== (svg3_class_value = /*rotate*/ ctx[8] === 270 ? "text-stone-100" : "")) {
+    			if (!current || dirty[0] & /*rotate*/ 256 && svg3_class_value !== (svg3_class_value = /*rotate*/ ctx[8] === 270 ? "active-stroke" : "")) {
     				attr(svg3, "class", svg3_class_value);
     			}
 
@@ -43523,7 +43549,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t1 = text(t1_value);
     			t2 = space();
     			attr(p, "class", "font-medium text-sm tracking-wide truncate ml-3 -mb-0.5");
-    			attr(div, "class", "flex items-center cursor-pointer transition-all hover:bg-stone-200 p-4");
+    			attr(div, "class", "flex items-center cursor-pointer transition-all hover:bg-stone-200 py-3");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);

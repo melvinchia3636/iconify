@@ -44,8 +44,8 @@
 </script>
 
 <div class="w-full px-0 md:px-16">
-  <p class=" font-medium text-xl mb-2 text-center tracking-wide">Feautres</p>
-  <h2 class="text-5xl font-semibold tracking-wide  text-center mb-6 lg:mb-12">
+  <p class="font-medium text-base sm:text-xl mb-2 text-center tracking-wide">Feautres</p>
+  <h2 class="text-3xl sssm:text-4xl sm:text-5xl font-semibold tracking-wide text-center mb-6 lg:mb-12">
     Many icons, one framework
   </h2>
   <Paragraph>
@@ -71,7 +71,7 @@
           Load on demand
         </h3>
         <Paragraph>
-          <div class="text-base">
+          <div>
             Fonts and other SVG frameworks load entire collections. Even if you
             are using only 10-20 icons, your visitors are forced to load them
             all.
@@ -239,7 +239,7 @@
           Easy to use
         </h3>
         <Paragraph>
-          <div class="text-base">
+          <div>
             Syntax is similar to glyph fonts. Write a placeholder element,
             Iconify will replace it with SVG.
             <br /><br />
@@ -335,7 +335,7 @@
           Lightning fast
         </h3>
         <Paragraph>
-          <div class="text-base">
+          <div>
             Icons are loaded from Iconify API in bulk, reducing number of
             queries. Script is small and fast. Placeholders are replaced with
             SVG images in fraction of second.

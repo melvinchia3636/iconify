@@ -1,7 +1,7 @@
-<div class="w-full relative p-4 sssm:p-8 ssm:p-16 ">
+<div class="w-full relative sssm:p-8 sm:p-16 ">
   <div class="inline-flex flex-col w-full ssm:w-auto">
     <div
-      class=" bg-stone-100 !border-b-0 -mb-[4px] pt-4 530:pt-6 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide"
+      class="bg-stone-100 !border-b-0 -mb-[4px] pb-2 inline relative w-min text-5xl 530:text-6xl 700:text-7xl xl:text-8xl font-bold tracking-wide"
     >
       Unified
     </div>
@@ -12,7 +12,7 @@
     </div>
   </div>
   <p
-    class=" text-xl sssm:text-xl ssm:text-2xl leading-7 sssm:leading-8 ssm:leading-10 tracking-wide mt-8"
+    class="text-sm sssm:text-lg ssm:text-xl md:text-2xl leading-7 tracking-wide mt-8"
   >
     More than 100 icon sets, one library.
     <br class="hidden 700:inline" />Over 100,000 open source vector icons.
@@ -25,10 +25,10 @@
       autocomplete="off"
       name="q"
       type="text"
-      class="bg-transparent  placeholder-stone-600 w-full px-6 py-3 ssm:py-5 text-xl tracking-wide"
+      class="bg-transparent placeholder-stone-600 w-full px-6 py-3 ssm:py-5 text-base ssm:text-xl tracking-wide"
       placeholder="Search icons..."
     />
-    <button type="submit" class="bg-stone-600 py-4 px-6">
+    <button type="submit" class="bg-stone-600 py-4 px-6 h-full">
       <svg
         class="mt-1 w-5 h-5"
         viewBox="0 0 19 17"

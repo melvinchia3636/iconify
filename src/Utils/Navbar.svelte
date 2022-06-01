@@ -20,7 +20,7 @@
 </script>
 
 <nav
-  class="flex items-center justify-between w-full px-3 390:px-8 ssm:px-12 mb-8"
+  class="flex items-center justify-between w-full px-8 ssm:px-12 mb-8"
 >
   <div class="flex items-center flex-shrink-0 gap-6 z-50">
     <button class="block 1100:hidden" on:click={toggleNav}>
@@ -74,12 +74,12 @@
   </Link>
   {#if isNavOpen}
     <div
-      class="fixed z-40 top-0 left-0 w-full h-screen bg-stone-600 flex gap-16 flex-col items-center justify-center text-lg font-medium tracking-wide "
+      class="fixed z-40 top-0 left-0 w-full h-screen bg-stone-50 flex gap-16 flex-col items-center justify-center text-lg font-medium tracking-wide "
       transition:slide
     >
       {#each navOptions as [route, name]}
         {#if route.includes(pathname)}
-          <a href={route[0]} class="font-semibold " style="font-size: 1.3rem"
+          <a href={route[0]} class="font-semibold relative after:w-1/2 after:border-b-2 after:absolute after:border-stone-600 after:bottom-0 after:left-1/2 after:-translate-x-1/2"
             >{name}</a
           >
         {:else}

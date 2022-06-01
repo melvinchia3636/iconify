@@ -6,9 +6,9 @@
   class="w-full flex flex-col lg:flex-row gap-12 lg:gap-20 items-center px-0 md:px-16"
 >
   <div
-    class="text-5xl font-semibold tracking-wide text-center !leading-tight whitespace-nowrap "
+    class="text-3xl sssm:text-4xl xl:text-5xl font-semibold tracking-wide text-center !leading-tight sm:whitespace-nowrap "
   >
-    Thousands of<br />icons, one<br />
+    Thousands of<br class="hidden sm:inline-block" />icons, one<br class="hidden sssm:inline-block" />
     <span class="">unified</span> framework.
   </div>
   <Paragraph>

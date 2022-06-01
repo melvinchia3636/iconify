@@ -163,7 +163,7 @@
             on:click={() => {
               currentIcon.set(`${iconSet}:${icon.name || icon}`);
             }}
-            class="flex items-center cursor-pointer transition-all hover:bg-stone-200 p-4"
+            class="flex items-center cursor-pointer transition-all hover:bg-stone-200 py-3"
           >
             <Icon
               icon={`${iconSet}:${icon.name || icon}`}

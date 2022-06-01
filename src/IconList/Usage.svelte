@@ -103,7 +103,7 @@
   <div
     in:slide
     out:slide
-    class="w-full p-8 gap-8 flex flex-col md:flex-row overflow-auto md:overflow-hidden relative bg-stone-100 m-4 ssssm:m-12 700:m-24"
+    class="w-full gap-8 flex flex-col md:flex-row overflow-auto md:overflow-hidden relative bg-stone-100 m-4 ssssm:m-12 700:m-24"
     style="height: calc(100vh - 8rem)"
   >
     <button
@@ -112,7 +112,7 @@
       ><Icon icon="heroicons-solid:x" class="" width="24" height="24" /></button
     >
     <div
-      class="pt-12 pb-24 md:h-full relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center border-2 border-stone-600"
+      class="pt-12 m-8 pb-24 relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center border-2 border-stone-600"
     >
       {#if display === "inline"}
         <p class=" tracking-wide text-lg p-12 text-center">
@@ -166,7 +166,7 @@
         </p>
       {/if}
     </div>
-    <div class="w-full h-full overflow-visible md:overflow-auto pr-4 mt-8">
+    <div class="w-full overflow-visible md:overflow-auto pr-4 mt-8 mr-8 pb-8">
       <p class=" font-medium tracking-wide mb-2">{curIconSet}</p>
       <div class="flex gap-4 items-center">
         {#if curIcon}
@@ -303,7 +303,7 @@
               icon="mdi:flip-horizontal"
               width="28"
               height="28"
-              class={flipHoriz ? "text-stone-100" : ""}
+              class={flipHoriz ? "active" : ""}
             />
             <p
               class="{flipHoriz
@@ -323,7 +323,7 @@
               icon="mdi:flip-vertical"
               width="28"
               height="28"
-              class={flipVert ? "text-stone-100" : ""}
+              class={flipVert ? "active" : ""}
             />
             <p
               class="{flipVert
@@ -354,7 +354,7 @@
               icon="mdi:flip-horizontal"
               width="28"
               height="28"
-              class={display === "block" ? "text-stone-100" : ""}
+              class={display === "block" ? "active" : ""}
             />
             <p
               class="{display === 'block'
@@ -375,7 +375,7 @@
               icon="mdi:flip-vertical"
               width="28"
               height="28"
-              class={display === "inline" ? "text-stone-100" : ""}
+              class={display === "inline" ? "active" : ""}
             />
             <p
               class="{display === 'inline'
@@ -393,7 +393,7 @@
             class="absolute left-4 bg-stone-100 p-2 h-4 flex items-center"
             style="top: -0.6rem"
           >
-            <p class="tracking-wide  text-base font-medium">Rotate</p>
+            <p class="tracking-wide text-base font-medium">Rotate</p>
           </div>
           <button
             on:click={() => (rotate = 0)}
@@ -408,7 +408,7 @@
               viewBox="0 0 6 6"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class={rotate === 0 ? "text-stone-100" : ""}
+              class={rotate === 0 ? "active" : ""}
             >
               <circle cx="3" cy="3" r="3" fill="currentColor" />
             </svg>
@@ -433,7 +433,7 @@
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class={rotate === 90 ? "text-stone-100" : ""}
+              class={rotate === 90 ? "active-stroke" : ""}
             >
               <path
                 d="M12 6C13.5913 6 15.1174 6.63214 16.2426 7.75736C17.3679 8.88258 18 10.4087 18 12V14.5"
@@ -475,7 +475,7 @@
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class={rotate === 180 ? "text-stone-100" : ""}
+              class={rotate === 180 ? "active-stroke" : ""}
             >
               <path
                 d="M11.998 6C13.5893 6 15.1155 6.63214 16.2407 7.75736C17.3659 8.88258 17.998 10.4087 17.998 12C17.998 13.5913 17.3659 15.1174 16.2407 16.2426C15.1155 17.3679 13.5893 18 11.998 18H9.49805"
@@ -517,7 +517,7 @@
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class={rotate === 270 ? "text-stone-100" : ""}
+              class={rotate === 270 ? "active-stroke" : ""}
             >
               <path
                 d="M13.8 5.00002C15.224 5.00002 16.6161 5.42229 17.8001 6.21344C18.9841 7.00459 19.907 8.12907 20.4519 9.4447C20.9969 10.7603 21.1395 12.208 20.8617 13.6047C20.5838 15.0013 19.8981 16.2843 18.8912 17.2912C17.8842 18.2981 16.6013 18.9839 15.2046 19.2617C13.808 19.5395 12.3603 19.3969 11.0447 18.852C9.72905 18.307 8.60456 17.3842 7.81342 16.2001C7.02227 15.0161 6.6 13.624 6.6 12.2V9.20002"
@@ -560,8 +560,12 @@
                 ? 'font-medium bg-stone-600 text-stone-100'
                 : ''} border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2"
             >
-              <Icon icon={tab.icon} width="20" height="20" />
-              <span class="-mt-0.5">{tab.name}</span>
+              <Icon icon={tab.icon} width="20" height="20" class="{currentTab == index
+                ? 'active'
+                : ''}" />
+              <span class="-mt-0.5 {currentTab == index
+                ? 'text-stone-100'
+                : ''}">{tab.name}</span>
             </button>
           {/each}
         </div>
@@ -576,12 +580,14 @@
                   ? 'font-medium bg-stone-600 text-stone-100'
                   : ''} border-2 border-stone-600 tracking-wide px-3 items-center justify-center py-2"
               >
-                <span class="-mt-0.5">{name}</span>
+                <span class="-mt-0.5 {currentSubTab == index
+                  ? 'text-stone-100'
+                  : ''}">{name}</span>
               </button>
             {/each}
           </div>
         {/if}
-        <div class="mt-8 mb-8">
+        <div class="mt-8">
           <svelte:component
             this={tabs[currentTab].subTab ||
               tabs[currentTab].subtabs[currentSubTab][1]}
@@ -626,5 +632,13 @@
 
   .-translate-x-1\/2 {
     --tw-translate-x: -50%;
+  }
+
+  .active path, .active circle {
+    @apply fill-stone-100;
+  }
+
+  .active-stroke path {
+    @apply stroke-stone-100;
   }
 </style>

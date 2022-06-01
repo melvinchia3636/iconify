@@ -73,6 +73,6 @@
   on:click={() => {
     saveSvg(curSVG, icon.split(":")[1] + ".svg");
   }}
-  class="w-full p-4 text-xl font-medium tracking-wide  bg-stone-600  "
+  class="w-full p-4 text-lg font-medium tracking-wide text-stone-100 bg-stone-600  "
   >Download SVG</button
 >

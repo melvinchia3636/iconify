@@ -43,7 +43,7 @@
               class="flex flex-col sssm:flex-row flex-grow overflow-hidden w-full border-2 border-stone-600"
             >
               <div
-                class="flex flex-col flex-shrink-0 border-r-2 border-stone-600 font-medium tracking-wide text-stone-800 w-full sssm:w-36"
+                class="flex flex-col flex-shrink-0 border-b-2 sssm:border-b-0 sssm:border-r-2 border-stone-600 font-medium tracking-wide text-stone-800 w-full sssm:w-36"
               >
                 <div
                   class="w-full h-full flex items-center justify-center px-4 py-3 gap-5 sssm:gap-3 "

@@ -1,4 +1,4 @@
-<p class="tracking-wide ">
+<p class="tracking-wide text-sm ssm:text-base">
   <slot />
 </p>
 

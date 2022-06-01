@@ -50,15 +50,22 @@
   @tailwind components;
   @tailwind utilities;
 
-  @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700&family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap");
-
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+  
   body {
     margin: 0;
   }
 
-  * {
+  *:not(path) {
     font-family: "Jetbrains Mono";
     @apply text-stone-600;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     &:focus {
       outline: none;
