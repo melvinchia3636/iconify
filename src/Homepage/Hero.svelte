@@ -28,7 +28,7 @@
       class="bg-transparent placeholder-stone-600 w-full px-6 py-3 ssm:py-5 text-base ssm:text-xl tracking-wide"
       placeholder="Search icons..."
     />
-    <button type="submit" class="bg-stone-600 py-4 px-6 h-full">
+    <button type="submit" class="bg-stone-600 py-4 px-6">
       <svg
         class="mt-1 w-5 h-5"
         viewBox="0 0 19 17"

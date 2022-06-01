@@ -5237,7 +5237,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (41:6) {:else}
+    // (36:6) {:else}
     function create_else_block_1$4(ctx) {
     	let a;
     	let t_value = /*name*/ ctx[5] + "";
@@ -5260,7 +5260,7 @@ var app = (function () {
     	};
     }
 
-    // (35:6) {#if route.includes(pathname)}
+    // (30:6) {#if route.includes(pathname)}
     function create_if_block_2$7(ctx) {
     	let a;
     	let t_value = /*name*/ ctx[5] + "";
@@ -5284,7 +5284,7 @@ var app = (function () {
     	};
     }
 
-    // (34:4) {#each navOptions as [route, name]}
+    // (29:4) {#each navOptions as [route, name]}
     function create_each_block_1$5(ctx) {
     	let if_block_anchor;
 
@@ -5315,7 +5315,7 @@ var app = (function () {
     	};
     }
 
-    // (46:2) <Link     to="/icon-sets"     class="items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6"   >
+    // (44:2) <Link     to="/icon-sets"     class="items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6"   >
     function create_default_slot$n(ctx) {
     	let t;
     	let svg;
@@ -5359,7 +5359,7 @@ var app = (function () {
     	};
     }
 
-    // (75:2) {#if isNavOpen}
+    // (73:2) {#if isNavOpen}
     function create_if_block$9(ctx) {
     	let div;
     	let div_transition;
@@ -5460,7 +5460,7 @@ var app = (function () {
     	};
     }
 
-    // (81:8) {#if route.includes(pathname)}
+    // (79:8) {#if route.includes(pathname)}
     function create_if_block_1$8(ctx) {
     	let a;
     	let t_value = /*name*/ ctx[5] + "";
@@ -5484,7 +5484,7 @@ var app = (function () {
     	};
     }
 
-    // (80:6) {#each navOptions as [route, name]}
+    // (78:6) {#each navOptions as [route, name]}
     function create_each_block$8(ctx) {
     	let if_block_anchor;
 
@@ -5517,35 +5517,33 @@ var app = (function () {
 
     function create_fragment$G(ctx) {
     	let nav;
-    	let div0;
+    	let a;
+    	let t0;
+    	let div;
+    	let t1;
     	let button;
     	let icon;
-    	let t0;
-    	let a;
-    	let t1;
-    	let div1;
     	let t2;
     	let link;
     	let t3;
     	let current;
     	let mounted;
     	let dispose;
-
-    	icon = new Icon({
-    			props: {
-    				icon: "gg:menu",
-    				class: "",
-    				width: "1.8rem",
-    				height: "1.8rem"
-    			}
-    		});
-
     	let each_value_1 = /*navOptions*/ ctx[2];
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
     		each_blocks[i] = create_each_block_1$5(get_each_context_1$5(ctx, each_value_1, i));
     	}
+
+    	icon = new Icon({
+    			props: {
+    				icon: "tabler:menu-2",
+    				class: "",
+    				width: "1.8rem",
+    				height: "1.8rem"
+    			}
+    		});
 
     	link = new Link$1({
     			props: {
@@ -5561,43 +5559,41 @@ var app = (function () {
     	return {
     		c() {
     			nav = element("nav");
-    			div0 = element("div");
-    			button = element("button");
-    			create_component(icon.$$.fragment);
-    			t0 = space();
     			a = element("a");
     			a.innerHTML = `<img src="../assets/logo.svg" alt="iconify logo"/>`;
-    			t1 = space();
-    			div1 = element("div");
+    			t0 = space();
+    			div = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
+    			t1 = space();
+    			button = element("button");
+    			create_component(icon.$$.fragment);
     			t2 = space();
     			create_component(link.$$.fragment);
     			t3 = space();
     			if (if_block) if_block.c();
-    			attr(button, "class", "block 1100:hidden");
     			attr(a, "href", "/");
-    			attr(div0, "class", "flex items-center flex-shrink-0 gap-6 z-50");
-    			attr(div1, "class", "items-center hidden -mt-1 font-medium tracking-wide gap-16 1100:flex");
+    			attr(a, "class", "relative z-50");
+    			attr(div, "class", "items-center hidden -mt-1 font-medium tracking-wide gap-16 1100:flex");
+    			attr(button, "class", "block 1100:hidden relative z-50");
     			attr(nav, "class", "flex items-center justify-between w-full px-8 ssm:px-12 mb-8");
     		},
     		m(target, anchor) {
     			insert(target, nav, anchor);
-    			append(nav, div0);
-    			append(div0, button);
-    			mount_component(icon, button, null);
-    			append(div0, t0);
-    			append(div0, a);
-    			append(nav, t1);
-    			append(nav, div1);
+    			append(nav, a);
+    			append(nav, t0);
+    			append(nav, div);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div1, null);
+    				each_blocks[i].m(div, null);
     			}
 
+    			append(nav, t1);
+    			append(nav, button);
+    			mount_component(icon, button, null);
     			append(nav, t2);
     			mount_component(link, nav, null);
     			append(nav, t3);
@@ -5622,7 +5618,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block_1$5(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div1, null);
+    						each_blocks[i].m(div, null);
     					}
     				}
 
@@ -5679,8 +5675,8 @@ var app = (function () {
     		},
     		d(detaching) {
     			if (detaching) detach(nav);
-    			destroy_component(icon);
     			destroy_each(each_blocks, detaching);
+    			destroy_component(icon);
     			destroy_component(link);
     			if (if_block) if_block.d();
     			mounted = false;
@@ -5890,7 +5886,7 @@ var app = (function () {
   <p class="text-sm sssm:text-lg ssm:text-xl md:text-2xl leading-7 tracking-wide mt-8">More than 100 icon sets, one library.
     <br class="hidden 700:inline"/>Over 100,000 open source vector icons.</p> 
   <form action="/search" class="mt-10 flex w-full md:w-9/12 border-2 border-stone-600 lg:w-5/12 overflow-hidden"><input autocomplete="off" name="q" type="text" class="bg-transparent placeholder-stone-600 w-full px-6 py-3 ssm:py-5 text-base ssm:text-xl tracking-wide" placeholder="Search icons..."/> 
-    <button type="submit" class="bg-stone-600 py-4 px-6 h-full"><svg class="mt-1 w-5 h-5" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form> 
+    <button type="submit" class="bg-stone-600 py-4 px-6"><svg class="mt-1 w-5 h-5" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6786 14.8369L17.4286 8.33691L10.6786 1.83691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.4286 8.33691L2.00002 8.33691" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></form> 
   <img src="./assets/hero.svg" alt="hero design" class="absolute right-0 top-0 h-full hidden lg:block"/>`;
 
     			attr(div3, "class", "w-full relative sssm:p-8 sm:p-16 ");
@@ -13464,7 +13460,7 @@ var app = (function () {
     			attr(input0, "placeholder", input0_placeholder_value = "Search " + /*count_value*/ ctx[3].toLocaleString() + " icons");
     			attr(div0, "class", "inline-flex items-center w-full p-4 overflow-hidden border-2 border-stone-600 gap-4 ");
     			attr(button, "type", "submit");
-    			attr(button, "class", "flex items-center justify-center h-16 sm:h-full px-12 font-semibold tracking-wide border-2 border-stone-600 whitespace-nowrap gap-6");
+    			attr(button, "class", "flex items-center justify-center h-16 sm:h-full px-12 font-semibold tracking-wide border-2 border-stone-600 text-stone-100 bg-stone-600 whitespace-nowrap gap-6");
     			attr(form, "action", "/search");
     			attr(form, "class", "flex flex-col w-full sm:h-16 mt-12 sm:flex-row gap-2");
     			attr(div1, "class", "flex flex-wrap gap-2");
@@ -32479,38 +32475,38 @@ var app = (function () {
     			t12 = space();
     			div5 = element("div");
     			input6 = element("input");
-    			attr(strong0, "class", "svelte-w9go3q");
+    			attr(strong0, "class", "svelte-potnje");
     			attr(input0, "type", "range");
     			attr(input0, "min", "0");
     			attr(input0, "max", "255");
-    			attr(input0, "class", "svelte-w9go3q");
-    			attr(input1, "class", "text-input svelte-w9go3q");
+    			attr(input0, "class", "svelte-potnje");
+    			attr(input1, "class", "text-input svelte-potnje");
     			attr(input1, "type", "number");
-    			attr(div0, "class", "color-component svelte-w9go3q");
-    			attr(strong1, "class", "svelte-w9go3q");
+    			attr(div0, "class", "color-component svelte-potnje");
+    			attr(strong1, "class", "svelte-potnje");
     			attr(input2, "type", "range");
     			attr(input2, "min", "0");
     			attr(input2, "max", "255");
-    			attr(input2, "class", "svelte-w9go3q");
-    			attr(input3, "class", "text-input svelte-w9go3q");
+    			attr(input2, "class", "svelte-potnje");
+    			attr(input3, "class", "text-input svelte-potnje");
     			attr(input3, "type", "number");
-    			attr(div1, "class", "color-component svelte-w9go3q");
-    			attr(strong2, "class", "svelte-w9go3q");
+    			attr(div1, "class", "color-component svelte-potnje");
+    			attr(strong2, "class", "svelte-potnje");
     			attr(input4, "type", "range");
     			attr(input4, "min", "0");
     			attr(input4, "max", "255");
-    			attr(input4, "class", "svelte-w9go3q");
-    			attr(input5, "class", "text-input svelte-w9go3q");
+    			attr(input4, "class", "svelte-potnje");
+    			attr(input5, "class", "text-input svelte-potnje");
     			attr(input5, "type", "number");
-    			attr(div2, "class", "color-component svelte-w9go3q");
-    			attr(div3, "class", "color-selectors svelte-w9go3q");
-    			attr(div4, "class", "preview svelte-w9go3q");
+    			attr(div2, "class", "color-component svelte-potnje");
+    			attr(div3, "class", "color-selectors svelte-potnje");
+    			attr(div4, "class", "preview svelte-potnje");
     			set_style(div4, "background", /*rgb*/ ctx[4]);
-    			attr(input6, "class", "text-input svelte-w9go3q");
+    			attr(input6, "class", "text-input svelte-potnje");
     			attr(input6, "type", "text");
     			input6.value = /*hex*/ ctx[3];
-    			attr(div6, "class", "color-preview svelte-w9go3q");
-    			attr(div7, "class", "color-picker svelte-w9go3q");
+    			attr(div6, "class", "color-preview svelte-potnje");
+    			attr(div7, "class", "color-picker svelte-potnje");
     		},
     		m(target, anchor) {
     			insert(target, div7, anchor);
@@ -32737,9 +32733,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*version*/ ctx[9]);
-    			attr(span0, "class", "label svelte-1gm5gmt");
-    			attr(span1, "class", "value svelte-1gm5gmt");
-    			attr(div, "class", "property svelte-1gm5gmt");
+    			attr(span0, "class", "label svelte-54ndm9");
+    			attr(span1, "class", "value svelte-54ndm9");
+    			attr(div, "class", "property svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32757,7 +32753,7 @@ var app = (function () {
     	};
     }
 
-    // (71:0) {#if numFrames}
+    // (70:0) {#if numFrames}
     function create_if_block_9$1(ctx) {
     	let div;
     	let span0;
@@ -32773,9 +32769,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*numFrames*/ ctx[6]);
-    			attr(span0, "class", "label svelte-1gm5gmt");
-    			attr(span1, "class", "value svelte-1gm5gmt");
-    			attr(div, "class", "property svelte-1gm5gmt");
+    			attr(span0, "class", "label svelte-54ndm9");
+    			attr(span1, "class", "value svelte-54ndm9");
+    			attr(div, "class", "property svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32793,7 +32789,7 @@ var app = (function () {
     	};
     }
 
-    // (78:0) {#if frameRate}
+    // (77:0) {#if frameRate}
     function create_if_block_8$1(ctx) {
     	let div;
     	let span0;
@@ -32809,9 +32805,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*frameRate*/ ctx[1]);
-    			attr(span0, "class", "label svelte-1gm5gmt");
-    			attr(span1, "class", "value svelte-1gm5gmt");
-    			attr(div, "class", "property svelte-1gm5gmt");
+    			attr(span0, "class", "label svelte-54ndm9");
+    			attr(span1, "class", "value svelte-54ndm9");
+    			attr(div, "class", "property svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32829,7 +32825,7 @@ var app = (function () {
     	};
     }
 
-    // (85:0) {#if numLayers}
+    // (84:0) {#if numLayers}
     function create_if_block_7$1(ctx) {
     	let div;
     	let span0;
@@ -32845,9 +32841,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*numLayers*/ ctx[7]);
-    			attr(span0, "class", "label svelte-1gm5gmt");
-    			attr(span1, "class", "value svelte-1gm5gmt");
-    			attr(div, "class", "property svelte-1gm5gmt");
+    			attr(span0, "class", "label svelte-54ndm9");
+    			attr(span1, "class", "value svelte-54ndm9");
+    			attr(div, "class", "property svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32865,7 +32861,7 @@ var app = (function () {
     	};
     }
 
-    // (92:0) {#if numAssets}
+    // (91:0) {#if numAssets}
     function create_if_block_6$1(ctx) {
     	let div;
     	let span0;
@@ -32881,9 +32877,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*numAssets*/ ctx[4]);
-    			attr(span0, "class", "label svelte-1gm5gmt");
-    			attr(span1, "class", "value svelte-1gm5gmt");
-    			attr(div, "class", "property svelte-1gm5gmt");
+    			attr(span0, "class", "label svelte-54ndm9");
+    			attr(span1, "class", "value svelte-54ndm9");
+    			attr(div, "class", "property svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32901,7 +32897,7 @@ var app = (function () {
     	};
     }
 
-    // (99:0) {#if numFonts}
+    // (98:0) {#if numFonts}
     function create_if_block_5$1(ctx) {
     	let div;
     	let span0;
@@ -32917,9 +32913,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*numFonts*/ ctx[5]);
-    			attr(span0, "class", "label svelte-1gm5gmt");
-    			attr(span1, "class", "value svelte-1gm5gmt");
-    			attr(div, "class", "property svelte-1gm5gmt");
+    			attr(span0, "class", "label svelte-54ndm9");
+    			attr(span1, "class", "value svelte-54ndm9");
+    			attr(div, "class", "property svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -32937,7 +32933,7 @@ var app = (function () {
     	};
     }
 
-    // (106:0) {#if hasMeta}
+    // (105:0) {#if hasMeta}
     function create_if_block$5(ctx) {
     	let hr;
     	let t0;
@@ -33043,7 +33039,7 @@ var app = (function () {
     	};
     }
 
-    // (109:2) {#if generator}
+    // (108:2) {#if generator}
     function create_if_block_4$2(ctx) {
     	let div;
     	let span0;
@@ -33059,9 +33055,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*generator*/ ctx[2]);
-    			attr(span0, "class", "label svelte-1gm5gmt");
-    			attr(span1, "class", "value svelte-1gm5gmt");
-    			attr(div, "class", "property svelte-1gm5gmt");
+    			attr(span0, "class", "label svelte-54ndm9");
+    			attr(span1, "class", "value svelte-54ndm9");
+    			attr(div, "class", "property svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33079,7 +33075,7 @@ var app = (function () {
     	};
     }
 
-    // (116:2) {#if author}
+    // (115:2) {#if author}
     function create_if_block_3$4(ctx) {
     	let div;
     	let span0;
@@ -33095,9 +33091,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*author*/ ctx[0]);
-    			attr(span0, "class", "label svelte-1gm5gmt");
-    			attr(span1, "class", "value svelte-1gm5gmt");
-    			attr(div, "class", "property svelte-1gm5gmt");
+    			attr(span0, "class", "label svelte-54ndm9");
+    			attr(span1, "class", "value svelte-54ndm9");
+    			attr(div, "class", "property svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33115,7 +33111,7 @@ var app = (function () {
     	};
     }
 
-    // (123:2) {#if keywords}
+    // (122:2) {#if keywords}
     function create_if_block_2$4(ctx) {
     	let div;
     	let span0;
@@ -33131,9 +33127,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*keywords*/ ctx[3]);
-    			attr(span0, "class", "label svelte-1gm5gmt");
-    			attr(span1, "class", "value svelte-1gm5gmt");
-    			attr(div, "class", "property svelte-1gm5gmt");
+    			attr(span0, "class", "label svelte-54ndm9");
+    			attr(span1, "class", "value svelte-54ndm9");
+    			attr(div, "class", "property svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33151,7 +33147,7 @@ var app = (function () {
     	};
     }
 
-    // (130:2) {#if themeColor}
+    // (129:2) {#if themeColor}
     function create_if_block_1$5(ctx) {
     	let div;
     	let span0;
@@ -33167,9 +33163,9 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*themeColor*/ ctx[8]);
-    			attr(span0, "class", "label svelte-1gm5gmt");
-    			attr(span1, "class", "value svelte-1gm5gmt");
-    			attr(div, "class", "property svelte-1gm5gmt");
+    			attr(span0, "class", "label svelte-54ndm9");
+    			attr(span1, "class", "value svelte-54ndm9");
+    			attr(div, "class", "property svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33224,7 +33220,7 @@ var app = (function () {
     			t7 = space();
     			if (if_block6) if_block6.c();
     			if_block6_anchor = empty();
-    			attr(h4, "class", "svelte-1gm5gmt");
+    			attr(h4, "class", "svelte-54ndm9");
     		},
     		m(target, anchor) {
     			insert(target, h4, anchor);
@@ -33454,13 +33450,13 @@ var app = (function () {
     			if (content_slot) content_slot.c();
     			t1 = space();
     			div1 = element("div");
-    			attr(div1, "class", "arrow svelte-cq7jp3");
+    			attr(div1, "class", "arrow svelte-1i83hqr");
     			set_style(div1, "border-color", /*color*/ ctx[0] + " transparent transparent transparent");
-    			attr(div2, "class", "popover-content svelte-cq7jp3");
+    			attr(div2, "class", "popover-content svelte-1i83hqr");
     			toggle_class(div2, "hidden", !/*_open*/ ctx[4]);
     			toggle_class(div2, "left-align", /*_alignment*/ ctx[3] !== -1);
     			toggle_class(div2, "right-align", /*_alignment*/ ctx[3] === -1);
-    			attr(div3, "class", "popover svelte-cq7jp3");
+    			attr(div3, "class", "popover svelte-1i83hqr");
     		},
     		m(target, anchor) {
     			insert(target, div3, anchor);
@@ -33751,14 +33747,14 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (426:32) 
+    // (425:32) 
     function create_if_block_13(ctx) {
     	let div;
 
     	return {
     		c() {
     			div = element("div");
-    			attr(div, "class", "spacer svelte-9yox50");
+    			attr(div, "class", "spacer svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33772,7 +33768,7 @@ var app = (function () {
     	};
     }
 
-    // (419:39) 
+    // (418:39) 
     function create_if_block_12(ctx) {
     	let div;
     	let svg;
@@ -33801,8 +33797,8 @@ var app = (function () {
     			attr(rect, "transform", "matrix(-1 0 0 1 7.7 3.4)");
     			attr(rect, "width", "5.7");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
-    			attr(div, "class", "btn svelte-9yox50");
+    			toggle_class(svg, "svelte-y4y35s", true);
+    			attr(div, "class", "btn svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33818,7 +33814,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		i: noop,
     		o: noop,
@@ -33830,7 +33826,7 @@ var app = (function () {
     	};
     }
 
-    // (409:35) 
+    // (408:35) 
     function create_if_block_11(ctx) {
     	let div;
     	let svg;
@@ -33859,8 +33855,8 @@ var app = (function () {
     			attr(rect, "transform", "matrix(1 0 0 -1 16.286 20.571)");
     			attr(rect, "width", "5.714");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
-    			attr(div, "class", "btn svelte-9yox50");
+    			toggle_class(svg, "svelte-y4y35s", true);
+    			attr(div, "class", "btn svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33876,7 +33872,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		i: noop,
     		o: noop,
@@ -33888,7 +33884,7 @@ var app = (function () {
     	};
     }
 
-    // (397:31) 
+    // (396:31) 
     function create_if_block_10(ctx) {
     	let div;
     	let input;
@@ -33901,9 +33897,9 @@ var app = (function () {
     			div = element("div");
     			input = element("input");
     			t = space();
-    			attr(input, "class", "frame-number svelte-9yox50");
+    			attr(input, "class", "frame-number svelte-y4y35s");
     			attr(input, "type", "text");
-    			attr(div, "class", " svelte-9yox50");
+    			attr(div, "class", " svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33938,7 +33934,7 @@ var app = (function () {
     	};
     }
 
-    // (372:30) 
+    // (371:30) 
     function create_if_block_9(ctx) {
     	let div;
     	let popover;
@@ -33961,7 +33957,7 @@ var app = (function () {
     			div = element("div");
     			create_component(popover.$$.fragment);
     			t = space();
-    			attr(div, "class", " svelte-9yox50");
+    			attr(div, "class", " svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -33994,7 +33990,7 @@ var app = (function () {
     	};
     }
 
-    // (350:30) 
+    // (349:30) 
     function create_if_block_7(ctx) {
     	let div;
     	let t;
@@ -34014,7 +34010,7 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			t = space();
-    			attr(div, "class", "btn svelte-9yox50");
+    			attr(div, "class", "btn svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34050,7 +34046,7 @@ var app = (function () {
     	};
     }
 
-    // (316:34) 
+    // (315:34) 
     function create_if_block_6(ctx) {
     	let div;
     	let popover;
@@ -34077,7 +34073,7 @@ var app = (function () {
     			div = element("div");
     			create_component(popover.$$.fragment);
     			t = space();
-    			attr(div, "class", " svelte-9yox50");
+    			attr(div, "class", " svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34121,7 +34117,7 @@ var app = (function () {
     	};
     }
 
-    // (297:36) 
+    // (296:36) 
     function create_if_block_5(ctx) {
     	let div;
     	let popover;
@@ -34144,7 +34140,7 @@ var app = (function () {
     			div = element("div");
     			create_component(popover.$$.fragment);
     			t = space();
-    			attr(div, "class", " svelte-9yox50");
+    			attr(div, "class", " svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34177,7 +34173,7 @@ var app = (function () {
     	};
     }
 
-    // (268:30) 
+    // (267:30) 
     function create_if_block_4$1(ctx) {
     	let div;
     	let svg;
@@ -34208,8 +34204,8 @@ var app = (function () {
     			attr(path1, "stroke", "#8795A1");
     			attr(path1, "stroke-width", ".26");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
-    			attr(div, "class", "btn svelte-9yox50");
+    			toggle_class(svg, "svelte-y4y35s", true);
+    			attr(div, "class", "btn svelte-y4y35s");
     			toggle_class(div, "active", /*loop*/ ctx[7]);
     		},
     		m(target, anchor) {
@@ -34230,7 +34226,7 @@ var app = (function () {
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
 
     			if (dirty[0] & /*loop*/ 128) {
     				toggle_class(div, "active", /*loop*/ ctx[7]);
@@ -34246,7 +34242,7 @@ var app = (function () {
     	};
     }
 
-    // (252:34) 
+    // (251:34) 
     function create_if_block_3$3(ctx) {
     	let input;
     	let input_style_value;
@@ -34256,7 +34252,7 @@ var app = (function () {
     	return {
     		c() {
     			input = element("input");
-    			attr(input, "class", "progress svelte-9yox50");
+    			attr(input, "class", "progress svelte-y4y35s");
     			attr(input, "type", "range");
     			attr(input, "min", "0");
     			attr(input, "step", "1");
@@ -34311,7 +34307,7 @@ var app = (function () {
     	};
     }
 
-    // (243:30) 
+    // (242:30) 
     function create_if_block_2$3(ctx) {
     	let div;
     	let svg;
@@ -34334,8 +34330,8 @@ var app = (function () {
     			t = space();
     			attr(path, "d", "M2 3.667A1.67 1.67 0 0 1 3.667 2h16.666A1.67 1.67 0 0 1 22 3.667v16.666A1.67 1.67 0 0 1 20.333\n            22H3.667A1.67 1.67 0 0 1 2 20.333z");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
-    			attr(div, "class", "btn svelte-9yox50");
+    			toggle_class(svg, "svelte-y4y35s", true);
+    			attr(div, "class", "btn svelte-y4y35s");
     			toggle_class(div, "active", /*isStopped*/ ctx[16]);
     		},
     		m(target, anchor) {
@@ -34355,7 +34351,7 @@ var app = (function () {
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
 
     			if (dirty[0] & /*isStopped*/ 65536) {
     				toggle_class(div, "active", /*isStopped*/ ctx[16]);
@@ -34371,7 +34367,7 @@ var app = (function () {
     	};
     }
 
-    // (230:4) {#if item === 'playpause'}
+    // (229:4) {#if item === 'playpause'}
     function create_if_block$4(ctx) {
     	let div;
     	let t;
@@ -34391,7 +34387,7 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			t = space();
-    			attr(div, "class", "btn svelte-9yox50");
+    			attr(div, "class", "btn svelte-y4y35s");
     			toggle_class(div, "active", /*isPlaying*/ ctx[18] || /*isPaused*/ ctx[17]);
     		},
     		m(target, anchor) {
@@ -34437,7 +34433,7 @@ var app = (function () {
     	};
     }
 
-    // (375:10) 
+    // (374:10) 
     function create_target_slot_2(ctx) {
     	let div;
     	let svg;
@@ -34463,8 +34459,8 @@ var app = (function () {
     			attr(path1, "clip-rule", "evenodd");
     			attr(path1, "d", "M12 10c.55 0 1 .42 1 .94v6.12c0 .52-.45.94-1 .94s-1-.42-1-.94v-6.12c0-.52.45-.94 1-.94zM12 6a1 1 0\n                011 1v.42a1 1 0 11-2 0V7a1 1 0 011-1z");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
-    			attr(div, "class", "btn svelte-9yox50");
+    			toggle_class(svg, "svelte-y4y35s", true);
+    			attr(div, "class", "btn svelte-y4y35s");
     			attr(div, "slot", "target");
     		},
     		m(target, anchor) {
@@ -34475,7 +34471,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		d(detaching) {
     			if (detaching) detach(div);
@@ -34483,7 +34479,7 @@ var app = (function () {
     	};
     }
 
-    // (392:10) 
+    // (391:10) 
     function create_content_slot_2(ctx) {
     	let div;
     	let info;
@@ -34498,7 +34494,7 @@ var app = (function () {
     			div = element("div");
     			create_component(info.$$.fragment);
     			attr(div, "slot", "content");
-    			attr(div, "class", "popover popover-info svelte-9yox50");
+    			attr(div, "class", "popover popover-info svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34526,7 +34522,7 @@ var app = (function () {
     	};
     }
 
-    // (361:8) {:else}
+    // (360:8) {:else}
     function create_else_block_1$3(ctx) {
     	let svg;
     	let path;
@@ -34544,7 +34540,7 @@ var app = (function () {
     			attr(path, "d", "M21 8a1 1 0 102 0V4a3 3 0 00-3-3h-4a1 1 0 100 2h4a1 1 0 011 1v4zM1 8a1 1 0 102 0V4a1 1 0 011-1h4a1 1 0\n              100-2H4a3 3 0 00-3 3v4zm15 15h4a3 3 0 003-3v-4a1 1 0 10-2 0v4a1 1 0 01-1 1h-4a1 1 0 100 2zM4 23h4a1 1 0\n              100-2H4a1 1 0 01-1-1v-4a1 1 0 10-2 0v4a3 3 0 003 3z");
     			attr(path, "stroke-width", ".2");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		m(target, anchor) {
     			insert(target, svg, anchor);
@@ -34552,7 +34548,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		d(detaching) {
     			if (detaching) detach(svg);
@@ -34560,7 +34556,7 @@ var app = (function () {
     	};
     }
 
-    // (352:8) {#if isZoomed}
+    // (351:8) {#if isZoomed}
     function create_if_block_8(ctx) {
     	let svg;
     	let path;
@@ -34578,7 +34574,7 @@ var app = (function () {
     			attr(path, "d", "M7 22a1 1 0 102 0v-4a3 3 0 00-3-3H2a1 1 0 100 2h4a1 1 0 011 1v4zm8 0a1 1 0 102 0v-4a1 1 0 011-1h4a1 1 0\n              100-2h-4a3 3 0 00-3 3v4zM2 9h4a3 3 0 003-3V2a1 1 0 10-2 0v4a1 1 0 01-1 1H2a1 1 0 100 2zm16 0h4a1 1 0\n              100-2h-4a1 1 0 01-1-1V2a1 1 0 10-2 0v4a3 3 0 003 3z");
     			attr(path, "stroke-width", ".2");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		m(target, anchor) {
     			insert(target, svg, anchor);
@@ -34586,7 +34582,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		d(detaching) {
     			if (detaching) detach(svg);
@@ -34594,7 +34590,7 @@ var app = (function () {
     	};
     }
 
-    // (323:10) 
+    // (322:10) 
     function create_target_slot_1(ctx) {
     	let div;
     	let svg;
@@ -34628,8 +34624,8 @@ var app = (function () {
     			attr(path2, "stroke", "#8795a1");
     			attr(path2, "stroke-width", ".215");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
-    			attr(div, "class", "btn svelte-9yox50");
+    			toggle_class(svg, "svelte-y4y35s", true);
+    			attr(div, "class", "btn svelte-y4y35s");
     			attr(div, "slot", "target");
     		},
     		m(target, anchor) {
@@ -34642,7 +34638,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		d(detaching) {
     			if (detaching) detach(div);
@@ -34650,7 +34646,7 @@ var app = (function () {
     	};
     }
 
-    // (342:10) 
+    // (341:10) 
     function create_content_slot_1(ctx) {
     	let div;
     	let h5;
@@ -34680,14 +34676,14 @@ var app = (function () {
     			t6 = space();
     			i = element("i");
     			i.textContent = "Scroll with mousewheel to find exact frame";
-    			attr(h5, "class", "svelte-9yox50");
+    			attr(h5, "class", "svelte-y4y35s");
     			attr(a0, "href", "#downloadsvg");
-    			attr(a0, "class", "svelte-9yox50");
+    			attr(a0, "class", "svelte-y4y35s");
     			attr(a1, "href", "#downloadsvg");
-    			attr(a1, "class", "svelte-9yox50");
-    			attr(i, "class", "note svelte-9yox50");
+    			attr(a1, "class", "svelte-y4y35s");
+    			attr(i, "class", "note svelte-y4y35s");
     			attr(div, "slot", "content");
-    			attr(div, "class", "popover popover-snapshot svelte-9yox50");
+    			attr(div, "class", "popover popover-snapshot svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34721,7 +34717,7 @@ var app = (function () {
     	};
     }
 
-    // (300:10) 
+    // (299:10) 
     function create_target_slot(ctx) {
     	let div;
     	let svg;
@@ -34740,8 +34736,8 @@ var app = (function () {
     			path = svg_element("path");
     			attr(path, "d", "M12 3.1L6.1 8.6a7.6 7.6 0 00-2.2 4 7.2 7.2 0 00.4 4.4 7.9 7.9 0 003 3.5 8.7 8.7 0 004.7 1.3c1.6 0\n                3.2-.5 4.6-1.3s2.4-2 3-3.5a7.2 7.2 0 00.5-4.5 7.6 7.6 0 00-2.2-4L12 3.2zM12 0l7.5 7a9.8 9.8 0 013 5.1\n                9.3 9.3 0 01-.6 5.8c-.9 1.8-2.2 3.3-4 4.4A11.2 11.2 0 0112 24a11.2 11.2 0\n                01-6-1.7c-1.7-1-3-2.6-3.9-4.4a9.3 9.3 0 01-.6-5.8c.4-2 1.5-3.7 3-5L12 0zM6 14h12c0 1.5-.7 3-1.8 4s-2.6\n                1.6-4.2 1.6S9 19 7.8 18s-1.7-2.5-1.7-4z");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
-    			attr(div, "class", "btn svelte-9yox50");
+    			toggle_class(svg, "svelte-y4y35s", true);
+    			attr(div, "class", "btn svelte-y4y35s");
     			attr(div, "slot", "target");
     		},
     		m(target, anchor) {
@@ -34751,7 +34747,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		d(detaching) {
     			if (detaching) detach(div);
@@ -34759,7 +34755,7 @@ var app = (function () {
     	};
     }
 
-    // (311:10) 
+    // (310:10) 
     function create_content_slot(ctx) {
     	let div;
     	let colorpicker;
@@ -34772,7 +34768,7 @@ var app = (function () {
     			div = element("div");
     			create_component(colorpicker.$$.fragment);
     			attr(div, "slot", "content");
-    			attr(div, "class", "popover popover-background svelte-9yox50");
+    			attr(div, "class", "popover popover-background svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -34800,7 +34796,7 @@ var app = (function () {
     	};
     }
 
-    // (237:8) {:else}
+    // (236:8) {:else}
     function create_else_block$3(ctx) {
     	let svg;
     	let path;
@@ -34817,7 +34813,7 @@ var app = (function () {
     			path = svg_element("path");
     			attr(path, "d", "M2 3.4C2 1.9 3.5 1 4.8 1.8l16.5 9.6c1.2.7 1.2 2.5 0 3.2L4.8 24.2C3.5 25 2 24.1 2 22.6V3.4z");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		m(target, anchor) {
     			insert(target, svg, anchor);
@@ -34825,7 +34821,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		d(detaching) {
     			if (detaching) detach(svg);
@@ -34833,7 +34829,7 @@ var app = (function () {
     	};
     }
 
-    // (232:8) {#if isPlaying}
+    // (231:8) {#if isPlaying}
     function create_if_block_1$4(ctx) {
     	let svg;
     	let rect0;
@@ -34861,7 +34857,7 @@ var app = (function () {
     			attr(rect1, "x", "2");
     			attr(rect1, "y", ".5");
     			set_svg_attributes(svg, svg_data);
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		m(target, anchor) {
     			insert(target, svg, anchor);
@@ -34870,7 +34866,7 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [/*ICON_SIZE*/ ctx[19]]));
-    			toggle_class(svg, "svelte-9yox50", true);
+    			toggle_class(svg, "svelte-y4y35s", true);
     		},
     		d(detaching) {
     			if (detaching) detach(svg);
@@ -34878,7 +34874,7 @@ var app = (function () {
     	};
     }
 
-    // (229:2) {#each layout as item}
+    // (228:2) {#each layout as item}
     function create_each_block$3(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -35012,7 +35008,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr(div, "class", "lottie-player-controls svelte-9yox50");
+    			attr(div, "class", "lottie-player-controls svelte-y4y35s");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -35290,7 +35286,7 @@ var app = (function () {
     		c() {
     			div = element("div");
     			div.textContent = "⚠️";
-    			attr(div, "class", "lottie-player-error svelte-1aiskgp");
+    			attr(div, "class", "lottie-player-error svelte-1n5qc19");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -35301,7 +35297,7 @@ var app = (function () {
     	};
     }
 
-    // (563:4) {#if controls}
+    // (562:4) {#if controls}
     function create_if_block$3(ctx) {
     	let controls_1;
     	let current;
@@ -35395,9 +35391,9 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			set_style(div0, "background", /*background*/ ctx[1]);
-    			attr(div0, "class", "svelte-1aiskgp");
+    			attr(div0, "class", "svelte-1n5qc19");
     			toggle_class(div0, "animation", true);
-    			attr(div1, "class", "lottie-player svelte-1aiskgp");
+    			attr(div1, "class", "lottie-player svelte-1n5qc19");
     			toggle_class(div1, "with-controls", /*controls*/ ctx[2]);
     			toggle_class(div1, "is-zoomed", /*isZoomed*/ ctx[29]);
 
@@ -41561,7 +41557,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		c() {
     			h2 = element("h2");
     			t = text(/*curIcon*/ ctx[0]);
-    			attr(h2, "class", "font-semibold break-all text-4xl tracking-wide -mt-1");
+    			attr(h2, "class", "font-semibold break-all text-3xl ssm:text-4xl tracking-wide -mt-1");
     		},
     		m(target, anchor) {
     			insert(target, h2, anchor);
@@ -42281,7 +42277,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			div15 = element("div");
     			div4 = element("div");
     			div2 = element("div");
-    			div2.innerHTML = `<p class="tracking-wide text-md font-medium">Color</p>`;
+    			div2.innerHTML = `<p class="tracking-wide text-sm md:text-base font-medium">Color</p>`;
     			t7 = space();
     			div3 = element("div");
     			create_component(icon1.$$.fragment);
@@ -42290,7 +42286,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t9 = space();
     			div8 = element("div");
     			div5 = element("div");
-    			div5.innerHTML = `<p class="tracking-wide text-md font-medium">Size</p>`;
+    			div5.innerHTML = `<p class="tracking-wide text-sm md:text-base font-medium">Size</p>`;
     			t11 = space();
     			div6 = element("div");
     			create_component(icon2.$$.fragment);
@@ -42304,7 +42300,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t15 = space();
     			div10 = element("div");
     			div9 = element("div");
-    			div9.innerHTML = `<p class="tracking-wide text-md font-medium">Flip</p>`;
+    			div9.innerHTML = `<p class="tracking-wide text-sm md:text-base font-medium">Flip</p>`;
     			t17 = space();
     			button1 = element("button");
     			create_component(icon4.$$.fragment);
@@ -42385,7 +42381,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			div17 = element("div");
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			attr(button0, "class", "absolute right-6 top-6");
-    			attr(div0, "class", "pt-12 m-8 pb-24 relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center border-2 border-stone-600");
+    			attr(div0, "class", "pt-12 m-8 mt-16 md:mt-8 pb-24 relative md:w-2/5 flex-shrink-0 flex items-center justify-center border-2 border-stone-600");
     			attr(p0, "class", "font-medium tracking-wide mb-2");
     			attr(div1, "class", "flex gap-4 items-center");
     			attr(div2, "class", "absolute -top-[1.3rem] left-4 bg-stone-100 p-2");
@@ -42395,7 +42391,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(input0, "placeholder", "#000000");
     			attr(input0, "autocomplete", "off");
     			attr(div3, "class", "flex flex-grow gap-2 items-center");
-    			attr(div4, "class", "p-4 py-2 flex flex-grow xl:flex-grow-0 gap-4 border-stone-600 border-2 relative");
+    			attr(div4, "class", "p-4 flex flex-grow xl:flex-grow-0 gap-4 border-stone-600 border-2 relative");
     			attr(div5, "class", "absolute left-4 bg-stone-100 p-2 h-4 flex items-center");
     			set_style(div5, "top", "-0.6rem");
     			attr(input1, "size", "5");
@@ -42504,7 +42500,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			attr(div16, "class", "flex flex-wrap gap-2");
     			attr(div17, "class", "mt-8");
     			attr(div18, "class", "mt-12");
-    			attr(div19, "class", "w-full overflow-visible md:overflow-auto pr-4 mt-8 mr-8 pb-8");
+    			attr(div19, "class", "overflow-visible md:overflow-auto p-8 md:pl-0 pt-0 md:pt-8");
     			attr(div20, "class", "w-full gap-8 flex flex-col md:flex-row overflow-auto md:overflow-hidden relative bg-stone-100 m-4 ssssm:m-12 700:m-24");
     			set_style(div20, "height", "calc(100vh - 8rem)");
     			attr(div21, "class", "fixed z-[60] w-full h-screen flex items-center justify-center top-0 left-0 bg-black bg-opacity-20");

@@ -19,15 +19,10 @@
   };
 </script>
 
-<nav
-  class="flex items-center justify-between w-full px-8 ssm:px-12 mb-8"
->
-  <div class="flex items-center flex-shrink-0 gap-6 z-50">
-    <button class="block 1100:hidden" on:click={toggleNav}>
-      <Icon icon="gg:menu" class="" width="1.8rem" height="1.8rem" />
-    </button>
-    <a href="/"><img src="../assets/logo.svg" alt="iconify logo" /></a>
-  </div>
+<nav class="flex items-center justify-between w-full px-8 ssm:px-12 mb-8">
+  <a href="/" class="relative z-50">
+    <img src="../assets/logo.svg" alt="iconify logo" />
+  </a>
   <div
     class="items-center hidden -mt-1 font-medium  tracking-wide  gap-16 1100:flex"
   >
@@ -43,6 +38,9 @@
       {/if}
     {/each}
   </div>
+  <button class="block 1100:hidden relative z-50" on:click={toggleNav}>
+    <Icon icon="tabler:menu-2" class="" width="1.8rem" height="1.8rem" />
+  </button>
   <Link
     to="/icon-sets"
     class="items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6"
@@ -79,7 +77,9 @@
     >
       {#each navOptions as [route, name]}
         {#if route.includes(pathname)}
-          <a href={route[0]} class="font-semibold relative after:w-1/2 after:border-b-2 after:absolute after:border-stone-600 after:bottom-0 after:left-1/2 after:-translate-x-1/2"
+          <a
+            href={route[0]}
+            class="font-semibold relative after:w-1/2 after:border-b-2 after:absolute after:border-stone-600 after:bottom-0 after:left-1/2 after:-translate-x-1/2"
             >{name}</a
           >
         {:else}

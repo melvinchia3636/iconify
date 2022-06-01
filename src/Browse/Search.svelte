@@ -42,7 +42,7 @@
   </div>
   <button
     type="submit"
-    class="flex items-center justify-center h-16 sm:h-full px-12 font-semibold tracking-wide  border-2 border-stone-600  whitespace-nowrap  gap-6"
+    class="flex items-center justify-center h-16 sm:h-full px-12 font-semibold tracking-wide  border-2 border-stone-600 text-stone-100 bg-stone-600  whitespace-nowrap  gap-6"
   >
     Search Icons
   </button>

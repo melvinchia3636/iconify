@@ -112,7 +112,7 @@
       ><Icon icon="heroicons-solid:x" class="" width="24" height="24" /></button
     >
     <div
-      class="pt-12 m-8 pb-24 relative w-full md:w-2/5 flex-shrink-0 flex items-center justify-center border-2 border-stone-600"
+      class="pt-12 m-8 mt-16 md:mt-8 pb-24 relative md:w-2/5 flex-shrink-0 flex items-center justify-center border-2 border-stone-600"
     >
       {#if display === "inline"}
         <p class=" tracking-wide text-lg p-12 text-center">
@@ -136,7 +136,7 @@
           to show icon alignment in text.
         </p>
         <p
-          class="font-medium  tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all"
+          class="font-medium tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all"
         >
           Inline text
         </p>
@@ -158,7 +158,7 @@
             : '172px'}"
         />
         <p
-          class="font-medium  tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all"
+          class="font-medium tracking-wide absolute bottom-1 left-1/2 transform -translate-x-1/2 text-center w-full p-8 break-all"
         >
           {width && !isNaN(width) ? width : "24"} x {height && !isNaN(height)
             ? height
@@ -166,11 +166,11 @@
         </p>
       {/if}
     </div>
-    <div class="w-full overflow-visible md:overflow-auto pr-4 mt-8 mr-8 pb-8">
+    <div class="overflow-visible md:overflow-auto p-8 md:pl-0 pt-0 md:pt-8">
       <p class=" font-medium tracking-wide mb-2">{curIconSet}</p>
       <div class="flex gap-4 items-center">
         {#if curIcon}
-          <h2 class=" font-semibold break-all text-4xl tracking-wide -mt-1">
+          <h2 class="font-semibold break-all text-3xl ssm:text-4xl tracking-wide -mt-1">
             {curIcon}
           </h2>
         {/if}
@@ -220,10 +220,10 @@
       </div>
       <div class="flex gap-6 mt-8 flex-wrap">
         <div
-          class="p-4 py-2 flex flex-grow xl:flex-grow-0 gap-4 border-stone-600 border-2 relative"
+          class="p-4 flex flex-grow xl:flex-grow-0 gap-4 border-stone-600 border-2 relative"
         >
           <div class="absolute -top-[1.3rem] left-4 bg-stone-100 p-2">
-            <p class="tracking-wide  text-md font-medium">Color</p>
+            <p class="tracking-wide text-sm md:text-base font-medium">Color</p>
           </div>
           <div class="flex flex-grow gap-2 items-center">
             <Icon
@@ -249,7 +249,7 @@
             class="absolute left-4 bg-stone-100 p-2 h-4 flex items-center"
             style="top: -0.6rem"
           >
-            <p class="tracking-wide  text-md font-medium">Size</p>
+            <p class="tracking-wide  text-sm md:text-base font-medium">Size</p>
           </div>
           <div class="flex flex-grow gap-2 items-center  ">
             <Icon
@@ -291,7 +291,7 @@
             class="absolute left-4 bg-stone-100 p-2 h-4 flex items-center"
             style="top: -0.6rem"
           >
-            <p class="tracking-wide  text-md font-medium">Flip</p>
+            <p class="tracking-wide  text-sm md:text-base font-medium">Flip</p>
           </div>
           <button
             on:click={() => (flipHoriz = !flipHoriz)}
