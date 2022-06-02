@@ -7617,7 +7617,7 @@ var app = (function () {
     }
 
     // (224:48) 
-    function create_if_block_5$2(ctx) {
+    function create_if_block_5$3(ctx) {
     	let div;
     	let icon;
     	let div_intro;
@@ -8287,7 +8287,7 @@ var app = (function () {
     		create_if_block_2$6,
     		create_if_block_3$5,
     		create_if_block_4$3,
-    		create_if_block_5$2
+    		create_if_block_5$3
     	];
 
     	const if_blocks = [];
@@ -11705,14 +11705,14 @@ var app = (function () {
     	return child_ctx;
     }
 
-    function get_each_context_2$1(ctx, list, i) {
+    function get_each_context_2$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[8] = list[i];
     	return child_ctx;
     }
 
     // (51:18) {#each iconSet.samples as sampleIcon}
-    function create_each_block_2$1(ctx) {
+    function create_each_block_2$2(ctx) {
     	let icon;
     	let current;
 
@@ -11836,7 +11836,7 @@ var app = (function () {
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value_2.length; i += 1) {
-    		each_blocks[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
+    		each_blocks[i] = create_each_block_2$2(get_each_context_2$2(ctx, each_value_2, i));
     	}
 
     	const out = i => transition_out(each_blocks[i], 1, 1, () => {
@@ -11916,13 +11916,13 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value_2.length; i += 1) {
-    					const child_ctx = get_each_context_2$1(ctx, each_value_2, i);
+    					const child_ctx = get_each_context_2$2(ctx, each_value_2, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(child_ctx, dirty);
     						transition_in(each_blocks[i], 1);
     					} else {
-    						each_blocks[i] = create_each_block_2$1(child_ctx);
+    						each_blocks[i] = create_each_block_2$2(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
     						each_blocks[i].m(div0, null);
@@ -12578,7 +12578,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    function get_each_context_2(ctx, list, i) {
+    function get_each_context_2$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[10] = list[i];
     	return child_ctx;
@@ -12732,7 +12732,7 @@ var app = (function () {
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value_2.length; i += 1) {
-    		each_blocks[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+    		each_blocks[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
     	}
 
     	const out = i => transition_out(each_blocks[i], 1, 1, () => {
@@ -12812,13 +12812,13 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value_2.length; i += 1) {
-    					const child_ctx = get_each_context_2(ctx, each_value_2, i);
+    					const child_ctx = get_each_context_2$1(ctx, each_value_2, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(child_ctx, dirty);
     						transition_in(each_blocks[i], 1);
     					} else {
-    						each_blocks[i] = create_each_block_2(child_ctx);
+    						each_blocks[i] = create_each_block_2$1(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
     						each_blocks[i].m(div0, null);
@@ -12900,7 +12900,7 @@ var app = (function () {
     }
 
     // (66:22) {#each iconSet.samples as sampleIcon}
-    function create_each_block_2(ctx) {
+    function create_each_block_2$1(ctx) {
     	let icon;
     	let current;
 
@@ -32898,7 +32898,7 @@ var app = (function () {
     }
 
     // (98:0) {#if numFonts}
-    function create_if_block_5$1(ctx) {
+    function create_if_block_5$2(ctx) {
     	let div;
     	let span0;
     	let t1;
@@ -33198,7 +33198,7 @@ var app = (function () {
     	let if_block2 = /*frameRate*/ ctx[1] && create_if_block_8$1(ctx);
     	let if_block3 = /*numLayers*/ ctx[7] && create_if_block_7$1(ctx);
     	let if_block4 = /*numAssets*/ ctx[4] && create_if_block_6$1(ctx);
-    	let if_block5 = /*numFonts*/ ctx[5] && create_if_block_5$1(ctx);
+    	let if_block5 = /*numFonts*/ ctx[5] && create_if_block_5$2(ctx);
     	let if_block6 = /*hasMeta*/ ctx[10] && create_if_block$5(ctx);
 
     	return {
@@ -33310,7 +33310,7 @@ var app = (function () {
     				if (if_block5) {
     					if_block5.p(ctx, dirty);
     				} else {
-    					if_block5 = create_if_block_5$1(ctx);
+    					if_block5 = create_if_block_5$2(ctx);
     					if_block5.c();
     					if_block5.m(t7.parentNode, t7);
     				}
@@ -34118,7 +34118,7 @@ var app = (function () {
     }
 
     // (296:36) 
-    function create_if_block_5(ctx) {
+    function create_if_block_5$1(ctx) {
     	let div;
     	let popover;
     	let t;
@@ -34886,7 +34886,7 @@ var app = (function () {
     		create_if_block_2$3,
     		create_if_block_3$3,
     		create_if_block_4$1,
-    		create_if_block_5,
+    		create_if_block_5$1,
     		create_if_block_6,
     		create_if_block_7,
     		create_if_block_9,
@@ -43130,26 +43130,32 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     /* src/IconList/IconList.svelte generated by Svelte v3.48.0 */
 
-    function get_each_context$1(ctx, list, i) {
-    	const child_ctx = ctx.slice();
-    	child_ctx[18] = list[i];
-    	return child_ctx;
-    }
-
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i];
+    	child_ctx[24] = list[i];
     	return child_ctx;
     }
 
-    // (115:2) {#if tags.length}
-    function create_if_block_3$1(ctx) {
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[24] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[29] = list[i];
+    	return child_ctx;
+    }
+
+    // (162:2) {#if tags.length}
+    function create_if_block_4(ctx) {
     	let div;
-    	let each_value_1 = /*tags*/ ctx[5].sort();
+    	let each_value_2 = /*tags*/ ctx[5].sort();
     	let each_blocks = [];
 
-    	for (let i = 0; i < each_value_1.length; i += 1) {
-    		each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
     	}
 
     	return {
@@ -43170,17 +43176,17 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*currentTag, tags, setCurrentTag*/ 608) {
-    				each_value_1 = /*tags*/ ctx[5].sort();
+    			if (dirty[0] & /*currentTag, tags, setCurrentTag*/ 1120) {
+    				each_value_2 = /*tags*/ ctx[5].sort();
     				let i;
 
-    				for (i = 0; i < each_value_1.length; i += 1) {
-    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2(ctx, each_value_2, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(child_ctx, dirty);
     					} else {
-    						each_blocks[i] = create_each_block_1$1(child_ctx);
+    						each_blocks[i] = create_each_block_2(child_ctx);
     						each_blocks[i].c();
     						each_blocks[i].m(div, null);
     					}
@@ -43190,7 +43196,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     					each_blocks[i].d(1);
     				}
 
-    				each_blocks.length = each_value_1.length;
+    				each_blocks.length = each_value_2.length;
     			}
     		},
     		d(detaching) {
@@ -43200,17 +43206,17 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (118:8) {#if tag}
-    function create_if_block_4(ctx) {
+    // (165:8) {#if tag}
+    function create_if_block_5(ctx) {
     	let button;
-    	let t_value = /*tag*/ ctx[21] + "";
+    	let t_value = /*tag*/ ctx[29] + "";
     	let t;
     	let button_class_value;
     	let mounted;
     	let dispose;
 
-    	function click_handler() {
-    		return /*click_handler*/ ctx[12](/*tag*/ ctx[21]);
+    	function click_handler_4() {
+    		return /*click_handler_4*/ ctx[18](/*tag*/ ctx[29]);
     	}
 
     	return {
@@ -43218,7 +43224,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			button = element("button");
     			t = text(t_value);
 
-    			attr(button, "class", button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[21]
+    			attr(button, "class", button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[29]
     			? `bg-stone-600 text-stone-200`
     			: `border-2 border-stone-600 `) + " whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"));
     		},
@@ -43227,15 +43233,15 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			append(button, t);
 
     			if (!mounted) {
-    				dispose = listen(button, "click", click_handler);
+    				dispose = listen(button, "click", click_handler_4);
     				mounted = true;
     			}
     		},
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*tags*/ 32 && t_value !== (t_value = /*tag*/ ctx[21] + "")) set_data(t, t_value);
+    			if (dirty[0] & /*tags*/ 32 && t_value !== (t_value = /*tag*/ ctx[29] + "")) set_data(t, t_value);
 
-    			if (dirty & /*currentTag, tags*/ 96 && button_class_value !== (button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[21]
+    			if (dirty[0] & /*currentTag, tags*/ 96 && button_class_value !== (button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[29]
     			? `bg-stone-600 text-stone-200`
     			: `border-2 border-stone-600 `) + " whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"))) {
     				attr(button, "class", button_class_value);
@@ -43249,10 +43255,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (117:6) {#each tags.sort() as tag}
-    function create_each_block_1$1(ctx) {
+    // (164:6) {#each tags.sort() as tag}
+    function create_each_block_2(ctx) {
     	let if_block_anchor;
-    	let if_block = /*tag*/ ctx[21] && create_if_block_4(ctx);
+    	let if_block = /*tag*/ ctx[29] && create_if_block_5(ctx);
 
     	return {
     		c() {
@@ -43264,11 +43270,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			insert(target, if_block_anchor, anchor);
     		},
     		p(ctx, dirty) {
-    			if (/*tag*/ ctx[21]) {
+    			if (/*tag*/ ctx[29]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_4(ctx);
+    					if_block = create_if_block_5(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -43284,8 +43290,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (193:2) {:else}
-    function create_else_block_1$1(ctx) {
+    // (250:4) {:else}
+    function create_else_block_2(ctx) {
     	let p;
 
     	return {
@@ -43306,13 +43312,13 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (130:2) {#if filteredIconList === null || filteredIconList.length > 0}
+    // (178:4) {#if filteredIconList === null || filteredIconList.length > 0}
     function create_if_block_1$1(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block_2$1, create_else_block$1];
+    	const if_block_creators = [create_if_block_2$1, create_else_block_1$1];
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -43376,8 +43382,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (180:4) {:else}
-    function create_else_block$1(ctx) {
+    // (237:6) {:else}
+    function create_else_block_1$1(ctx) {
     	let div;
     	let lottieplayer;
     	let current;
@@ -43422,9 +43428,180 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (131:4) {#if filteredIconList}
+    // (179:6) {#if filteredIconList}
     function create_if_block_2$1(ctx) {
+    	let current_block_type_index;
+    	let if_block;
+    	let if_block_anchor;
+    	let current;
+    	const if_block_creators = [create_if_block_3$1, create_else_block$1];
+    	const if_blocks = [];
+
+    	function select_block_type_2(ctx, dirty) {
+    		if (!/*isList*/ ctx[9]) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type_2(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	return {
+    		c() {
+    			if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m(target, anchor) {
+    			if_blocks[current_block_type_index].m(target, anchor);
+    			insert(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p(ctx, dirty) {
+    			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type_2(ctx);
+
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(ctx, dirty);
+    			} else {
+    				group_outros();
+
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+
+    				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				} else {
+    					if_block.p(ctx, dirty);
+    				}
+
+    				transition_in(if_block, 1);
+    				if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    			}
+    		},
+    		i(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d(detaching) {
+    			if_blocks[current_block_type_index].d(detaching);
+    			if (detaching) detach(if_block_anchor);
+    		}
+    	};
+    }
+
+    // (208:8) {:else}
+    function create_else_block$1(ctx) {
     	let div;
+    	let div_intro;
+    	let div_outro;
+    	let current;
+    	let each_value_1 = /*filteredIconList*/ ctx[8];
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	return {
+    		c() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr(div, "class", "w-full pb-8 grid gap-3 gap-x-6");
+    			set_style(div, "grid-template-columns", "repeat(auto-fill, minmax(200px, 1fr))");
+    		},
+    		m(target, anchor) {
+    			insert(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+
+    			current = true;
+    		},
+    		p(ctx, dirty) {
+    			if (dirty[0] & /*iconSet, filteredIconList*/ 257) {
+    				each_value_1 = /*filteredIconList*/ ctx[8];
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_1$1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			add_render_callback(() => {
+    				if (div_outro) div_outro.end(1);
+    				div_intro = create_in_transition(div, fade, {});
+    				div_intro.start();
+    			});
+
+    			current = true;
+    		},
+    		o(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			if (div_intro) div_intro.invalidate();
+    			div_outro = create_out_transition(div, fade, {});
+    			current = false;
+    		},
+    		d(detaching) {
+    			if (detaching) detach(div);
+    			destroy_each(each_blocks, detaching);
+    			if (detaching && div_outro) div_outro.end();
+    		}
+    	};
+    }
+
+    // (180:8) {#if !isList}
+    function create_if_block_3$1(ctx) {
+    	let div;
+    	let div_intro;
+    	let div_outro;
     	let current;
     	let each_value = /*filteredIconList*/ ctx[8];
     	let each_blocks = [];
@@ -43446,7 +43623,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
 
     			attr(div, "class", "w-full pb-8 grid gap-3");
-    			set_style(div, "grid-template-columns", "repeat(auto-fill, minmax(200px, 1fr))");
+    			set_style(div, "grid-template-columns", "repeat(auto-fill, minmax(120px, 1fr))");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -43458,7 +43635,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*currentIcon, iconSet, filteredIconList*/ 257) {
+    			if (dirty[0] & /*iconSet, filteredIconList*/ 257) {
     				each_value = /*filteredIconList*/ ctx[8];
     				let i;
 
@@ -43492,6 +43669,12 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				transition_in(each_blocks[i]);
     			}
 
+    			add_render_callback(() => {
+    				if (div_outro) div_outro.end(1);
+    				div_intro = create_in_transition(div, fade, {});
+    				div_intro.start();
+    			});
+
     			current = true;
     		},
     		o(local) {
@@ -43501,22 +43684,25 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				transition_out(each_blocks[i]);
     			}
 
+    			if (div_intro) div_intro.invalidate();
+    			div_outro = create_out_transition(div, fade, {});
     			current = false;
     		},
     		d(detaching) {
     			if (detaching) detach(div);
     			destroy_each(each_blocks, detaching);
+    			if (detaching && div_outro) div_outro.end();
     		}
     	};
     }
 
-    // (161:8) {#each filteredIconList as icon}
-    function create_each_block$1(ctx) {
+    // (215:12) {#each filteredIconList as icon}
+    function create_each_block_1$1(ctx) {
     	let div;
     	let icon;
     	let t0;
     	let p;
-    	let t1_value = (/*icon*/ ctx[18].name || /*icon*/ ctx[18]) + "";
+    	let t1_value = (/*icon*/ ctx[24].name || /*icon*/ ctx[24]) + "";
     	let t1;
     	let t2;
     	let current;
@@ -43525,15 +43711,15 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	icon = new Icon({
     			props: {
-    				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[18].name || /*icon*/ ctx[18]}`,
+    				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[24].name || /*icon*/ ctx[24]}`,
     				width: "24",
     				height: "24",
     				class: " flex-shrink-0"
     			}
     		});
 
-    	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[13](/*icon*/ ctx[18]);
+    	function click_handler_6() {
+    		return /*click_handler_6*/ ctx[20](/*icon*/ ctx[24]);
     	}
 
     	return {
@@ -43545,7 +43731,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t1 = text(t1_value);
     			t2 = space();
     			attr(p, "class", "font-medium text-sm tracking-wide truncate ml-3 -mb-0.5");
-    			attr(div, "class", "flex items-center cursor-pointer transition-all hover:bg-stone-200 py-3");
+    			attr(div, "class", "flex items-center cursor-pointer transition-all hover:bg-stone-200 py-3 px-2");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -43557,16 +43743,16 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen(div, "click", click_handler_1);
+    				dispose = listen(div, "click", click_handler_6);
     				mounted = true;
     			}
     		},
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			const icon_changes = {};
-    			if (dirty & /*iconSet, filteredIconList*/ 257) icon_changes.icon = `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[18].name || /*icon*/ ctx[18]}`;
+    			if (dirty[0] & /*iconSet, filteredIconList*/ 257) icon_changes.icon = `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[24].name || /*icon*/ ctx[24]}`;
     			icon.$set(icon_changes);
-    			if ((!current || dirty & /*filteredIconList*/ 256) && t1_value !== (t1_value = (/*icon*/ ctx[18].name || /*icon*/ ctx[18]) + "")) set_data(t1, t1_value);
+    			if ((!current || dirty[0] & /*filteredIconList*/ 256) && t1_value !== (t1_value = (/*icon*/ ctx[24].name || /*icon*/ ctx[24]) + "")) set_data(t1, t1_value);
     		},
     		i(local) {
     			if (current) return;
@@ -43586,7 +43772,83 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (198:2) {#if curIcon}
+    // (187:12) {#each filteredIconList as icon}
+    function create_each_block$1(ctx) {
+    	let div;
+    	let icon;
+    	let t0;
+    	let p;
+    	let t1_value = (/*icon*/ ctx[24].name || /*icon*/ ctx[24]).replace(/-/g, " ") + "";
+    	let t1;
+    	let t2;
+    	let current;
+    	let mounted;
+    	let dispose;
+
+    	icon = new Icon({
+    			props: {
+    				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[24].name || /*icon*/ ctx[24]}`,
+    				width: "32",
+    				height: "32",
+    				class: ""
+    			}
+    		});
+
+    	function click_handler_5() {
+    		return /*click_handler_5*/ ctx[19](/*icon*/ ctx[24]);
+    	}
+
+    	return {
+    		c() {
+    			div = element("div");
+    			create_component(icon.$$.fragment);
+    			t0 = space();
+    			p = element("p");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			attr(p, "class", "font-medium text-[0.7rem] tracking-wide text-center mt-4 -mb-0.5");
+    			attr(div, "class", "flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 p-4");
+    		},
+    		m(target, anchor) {
+    			insert(target, div, anchor);
+    			mount_component(icon, div, null);
+    			append(div, t0);
+    			append(div, p);
+    			append(p, t1);
+    			append(div, t2);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = listen(div, "click", click_handler_5);
+    				mounted = true;
+    			}
+    		},
+    		p(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const icon_changes = {};
+    			if (dirty[0] & /*iconSet, filteredIconList*/ 257) icon_changes.icon = `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[24].name || /*icon*/ ctx[24]}`;
+    			icon.$set(icon_changes);
+    			if ((!current || dirty[0] & /*filteredIconList*/ 256) && t1_value !== (t1_value = (/*icon*/ ctx[24].name || /*icon*/ ctx[24]).replace(/-/g, " ") + "")) set_data(t1, t1_value);
+    		},
+    		i(local) {
+    			if (current) return;
+    			transition_in(icon.$$.fragment, local);
+    			current = true;
+    		},
+    		o(local) {
+    			transition_out(icon.$$.fragment, local);
+    			current = false;
+    		},
+    		d(detaching) {
+    			if (detaching) detach(div);
+    			destroy_component(icon);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+    }
+
+    // (256:2) {#if curIcon}
     function create_if_block$1(ctx) {
     	let usage;
     	let current;
@@ -43616,7 +43878,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     }
 
     function create_fragment$2(ctx) {
-    	let div1;
+    	let div4;
     	let h1;
     	let t0;
     	let span;
@@ -43624,30 +43886,81 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	let t2;
     	let t3;
     	let div0;
-    	let icon;
+    	let icon0;
     	let t4;
     	let input;
     	let input_placeholder_value;
     	let t5;
+    	let button0;
+    	let icon1;
     	let t6;
+    	let button1;
+    	let icon2;
+    	let t7;
+    	let div2;
+    	let p;
+    	let t9;
+    	let div1;
+    	let button2;
+    	let icon3;
+    	let button2_class_value;
+    	let t10;
+    	let button3;
+    	let icon4;
+    	let button3_class_value;
+    	let t11;
+    	let t12;
+    	let div3;
     	let current_block_type_index;
     	let if_block1;
-    	let t7;
+    	let t13;
     	let current;
     	let mounted;
     	let dispose;
 
-    	icon = new Icon({
+    	icon0 = new Icon({
     			props: {
     				icon: "uil:search",
-    				class: "",
+    				class: "flex-shrink-0",
     				width: "24",
     				height: "24"
     			}
     		});
 
-    	let if_block0 = /*tags*/ ctx[5].length && create_if_block_3$1(ctx);
-    	const if_block_creators = [create_if_block_1$1, create_else_block_1$1];
+    	icon1 = new Icon({
+    			props: {
+    				icon: "carbon:grid",
+    				class: "w-6 h-6 " + (/*isList*/ ctx[9]
+    				? 'stroke-stone-400 text-stone-400'
+    				: 'stroke-stone-600 text-stone-600') + " stroke-[0.6px]"
+    			}
+    		});
+
+    	icon2 = new Icon({
+    			props: {
+    				icon: "carbon:list-boxes",
+    				class: "w-6 h-6 " + (!/*isList*/ ctx[9]
+    				? 'stroke-stone-400 text-stone-400'
+    				: 'stroke-stone-600 text-stone-600') + " stroke-[0.6px]"
+    			}
+    		});
+
+    	icon3 = new Icon({
+    			props: {
+    				icon: "carbon:grid",
+    				class: "w-6 h-6 stroke-[0.6px] stroke-stone-600 " + (!/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100 stroke-stone-100')
+    			}
+    		});
+
+    	icon4 = new Icon({
+    			props: {
+    				icon: "carbon:list-boxes",
+    				class: "w-6 h-6 stroke-[0.6px] stroke-stone-600 " + (/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100 stroke-stone-100')
+    			}
+    		});
+
+    	let if_block0 = /*tags*/ ctx[5].length && create_if_block_4(ctx);
+    	const if_block_creators = [create_if_block_1$1, create_else_block_2];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -43661,7 +43974,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	return {
     		c() {
-    			div1 = element("div");
+    			div4 = element("div");
     			h1 = element("h1");
     			t0 = text(/*name*/ ctx[3]);
     			span = element("span");
@@ -43669,73 +43982,150 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			t2 = text(/*version*/ ctx[2]);
     			t3 = space();
     			div0 = element("div");
-    			create_component(icon.$$.fragment);
+    			create_component(icon0.$$.fragment);
     			t4 = space();
     			input = element("input");
     			t5 = space();
-    			if (if_block0) if_block0.c();
+    			button0 = element("button");
+    			create_component(icon1.$$.fragment);
     			t6 = space();
-    			if_block1.c();
+    			button1 = element("button");
+    			create_component(icon2.$$.fragment);
     			t7 = space();
+    			div2 = element("div");
+    			p = element("p");
+    			p.textContent = "View Options";
+    			t9 = space();
+    			div1 = element("div");
+    			button2 = element("button");
+    			create_component(icon3.$$.fragment);
+    			t10 = space();
+    			button3 = element("button");
+    			create_component(icon4.$$.fragment);
+    			t11 = space();
+    			if (if_block0) if_block0.c();
+    			t12 = space();
+    			div3 = element("div");
+    			if_block1.c();
+    			t13 = space();
     			if (if_block2) if_block2.c();
-    			attr(span, "class", "ml-2 text-base ");
-    			attr(h1, "class", "mt-12 mb-6 text-3xl font-semibold tracking-wide text-center flex flex-col items-center gap-6 sm:inline");
+    			attr(span, "class", "sm:ml-2 text-base");
+    			attr(h1, "class", "mt-12 mb-6 text-3xl font-semibold tracking-wide text-center flex flex-col items-center gap-1 sm:inline");
     			attr(input, "type", "text");
     			attr(input, "id", "icon-search");
     			attr(input, "class", "w-full tracking-wide placeholder-stone-600 bg-transparent");
     			attr(input, "placeholder", input_placeholder_value = "Search " + /*iconCount*/ ctx[4] + " icons (Press '/' to focus)");
+    			attr(button0, "class", "hidden ssssm:block");
+    			attr(button1, "class", "hidden ssssm:block");
     			attr(div0, "class", "inline-flex items-center w-full p-4 mx-auto mb-6 overflow-hidden border-2 border-stone-600 gap-4");
-    			attr(div1, "class", "flex flex-1 flex-col w-full px-12 md:px-24");
+    			attr(p, "class", "mb-2");
+    			attr(button2, "class", button2_class_value = "border-2 border-stone-600 flex-1 py-4 flex items-center justify-center " + (!/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100'));
+    			attr(button3, "class", button3_class_value = "border-2 border-stone-600 flex-1 py-4 flex items-center justify-center " + (/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100'));
+    			attr(div1, "class", "flex gap-2 mb-6");
+    			attr(div2, "class", "ssssm:hidden");
+    			attr(div3, "class", "relative");
+    			attr(div4, "class", "flex flex-1 flex-col w-full px-12 md:px-24");
     		},
     		m(target, anchor) {
-    			insert(target, div1, anchor);
-    			append(div1, h1);
+    			insert(target, div4, anchor);
+    			append(div4, h1);
     			append(h1, t0);
     			append(h1, span);
     			append(span, t1);
     			append(span, t2);
-    			append(div1, t3);
-    			append(div1, div0);
-    			mount_component(icon, div0, null);
+    			append(div4, t3);
+    			append(div4, div0);
+    			mount_component(icon0, div0, null);
     			append(div0, t4);
     			append(div0, input);
     			set_input_value(input, /*searchTerm*/ ctx[7]);
-    			append(div1, t5);
-    			if (if_block0) if_block0.m(div1, null);
-    			append(div1, t6);
-    			if_blocks[current_block_type_index].m(div1, null);
-    			append(div1, t7);
-    			if (if_block2) if_block2.m(div1, null);
+    			append(div0, t5);
+    			append(div0, button0);
+    			mount_component(icon1, button0, null);
+    			append(div0, t6);
+    			append(div0, button1);
+    			mount_component(icon2, button1, null);
+    			append(div4, t7);
+    			append(div4, div2);
+    			append(div2, p);
+    			append(div2, t9);
+    			append(div2, div1);
+    			append(div1, button2);
+    			mount_component(icon3, button2, null);
+    			append(div1, t10);
+    			append(div1, button3);
+    			mount_component(icon4, button3, null);
+    			append(div4, t11);
+    			if (if_block0) if_block0.m(div4, null);
+    			append(div4, t12);
+    			append(div4, div3);
+    			if_blocks[current_block_type_index].m(div3, null);
+    			append(div4, t13);
+    			if (if_block2) if_block2.m(div4, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen(input, "input", /*input_input_handler*/ ctx[11]),
-    					listen(input, "input", /*inputOnChange*/ ctx[10])
+    					listen(input, "input", /*input_input_handler*/ ctx[13]),
+    					listen(input, "input", /*inputOnChange*/ ctx[11]),
+    					listen(button0, "click", /*click_handler*/ ctx[14]),
+    					listen(button1, "click", /*click_handler_1*/ ctx[15]),
+    					listen(button2, "click", /*click_handler_2*/ ctx[16]),
+    					listen(button3, "click", /*click_handler_3*/ ctx[17])
     				];
 
     				mounted = true;
     			}
     		},
-    		p(ctx, [dirty]) {
-    			if (!current || dirty & /*name*/ 8) set_data(t0, /*name*/ ctx[3]);
-    			if (!current || dirty & /*version*/ 4) set_data(t2, /*version*/ ctx[2]);
+    		p(ctx, dirty) {
+    			if (!current || dirty[0] & /*name*/ 8) set_data(t0, /*name*/ ctx[3]);
+    			if (!current || dirty[0] & /*version*/ 4) set_data(t2, /*version*/ ctx[2]);
 
-    			if (!current || dirty & /*iconCount*/ 16 && input_placeholder_value !== (input_placeholder_value = "Search " + /*iconCount*/ ctx[4] + " icons (Press '/' to focus)")) {
+    			if (!current || dirty[0] & /*iconCount*/ 16 && input_placeholder_value !== (input_placeholder_value = "Search " + /*iconCount*/ ctx[4] + " icons (Press '/' to focus)")) {
     				attr(input, "placeholder", input_placeholder_value);
     			}
 
-    			if (dirty & /*searchTerm*/ 128 && input.value !== /*searchTerm*/ ctx[7]) {
+    			if (dirty[0] & /*searchTerm*/ 128 && input.value !== /*searchTerm*/ ctx[7]) {
     				set_input_value(input, /*searchTerm*/ ctx[7]);
+    			}
+
+    			const icon1_changes = {};
+
+    			if (dirty[0] & /*isList*/ 512) icon1_changes.class = "w-6 h-6 " + (/*isList*/ ctx[9]
+    			? 'stroke-stone-400 text-stone-400'
+    			: 'stroke-stone-600 text-stone-600') + " stroke-[0.6px]";
+
+    			icon1.$set(icon1_changes);
+    			const icon2_changes = {};
+
+    			if (dirty[0] & /*isList*/ 512) icon2_changes.class = "w-6 h-6 " + (!/*isList*/ ctx[9]
+    			? 'stroke-stone-400 text-stone-400'
+    			: 'stroke-stone-600 text-stone-600') + " stroke-[0.6px]";
+
+    			icon2.$set(icon2_changes);
+    			const icon3_changes = {};
+    			if (dirty[0] & /*isList*/ 512) icon3_changes.class = "w-6 h-6 stroke-[0.6px] stroke-stone-600 " + (!/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100 stroke-stone-100');
+    			icon3.$set(icon3_changes);
+
+    			if (!current || dirty[0] & /*isList*/ 512 && button2_class_value !== (button2_class_value = "border-2 border-stone-600 flex-1 py-4 flex items-center justify-center " + (!/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100'))) {
+    				attr(button2, "class", button2_class_value);
+    			}
+
+    			const icon4_changes = {};
+    			if (dirty[0] & /*isList*/ 512) icon4_changes.class = "w-6 h-6 stroke-[0.6px] stroke-stone-600 " + (/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100 stroke-stone-100');
+    			icon4.$set(icon4_changes);
+
+    			if (!current || dirty[0] & /*isList*/ 512 && button3_class_value !== (button3_class_value = "border-2 border-stone-600 flex-1 py-4 flex items-center justify-center " + (/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100'))) {
+    				attr(button3, "class", button3_class_value);
     			}
 
     			if (/*tags*/ ctx[5].length) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_3$1(ctx);
+    					if_block0 = create_if_block_4(ctx);
     					if_block0.c();
-    					if_block0.m(div1, t6);
+    					if_block0.m(div4, t12);
     				}
     			} else if (if_block0) {
     				if_block0.d(1);
@@ -43765,19 +44155,19 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				}
 
     				transition_in(if_block1, 1);
-    				if_block1.m(div1, t7);
+    				if_block1.m(div3, null);
     			}
 
     			if (/*curIcon*/ ctx[1]) {
     				if (if_block2) {
-    					if (dirty & /*curIcon*/ 2) {
+    					if (dirty[0] & /*curIcon*/ 2) {
     						transition_in(if_block2, 1);
     					}
     				} else {
     					if_block2 = create_if_block$1();
     					if_block2.c();
     					transition_in(if_block2, 1);
-    					if_block2.m(div1, null);
+    					if_block2.m(div4, null);
     				}
     			} else if (if_block2) {
     				group_outros();
@@ -43791,20 +44181,32 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		},
     		i(local) {
     			if (current) return;
-    			transition_in(icon.$$.fragment, local);
+    			transition_in(icon0.$$.fragment, local);
+    			transition_in(icon1.$$.fragment, local);
+    			transition_in(icon2.$$.fragment, local);
+    			transition_in(icon3.$$.fragment, local);
+    			transition_in(icon4.$$.fragment, local);
     			transition_in(if_block1);
     			transition_in(if_block2);
     			current = true;
     		},
     		o(local) {
-    			transition_out(icon.$$.fragment, local);
+    			transition_out(icon0.$$.fragment, local);
+    			transition_out(icon1.$$.fragment, local);
+    			transition_out(icon2.$$.fragment, local);
+    			transition_out(icon3.$$.fragment, local);
+    			transition_out(icon4.$$.fragment, local);
     			transition_out(if_block1);
     			transition_out(if_block2);
     			current = false;
     		},
     		d(detaching) {
-    			if (detaching) detach(div1);
-    			destroy_component(icon);
+    			if (detaching) detach(div4);
+    			destroy_component(icon0);
+    			destroy_component(icon1);
+    			destroy_component(icon2);
+    			destroy_component(icon3);
+    			destroy_component(icon4);
     			if (if_block0) if_block0.d();
     			if_blocks[current_block_type_index].d();
     			if (if_block2) if_block2.d();
@@ -43830,6 +44232,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	let currentTag = null;
     	let searchTerm = null;
     	let filteredIconList = null;
+    	let isList = false;
 
     	async function getIconSet() {
     		const res = await fetch(`https://cors-anywhere.thecodeblog.net/icon-sets.iconify.design/assets/collection.${iconSet}.js`);
@@ -43840,7 +44243,6 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		$$invalidate(3, name = data.info.name);
     		$$invalidate(4, iconCount = data.info.total);
     		$$invalidate(5, tags = data.tags || []);
-    		data.info.category;
     		currentIconSet.set(name);
     		$$invalidate(8, filteredIconList = iconlist);
     	}
@@ -43878,14 +44280,26 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		};
     	});
 
+    	const toggleView = state => {
+    		$$invalidate(9, isList = state);
+    	};
+
     	function input_input_handler() {
     		searchTerm = this.value;
     		$$invalidate(7, searchTerm);
     	}
 
-    	const click_handler = tag => setCurrentTag(tag);
+    	const click_handler = () => toggleView(false);
+    	const click_handler_1 = () => toggleView(true);
+    	const click_handler_2 = () => toggleView(false);
+    	const click_handler_3 = () => toggleView(true);
+    	const click_handler_4 = tag => setCurrentTag(tag);
 
-    	const click_handler_1 = icon => {
+    	const click_handler_5 = icon => {
+    		currentIcon.set(`${iconSet}:${icon.name || icon}`);
+    	};
+
+    	const click_handler_6 = icon => {
     		currentIcon.set(`${iconSet}:${icon.name || icon}`);
     	};
 
@@ -43903,18 +44317,25 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		currentTag,
     		searchTerm,
     		filteredIconList,
+    		isList,
     		setCurrentTag,
     		inputOnChange,
+    		toggleView,
     		input_input_handler,
     		click_handler,
-    		click_handler_1
+    		click_handler_1,
+    		click_handler_2,
+    		click_handler_3,
+    		click_handler_4,
+    		click_handler_5,
+    		click_handler_6
     	];
     }
 
     class IconList extends SvelteComponent {
     	constructor(options) {
     		super();
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { iconSet: 0 });
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { iconSet: 0 }, null, [-1, -1]);
     	}
     }
 

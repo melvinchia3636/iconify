@@ -4,6 +4,7 @@
   import Usage from "./Usage.svelte";
   import { currentIcon, currentIconSet } from "./stores";
   import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
 
   export let iconSet;
 
@@ -26,10 +27,10 @@
   let name = "";
   let iconCount = 0;
   let tags = [];
-  let category = null;
   let currentTag = null;
   let searchTerm = null;
   let filteredIconList = null;
+  let isList = false;
 
   async function getIconSet() {
     const res = await fetch(
@@ -42,7 +43,6 @@
     name = data.info.name;
     iconCount = data.info.total;
     tags = data.tags || [];
-    category = data.info.category;
     currentIconSet.set(name);
     filteredIconList = iconlist;
   }
@@ -91,26 +91,73 @@
       }
     };
   });
+
+  const toggleView = (state) => {
+    isList = state;
+  };
 </script>
 
 <div class="flex flex-1 flex-col w-full px-12 md:px-24">
   <h1
-    class="mt-12 mb-6 text-3xl font-semibold tracking-wide text-center  flex flex-col items-center gap-6 sm:inline"
+    class="mt-12 mb-6 text-3xl font-semibold tracking-wide text-center flex flex-col items-center gap-1 sm:inline"
   >
-    {name}<span class="ml-2 text-base ">v{version}</span>
+    {name}<span class="sm:ml-2 text-base">v{version}</span>
   </h1>
   <div
     class="inline-flex items-center w-full p-4 mx-auto mb-6 overflow-hidden border-2 border-stone-600 gap-4"
   >
-    <Icon icon="uil:search" class="" width="24" height="24" />
+    <Icon icon="uil:search" class="flex-shrink-0" width="24" height="24" />
     <input
       bind:value={searchTerm}
       on:input={inputOnChange}
       type="text"
       id="icon-search"
-      class="w-full tracking-wide  placeholder-stone-600 bg-transparent"
+      class="w-full tracking-wide placeholder-stone-600 bg-transparent"
       placeholder="Search {iconCount} icons (Press '/' to focus)"
     />
+    <button on:click={() => toggleView(false)} class="hidden ssssm:block">
+      <Icon
+        icon="carbon:grid"
+        class="w-6 h-6 {isList
+          ? 'stroke-stone-400 text-stone-400'
+          : 'stroke-stone-600 text-stone-600'} stroke-[0.6px]"
+      />
+    </button>
+    <button on:click={() => toggleView(true)} class="hidden ssssm:block">
+      <Icon
+        icon="carbon:list-boxes"
+        class="w-6 h-6 {!isList
+          ? 'stroke-stone-400 text-stone-400'
+          : 'stroke-stone-600 text-stone-600'} stroke-[0.6px]"
+      />
+    </button>
+  </div>
+  <div class="ssssm:hidden">
+    <p class="mb-2">View Options</p>
+    <div class="flex gap-2 mb-6">
+      <button
+        on:click={() => toggleView(false)}
+        class="border-2 border-stone-600 flex-1 py-4 flex items-center justify-center {!isList &&
+          'bg-stone-600 text-stone-100'}"
+      >
+        <Icon
+          icon="carbon:grid"
+          class="w-6 h-6 stroke-[0.6px] stroke-stone-600 {!isList &&
+            'bg-stone-600 text-stone-100 stroke-stone-100'}"
+        />
+      </button>
+      <button
+        on:click={() => toggleView(true)}
+        class="border-2 border-stone-600 flex-1 py-4 flex items-center justify-center {isList &&
+          'bg-stone-600 text-stone-100'}"
+      >
+        <Icon
+          icon="carbon:list-boxes"
+          class="w-6 h-6 stroke-[0.6px] stroke-stone-600 {isList &&
+            'bg-stone-600 text-stone-100 stroke-stone-100'}"
+        />
+      </button>
+    </div>
   </div>
   {#if tags.length}
     <div class="flex flex-wrap justify-center mb-12 gap-2">
@@ -127,74 +174,85 @@
       {/each}
     </div>
   {/if}
-  {#if filteredIconList === null || filteredIconList.length > 0}
-    {#if filteredIconList}
-      <!-- <div
-        class="w-full pb-8 grid gap-3"
-        style="grid-template-columns: repeat(auto-fill, minmax(120px, 1fr))"
-      >
-        {#each filteredIconList as icon}
+  <div class="relative">
+    {#if filteredIconList === null || filteredIconList.length > 0}
+      {#if filteredIconList}
+        {#if !isList}
           <div
-            on:click={() => {
-              currentIcon.set(`${iconSet}:${icon.name || icon}`);
-            }}
-            class="flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 p-4"
+            in:fade
+            out:fade
+            class="w-full pb-8 grid gap-3"
+            style="grid-template-columns: repeat(auto-fill, minmax(120px, 1fr))"
           >
-            <Icon
-              icon={`${iconSet}:${icon.name || icon}`}
-              width="32"
-              height="32"
-              class=""
-            />
-            <p
-              class="font-medium text-[0.7rem] tracking-wide text-center  mt-4 -mb-0.5"
-            >
-              {(icon.name || icon).replace(/-/g, ' ')}
-            </p>
+            {#each filteredIconList as icon}
+              <div
+                on:click={() => {
+                  currentIcon.set(`${iconSet}:${icon.name || icon}`);
+                }}
+                class="flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 p-4"
+              >
+                <Icon
+                  icon={`${iconSet}:${icon.name || icon}`}
+                  width="32"
+                  height="32"
+                  class=""
+                />
+                <p
+                  class="font-medium text-[0.7rem] tracking-wide text-center  mt-4 -mb-0.5"
+                >
+                  {(icon.name || icon).replace(/-/g, " ")}
+                </p>
+              </div>
+            {/each}
           </div>
-        {/each}
-      </div> -->
-      <div
-        class="w-full pb-8 grid gap-3"
-        style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))"
-      >
-        {#each filteredIconList as icon}
+        {:else}
           <div
-            on:click={() => {
-              currentIcon.set(`${iconSet}:${icon.name || icon}`);
-            }}
-            class="flex items-center cursor-pointer transition-all hover:bg-stone-200 py-3"
+            in:fade
+            out:fade
+            class="w-full pb-8 grid gap-3 gap-x-6"
+            style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))"
           >
-            <Icon
-              icon={`${iconSet}:${icon.name || icon}`}
-              width="24"
-              height="24"
-              class=" flex-shrink-0"
-            />
-            <p class="font-medium text-sm tracking-wide  truncate ml-3 -mb-0.5">
-              {icon.name || icon}
-            </p>
+            {#each filteredIconList as icon}
+              <div
+                on:click={() => {
+                  currentIcon.set(`${iconSet}:${icon.name || icon}`);
+                }}
+                class="flex items-center cursor-pointer transition-all hover:bg-stone-200 py-3 px-2"
+              >
+                <Icon
+                  icon={`${iconSet}:${icon.name || icon}`}
+                  width="24"
+                  height="24"
+                  class=" flex-shrink-0"
+                />
+                <p
+                  class="font-medium text-sm tracking-wide  truncate ml-3 -mb-0.5"
+                >
+                  {icon.name || icon}
+                </p>
+              </div>
+            {/each}
           </div>
-        {/each}
-      </div>
+        {/if}
+      {:else}
+        <div class="flex justify-center w-full">
+          <LottiePlayer
+            src="/assets/loading_anim.json"
+            autoplay={true}
+            loop={true}
+            renderer="svg"
+            background="transparent"
+            height={160}
+            width={160}
+          />
+        </div>
+      {/if}
     {:else}
-      <div class="flex justify-center w-full">
-        <LottiePlayer
-          src="/assets/loading_anim.json"
-          autoplay={true}
-          loop={true}
-          renderer="svg"
-          background="transparent"
-          height={160}
-          width={160}
-        />
-      </div>
+      <p class="text-xl font-medium tracking-wide text-center ">
+        Nothing found :(
+      </p>
     {/if}
-  {:else}
-    <p class="text-xl font-medium tracking-wide text-center ">
-      Nothing found :(
-    </p>
-  {/if}
+  </div>
   {#if curIcon}
     <Usage />
   {/if}
