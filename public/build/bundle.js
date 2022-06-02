@@ -5315,7 +5315,7 @@ var app = (function () {
     	};
     }
 
-    // (44:2) <Link     to="/icon-sets"     class="items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6"   >
+    // (44:2) <Link     to="/icon-sets"     class="items-center hidden px-6 py-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6"   >
     function create_default_slot$n(ctx) {
     	let t;
     	let svg;
@@ -5548,7 +5548,7 @@ var app = (function () {
     	link = new Link$1({
     			props: {
     				to: "/icon-sets",
-    				class: "items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6",
+    				class: "items-center hidden px-6 py-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6",
     				$$slots: { default: [create_default_slot$n] },
     				$$scope: { ctx }
     			}
@@ -43832,7 +43832,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	let filteredIconList = null;
 
     	async function getIconSet() {
-    		const res = await fetch(`https:cors-anywhere.thecodeblog.net/icon-sets.iconify.design/assets/collection.${iconSet}.js`);
+    		const res = await fetch(`https://cors-anywhere.thecodeblog.net/icon-sets.iconify.design/assets/collection.${iconSet}.js`);
     		let data = await res.text();
     		data = JSON.parse(data.match(/=(.+);/)[1]);
     		iconlist = data.icons;

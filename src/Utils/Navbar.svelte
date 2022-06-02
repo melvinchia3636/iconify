@@ -43,7 +43,7 @@
   </button>
   <Link
     to="/icon-sets"
-    class="items-center hidden px-6 pt-[0.9rem] pb-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6"
+    class="items-center hidden px-6 py-4 font-semibold tracking-wide  ssm:flex border-2 border-stone-600 gap-6"
   >
     Browse Icons
     <svg

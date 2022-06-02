@@ -33,7 +33,7 @@
 
   async function getIconSet() {
     const res = await fetch(
-      `https:cors-anywhere.thecodeblog.net/icon-sets.iconify.design/assets/collection.${iconSet}.js`
+      `https://cors-anywhere.thecodeblog.net/icon-sets.iconify.design/assets/collection.${iconSet}.js`
     );
     let data = await res.text();
     data = JSON.parse(data.match(/=(.+);/)[1]);
