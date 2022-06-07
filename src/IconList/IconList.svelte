@@ -14,14 +14,6 @@
     curIcon = value;
   });
 
-  const colors = {
-    General: "rose",
-    Emoji: "orange",
-    "Brands / Social": "emerald",
-    Maps: "sky",
-    Thematic: "purple",
-  };
-
   let iconlist = null;
   let version = "";
   let name = "";
@@ -198,7 +190,8 @@
                   class=""
                 />
                 <p
-                  class="font-medium text-[0.7rem] tracking-wide text-center  mt-4 -mb-0.5"
+                  class="font-medium tracking-wide text-center  mt-4 -mb-0.5"
+                  style="font-size: 0.7rem"
                 >
                   {(icon.name || icon).replace(/-/g, " ")}
                 </p>
