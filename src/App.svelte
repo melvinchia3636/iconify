@@ -60,12 +60,6 @@
     font-family: "Jetbrains Mono";
     @apply text-stone-600;
     -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 
     &:focus {
       outline: none;
