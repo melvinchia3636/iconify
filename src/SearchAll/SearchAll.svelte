@@ -7,16 +7,6 @@
   } from "../IconList/stores";
   import Usage from "../IconList/Usage.svelte";
 
-  const colors = {
-    General: "rose",
-    Emoji: "orange",
-    "Brands / Social": "emerald",
-    "Maps / Flags": "sky",
-    Thematic: "purple",
-    "Archive / Unmaintained": "gray",
-    Other: "gray",
-  };
-
   let iconlist = null;
   let iconSets = null;
   const urlParams = new URLSearchParams(window.location.search);
@@ -93,6 +83,7 @@
           <div
             on:click={() => {
               currentIcon.set(icon);
+              curIconSet.set(iconSets[icon.split(":").shift()].name);
             }}
             class="flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 p-4"
           >

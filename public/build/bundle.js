@@ -2541,7 +2541,7 @@ var app = (function () {
     }
 
     // (113:2) {:else}
-    function create_else_block$5(ctx) {
+    function create_else_block$6(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[17].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[18], get_default_slot_context$1);
@@ -2589,7 +2589,7 @@ var app = (function () {
     }
 
     // (105:2) {#if component !== null}
-    function create_if_block_1$9(ctx) {
+    function create_if_block_1$a(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -2686,7 +2686,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block_1$9, create_else_block$5];
+    	const if_block_creators = [create_if_block_1$a, create_else_block$6];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -3148,20 +3148,7 @@ var app = (function () {
 
     var Link$1 = Link;
 
-    const matchName = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-    const iconDefaults = Object.freeze({
-      left: 0,
-      top: 0,
-      width: 16,
-      height: 16,
-      rotate: 0,
-      vFlip: false,
-      hFlip: false
-    });
-    function fullIcon(data) {
-      return { ...iconDefaults, ...data };
-    }
-
+    const matchIconName = /^[a-z0-9]+(-[a-z0-9]+)*$/;
     const stringToIcon = (value, validate, allowSimpleName, provider = "") => {
       const colonSeparated = value.split(":");
       if (value.slice(0, 1) === "@") {
@@ -3181,7 +3168,7 @@ var app = (function () {
           prefix,
           name: name2
         };
-        return validate && !validateIcon(result) ? null : result;
+        return validate && !validateIconName(result) ? null : result;
       }
       const name = colonSeparated[0];
       const dashSeparated = name.split("-");
@@ -3191,7 +3178,7 @@ var app = (function () {
           prefix: dashSeparated.shift(),
           name: dashSeparated.join("-")
         };
-        return validate && !validateIcon(result) ? null : result;
+        return validate && !validateIconName(result) ? null : result;
       }
       if (allowSimpleName && provider === "") {
         const result = {
@@ -3199,87 +3186,109 @@ var app = (function () {
           prefix: "",
           name
         };
-        return validate && !validateIcon(result, allowSimpleName) ? null : result;
+        return validate && !validateIconName(result, allowSimpleName) ? null : result;
       }
       return null;
     };
-    const validateIcon = (icon, allowSimpleName) => {
+    const validateIconName = (icon, allowSimpleName) => {
       if (!icon) {
         return false;
       }
-      return !!((icon.provider === "" || icon.provider.match(matchName)) && (allowSimpleName && icon.prefix === "" || icon.prefix.match(matchName)) && icon.name.match(matchName));
+      return !!((icon.provider === "" || icon.provider.match(matchIconName)) && (allowSimpleName && icon.prefix === "" || icon.prefix.match(matchIconName)) && icon.name.match(matchIconName));
     };
 
-    function mergeIconData(icon, alias) {
-      const result = { ...icon };
-      for (const key in iconDefaults) {
-        const prop = key;
-        if (alias[prop] !== void 0) {
-          const value = alias[prop];
-          if (result[prop] === void 0) {
-            result[prop] = value;
-            continue;
+    const defaultIconDimensions = Object.freeze(
+      {
+        left: 0,
+        top: 0,
+        width: 16,
+        height: 16
+      }
+    );
+    const defaultIconTransformations = Object.freeze({
+      rotate: 0,
+      vFlip: false,
+      hFlip: false
+    });
+    const defaultIconProps = Object.freeze({
+      ...defaultIconDimensions,
+      ...defaultIconTransformations
+    });
+    const defaultExtendedIconProps = Object.freeze({
+      ...defaultIconProps,
+      body: "",
+      hidden: false
+    });
+
+    function mergeIconTransformations(obj1, obj2) {
+      const result = {};
+      if (!obj1.hFlip !== !obj2.hFlip) {
+        result.hFlip = true;
+      }
+      if (!obj1.vFlip !== !obj2.vFlip) {
+        result.vFlip = true;
+      }
+      const rotate = ((obj1.rotate || 0) + (obj2.rotate || 0)) % 4;
+      if (rotate) {
+        result.rotate = rotate;
+      }
+      return result;
+    }
+
+    function mergeIconData(parent, child) {
+      const result = mergeIconTransformations(parent, child);
+      for (const key in defaultExtendedIconProps) {
+        if (key in defaultIconTransformations) {
+          if (key in parent && !(key in result)) {
+            result[key] = defaultIconTransformations[key];
           }
-          switch (prop) {
-            case "rotate":
-              result[prop] = (result[prop] + value) % 4;
-              break;
-            case "hFlip":
-            case "vFlip":
-              result[prop] = value !== result[prop];
-              break;
-            default:
-              result[prop] = value;
-          }
+        } else if (key in child) {
+          result[key] = child[key];
+        } else if (key in parent) {
+          result[key] = parent[key];
         }
       }
       return result;
     }
 
-    function getIconData$1(data, name, full) {
-      function getIcon(name2, iteration) {
-        if (data.icons[name2] !== void 0) {
-          return Object.assign({}, data.icons[name2]);
+    function getIconsTree(data, names) {
+      const icons = data.icons;
+      const aliases = data.aliases || /* @__PURE__ */ Object.create(null);
+      const resolved = /* @__PURE__ */ Object.create(null);
+      function resolve(name) {
+        if (icons[name]) {
+          return resolved[name] = [];
         }
-        if (iteration > 5) {
-          return null;
-        }
-        const aliases = data.aliases;
-        if (aliases && aliases[name2] !== void 0) {
-          const item = aliases[name2];
-          const result2 = getIcon(item.parent, iteration + 1);
-          if (result2) {
-            return mergeIconData(result2, item);
-          }
-          return result2;
-        }
-        const chars = data.chars;
-        if (!iteration && chars && chars[name2] !== void 0) {
-          return getIcon(chars[name2], iteration + 1);
-        }
-        return null;
-      }
-      const result = getIcon(name, 0);
-      if (result) {
-        for (const key in iconDefaults) {
-          if (result[key] === void 0 && data[key] !== void 0) {
-            result[key] = data[key];
+        if (!(name in resolved)) {
+          resolved[name] = null;
+          const parent = aliases[name] && aliases[name].parent;
+          const value = parent && resolve(parent);
+          if (value) {
+            resolved[name] = [parent].concat(value);
           }
         }
+        return resolved[name];
       }
-      return result && full ? fullIcon(result) : result;
+      (names || Object.keys(icons).concat(Object.keys(aliases))).forEach(resolve);
+      return resolved;
     }
 
-    function isVariation(item) {
-      for (const key in iconDefaults) {
-        if (item[key] !== void 0) {
-          return true;
-        }
+    function internalGetIconData(data, name, tree) {
+      const icons = data.icons;
+      const aliases = data.aliases || /* @__PURE__ */ Object.create(null);
+      let currentProps = {};
+      function parse(name2) {
+        currentProps = mergeIconData(
+          icons[name2] || aliases[name2],
+          currentProps
+        );
       }
-      return false;
+      parse(name);
+      tree.forEach(parse);
+      return mergeIconData(data, currentProps);
     }
-    function parseIconSet(data, callback, options) {
-      options = options || {};
+
+    function parseIconSet(data, callback) {
       const names = [];
       if (typeof data !== "object" || typeof data.icons !== "object") {
         return names;
@@ -3290,38 +3299,30 @@ var app = (function () {
           names.push(name);
         });
       }
-      const icons = data.icons;
-      Object.keys(icons).forEach((name) => {
-        const iconData = getIconData$1(data, name, true);
-        if (iconData) {
-          callback(name, iconData);
+      const tree = getIconsTree(data);
+      for (const name in tree) {
+        const item = tree[name];
+        if (item) {
+          callback(name, internalGetIconData(data, name, item));
           names.push(name);
         }
-      });
-      const parseAliases = options.aliases || "all";
-      if (parseAliases !== "none" && typeof data.aliases === "object") {
-        const aliases = data.aliases;
-        Object.keys(aliases).forEach((name) => {
-          if (parseAliases === "variations" && isVariation(aliases[name])) {
-            return;
-          }
-          const iconData = getIconData$1(data, name, true);
-          if (iconData) {
-            callback(name, iconData);
-            names.push(name);
-          }
-        });
       }
       return names;
     }
 
-    const optionalProperties = {
-      provider: "string",
-      aliases: "object",
-      not_found: "object"
+    const optionalPropertyDefaults = {
+      provider: "",
+      aliases: {},
+      not_found: {},
+      ...defaultIconDimensions
     };
-    for (const prop in iconDefaults) {
-      optionalProperties[prop] = typeof iconDefaults[prop];
+    function checkOptionalProps(item, defaults) {
+      for (const prop in defaults) {
+        if (prop in item && typeof item[prop] !== typeof defaults[prop]) {
+          return false;
+        }
+      }
+      return true;
     }
     function quicklyValidateIconSet(obj) {
       if (typeof obj !== "object" || obj === null) {
@@ -3331,94 +3332,67 @@ var app = (function () {
       if (typeof data.prefix !== "string" || !obj.icons || typeof obj.icons !== "object") {
         return null;
       }
-      for (const prop in optionalProperties) {
-        if (obj[prop] !== void 0 && typeof obj[prop] !== optionalProperties[prop]) {
-          return null;
-        }
+      if (!checkOptionalProps(obj, optionalPropertyDefaults)) {
+        return null;
       }
       const icons = data.icons;
       for (const name in icons) {
         const icon = icons[name];
-        if (!name.match(matchName) || typeof icon.body !== "string") {
+        if (!name.match(matchIconName) || typeof icon.body !== "string" || !checkOptionalProps(
+          icon,
+          defaultExtendedIconProps
+        )) {
           return null;
         }
-        for (const prop in iconDefaults) {
-          if (icon[prop] !== void 0 && typeof icon[prop] !== typeof iconDefaults[prop]) {
-            return null;
-          }
-        }
       }
-      const aliases = data.aliases;
-      if (aliases) {
-        for (const name in aliases) {
-          const icon = aliases[name];
-          const parent = icon.parent;
-          if (!name.match(matchName) || typeof parent !== "string" || !icons[parent] && !aliases[parent]) {
-            return null;
-          }
-          for (const prop in iconDefaults) {
-            if (icon[prop] !== void 0 && typeof icon[prop] !== typeof iconDefaults[prop]) {
-              return null;
-            }
-          }
+      const aliases = data.aliases || /* @__PURE__ */ Object.create(null);
+      for (const name in aliases) {
+        const icon = aliases[name];
+        const parent = icon.parent;
+        if (!name.match(matchIconName) || typeof parent !== "string" || !icons[parent] && !aliases[parent] || !checkOptionalProps(
+          icon,
+          defaultExtendedIconProps
+        )) {
+          return null;
         }
       }
       return data;
     }
 
-    const storageVersion = 1;
-    let storage$1 = /* @__PURE__ */ Object.create(null);
-    try {
-      const w = window || self;
-      if (w && w._iconifyStorage.version === storageVersion) {
-        storage$1 = w._iconifyStorage.storage;
-      }
-    } catch (err) {
-    }
+    const dataStorage = /* @__PURE__ */ Object.create(null);
     function newStorage(provider, prefix) {
       return {
         provider,
         prefix,
         icons: /* @__PURE__ */ Object.create(null),
-        missing: /* @__PURE__ */ Object.create(null)
+        missing: /* @__PURE__ */ new Set()
       };
     }
     function getStorage(provider, prefix) {
-      if (storage$1[provider] === void 0) {
-        storage$1[provider] = /* @__PURE__ */ Object.create(null);
-      }
-      const providerStorage = storage$1[provider];
-      if (providerStorage[prefix] === void 0) {
-        providerStorage[prefix] = newStorage(provider, prefix);
-      }
-      return providerStorage[prefix];
+      const providerStorage = dataStorage[provider] || (dataStorage[provider] = /* @__PURE__ */ Object.create(null));
+      return providerStorage[prefix] || (providerStorage[prefix] = newStorage(provider, prefix));
     }
-    function addIconSet(storage2, data) {
+    function addIconSet(storage, data) {
       if (!quicklyValidateIconSet(data)) {
         return [];
       }
-      const t = Date.now();
       return parseIconSet(data, (name, icon) => {
         if (icon) {
-          storage2.icons[name] = icon;
+          storage.icons[name] = icon;
         } else {
-          storage2.missing[name] = t;
+          storage.missing.add(name);
         }
       });
     }
-    function addIconToStorage(storage2, name, icon) {
+    function addIconToStorage(storage, name, icon) {
       try {
         if (typeof icon.body === "string") {
-          storage2.icons[name] = Object.freeze(fullIcon(icon));
+          storage.icons[name] = { ...icon };
           return true;
         }
       } catch (err) {
       }
       return false;
-    }
-    function getIconFromStorage(storage2, name) {
-      const value = storage2.icons[name];
-      return value === void 0 ? null : value;
     }
 
     let simpleNames = false;
@@ -3430,7 +3404,11 @@ var app = (function () {
     }
     function getIconData(name) {
       const icon = typeof name === "string" ? stringToIcon(name, true, simpleNames) : name;
-      return icon ? getIconFromStorage(getStorage(icon.provider, icon.prefix), icon.name) : null;
+      if (icon) {
+        const storage = getStorage(icon.provider, icon.prefix);
+        const iconName = icon.name;
+        return storage.icons[iconName] || (storage.missing.has(iconName) ? null : void 0);
+      }
     }
     function addIcon(name, data) {
       const icon = stringToIcon(name, true, simpleNames);
@@ -3445,9 +3423,9 @@ var app = (function () {
         return false;
       }
       if (typeof provider !== "string") {
-        provider = typeof data.provider === "string" ? data.provider : "";
+        provider = data.provider || "";
       }
-      if (simpleNames && provider === "" && (typeof data.prefix !== "string" || data.prefix === "")) {
+      if (simpleNames && !provider && !data.prefix) {
         let added = false;
         if (quicklyValidateIconSet(data)) {
           data.prefix = "";
@@ -3459,75 +3437,33 @@ var app = (function () {
         }
         return added;
       }
-      if (typeof data.prefix !== "string" || !validateIcon({
+      const prefix = data.prefix;
+      if (!validateIconName({
         provider,
-        prefix: data.prefix,
+        prefix,
         name: "a"
       })) {
         return false;
       }
-      const storage = getStorage(provider, data.prefix);
+      const storage = getStorage(provider, prefix);
       return !!addIconSet(storage, data);
     }
     function getIcon(name) {
       const result = getIconData(name);
-      return result ? { ...result } : null;
+      return result ? {
+        ...defaultIconProps,
+        ...result
+      } : null;
     }
 
-    const defaults = Object.freeze({
-      inline: false,
+    const defaultIconSizeCustomisations = Object.freeze({
       width: null,
-      height: null,
-      hAlign: "center",
-      vAlign: "middle",
-      slice: false,
-      hFlip: false,
-      vFlip: false,
-      rotate: 0
+      height: null
     });
-    function mergeCustomisations(defaults2, item) {
-      const result = {};
-      for (const key in defaults2) {
-        const attr = key;
-        result[attr] = defaults2[attr];
-        if (item[attr] === void 0) {
-          continue;
-        }
-        const value = item[attr];
-        switch (attr) {
-          case "inline":
-          case "slice":
-            if (typeof value === "boolean") {
-              result[attr] = value;
-            }
-            break;
-          case "hFlip":
-          case "vFlip":
-            if (value === true) {
-              result[attr] = !result[attr];
-            }
-            break;
-          case "hAlign":
-          case "vAlign":
-            if (typeof value === "string" && value !== "") {
-              result[attr] = value;
-            }
-            break;
-          case "width":
-          case "height":
-            if (typeof value === "string" && value !== "" || typeof value === "number" && value || value === null) {
-              result[attr] = value;
-            }
-            break;
-          case "rotate":
-            if (typeof value === "number") {
-              result[attr] += value;
-            }
-            break;
-        }
-      }
-      return result;
-    }
+    const defaultIconCustomisations = Object.freeze({
+      ...defaultIconSizeCustomisations,
+      ...defaultIconTransformations
+    });
 
     const unitsSplit = /(-?[0-9.]*[0-9]+[0-9.]*)/g;
     const unitsTest = /^-?[0-9.]*[0-9]+[0-9.]*$/g;
@@ -3535,7 +3471,7 @@ var app = (function () {
       if (ratio === 1) {
         return size;
       }
-      precision = precision === void 0 ? 100 : precision;
+      precision = precision || 100;
       if (typeof size === "number") {
         return Math.ceil(size * ratio * precision) / precision;
       }
@@ -3568,40 +3504,24 @@ var app = (function () {
       }
     }
 
-    function preserveAspectRatio(props) {
-      let result = "";
-      switch (props.hAlign) {
-        case "left":
-          result += "xMin";
-          break;
-        case "right":
-          result += "xMax";
-          break;
-        default:
-          result += "xMid";
-      }
-      switch (props.vAlign) {
-        case "top":
-          result += "YMin";
-          break;
-        case "bottom":
-          result += "YMax";
-          break;
-        default:
-          result += "YMid";
-      }
-      result += props.slice ? " slice" : " meet";
-      return result;
-    }
+    const isUnsetKeyword = (value) => value === "unset" || value === "undefined" || value === "none";
     function iconToSVG(icon, customisations) {
-      const box = {
-        left: icon.left,
-        top: icon.top,
-        width: icon.width,
-        height: icon.height
+      const fullIcon = {
+        ...defaultIconProps,
+        ...icon
       };
-      let body = icon.body;
-      [icon, customisations].forEach((props) => {
+      const fullCustomisations = {
+        ...defaultIconCustomisations,
+        ...customisations
+      };
+      const box = {
+        left: fullIcon.left,
+        top: fullIcon.top,
+        width: fullIcon.width,
+        height: fullIcon.height
+      };
+      let body = fullIcon.body;
+      [fullIcon, fullCustomisations].forEach((props) => {
         const transformations = [];
         const hFlip = props.hFlip;
         const vFlip = props.vFlip;
@@ -3610,12 +3530,16 @@ var app = (function () {
           if (vFlip) {
             rotation += 2;
           } else {
-            transformations.push("translate(" + (box.width + box.left).toString() + " " + (0 - box.top).toString() + ")");
+            transformations.push(
+              "translate(" + (box.width + box.left).toString() + " " + (0 - box.top).toString() + ")"
+            );
             transformations.push("scale(-1 1)");
             box.top = box.left = 0;
           }
         } else if (vFlip) {
-          transformations.push("translate(" + (0 - box.left).toString() + " " + (box.height + box.top).toString() + ")");
+          transformations.push(
+            "translate(" + (0 - box.left).toString() + " " + (box.height + box.top).toString() + ")"
+          );
           transformations.push("scale(1 -1)");
           box.top = box.left = 0;
         }
@@ -3627,18 +3551,24 @@ var app = (function () {
         switch (rotation) {
           case 1:
             tempValue = box.height / 2 + box.top;
-            transformations.unshift("rotate(90 " + tempValue.toString() + " " + tempValue.toString() + ")");
+            transformations.unshift(
+              "rotate(90 " + tempValue.toString() + " " + tempValue.toString() + ")"
+            );
             break;
           case 2:
-            transformations.unshift("rotate(180 " + (box.width / 2 + box.left).toString() + " " + (box.height / 2 + box.top).toString() + ")");
+            transformations.unshift(
+              "rotate(180 " + (box.width / 2 + box.left).toString() + " " + (box.height / 2 + box.top).toString() + ")"
+            );
             break;
           case 3:
             tempValue = box.width / 2 + box.left;
-            transformations.unshift("rotate(-90 " + tempValue.toString() + " " + tempValue.toString() + ")");
+            transformations.unshift(
+              "rotate(-90 " + tempValue.toString() + " " + tempValue.toString() + ")"
+            );
             break;
         }
         if (rotation % 2 === 1) {
-          if (box.left !== 0 || box.top !== 0) {
+          if (box.left !== box.top) {
             tempValue = box.left;
             box.left = box.top;
             box.top = tempValue;
@@ -3653,41 +3583,32 @@ var app = (function () {
           body = '<g transform="' + transformations.join(" ") + '">' + body + "</g>";
         }
       });
-      let width, height;
-      if (customisations.width === null && customisations.height === null) {
-        height = "1em";
-        width = calculateSize(height, box.width / box.height);
-      } else if (customisations.width !== null && customisations.height !== null) {
-        width = customisations.width;
-        height = customisations.height;
-      } else if (customisations.height !== null) {
-        height = customisations.height;
-        width = calculateSize(height, box.width / box.height);
+      const customisationsWidth = fullCustomisations.width;
+      const customisationsHeight = fullCustomisations.height;
+      const boxWidth = box.width;
+      const boxHeight = box.height;
+      let width;
+      let height;
+      if (customisationsWidth === null) {
+        height = customisationsHeight === null ? "1em" : customisationsHeight === "auto" ? boxHeight : customisationsHeight;
+        width = calculateSize(height, boxWidth / boxHeight);
       } else {
-        width = customisations.width;
-        height = calculateSize(width, box.height / box.width);
+        width = customisationsWidth === "auto" ? boxWidth : customisationsWidth;
+        height = customisationsHeight === null ? calculateSize(width, boxHeight / boxWidth) : customisationsHeight === "auto" ? boxHeight : customisationsHeight;
       }
-      if (width === "auto") {
-        width = box.width;
-      }
-      if (height === "auto") {
-        height = box.height;
-      }
-      width = typeof width === "string" ? width : width.toString() + "";
-      height = typeof height === "string" ? height : height.toString() + "";
-      const result = {
-        attributes: {
-          width,
-          height,
-          preserveAspectRatio: preserveAspectRatio(customisations),
-          viewBox: box.left.toString() + " " + box.top.toString() + " " + box.width.toString() + " " + box.height.toString()
-        },
+      const attributes = {};
+      const setAttr = (prop, value) => {
+        if (!isUnsetKeyword(value)) {
+          attributes[prop] = value.toString();
+        }
+      };
+      setAttr("width", width);
+      setAttr("height", height);
+      attributes.viewBox = box.left.toString() + " " + box.top.toString() + " " + boxWidth.toString() + " " + boxHeight.toString();
+      return {
+        attributes,
         body
       };
-      if (customisations.inline) {
-        result.inline = true;
-      }
-      return result;
     }
 
     const regex = /\sid="(\S+)"/g;
@@ -3702,11 +3623,16 @@ var app = (function () {
       if (!ids.length) {
         return body;
       }
+      const suffix = "suffix" + (Math.random() * 16777216 | Date.now()).toString(16);
       ids.forEach((id) => {
         const newID = typeof prefix === "function" ? prefix(id) : prefix + (counter++).toString();
         const escapedID = id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-        body = body.replace(new RegExp('([#;"])(' + escapedID + ')([")]|\\.[a-z])', "g"), "$1" + newID + "$3");
+        body = body.replace(
+          new RegExp('([#;"])(' + escapedID + ')([")]|\\.[a-z])', "g"),
+          "$1" + newID + suffix + "$3"
+        );
       });
+      body = body.replace(new RegExp(suffix, "g"), "");
       return body;
     }
 
@@ -3730,12 +3656,12 @@ var app = (function () {
       }
       const result = {
         resources,
-        path: source.path === void 0 ? "/" : source.path,
-        maxURL: source.maxURL ? source.maxURL : 500,
-        rotate: source.rotate ? source.rotate : 750,
-        timeout: source.timeout ? source.timeout : 5e3,
+        path: source.path || "/",
+        maxURL: source.maxURL || 500,
+        rotate: source.rotate || 750,
+        timeout: source.timeout || 5e3,
         random: source.random === true,
-        index: source.index ? source.index : 0,
+        index: source.index || 0,
         dataAfterTimeout: source.dataAfterTimeout !== false
       };
       return result;
@@ -3772,35 +3698,6 @@ var app = (function () {
       return configStorage[provider];
     }
 
-    const mergeParams = (base, params) => {
-      let result = base, hasParams = result.indexOf("?") !== -1;
-      function paramToString(value) {
-        switch (typeof value) {
-          case "boolean":
-            return value ? "true" : "false";
-          case "number":
-            return encodeURIComponent(value);
-          case "string":
-            return encodeURIComponent(value);
-          default:
-            throw new Error("Invalid parameter");
-        }
-      }
-      Object.keys(params).forEach((key) => {
-        let value;
-        try {
-          value = paramToString(params[key]);
-        } catch (err) {
-          return;
-        }
-        result += (hasParams ? "&" : "?") + encodeURIComponent(key) + "=" + value;
-        hasParams = true;
-      });
-      return result;
-    };
-
-    const maxLengthCache = {};
-    const pathCache = {};
     const detectFetch = () => {
       let callback;
       try {
@@ -3810,7 +3707,6 @@ var app = (function () {
         }
       } catch (err) {
       }
-      return null;
     };
     let fetchModule = detectFetch();
     function calculateMaxLength(provider, prefix) {
@@ -3827,14 +3723,9 @@ var app = (function () {
           const host = item;
           maxHostLength = Math.max(maxHostLength, host.length);
         });
-        const url = mergeParams(prefix + ".json", {
-          icons: ""
-        });
+        const url = prefix + ".json?icons=";
         result = config.maxURL - maxHostLength - config.path.length - url.length;
       }
-      const cacheKey = provider + ":" + prefix;
-      pathCache[provider] = config.path;
-      maxLengthCache[cacheKey] = result;
       return result;
     }
     function shouldAbort(status) {
@@ -3842,10 +3733,7 @@ var app = (function () {
     }
     const prepare = (provider, prefix, icons) => {
       const results = [];
-      let maxLength = maxLengthCache[prefix];
-      if (maxLength === void 0) {
-        maxLength = calculateMaxLength(provider, prefix);
-      }
+      const maxLength = calculateMaxLength(provider, prefix);
       const type = "icons";
       let item = {
         type,
@@ -3873,14 +3761,10 @@ var app = (function () {
     };
     function getPath(provider) {
       if (typeof provider === "string") {
-        if (pathCache[provider] === void 0) {
-          const config = getAPIConfig(provider);
-          if (!config) {
-            return "/";
-          }
-          pathCache[provider] = config.path;
+        const config = getAPIConfig(provider);
+        if (config) {
+          return config.path;
         }
-        return pathCache[provider];
       }
       return "/";
     }
@@ -3895,9 +3779,10 @@ var app = (function () {
           const prefix = params.prefix;
           const icons = params.icons;
           const iconsList = icons.join(",");
-          path += mergeParams(prefix + ".json", {
+          const urlParams = new URLSearchParams({
             icons: iconsList
           });
+          path += prefix + ".json?" + urlParams.toString();
           break;
         }
         case "custom": {
@@ -3923,7 +3808,11 @@ var app = (function () {
       }).then((data) => {
         if (typeof data !== "object" || data === null) {
           setTimeout(() => {
-            callback("next", defaultError);
+            if (data === 404) {
+              callback("abort", data);
+            } else {
+              callback("next", defaultError);
+            }
           });
           return;
         }
@@ -3968,18 +3857,12 @@ var app = (function () {
         const provider = icon.provider;
         const prefix = icon.prefix;
         const name = icon.name;
-        if (storage[provider] === void 0) {
-          storage[provider] = /* @__PURE__ */ Object.create(null);
-        }
-        const providerStorage = storage[provider];
-        if (providerStorage[prefix] === void 0) {
-          providerStorage[prefix] = getStorage(provider, prefix);
-        }
-        const localStorage = providerStorage[prefix];
+        const providerStorage = storage[provider] || (storage[provider] = /* @__PURE__ */ Object.create(null));
+        const localStorage = providerStorage[prefix] || (providerStorage[prefix] = getStorage(provider, prefix));
         let list;
-        if (localStorage.icons[name] !== void 0) {
+        if (name in localStorage.icons) {
           list = result.loaded;
-        } else if (prefix === "" || localStorage.missing[name] !== void 0) {
+        } else if (prefix === "" || localStorage.missing.has(name)) {
           list = result.missing;
         } else {
           list = result.pending;
@@ -3994,40 +3877,26 @@ var app = (function () {
       return result;
     }
 
-    const callbacks = /* @__PURE__ */ Object.create(null);
-    const pendingUpdates = /* @__PURE__ */ Object.create(null);
-    function removeCallback(sources, id) {
-      sources.forEach((source) => {
-        const provider = source.provider;
-        if (callbacks[provider] === void 0) {
-          return;
-        }
-        const providerCallbacks = callbacks[provider];
-        const prefix = source.prefix;
-        const items = providerCallbacks[prefix];
+    function removeCallback(storages, id) {
+      storages.forEach((storage) => {
+        const items = storage.loaderCallbacks;
         if (items) {
-          providerCallbacks[prefix] = items.filter((row) => row.id !== id);
+          storage.loaderCallbacks = items.filter((row) => row.id !== id);
         }
       });
     }
-    function updateCallbacks(provider, prefix) {
-      if (pendingUpdates[provider] === void 0) {
-        pendingUpdates[provider] = /* @__PURE__ */ Object.create(null);
-      }
-      const providerPendingUpdates = pendingUpdates[provider];
-      if (!providerPendingUpdates[prefix]) {
-        providerPendingUpdates[prefix] = true;
+    function updateCallbacks(storage) {
+      if (!storage.pendingCallbacksFlag) {
+        storage.pendingCallbacksFlag = true;
         setTimeout(() => {
-          providerPendingUpdates[prefix] = false;
-          if (callbacks[provider] === void 0 || callbacks[provider][prefix] === void 0) {
-            return;
-          }
-          const items = callbacks[provider][prefix].slice(0);
+          storage.pendingCallbacksFlag = false;
+          const items = storage.loaderCallbacks ? storage.loaderCallbacks.slice(0) : [];
           if (!items.length) {
             return;
           }
-          const storage = getStorage(provider, prefix);
           let hasPending = false;
+          const provider = storage.provider;
+          const prefix = storage.prefix;
           items.forEach((item) => {
             const icons = item.icons;
             const oldLength = icons.pending.length;
@@ -4036,13 +3905,13 @@ var app = (function () {
                 return true;
               }
               const name = icon.name;
-              if (storage.icons[name] !== void 0) {
+              if (storage.icons[name]) {
                 icons.loaded.push({
                   provider,
                   prefix,
                   name
                 });
-              } else if (storage.missing[name] !== void 0) {
+              } else if (storage.missing.has(name)) {
                 icons.missing.push({
                   provider,
                   prefix,
@@ -4056,14 +3925,14 @@ var app = (function () {
             });
             if (icons.pending.length !== oldLength) {
               if (!hasPending) {
-                removeCallback([
-                  {
-                    provider,
-                    prefix
-                  }
-                ], item.id);
+                removeCallback([storage], item.id);
               }
-              item.callback(icons.loaded.slice(0), icons.missing.slice(0), icons.pending.slice(0), item.abort);
+              item.callback(
+                icons.loaded.slice(0),
+                icons.missing.slice(0),
+                icons.pending.slice(0),
+                item.abort
+              );
             }
           });
         });
@@ -4082,17 +3951,8 @@ var app = (function () {
         callback,
         abort
       };
-      pendingSources.forEach((source) => {
-        const provider = source.provider;
-        const prefix = source.prefix;
-        if (callbacks[provider] === void 0) {
-          callbacks[provider] = /* @__PURE__ */ Object.create(null);
-        }
-        const providerCallbacks = callbacks[provider];
-        if (providerCallbacks[prefix] === void 0) {
-          providerCallbacks[prefix] = [];
-        }
-        providerCallbacks[prefix].push(item);
+      pendingSources.forEach((storage) => {
+        (storage.loaderCallbacks || (storage.loaderCallbacks = [])).push(item);
       });
       return abort;
     }
@@ -4100,13 +3960,9 @@ var app = (function () {
     function listToIcons(list, validate, simpleNames = false) {
       const result = [];
       list.forEach((item) => {
-        const icon = typeof item === "string" ? stringToIcon(item, false, simpleNames) : item;
-        if (!validate || validateIcon(icon, simpleNames)) {
-          result.push({
-            provider: icon.provider,
-            prefix: icon.prefix,
-            name: icon.name
-          });
+        const icon = typeof item === "string" ? stringToIcon(item, validate, simpleNames) : item;
+        if (icon) {
+          result.push(icon);
         }
       });
       return result;
@@ -4280,42 +4136,34 @@ var app = (function () {
     }
 
     // src/index.ts
-    function setConfig(config) {
-      if (typeof config !== "object" || typeof config.resources !== "object" || !(config.resources instanceof Array) || !config.resources.length) {
-        throw new Error("Invalid Reduncancy configuration");
-      }
-      const newConfig = /* @__PURE__ */ Object.create(null);
-      let key;
-      for (key in defaultConfig) {
-        if (config[key] !== void 0) {
-          newConfig[key] = config[key];
-        } else {
-          newConfig[key] = defaultConfig[key];
-        }
-      }
-      return newConfig;
-    }
     function initRedundancy(cfg) {
-      const config = setConfig(cfg);
+      const config = {
+        ...defaultConfig,
+        ...cfg
+      };
       let queries = [];
       function cleanup() {
         queries = queries.filter((item) => item().status === "pending");
       }
       function query(payload, queryCallback, doneCallback) {
-        const query2 = sendQuery(config, payload, queryCallback, (data, error) => {
-          cleanup();
-          if (doneCallback) {
-            doneCallback(data, error);
+        const query2 = sendQuery(
+          config,
+          payload,
+          queryCallback,
+          (data, error) => {
+            cleanup();
+            if (doneCallback) {
+              doneCallback(data, error);
+            }
           }
-        });
+        );
         queries.push(query2);
         return query2;
       }
       function find(callback) {
-        const result = queries.find((value) => {
+        return queries.find((value) => {
           return callback(value);
-        });
-        return result !== void 0 ? result : null;
+        }) || null;
       }
       const instance = {
         query,
@@ -4333,7 +4181,7 @@ var app = (function () {
     }
     const redundancyCache = /* @__PURE__ */ Object.create(null);
     function getRedundancyCache(provider) {
-      if (redundancyCache[provider] === void 0) {
+      if (!redundancyCache[provider]) {
         const config = getAPIConfig(provider);
         if (!config) {
           return;
@@ -4379,95 +4227,252 @@ var app = (function () {
       return redundancy.query(query, send, callback)().abort;
     }
 
-    const cache = {};
+    const browserCacheVersion = "iconify2";
+    const browserCachePrefix = "iconify";
+    const browserCacheCountKey = browserCachePrefix + "-count";
+    const browserCacheVersionKey = browserCachePrefix + "-version";
+    const browserStorageHour = 36e5;
+    const browserStorageCacheExpiration = 168;
 
-    function emptyCallback() {
-    }
-    const pendingIcons = /* @__PURE__ */ Object.create(null);
-    const iconsToLoad = /* @__PURE__ */ Object.create(null);
-    const loaderFlags = /* @__PURE__ */ Object.create(null);
-    const queueFlags = /* @__PURE__ */ Object.create(null);
-    function loadedNewIcons(provider, prefix) {
-      if (loaderFlags[provider] === void 0) {
-        loaderFlags[provider] = /* @__PURE__ */ Object.create(null);
+    function getStoredItem(func, key) {
+      try {
+        return func.getItem(key);
+      } catch (err) {
       }
-      const providerLoaderFlags = loaderFlags[provider];
-      if (!providerLoaderFlags[prefix]) {
-        providerLoaderFlags[prefix] = true;
-        setTimeout(() => {
-          providerLoaderFlags[prefix] = false;
-          updateCallbacks(provider, prefix);
+    }
+    function setStoredItem(func, key, value) {
+      try {
+        func.setItem(key, value);
+        return true;
+      } catch (err) {
+      }
+    }
+    function removeStoredItem(func, key) {
+      try {
+        func.removeItem(key);
+      } catch (err) {
+      }
+    }
+
+    function setBrowserStorageItemsCount(storage, value) {
+      return setStoredItem(storage, browserCacheCountKey, value.toString());
+    }
+    function getBrowserStorageItemsCount(storage) {
+      return parseInt(getStoredItem(storage, browserCacheCountKey)) || 0;
+    }
+
+    const browserStorageConfig = {
+      local: true,
+      session: true
+    };
+    const browserStorageEmptyItems = {
+      local: /* @__PURE__ */ new Set(),
+      session: /* @__PURE__ */ new Set()
+    };
+    let browserStorageStatus = false;
+    function setBrowserStorageStatus(status) {
+      browserStorageStatus = status;
+    }
+
+    let _window = typeof window === "undefined" ? {} : window;
+    function getBrowserStorage(key) {
+      const attr = key + "Storage";
+      try {
+        if (_window && _window[attr] && typeof _window[attr].length === "number") {
+          return _window[attr];
+        }
+      } catch (err) {
+      }
+      browserStorageConfig[key] = false;
+    }
+
+    function iterateBrowserStorage(key, callback) {
+      const func = getBrowserStorage(key);
+      if (!func) {
+        return;
+      }
+      const version = getStoredItem(func, browserCacheVersionKey);
+      if (version !== browserCacheVersion) {
+        if (version) {
+          const total2 = getBrowserStorageItemsCount(func);
+          for (let i = 0; i < total2; i++) {
+            removeStoredItem(func, browserCachePrefix + i.toString());
+          }
+        }
+        setStoredItem(func, browserCacheVersionKey, browserCacheVersion);
+        setBrowserStorageItemsCount(func, 0);
+        return;
+      }
+      const minTime = Math.floor(Date.now() / browserStorageHour) - browserStorageCacheExpiration;
+      const parseItem = (index) => {
+        const name = browserCachePrefix + index.toString();
+        const item = getStoredItem(func, name);
+        if (typeof item !== "string") {
+          return;
+        }
+        try {
+          const data = JSON.parse(item);
+          if (typeof data === "object" && typeof data.cached === "number" && data.cached > minTime && typeof data.provider === "string" && typeof data.data === "object" && typeof data.data.prefix === "string" && callback(data, index)) {
+            return true;
+          }
+        } catch (err) {
+        }
+        removeStoredItem(func, name);
+      };
+      let total = getBrowserStorageItemsCount(func);
+      for (let i = total - 1; i >= 0; i--) {
+        if (!parseItem(i)) {
+          if (i === total - 1) {
+            total--;
+            setBrowserStorageItemsCount(func, total);
+          } else {
+            browserStorageEmptyItems[key].add(i);
+          }
+        }
+      }
+    }
+
+    function initBrowserStorage() {
+      if (browserStorageStatus) {
+        return;
+      }
+      setBrowserStorageStatus(true);
+      for (const key in browserStorageConfig) {
+        iterateBrowserStorage(key, (item) => {
+          const iconSet = item.data;
+          const provider = item.provider;
+          const prefix = iconSet.prefix;
+          const storage = getStorage(
+            provider,
+            prefix
+          );
+          if (!addIconSet(storage, iconSet).length) {
+            return false;
+          }
+          const lastModified = iconSet.lastModified || -1;
+          storage.lastModifiedCached = storage.lastModifiedCached ? Math.min(storage.lastModifiedCached, lastModified) : lastModified;
+          return true;
         });
       }
     }
-    const errorsCache = /* @__PURE__ */ Object.create(null);
-    function loadNewIcons(provider, prefix, icons) {
-      function err() {
-        const key = (provider === "" ? "" : "@" + provider + ":") + prefix;
-        const time = Math.floor(Date.now() / 6e4);
-        if (errorsCache[key] < time) {
-          errorsCache[key] = time;
-          console.error('Unable to retrieve icons for "' + key + '" because API is not configured properly.');
+
+    function updateLastModified(storage, lastModified) {
+      const lastValue = storage.lastModifiedCached;
+      if (lastValue && lastValue >= lastModified) {
+        return lastValue === lastModified;
+      }
+      storage.lastModifiedCached = lastModified;
+      if (lastValue) {
+        for (const key in browserStorageConfig) {
+          iterateBrowserStorage(key, (item) => {
+            const iconSet = item.data;
+            return item.provider !== storage.provider || iconSet.prefix !== storage.prefix || iconSet.lastModified === lastModified;
+          });
         }
       }
-      if (iconsToLoad[provider] === void 0) {
-        iconsToLoad[provider] = /* @__PURE__ */ Object.create(null);
+      return true;
+    }
+    function storeInBrowserStorage(storage, data) {
+      if (!browserStorageStatus) {
+        initBrowserStorage();
       }
-      const providerIconsToLoad = iconsToLoad[provider];
-      if (queueFlags[provider] === void 0) {
-        queueFlags[provider] = /* @__PURE__ */ Object.create(null);
+      function store(key) {
+        let func;
+        if (!browserStorageConfig[key] || !(func = getBrowserStorage(key))) {
+          return;
+        }
+        const set = browserStorageEmptyItems[key];
+        let index;
+        if (set.size) {
+          set.delete(index = Array.from(set).shift());
+        } else {
+          index = getBrowserStorageItemsCount(func);
+          if (!setBrowserStorageItemsCount(func, index + 1)) {
+            return;
+          }
+        }
+        const item = {
+          cached: Math.floor(Date.now() / browserStorageHour),
+          provider: storage.provider,
+          data
+        };
+        return setStoredItem(
+          func,
+          browserCachePrefix + index.toString(),
+          JSON.stringify(item)
+        );
       }
-      const providerQueueFlags = queueFlags[provider];
-      if (pendingIcons[provider] === void 0) {
-        pendingIcons[provider] = /* @__PURE__ */ Object.create(null);
+      if (data.lastModified && !updateLastModified(storage, data.lastModified)) {
+        return;
       }
-      const providerPendingIcons = pendingIcons[provider];
-      if (providerIconsToLoad[prefix] === void 0) {
-        providerIconsToLoad[prefix] = icons;
-      } else {
-        providerIconsToLoad[prefix] = providerIconsToLoad[prefix].concat(icons).sort();
+      if (!Object.keys(data.icons).length) {
+        return;
       }
-      if (!providerQueueFlags[prefix]) {
-        providerQueueFlags[prefix] = true;
+      if (data.not_found) {
+        data = Object.assign({}, data);
+        delete data.not_found;
+      }
+      if (!store("local")) {
+        store("session");
+      }
+    }
+
+    function emptyCallback() {
+    }
+    function loadedNewIcons(storage) {
+      if (!storage.iconsLoaderFlag) {
+        storage.iconsLoaderFlag = true;
         setTimeout(() => {
-          providerQueueFlags[prefix] = false;
-          const icons2 = providerIconsToLoad[prefix];
-          delete providerIconsToLoad[prefix];
-          const api = getAPIModule(provider);
-          if (!api) {
-            err();
+          storage.iconsLoaderFlag = false;
+          updateCallbacks(storage);
+        });
+      }
+    }
+    function loadNewIcons(storage, icons) {
+      if (!storage.iconsToLoad) {
+        storage.iconsToLoad = icons;
+      } else {
+        storage.iconsToLoad = storage.iconsToLoad.concat(icons).sort();
+      }
+      if (!storage.iconsQueueFlag) {
+        storage.iconsQueueFlag = true;
+        setTimeout(() => {
+          storage.iconsQueueFlag = false;
+          const { provider, prefix } = storage;
+          const icons2 = storage.iconsToLoad;
+          delete storage.iconsToLoad;
+          let api;
+          if (!icons2 || !(api = getAPIModule(provider))) {
             return;
           }
           const params = api.prepare(provider, prefix, icons2);
           params.forEach((item) => {
-            sendAPIQuery(provider, item, (data, error) => {
-              const storage = getStorage(provider, prefix);
+            sendAPIQuery(provider, item, (data) => {
               if (typeof data !== "object") {
-                if (error !== 404) {
-                  return;
-                }
-                const t = Date.now();
                 item.icons.forEach((name) => {
-                  storage.missing[name] = t;
+                  storage.missing.add(name);
                 });
               } else {
                 try {
-                  const parsed = addIconSet(storage, data);
+                  const parsed = addIconSet(
+                    storage,
+                    data
+                  );
                   if (!parsed.length) {
                     return;
                   }
-                  const pending = providerPendingIcons[prefix];
-                  parsed.forEach((name) => {
-                    delete pending[name];
-                  });
-                  if (cache.store) {
-                    cache.store(provider, data);
+                  const pending = storage.pendingIcons;
+                  if (pending) {
+                    parsed.forEach((name) => {
+                      pending.delete(name);
+                    });
                   }
-                } catch (err2) {
-                  console.error(err2);
+                  storeInBrowserStorage(storage, data);
+                } catch (err) {
+                  console.error(err);
                 }
               }
-              loadedNewIcons(provider, prefix);
+              loadedNewIcons(storage);
             });
           });
         });
@@ -4481,7 +4486,12 @@ var app = (function () {
         if (callback) {
           setTimeout(() => {
             if (callCallback) {
-              callback(sortedIcons.loaded, sortedIcons.missing, sortedIcons.pending, emptyCallback);
+              callback(
+                sortedIcons.loaded,
+                sortedIcons.missing,
+                sortedIcons.pending,
+                emptyCallback
+              );
             }
           });
         }
@@ -4493,222 +4503,53 @@ var app = (function () {
       const sources = [];
       let lastProvider, lastPrefix;
       sortedIcons.pending.forEach((icon) => {
-        const provider = icon.provider;
-        const prefix = icon.prefix;
+        const { provider, prefix } = icon;
         if (prefix === lastPrefix && provider === lastProvider) {
           return;
         }
         lastProvider = provider;
         lastPrefix = prefix;
-        sources.push({
-          provider,
-          prefix
-        });
-        if (pendingIcons[provider] === void 0) {
-          pendingIcons[provider] = /* @__PURE__ */ Object.create(null);
-        }
-        const providerPendingIcons = pendingIcons[provider];
-        if (providerPendingIcons[prefix] === void 0) {
-          providerPendingIcons[prefix] = /* @__PURE__ */ Object.create(null);
-        }
-        if (newIcons[provider] === void 0) {
-          newIcons[provider] = /* @__PURE__ */ Object.create(null);
-        }
-        const providerNewIcons = newIcons[provider];
-        if (providerNewIcons[prefix] === void 0) {
+        sources.push(getStorage(provider, prefix));
+        const providerNewIcons = newIcons[provider] || (newIcons[provider] = /* @__PURE__ */ Object.create(null));
+        if (!providerNewIcons[prefix]) {
           providerNewIcons[prefix] = [];
         }
       });
-      const time = Date.now();
       sortedIcons.pending.forEach((icon) => {
-        const provider = icon.provider;
-        const prefix = icon.prefix;
-        const name = icon.name;
-        const pendingQueue = pendingIcons[provider][prefix];
-        if (pendingQueue[name] === void 0) {
-          pendingQueue[name] = time;
+        const { provider, prefix, name } = icon;
+        const storage = getStorage(provider, prefix);
+        const pendingQueue = storage.pendingIcons || (storage.pendingIcons = /* @__PURE__ */ new Set());
+        if (!pendingQueue.has(name)) {
+          pendingQueue.add(name);
           newIcons[provider][prefix].push(name);
         }
       });
-      sources.forEach((source) => {
-        const provider = source.provider;
-        const prefix = source.prefix;
+      sources.forEach((storage) => {
+        const { provider, prefix } = storage;
         if (newIcons[provider][prefix].length) {
-          loadNewIcons(provider, prefix, newIcons[provider][prefix]);
+          loadNewIcons(storage, newIcons[provider][prefix]);
         }
       });
       return callback ? storeCallback(callback, sortedIcons, sources) : emptyCallback;
     };
 
-    const cacheVersion = "iconify2";
-    const cachePrefix = "iconify";
-    const countKey = cachePrefix + "-count";
-    const versionKey = cachePrefix + "-version";
-    const hour = 36e5;
-    const cacheExpiration = 168;
-    const config = {
-      local: true,
-      session: true
-    };
-    let loaded = false;
-    const count$1 = {
-      local: 0,
-      session: 0
-    };
-    const emptyList = {
-      local: [],
-      session: []
-    };
-    let _window = typeof window === "undefined" ? {} : window;
-    function getGlobal(key) {
-      const attr = key + "Storage";
-      try {
-        if (_window && _window[attr] && typeof _window[attr].length === "number") {
-          return _window[attr];
+    function mergeCustomisations(defaults, item) {
+      const result = {
+        ...defaults
+      };
+      for (const key in item) {
+        const value = item[key];
+        const valueType = typeof value;
+        if (key in defaultIconSizeCustomisations) {
+          if (value === null || value && (valueType === "string" || valueType === "number")) {
+            result[key] = value;
+          }
+        } else if (valueType === typeof result[key]) {
+          result[key] = key === "rotate" ? value % 4 : value;
         }
-      } catch (err) {
       }
-      config[key] = false;
-      return null;
+      return result;
     }
-    function setCount(storage, key, value) {
-      try {
-        storage.setItem(countKey, value.toString());
-        count$1[key] = value;
-        return true;
-      } catch (err) {
-        return false;
-      }
-    }
-    function getCount(storage) {
-      const count2 = storage.getItem(countKey);
-      if (count2) {
-        const total = parseInt(count2);
-        return total ? total : 0;
-      }
-      return 0;
-    }
-    function initCache(storage, key) {
-      try {
-        storage.setItem(versionKey, cacheVersion);
-      } catch (err) {
-      }
-      setCount(storage, key, 0);
-    }
-    function destroyCache(storage) {
-      try {
-        const total = getCount(storage);
-        for (let i = 0; i < total; i++) {
-          storage.removeItem(cachePrefix + i.toString());
-        }
-      } catch (err) {
-      }
-    }
-    const loadCache = () => {
-      if (loaded) {
-        return;
-      }
-      loaded = true;
-      const minTime = Math.floor(Date.now() / hour) - cacheExpiration;
-      function load(key) {
-        const func = getGlobal(key);
-        if (!func) {
-          return;
-        }
-        const getItem = (index) => {
-          const name = cachePrefix + index.toString();
-          const item = func.getItem(name);
-          if (typeof item !== "string") {
-            return false;
-          }
-          let valid = true;
-          try {
-            const data = JSON.parse(item);
-            if (typeof data !== "object" || typeof data.cached !== "number" || data.cached < minTime || typeof data.provider !== "string" || typeof data.data !== "object" || typeof data.data.prefix !== "string") {
-              valid = false;
-            } else {
-              const provider = data.provider;
-              const prefix = data.data.prefix;
-              const storage = getStorage(provider, prefix);
-              valid = addIconSet(storage, data.data).length > 0;
-            }
-          } catch (err) {
-            valid = false;
-          }
-          if (!valid) {
-            func.removeItem(name);
-          }
-          return valid;
-        };
-        try {
-          const version = func.getItem(versionKey);
-          if (version !== cacheVersion) {
-            if (version) {
-              destroyCache(func);
-            }
-            initCache(func, key);
-            return;
-          }
-          let total = getCount(func);
-          for (let i = total - 1; i >= 0; i--) {
-            if (!getItem(i)) {
-              if (i === total - 1) {
-                total--;
-              } else {
-                emptyList[key].push(i);
-              }
-            }
-          }
-          setCount(func, key, total);
-        } catch (err) {
-        }
-      }
-      for (const key in config) {
-        load(key);
-      }
-    };
-    const storeCache = (provider, data) => {
-      if (!loaded) {
-        loadCache();
-      }
-      function store(key) {
-        if (!config[key]) {
-          return false;
-        }
-        const func = getGlobal(key);
-        if (!func) {
-          return false;
-        }
-        let index = emptyList[key].shift();
-        if (index === void 0) {
-          index = count$1[key];
-          if (!setCount(func, key, index + 1)) {
-            return false;
-          }
-        }
-        try {
-          const item = {
-            cached: Math.floor(Date.now() / hour),
-            provider,
-            data
-          };
-          func.setItem(cachePrefix + index.toString(), JSON.stringify(item));
-        } catch (err) {
-          return false;
-        }
-        return true;
-      }
-      if (!Object.keys(data.icons).length) {
-        return;
-      }
-      if (data.not_found) {
-        data = Object.assign({}, data);
-        delete data.not_found;
-      }
-      if (!store("local")) {
-        store("session");
-      }
-    };
 
     const separator = /[\s,]+/;
     function flipFromString(custom, flip) {
@@ -4721,29 +4562,6 @@ var app = (function () {
           case "vertical":
             custom.vFlip = true;
             break;
-        }
-      });
-    }
-    function alignmentFromString(custom, align) {
-      align.split(separator).forEach((str) => {
-        const value = str.trim();
-        switch (value) {
-          case "left":
-          case "center":
-          case "right":
-            custom.hAlign = value;
-            break;
-          case "top":
-          case "middle":
-          case "bottom":
-            custom.vAlign = value;
-            break;
-          case "slice":
-          case "crop":
-            custom.slice = true;
-            break;
-          case "meet":
-            custom.slice = false;
         }
       });
     }
@@ -4780,6 +4598,26 @@ var app = (function () {
       return defaultValue;
     }
 
+    function iconToHTML(body, attributes) {
+      let renderAttribsHTML = body.indexOf("xlink:") === -1 ? "" : ' xmlns:xlink="http://www.w3.org/1999/xlink"';
+      for (const attr in attributes) {
+        renderAttribsHTML += " " + attr + '="' + attributes[attr] + '"';
+      }
+      return '<svg xmlns="http://www.w3.org/2000/svg"' + renderAttribsHTML + ">" + body + "</svg>";
+    }
+
+    function encodeSVGforURL(svg) {
+      return svg.replace(/"/g, "'").replace(/%/g, "%25").replace(/#/g, "%23").replace(/</g, "%3C").replace(/>/g, "%3E").replace(/\s+/g, " ");
+    }
+    function svgToURL(svg) {
+      return 'url("data:image/svg+xml,' + encodeSVGforURL(svg) + '")';
+    }
+
+    const defaultExtendedIconCustomisations = {
+        ...defaultIconCustomisations,
+        inline: false,
+    };
+
     /**
      * Default SVG attributes
      */
@@ -4790,6 +4628,41 @@ var app = (function () {
         'role': 'img',
     };
     /**
+     * Style modes
+     */
+    const commonProps = {
+        display: 'inline-block',
+    };
+    const monotoneProps = {
+        'background-color': 'currentColor',
+    };
+    const coloredProps = {
+        'background-color': 'transparent',
+    };
+    // Dynamically add common props to variables above
+    const propsToAdd = {
+        image: 'var(--svg)',
+        repeat: 'no-repeat',
+        size: '100% 100%',
+    };
+    const propsToAddTo = {
+        '-webkit-mask': monotoneProps,
+        'mask': monotoneProps,
+        'background': coloredProps,
+    };
+    for (const prefix in propsToAddTo) {
+        const list = propsToAddTo[prefix];
+        for (const prop in propsToAdd) {
+            list[prefix + '-' + prop] = propsToAdd[prop];
+        }
+    }
+    /**
+     * Fix size: add 'px' to numbers
+     */
+    function fixSize(value) {
+        return value + (value.match(/^[-0-9.]+$/) ? 'px' : '');
+    }
+    /**
      * Generate icon from properties
      */
     function render(
@@ -4797,8 +4670,13 @@ var app = (function () {
     icon, 
     // Properties
     props) {
-        const customisations = mergeCustomisations(defaults, props);
-        const componentProps = { ...svgDefaults };
+        const customisations = mergeCustomisations(defaultExtendedIconCustomisations, props);
+        // Check mode
+        const mode = props.mode || 'svg';
+        const componentProps = (mode === 'svg' ? { ...svgDefaults } : {});
+        if (icon.body.indexOf('xlink:') === -1) {
+            delete componentProps['xmlns:xlink'];
+        }
         // Create style if missing
         let style = typeof props.style === 'string' ? props.style : '';
         // Get element properties
@@ -4812,6 +4690,7 @@ var app = (function () {
                 case 'icon':
                 case 'style':
                 case 'onLoad':
+                case 'mode':
                     break;
                 // Boolean attributes
                 case 'inline':
@@ -4824,12 +4703,6 @@ var app = (function () {
                 case 'flip':
                     if (typeof value === 'string') {
                         flipFromString(customisations, value);
-                    }
-                    break;
-                // Alignment as string
-                case 'align':
-                    if (typeof value === 'string') {
-                        alignmentFromString(customisations, value);
                     }
                     break;
                 // Color: copy to style, add extra ';' in case style is missing it
@@ -4865,37 +4738,72 @@ var app = (function () {
                         break;
                     }
                     // Copy missing property if it does not exist in customisations
-                    if (defaults[key] === void 0) {
+                    if (defaultExtendedIconCustomisations[key] === void 0) {
                         componentProps[key] = value;
                     }
             }
         }
         // Generate icon
         const item = iconToSVG(icon, customisations);
-        // Add icon stuff
-        for (let key in item.attributes) {
-            componentProps[key] =
-                item.attributes[key];
-        }
-        if (item.inline) {
+        const renderAttribs = item.attributes;
+        // Inline display
+        if (customisations.inline) {
             // Style overrides it
             style = 'vertical-align: -0.125em; ' + style;
         }
-        // Style
-        if (style !== '') {
-            componentProps.style = style;
+        if (mode === 'svg') {
+            // Add icon stuff
+            Object.assign(componentProps, renderAttribs);
+            // Style
+            if (style !== '') {
+                componentProps.style = style;
+            }
+            // Counter for ids based on "id" property to render icons consistently on server and client
+            let localCounter = 0;
+            let id = props.id;
+            if (typeof id === 'string') {
+                // Convert '-' to '_' to avoid errors in animations
+                id = id.replace(/-/g, '_');
+            }
+            // Generate HTML
+            return {
+                svg: true,
+                attributes: componentProps,
+                body: replaceIDs(item.body, id ? () => id + 'ID' + localCounter++ : 'iconifySvelte'),
+            };
         }
-        // Counter for ids based on "id" property to render icons consistently on server and client
-        let localCounter = 0;
-        let id = props.id;
-        if (typeof id === 'string') {
-            // Convert '-' to '_' to avoid errors in animations
-            id = id.replace(/-/g, '_');
+        // Render <span> with style
+        const { body, width, height } = icon;
+        const useMask = mode === 'mask' ||
+            (mode === 'bg' ? false : body.indexOf('currentColor') !== -1);
+        // Generate SVG
+        const html = iconToHTML(body, {
+            ...renderAttribs,
+            width: width + '',
+            height: height + '',
+        });
+        // Generate style
+        const url = svgToURL(html);
+        const styles = {
+            '--svg': url,
+        };
+        const size = (prop) => {
+            const value = renderAttribs[prop];
+            if (value) {
+                styles[prop] = fixSize(value);
+            }
+        };
+        size('width');
+        size('height');
+        Object.assign(styles, commonProps, useMask ? monotoneProps : coloredProps);
+        let customStyle = '';
+        for (const key in styles) {
+            customStyle += key + ': ' + styles[key] + ';';
         }
-        // Generate HTML
+        componentProps.style = customStyle + style;
         return {
+            svg: false,
             attributes: componentProps,
-            body: replaceIDs(item.body, id ? () => id + 'ID' + localCounter++ : 'iconifySvelte'),
         };
     }
     /**
@@ -4910,8 +4818,7 @@ var app = (function () {
      */
     if (typeof document !== 'undefined' && typeof window !== 'undefined') {
         // Set cache and load existing cache
-        cache.store = storeCache;
-        loadCache();
+        initBrowserStorage();
         const _window = window;
         // Load icons from global "IconifyPreload"
         if (_window.IconifyPreload !== void 0) {
@@ -4981,7 +4888,7 @@ var app = (function () {
             // Stop loading
             state.name = '';
             abortLoading();
-            return { data: fullIcon(icon) };
+            return { data: { ...defaultIconProps, ...icon } };
         }
         // Invalid icon?
         let iconName;
@@ -4992,8 +4899,8 @@ var app = (function () {
         }
         // Load icon
         const data = getIconData(iconName);
-        if (data === null) {
-            // Icon needs to be loaded
+        if (!data) {
+            // Icon data is not available
             // Do not load icon until component is mounted
             if (mounted && (!state.loading || state.loading.name !== icon)) {
                 // New icon to load
@@ -5028,12 +4935,85 @@ var app = (function () {
      * Generate icon
      */
     function generateIcon(icon, props) {
-        return icon ? render(icon, props) : null;
+        return icon
+            ? render({
+                ...defaultIconProps,
+                ...icon,
+            }, props)
+            : null;
     }
 
     /* node_modules/@iconify/svelte/dist/Icon.svelte generated by Svelte v3.48.0 */
 
     function create_if_block$a(ctx) {
+    	let if_block_anchor;
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*data*/ ctx[0].svg) return create_if_block_1$9;
+    		return create_else_block$5;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type(ctx);
+
+    	return {
+    		c() {
+    			if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m(target, anchor) {
+    			if_block.m(target, anchor);
+    			insert(target, if_block_anchor, anchor);
+    		},
+    		p(ctx, dirty) {
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			}
+    		},
+    		d(detaching) {
+    			if_block.d(detaching);
+    			if (detaching) detach(if_block_anchor);
+    		}
+    	};
+    }
+
+    // (113:1) {:else}
+    function create_else_block$5(ctx) {
+    	let span;
+    	let span_levels = [/*data*/ ctx[0].attributes];
+    	let span_data = {};
+
+    	for (let i = 0; i < span_levels.length; i += 1) {
+    		span_data = assign(span_data, span_levels[i]);
+    	}
+
+    	return {
+    		c() {
+    			span = element("span");
+    			set_attributes(span, span_data);
+    		},
+    		m(target, anchor) {
+    			insert(target, span, anchor);
+    		},
+    		p(ctx, dirty) {
+    			set_attributes(span, span_data = get_spread_update(span_levels, [dirty & /*data*/ 1 && /*data*/ ctx[0].attributes]));
+    		},
+    		d(detaching) {
+    			if (detaching) detach(span);
+    		}
+    	};
+    }
+
+    // (109:1) {#if data.svg}
+    function create_if_block_1$9(ctx) {
     	let svg;
     	let raw_value = /*data*/ ctx[0].body + "";
     	let svg_levels = [/*data*/ ctx[0].attributes];
@@ -5063,7 +5043,7 @@ var app = (function () {
 
     function create_fragment$H(ctx) {
     	let if_block_anchor;
-    	let if_block = /*data*/ ctx[0] !== null && create_if_block$a(ctx);
+    	let if_block = /*data*/ ctx[0] && create_if_block$a(ctx);
 
     	return {
     		c() {
@@ -5075,7 +5055,7 @@ var app = (function () {
     			insert(target, if_block_anchor, anchor);
     		},
     		p(ctx, [dirty]) {
-    			if (/*data*/ ctx[0] !== null) {
+    			if (/*data*/ ctx[0]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -8812,8 +8792,8 @@ var app = (function () {
 
     var ic = {
     	name: "Google Material Icons",
-    	total: 10945,
-    	version: "1.0.28",
+    	total: 10955,
+    	version: "1.0.32",
     	author: {
     		name: "Material Design Authors",
     		url: "https://github.com/material-icons/material-icons"
@@ -8834,9 +8814,9 @@ var app = (function () {
     };
     var mdi = {
     	name: "Material Design Icons",
-    	total: 6990,
+    	total: 7296,
     	author: {
-    		name: "Austin Andrews",
+    		name: "Pictogrammers",
     		url: "https://github.com/Templarian/MaterialDesign"
     	},
     	license: {
@@ -8899,8 +8879,8 @@ var app = (function () {
     };
     var carbon = {
     	name: "Carbon",
-    	total: 1798,
-    	version: "11.4.0",
+    	total: 1927,
+    	version: "11.17.0",
     	author: {
     		name: "IBM",
     		url: "https://github.com/carbon-design-system/carbon/tree/main/packages/icons"
@@ -8921,8 +8901,8 @@ var app = (function () {
     };
     var bi = {
     	name: "Bootstrap Icons",
-    	total: 1668,
-    	version: "1.8.3",
+    	total: 1953,
+    	version: "1.10.3",
     	author: {
     		name: "The Bootstrap Authors",
     		url: "https://github.com/twbs/icons"
@@ -8943,8 +8923,8 @@ var app = (function () {
     };
     var tabler = {
     	name: "Tabler Icons",
-    	total: 1978,
-    	version: "1.68.0",
+    	total: 3455,
+    	version: "2.7.0",
     	author: {
     		name: "Paweł Kuna",
     		url: "https://github.com/tabler/tabler-icons"
@@ -8966,7 +8946,7 @@ var app = (function () {
     var ion = {
     	name: "IonIcons",
     	total: 1332,
-    	version: "6.0.0",
+    	version: "6.1.3",
     	author: {
     		name: "Ben Sperry",
     		url: "https://github.com/ionic-team/ionicons"
@@ -8989,7 +8969,7 @@ var app = (function () {
     var uil = {
     	name: "Unicons",
     	total: 1206,
-    	version: "4.0.1",
+    	version: "4.0.6",
     	author: {
     		name: "Iconscout",
     		url: "https://github.com/Iconscout/unicons"
@@ -9030,6 +9010,27 @@ var app = (function () {
     	category: "General",
     	palette: false
     };
+    var mingcute = {
+    	name: "MingCute Icon",
+    	total: 1708,
+    	author: {
+    		name: "MingCute Design",
+    		url: "https://github.com/Richard9394/MingCute"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/Richard9394/MingCute/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"edit-3-line",
+    		"alert-fill",
+    		"riding-line"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
     var clarity = {
     	name: "Clarity",
     	total: 1103,
@@ -9054,21 +9055,21 @@ var app = (function () {
     };
     var iconoir = {
     	name: "Iconoir",
-    	total: 1091,
-    	version: "4.9.2",
+    	total: 1314,
+    	version: "6.4.0",
     	author: {
     		name: "Luca Burgio",
-    		url: "https://github.com/lucaburgio/iconoir"
+    		url: "https://github.com/iconoir-icons/iconoir"
     	},
     	license: {
     		title: "MIT",
     		spdx: "MIT",
-    		url: "https://github.com/lucaburgio/iconoir/blob/master/LICENSE"
+    		url: "https://github.com/iconoir-icons/iconoir/blob/main/LICENSE"
     	},
     	samples: [
     		"chat-bubble-check-1",
     		"edit",
-    		"terminal-simple"
+    		"activity"
     	],
     	height: 24,
     	category: "General",
@@ -9077,7 +9078,7 @@ var app = (function () {
     var majesticons = {
     	name: "Majesticons",
     	total: 760,
-    	version: "2.1.1",
+    	version: "2.1.2",
     	author: {
     		name: "Gerrit Halfmann",
     		url: "https://github.com/halfmage/majesticons"
@@ -9120,8 +9121,8 @@ var app = (function () {
     };
     var bx = {
     	name: "BoxIcons",
-    	total: 797,
-    	version: "2.1.2",
+    	total: 814,
+    	version: "2.1.4",
     	author: {
     		name: "Atisa",
     		url: "https://github.com/atisawd/boxicons"
@@ -9142,8 +9143,8 @@ var app = (function () {
     };
     var bxs = {
     	name: "BoxIcons Solid",
-    	total: 650,
-    	version: "2.1.2",
+    	total: 665,
+    	version: "2.1.4",
     	author: {
     		name: "Atisa",
     		url: "https://github.com/atisawd/boxicons"
@@ -9184,6 +9185,28 @@ var app = (function () {
     	category: "General",
     	palette: false
     };
+    var octicon = {
+    	name: "Octicons",
+    	total: 566,
+    	version: "18.0.0",
+    	author: {
+    		name: "GitHub",
+    		url: "https://github.com/primer/octicons/"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/primer/octicons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"alert-24",
+    		"bell-slash-24",
+    		"hourglass-24"
+    	],
+    	displayHeight: 24,
+    	category: "General",
+    	palette: false
+    };
     var cil = {
     	name: "CoreUI Free",
     	total: 554,
@@ -9209,7 +9232,7 @@ var app = (function () {
     };
     var lucide = {
     	name: "Lucide",
-    	total: 624,
+    	total: 899,
     	author: {
     		name: "Lucide Contributors",
     		url: "https://github.com/lucide-icons/lucide"
@@ -9217,7 +9240,7 @@ var app = (function () {
     	license: {
     		title: "ISC",
     		spdx: "ISC",
-    		url: "https://github.com/lucide-icons/lucide/blob/master/LICENSE"
+    		url: "https://github.com/lucide-icons/lucide/blob/main/LICENSE"
     	},
     	samples: [
     		"check-circle",
@@ -9228,10 +9251,31 @@ var app = (function () {
     	category: "General",
     	palette: false
     };
+    var basil = {
+    	name: "Basil",
+    	total: 497,
+    	author: {
+    		name: "Craftwork",
+    		url: "https://www.figma.com/community/file/931906394678748246"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://creativecommons.org/licenses/by/4.0/"
+    	},
+    	samples: [
+    		"comment-solid",
+    		"search-outline",
+    		"lightning-alt-solid"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
     var pixelarticons = {
     	name: "Pixelarticons",
-    	total: 460,
-    	version: "1.5.0",
+    	total: 480,
+    	version: "1.7.0",
     	author: {
     		name: "Gerrit Halfmann",
     		url: "https://github.com/halfmage/pixelarticons"
@@ -9272,6 +9316,27 @@ var app = (function () {
     	category: "General",
     	palette: false
     };
+    var memory = {
+    	name: "Memory Icons",
+    	total: 350,
+    	author: {
+    		name: "Pictogrammers",
+    		url: "https://github.com/Pictogrammers/Memory"
+    	},
+    	license: {
+    		title: "Apache 2.0",
+    		spdx: "Apache-2.0",
+    		url: "https://github.com/Pictogrammers/Memory/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"chart-bar",
+    		"application",
+    		"message"
+    	],
+    	height: 22,
+    	category: "General",
+    	palette: false
+    };
     var typcn = {
     	name: "Typicons",
     	total: 336,
@@ -9296,8 +9361,8 @@ var app = (function () {
     };
     var ep = {
     	name: "Element Plus",
-    	total: 283,
-    	version: "2.0.0-beta.1",
+    	total: 293,
+    	version: "2.1.0",
     	author: {
     		name: "Element Plus",
     		url: "https://github.com/element-plus/element-plus-icons"
@@ -9314,6 +9379,28 @@ var app = (function () {
     	],
     	height: 32,
     	displayHeight: 16,
+    	category: "General",
+    	palette: false
+    };
+    var circum = {
+    	name: "Circum Icons",
+    	total: 288,
+    	version: "1.0.0",
+    	author: {
+    		name: "Klarr Agency",
+    		url: "https://github.com/Klarr-Agency/Circum-Icons"
+    	},
+    	license: {
+    		title: "Mozilla Public License 2.0",
+    		spdx: "MPL-2.0",
+    		url: "https://github.com/Klarr-Agency/Circum-Icons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"text",
+    		"pill",
+    		"zoom-out"
+    	],
+    	height: 24,
     	category: "General",
     	palette: false
     };
@@ -9341,7 +9428,7 @@ var app = (function () {
     };
     var charm = {
     	name: "Charm Icons",
-    	total: 250,
+    	total: 261,
     	version: "0.12.1",
     	author: {
     		name: "Jay Newey",
@@ -9363,7 +9450,7 @@ var app = (function () {
     };
     var prime = {
     	name: "Prime Icons",
-    	total: 238,
+    	total: 260,
     	author: {
     		name: "PrimeTek",
     		url: "https://github.com/primefaces/primeicons"
@@ -9377,6 +9464,28 @@ var app = (function () {
     		"book",
     		"telegram",
     		"volume-off"
+    	],
+    	height: 24,
+    	category: "General",
+    	palette: false
+    };
+    var humbleicons = {
+    	name: "Humbleicons",
+    	total: 235,
+    	version: "1.9.0",
+    	author: {
+    		name: "Jiří Zralý",
+    		url: "https://github.com/zraly/humbleicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/zraly/humbleicons/blob/master/license"
+    	},
+    	samples: [
+    		"aid",
+    		"droplet",
+    		"rss"
     	],
     	height: 24,
     	category: "General",
@@ -9407,7 +9516,7 @@ var app = (function () {
     var uim = {
     	name: "Unicons Monochrome",
     	total: 296,
-    	version: "4.0.1",
+    	version: "4.0.6",
     	author: {
     		name: "Iconscout",
     		url: "https://github.com/Iconscout/unicons"
@@ -9429,7 +9538,7 @@ var app = (function () {
     var uit = {
     	name: "Unicons Thin Line",
     	total: 214,
-    	version: "4.0.1",
+    	version: "4.0.6",
     	author: {
     		name: "Iconscout",
     		url: "https://github.com/Iconscout/unicons"
@@ -9451,7 +9560,7 @@ var app = (function () {
     var uis = {
     	name: "Unicons Solid",
     	total: 189,
-    	version: "4.0.1",
+    	version: "4.0.6",
     	author: {
     		name: "Iconscout",
     		url: "https://github.com/Iconscout/unicons"
@@ -9472,8 +9581,8 @@ var app = (function () {
     };
     var maki = {
     	name: "Maki",
-    	total: 207,
-    	version: "7.1.0",
+    	total: 211,
+    	version: "8.0.1",
     	author: {
     		name: "Mapbox",
     		url: "https://github.com/mapbox/maki"
@@ -9494,8 +9603,8 @@ var app = (function () {
     };
     var gridicons = {
     	name: "Gridicons",
-    	total: 201,
-    	version: "3.4.0",
+    	total: 206,
+    	version: "3.4.1-alpha.3",
     	author: {
     		name: "Automattic",
     		url: "https://github.com/Automattic/gridicons"
@@ -9582,8 +9691,8 @@ var app = (function () {
     };
     var fluent = {
     	name: "Fluent UI System Icons",
-    	total: 11422,
-    	version: "1.1.170",
+    	total: 11814,
+    	version: "1.1.179",
     	author: {
     		name: "Microsoft Corporation",
     		url: "https://github.com/microsoft/fluentui-system-icons"
@@ -9623,10 +9732,35 @@ var app = (function () {
     	category: "General",
     	palette: false
     };
+    var heroicons = {
+    	name: "HeroIcons",
+    	total: 876,
+    	version: "2.0.16",
+    	author: {
+    		name: "Refactoring UI Inc",
+    		url: "https://github.com/tailwindlabs/heroicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/tailwindlabs/heroicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"camera",
+    		"building-library",
+    		"receipt-refund"
+    	],
+    	height: [
+    		24,
+    		20
+    	],
+    	category: "General",
+    	palette: false
+    };
     var codicon = {
     	name: "Codicons",
-    	total: 412,
-    	version: "0.0.30",
+    	total: 423,
+    	version: "0.0.32",
     	author: {
     		name: "Microsoft Corporation",
     		url: "https://github.com/microsoft/vscode-codicons"
@@ -9645,25 +9779,25 @@ var app = (function () {
     	category: "General",
     	palette: false
     };
-    var pepicons = {
-    	name: "Pepicons",
-    	total: 410,
-    	version: "1.1.0",
+    var pajamas = {
+    	name: "Gitlab SVGs",
+    	total: 357,
+    	version: "3.22.0",
     	author: {
-    		name: "CyCraft",
-    		url: "https://github.com/CyCraft/pepicons"
+    		name: "GitLab B.V.",
+    		url: "https://gitlab.com/gitlab-org/gitlab-svgs/-/tree/main"
     	},
     	license: {
-    		title: "CC BY 4.0",
-    		spdx: "CC-BY-4.0",
-    		url: "https://github.com/CyCraft/pepicons/blob/dev/LICENSE"
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://gitlab.com/gitlab-org/gitlab-svgs/-/blob/main/LICENSE"
     	},
     	samples: [
-    		"bookmark-print",
-    		"moon",
-    		"pen-print"
+    		"preferences",
+    		"expire",
+    		"merge"
     	],
-    	displayHeight: 20,
+    	displayHeight: 16,
     	category: "General",
     	palette: false
     };
@@ -9712,32 +9846,10 @@ var app = (function () {
     	category: "General",
     	palette: false
     };
-    var octicon = {
-    	name: "Octicons",
-    	total: 499,
-    	version: "17.2.0",
-    	author: {
-    		name: "GitHub",
-    		url: "https://github.com/primer/octicons/"
-    	},
-    	license: {
-    		title: "MIT",
-    		spdx: "MIT",
-    		url: "https://github.com/primer/octicons/blob/main/LICENSE"
-    	},
-    	samples: [
-    		"alert-24",
-    		"bell-slash-24",
-    		"hourglass-24"
-    	],
-    	displayHeight: 24,
-    	category: "General",
-    	palette: false
-    };
     var ooui = {
     	name: "OOUI",
-    	total: 322,
-    	version: "0.44.0",
+    	total: 341,
+    	version: "0.46.3",
     	author: {
     		name: "OOUI Team",
     		url: "https://github.com/wikimedia/oojs-ui"
@@ -9758,8 +9870,8 @@ var app = (function () {
     };
     var nimbus = {
     	name: "Nimbus",
-    	total: 134,
-    	version: "0.2.5",
+    	total: 140,
+    	version: "0.3.2",
     	author: {
     		name: "Linkedstore S.A.",
     		url: "https://github.com/TiendaNube/nimbus-icons"
@@ -9780,7 +9892,7 @@ var app = (function () {
     };
     var openmoji = {
     	name: "OpenMoji",
-    	total: 4027,
+    	total: 4071,
     	author: {
     		name: "OpenMoji",
     		url: "https://github.com/hfg-gmuend/openmoji"
@@ -9823,7 +9935,7 @@ var app = (function () {
     };
     var noto = {
     	name: "Noto Emoji",
-    	total: 3418,
+    	total: 3437,
     	author: {
     		name: "Google Inc",
     		url: "https://github.com/googlefonts/noto-emoji"
@@ -9890,8 +10002,8 @@ var app = (function () {
     };
     var bxl = {
     	name: "BoxIcons Logo",
-    	total: 153,
-    	version: "2.1.2",
+    	total: 155,
+    	version: "2.1.4",
     	author: {
     		name: "Atisa",
     		url: "https://github.com/atisawd/boxicons"
@@ -9912,7 +10024,7 @@ var app = (function () {
     };
     var logos = {
     	name: "SVG Logos",
-    	total: 1438,
+    	total: 1650,
     	author: {
     		name: "Gil Barbara",
     		url: "https://github.com/gilbarbara/logos"
@@ -9953,12 +10065,34 @@ var app = (function () {
     	category: "Brands / Social",
     	palette: false
     };
+    var nonicons = {
+    	name: "Nonicons",
+    	total: 62,
+    	version: "0.0.16",
+    	author: {
+    		name: "yamatsum",
+    		url: "https://github.com/yamatsum/nonicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/yamatsum/nonicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"kotlin-16",
+    		"vue-16",
+    		"npm-16"
+    	],
+    	displayHeight: 24,
+    	category: "Brands / Social",
+    	palette: false
+    };
     var arcticons = {
     	name: "Arcticons",
-    	total: 4274,
+    	total: 5268,
     	author: {
-    		name: "Donno",
-    		url: "https://github.com/Donno/Arcticons"
+    		name: "Donnnno",
+    		url: "https://github.com/Donnnno/Arcticons"
     	},
     	license: {
     		title: "CC BY-SA 4.0",
@@ -9997,8 +10131,8 @@ var app = (function () {
     };
     var cryptocurrency = {
     	name: "Cryptocurrency Icons",
-    	total: 471,
-    	version: "0.18.0",
+    	total: 483,
+    	version: "0.18.1",
     	author: {
     		name: "Christopher Downer",
     		url: "https://github.com/atomiclabs/cryptocurrency-icons"
@@ -10020,8 +10154,8 @@ var app = (function () {
     };
     var flag = {
     	name: "Flag Icons",
-    	total: 530,
-    	version: "6.4.4",
+    	total: 532,
+    	version: "6.6.6",
     	author: {
     		name: "Panayiotis Lipiridis",
     		url: "https://github.com/lipis/flag-icons"
@@ -10171,8 +10305,8 @@ var app = (function () {
     };
     var academicons = {
     	name: "Academicons",
-    	total: 149,
-    	version: "1.9.2",
+    	total: 151,
+    	version: "1.9.3",
     	author: {
     		name: "James Walsh",
     		url: "https://github.com/jpswalsh/academicons"
@@ -10594,8 +10728,8 @@ var app = (function () {
     	],
     	height: 32,
     	displayHeight: 16,
-    	palette: false,
-    	hidden: true
+    	category: "Archive / Unmaintained",
+    	palette: false
     };
     var whh = {
     	name: "WebHostingHub Glyphs",
@@ -10799,10 +10933,32 @@ var app = (function () {
     	palette: false,
     	hidden: true
     };
+    var pepicons = {
+    	name: "Pepicons",
+    	total: 428,
+    	version: "1.2.7",
+    	author: {
+    		name: "CyCraft",
+    		url: "https://github.com/CyCraft/pepicons"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://github.com/CyCraft/pepicons/blob/dev/LICENSE"
+    	},
+    	samples: [
+    		"bookmark-print",
+    		"moon",
+    		"pen-print"
+    	],
+    	displayHeight: 20,
+    	palette: false,
+    	hidden: true
+    };
     var importedCollections = {
     	"material-symbols": {
     	name: "Material Symbols",
-    	total: 7702,
+    	total: 12438,
     	author: {
     		name: "Google",
     		url: "https://github.com/google/material-design-icons"
@@ -10831,6 +10987,7 @@ var app = (function () {
     	ion: ion,
     	uil: uil,
     	teenyicons: teenyicons,
+    	mingcute: mingcute,
     	clarity: clarity,
     	iconoir: iconoir,
     	majesticons: majesticons,
@@ -10860,8 +11017,10 @@ var app = (function () {
     	bx: bx,
     	bxs: bxs,
     	gg: gg,
+    	octicon: octicon,
     	cil: cil,
     	lucide: lucide,
+    	basil: basil,
     	pixelarticons: pixelarticons,
     	"system-uicons": {
     	name: "System UIcons",
@@ -10887,8 +11046,8 @@ var app = (function () {
     	ci: ci,
     	"akar-icons": {
     	name: "Akar Icons",
-    	total: 398,
-    	version: "1.9.17",
+    	total: 423,
+    	version: "1.9.22",
     	author: {
     		name: "Arturo Wibawa",
     		url: "https://github.com/artcoholic/akar-icons"
@@ -10907,14 +11066,15 @@ var app = (function () {
     	category: "General",
     	palette: false
     },
+    	memory: memory,
     	typcn: typcn,
     	"radix-icons": {
     	name: "Radix Icons",
     	total: 318,
-    	version: "1.1.1",
+    	version: "1.2.0",
     	author: {
-    		name: "Modulz",
-    		url: "https://github.com/modulz/radix-icons"
+    		name: "WorkOS",
+    		url: "https://github.com/radix-ui/icons"
     	},
     	license: {
     		title: "MIT",
@@ -10931,11 +11091,12 @@ var app = (function () {
     	palette: false
     },
     	ep: ep,
+    	circum: circum,
     	"mdi-light": {
     	name: "Material Design Light",
-    	total: 267,
+    	total: 284,
     	author: {
-    		name: "Austin Andrews",
+    		name: "Pictogrammers",
     		url: "https://github.com/Templarian/MaterialDesignLight"
     	},
     	license: {
@@ -10975,74 +11136,9 @@ var app = (function () {
     	category: "General",
     	palette: false
     },
-    	"line-md": {
-    	name: "Material Line Icons",
-    	total: 256,
-    	version: "0.2.0",
-    	author: {
-    		name: "Vjacheslav Trushkin",
-    		url: "https://github.com/cyberalien/line-md"
-    	},
-    	license: {
-    		title: "MIT",
-    		spdx: "MIT",
-    		url: "https://github.com/cyberalien/line-md/blob/master/license.txt"
-    	},
-    	samples: [
-    		"home",
-    		"edit-twotone",
-    		"image-twotone"
-    	],
-    	height: 24,
-    	category: "General",
-    	palette: false
-    },
     	charm: charm,
     	prime: prime,
-    	"heroicons-outline": {
-    	name: "HeroIcons Outline",
-    	total: 230,
-    	version: "1.0.6",
-    	author: {
-    		name: "Refactoring UI Inc",
-    		url: "https://github.com/tailwindlabs/heroicons"
-    	},
-    	license: {
-    		title: "MIT",
-    		spdx: "MIT",
-    		url: "https://github.com/tailwindlabs/heroicons/blob/master/LICENSE"
-    	},
-    	samples: [
-    		"color-swatch",
-    		"library",
-    		"receipt-refund"
-    	],
-    	height: 24,
-    	category: "General",
-    	palette: false
-    },
-    	"heroicons-solid": {
-    	name: "HeroIcons Solid",
-    	total: 230,
-    	version: "1.0.6",
-    	author: {
-    		name: "Refactoring UI Inc",
-    		url: "https://github.com/tailwindlabs/heroicons"
-    	},
-    	license: {
-    		title: "MIT",
-    		spdx: "MIT",
-    		url: "https://github.com/tailwindlabs/heroicons/blob/master/LICENSE"
-    	},
-    	samples: [
-    		"color-swatch",
-    		"library",
-    		"receipt-refund"
-    	],
-    	height: 20,
-    	category: "General",
-    	palette: false
-    },
+    	humbleicons: humbleicons,
     	uiw: uiw,
     	uim: uim,
     	uit: uit,
@@ -11055,8 +11151,8 @@ var app = (function () {
     	fluent: fluent,
     	"icon-park-outline": {
     	name: "IconPark Outline",
-    	total: 2657,
-    	version: "1.4.0",
+    	total: 2658,
+    	version: "1.4.2",
     	author: {
     		name: "ByteDance",
     		url: "https://github.com/bytedance/IconPark"
@@ -11077,8 +11173,8 @@ var app = (function () {
     },
     	"icon-park-solid": {
     	name: "IconPark Solid",
-    	total: 1937,
-    	version: "1.4.0",
+    	total: 1965,
+    	version: "1.4.2",
     	author: {
     		name: "ByteDance",
     		url: "https://github.com/bytedance/IconPark"
@@ -11099,8 +11195,8 @@ var app = (function () {
     },
     	"icon-park-twotone": {
     	name: "IconPark TwoTone",
-    	total: 1915,
-    	version: "1.4.0",
+    	total: 1944,
+    	version: "1.4.2",
     	author: {
     		name: "ByteDance",
     		url: "https://github.com/bytedance/IconPark"
@@ -11121,8 +11217,8 @@ var app = (function () {
     },
     	"icon-park": {
     	name: "IconPark",
-    	total: 2657,
-    	version: "1.4.0",
+    	total: 2658,
+    	version: "1.4.2",
     	author: {
     		name: "ByteDance",
     		url: "https://github.com/bytedance/IconPark"
@@ -11143,8 +11239,8 @@ var app = (function () {
     },
     	"vscode-icons": {
     	name: "VSCode Icons",
-    	total: 1138,
-    	version: "11.12.0",
+    	total: 1197,
+    	version: "12.2.0",
     	author: {
     		name: "Roberto Huertas",
     		url: "https://github.com/vscode-icons/vscode-icons"
@@ -11165,14 +11261,59 @@ var app = (function () {
     	palette: true
     },
     	jam: jam,
+    	heroicons: heroicons,
     	codicon: codicon,
-    	pepicons: pepicons,
+    	pajamas: pajamas,
+    	"pepicons-pop": {
+    	name: "Pepicons Pop!",
+    	total: 224,
+    	version: "1.2.7",
+    	author: {
+    		name: "CyCraft",
+    		url: "https://github.com/CyCraft/pepicons"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://github.com/CyCraft/pepicons/blob/dev/LICENSE"
+    	},
+    	samples: [
+    		"bookmark",
+    		"moon",
+    		"pen"
+    	],
+    	height: 20,
+    	category: "General",
+    	palette: false
+    },
+    	"pepicons-print": {
+    	name: "Pepicons Print",
+    	total: 204,
+    	version: "1.2.7",
+    	author: {
+    		name: "CyCraft",
+    		url: "https://github.com/CyCraft/pepicons"
+    	},
+    	license: {
+    		title: "CC BY 4.0",
+    		spdx: "CC-BY-4.0",
+    		url: "https://github.com/CyCraft/pepicons/blob/dev/LICENSE"
+    	},
+    	samples: [
+    		"bookmark",
+    		"moon",
+    		"pen"
+    	],
+    	height: 20,
+    	category: "General",
+    	palette: false
+    },
     	bytesize: bytesize,
     	ei: ei,
     	"fa6-solid": {
     	name: "Font Awesome Solid",
-    	total: 1387,
-    	version: "6.1.1",
+    	total: 1390,
+    	version: "6.3.0",
     	author: {
     		name: "Dave Gandy",
     		url: "https://github.com/FortAwesome/Font-Awesome"
@@ -11194,8 +11335,8 @@ var app = (function () {
     },
     	"fa6-regular": {
     	name: "Font Awesome Regular",
-    	total: 162,
-    	version: "6.1.1",
+    	total: 163,
+    	version: "6.3.0",
     	author: {
     		name: "Dave Gandy",
     		url: "https://github.com/FortAwesome/Font-Awesome"
@@ -11215,15 +11356,123 @@ var app = (function () {
     	category: "General",
     	palette: false
     },
-    	octicon: octicon,
     	ooui: ooui,
     	nimbus: nimbus,
+    	"line-md": {
+    	name: "Material Line Icons",
+    	total: 398,
+    	version: "0.2.8",
+    	author: {
+    		name: "Vjacheslav Trushkin",
+    		url: "https://github.com/cyberalien/line-md"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/cyberalien/line-md/blob/master/license.txt"
+    	},
+    	samples: [
+    		"loading-twotone-loop",
+    		"beer-alt-twotone-loop",
+    		"image-twotone"
+    	],
+    	height: 24,
+    	category: "Animated Icons",
+    	palette: false
+    },
+    	"svg-spinners": {
+    	name: "SVG Spinners",
+    	total: 46,
+    	author: {
+    		name: "Utkarsh Verma",
+    		url: "https://github.com/n3r4zzurr0/svg-spinners"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/n3r4zzurr0/svg-spinners/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"tadpole",
+    		"pulse",
+    		"3-dots-rotate"
+    	],
+    	height: 24,
+    	category: "Animated Icons",
+    	palette: false
+    },
     	openmoji: openmoji,
     	twemoji: twemoji,
     	noto: noto,
+    	"fluent-emoji": {
+    	name: "Fluent Emoji",
+    	total: 2980,
+    	author: {
+    		name: "Microsoft Corporation",
+    		url: "https://github.com/microsoft/fluentui-emoji"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"avocado",
+    		"ticket",
+    		"yin-yang"
+    	],
+    	height: 32,
+    	displayHeight: 24,
+    	category: "Emoji",
+    	palette: true
+    },
+    	"fluent-emoji-flat": {
+    	name: "Fluent Emoji Flat",
+    	total: 2980,
+    	author: {
+    		name: "Microsoft Corporation",
+    		url: "https://github.com/microsoft/fluentui-emoji"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"avocado",
+    		"ticket",
+    		"yin-yang"
+    	],
+    	height: 32,
+    	displayHeight: 24,
+    	category: "Emoji",
+    	palette: true
+    },
+    	"fluent-emoji-high-contrast": {
+    	name: "Fluent Emoji High Contrast",
+    	total: 1545,
+    	author: {
+    		name: "Microsoft Corporation",
+    		url: "https://github.com/microsoft/fluentui-emoji"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"avocado",
+    		"ticket",
+    		"yin-yang"
+    	],
+    	height: 32,
+    	displayHeight: 24,
+    	category: "Emoji",
+    	palette: false
+    },
     	"noto-v1": {
     	name: "Noto Emoji (v1)",
-    	total: 2157,
+    	total: 2162,
     	author: {
     		name: "Google Inc",
     		url: "https://github.com/googlefonts/noto-emoji"
@@ -11294,8 +11543,8 @@ var app = (function () {
     	logos: logos,
     	"simple-icons": {
     	name: "Simple Icons",
-    	total: 2255,
-    	version: "6.23.0",
+    	total: 2437,
+    	version: "8.6.0",
     	author: {
     		name: "Simple Icons Collaborators",
     		url: "https://github.com/simple-icons/simple-icons"
@@ -11306,7 +11555,7 @@ var app = (function () {
     		url: "https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md"
     	},
     	samples: [
-    		"transferwise",
+    		"wise",
     		"nintendo",
     		"vuetify"
     	],
@@ -11317,8 +11566,8 @@ var app = (function () {
     	cib: cib,
     	"fa6-brands": {
     	name: "Font Awesome Brands",
-    	total: 462,
-    	version: "6.1.1",
+    	total: 467,
+    	version: "6.3.0",
     	author: {
     		name: "Dave Gandy",
     		url: "https://github.com/FortAwesome/Font-Awesome"
@@ -11338,6 +11587,7 @@ var app = (function () {
     	category: "Brands / Social",
     	palette: false
     },
+    	nonicons: nonicons,
     	arcticons: arcticons,
     	"file-icons": {
     	name: "File Icons",
@@ -11359,6 +11609,27 @@ var app = (function () {
     	height: 16,
     	category: "Brands / Social",
     	palette: false
+    },
+    	"skill-icons": {
+    	name: "Skill Icons",
+    	total: 317,
+    	author: {
+    		name: "tandpfun",
+    		url: "https://github.com/tandpfun/skill-icons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/tandpfun/skill-icons/blob/main/LICENSE"
+    	},
+    	samples: [
+    		"markdown-light",
+    		"vuejs-dark",
+    		"html"
+    	],
+    	height: 24,
+    	category: "Brands / Social",
+    	palette: true
     },
     	brandico: brandico,
     	"entypo-social": {
@@ -11383,10 +11654,33 @@ var app = (function () {
     	palette: false
     },
     	cryptocurrency: cryptocurrency,
+    	"cryptocurrency-color": {
+    	name: "Cryptocurrency Color Icons",
+    	total: 483,
+    	version: "0.18.1",
+    	author: {
+    		name: "Christopher Downer",
+    		url: "https://github.com/atomiclabs/cryptocurrency-icons"
+    	},
+    	license: {
+    		title: "CC0 1.0",
+    		spdx: "CC0-1.0",
+    		url: "https://creativecommons.org/publicdomain/zero/1.0/"
+    	},
+    	samples: [
+    		"btc",
+    		"ltc",
+    		"eth"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Brands / Social",
+    	palette: true
+    },
     	flag: flag,
     	"circle-flags": {
     	name: "Circle Flags",
-    	total: 348,
+    	total: 379,
     	version: "1.0.0",
     	author: {
     		name: "HatScripts",
@@ -11412,6 +11706,28 @@ var app = (function () {
     	gis: gis,
     	map: map,
     	geo: geo,
+    	"game-icons": {
+    	name: "Game Icons",
+    	total: 4046,
+    	author: {
+    		name: "GameIcons",
+    		url: "https://github.com/game-icons/icons"
+    	},
+    	license: {
+    		title: "CC BY 3.0",
+    		spdx: "CC-BY-3.0",
+    		url: "https://github.com/game-icons/icons/blob/master/license.txt"
+    	},
+    	samples: [
+    		"diamond-trophy",
+    		"thrown-spear",
+    		"rank-3"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Thematic",
+    	palette: false
+    },
     	fad: fad,
     	academicons: academicons,
     	wi: wi,
@@ -11467,6 +11783,50 @@ var app = (function () {
     	raphael: raphael,
     	icons8: icons8,
     	iwwa: iwwa,
+    	"heroicons-outline": {
+    	name: "HeroIcons v1 Outline",
+    	total: 230,
+    	version: "1.0.6",
+    	author: {
+    		name: "Refactoring UI Inc",
+    		url: "https://github.com/tailwindlabs/heroicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/tailwindlabs/heroicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"color-swatch",
+    		"library",
+    		"receipt-refund"
+    	],
+    	height: 24,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    },
+    	"heroicons-solid": {
+    	name: "HeroIcons v1 Solid",
+    	total: 230,
+    	version: "1.0.6",
+    	author: {
+    		name: "Refactoring UI Inc",
+    		url: "https://github.com/tailwindlabs/heroicons"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/tailwindlabs/heroicons/blob/master/LICENSE"
+    	},
+    	samples: [
+    		"color-swatch",
+    		"library",
+    		"receipt-refund"
+    	],
+    	height: 20,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    },
     	"fa-solid": {
     	name: "Font Awesome 5 Solid",
     	total: 1001,
@@ -11537,6 +11897,28 @@ var app = (function () {
     	palette: false
     },
     	fa: fa,
+    	"fluent-mdl2": {
+    	name: "Fluent UI MDL2",
+    	total: 1735,
+    	author: {
+    		name: "Microsoft Corporation",
+    		url: "https://github.com/microsoft/fluentui/tree/master/packages/react-icons-mdl2"
+    	},
+    	license: {
+    		title: "MIT",
+    		spdx: "MIT",
+    		url: "https://github.com/microsoft/fluentui/blob/master/packages/react-icons-mdl2/LICENSE"
+    	},
+    	samples: [
+    		"flow",
+    		"home",
+    		"switch"
+    	],
+    	height: 32,
+    	displayHeight: 16,
+    	category: "Archive / Unmaintained",
+    	palette: false
+    },
     	fontisto: fontisto,
     	"icomoon-free": {
     	name: "IcoMoon Free",
@@ -11607,8 +11989,8 @@ var app = (function () {
     		"home"
     	],
     	height: 24,
-    	palette: false,
-    	hidden: true
+    	category: "Archive / Unmaintained",
+    	palette: false
     },
     	whh: whh,
     	"si-glyph": {
@@ -11681,7 +12063,8 @@ var app = (function () {
     	height: 24,
     	palette: false,
     	hidden: true
-    }
+    },
+    	pepicons: pepicons
     };
 
     /**
@@ -11711,7 +12094,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (51:18) {#each iconSet.samples as sampleIcon}
+    // (52:18) {#each iconSet.samples as sampleIcon}
     function create_each_block_2$2(ctx) {
     	let icon;
     	let current;
@@ -11751,7 +12134,7 @@ var app = (function () {
     	};
     }
 
-    // (62:18) {#if iconSet.height}
+    // (63:18) {#if iconSet.height}
     function create_if_block$7(ctx) {
     	let div;
     	let icon;
@@ -11806,7 +12189,7 @@ var app = (function () {
     	};
     }
 
-    // (41:10) {#each iconSets as iconSet}
+    // (42:10) {#each iconSets as iconSet}
     function create_each_block_1$4(ctx) {
     	let div4;
     	let div2;
@@ -12003,7 +12386,7 @@ var app = (function () {
     	};
     }
 
-    // (29:4) {#each Object.entries(iconSets) as [name, iconSets], index}
+    // (30:4) {#each Object.entries(iconSets) as [name, iconSets], index}
     function create_each_block$6(ctx) {
     	let div2;
     	let div0;
@@ -12214,6 +12597,7 @@ var app = (function () {
     function instance$r($$self, $$props, $$invalidate) {
     	let iconSets = {
     		General: [],
+    		"Animated Icons": [],
     		"Brands / Social": [],
     		Emoji: [],
     		"Maps / Flags": [],
@@ -12584,7 +12968,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (39:6) {#if (selectedCategory === null || selectedCategory === index) && iconSets.filter((iconSet) => !iconFilterTerm.trim() || iconSet.name               .toLowerCase()               .includes(iconFilterTerm.trim().toLowerCase())).length}
+    // (40:6) {#if (selectedCategory === null || selectedCategory === index) && iconSets.filter((iconSet) => !iconFilterTerm.trim() || iconSet.name               .toLowerCase()               .includes(iconFilterTerm.trim().toLowerCase())).length}
     function create_if_block$6(ctx) {
     	let div2;
     	let div0;
@@ -12702,7 +13086,7 @@ var app = (function () {
     	};
     }
 
-    // (54:14) {#if !iconFilterTerm.trim() || iconSet.name                   .toLowerCase()                   .includes(iconFilterTerm.trim().toLowerCase())}
+    // (55:14) {#if !iconFilterTerm.trim() || iconSet.name                   .toLowerCase()                   .includes(iconFilterTerm.trim().toLowerCase())}
     function create_if_block_1$6(ctx) {
     	let div4;
     	let div2;
@@ -12899,7 +13283,7 @@ var app = (function () {
     	};
     }
 
-    // (66:22) {#each iconSet.samples as sampleIcon}
+    // (67:22) {#each iconSet.samples as sampleIcon}
     function create_each_block_2$1(ctx) {
     	let icon;
     	let current;
@@ -12939,7 +13323,7 @@ var app = (function () {
     	};
     }
 
-    // (77:22) {#if iconSet.height}
+    // (78:22) {#if iconSet.height}
     function create_if_block_2$5(ctx) {
     	let div;
     	let icon;
@@ -12994,7 +13378,7 @@ var app = (function () {
     	};
     }
 
-    // (53:12) {#each iconSets as iconSet}
+    // (54:12) {#each iconSets as iconSet}
     function create_each_block_1$3(ctx) {
     	let show_if = !/*iconFilterTerm*/ ctx[1].trim() || /*iconSet*/ ctx[7].name.toLowerCase().includes(/*iconFilterTerm*/ ctx[1].trim().toLowerCase());
     	let if_block_anchor;
@@ -13053,7 +13437,7 @@ var app = (function () {
     	};
     }
 
-    // (38:4) {#each Object.entries(iconSets) as [name, iconSets], index}
+    // (39:4) {#each Object.entries(iconSets) as [name, iconSets], index}
     function create_each_block$5(ctx) {
     	let show_if = (/*selectedCategory*/ ctx[0] === null || /*selectedCategory*/ ctx[0] === /*index*/ ctx[6]) && /*iconSets*/ ctx[2].filter(/*func*/ ctx[3]).length;
     	let if_block_anchor;
@@ -13205,6 +13589,7 @@ var app = (function () {
     function instance$q($$self, $$props, $$invalidate) {
     	let iconSets = {
     		General: [],
+    		"Animated Icons": [],
     		"Brands / Social": [],
     		Emoji: [],
     		"Maps / Flags": [],
@@ -43132,23 +43517,23 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[24] = list[i];
+    	child_ctx[23] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[24] = list[i];
+    	child_ctx[23] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[29] = list[i];
+    	child_ctx[28] = list[i];
     	return child_ctx;
     }
 
-    // (162:2) {#if tags.length}
+    // (154:2) {#if tags.length}
     function create_if_block_4(ctx) {
     	let div;
     	let each_value_2 = /*tags*/ ctx[5].sort();
@@ -43176,7 +43561,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			}
     		},
     		p(ctx, dirty) {
-    			if (dirty[0] & /*currentTag, tags, setCurrentTag*/ 1120) {
+    			if (dirty & /*currentTag, tags, setCurrentTag*/ 1120) {
     				each_value_2 = /*tags*/ ctx[5].sort();
     				let i;
 
@@ -43206,17 +43591,17 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (165:8) {#if tag}
+    // (157:8) {#if tag}
     function create_if_block_5(ctx) {
     	let button;
-    	let t_value = /*tag*/ ctx[29] + "";
+    	let t_value = /*tag*/ ctx[28] + "";
     	let t;
     	let button_class_value;
     	let mounted;
     	let dispose;
 
     	function click_handler_4() {
-    		return /*click_handler_4*/ ctx[18](/*tag*/ ctx[29]);
+    		return /*click_handler_4*/ ctx[18](/*tag*/ ctx[28]);
     	}
 
     	return {
@@ -43224,7 +43609,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			button = element("button");
     			t = text(t_value);
 
-    			attr(button, "class", button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[29]
+    			attr(button, "class", button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[28]
     			? `bg-stone-600 text-stone-200`
     			: `border-2 border-stone-600 `) + " whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"));
     		},
@@ -43239,9 +43624,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		},
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*tags*/ 32 && t_value !== (t_value = /*tag*/ ctx[29] + "")) set_data(t, t_value);
+    			if (dirty & /*tags*/ 32 && t_value !== (t_value = /*tag*/ ctx[28] + "")) set_data(t, t_value);
 
-    			if (dirty[0] & /*currentTag, tags*/ 96 && button_class_value !== (button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[29]
+    			if (dirty & /*currentTag, tags*/ 96 && button_class_value !== (button_class_value = "" + ((/*currentTag*/ ctx[6] === /*tag*/ ctx[28]
     			? `bg-stone-600 text-stone-200`
     			: `border-2 border-stone-600 `) + " whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium text-sm px-8 flex-grow md:flex-grow-0"))) {
     				attr(button, "class", button_class_value);
@@ -43255,10 +43640,10 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (164:6) {#each tags.sort() as tag}
+    // (156:6) {#each tags.sort() as tag}
     function create_each_block_2(ctx) {
     	let if_block_anchor;
-    	let if_block = /*tag*/ ctx[29] && create_if_block_5(ctx);
+    	let if_block = /*tag*/ ctx[28] && create_if_block_5(ctx);
 
     	return {
     		c() {
@@ -43270,7 +43655,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			insert(target, if_block_anchor, anchor);
     		},
     		p(ctx, dirty) {
-    			if (/*tag*/ ctx[29]) {
+    			if (/*tag*/ ctx[28]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -43290,7 +43675,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (250:4) {:else}
+    // (243:4) {:else}
     function create_else_block_2(ctx) {
     	let p;
 
@@ -43312,7 +43697,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (178:4) {#if filteredIconList === null || filteredIconList.length > 0}
+    // (170:4) {#if filteredIconList === null || filteredIconList.length > 0}
     function create_if_block_1$1(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -43382,7 +43767,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (237:6) {:else}
+    // (230:6) {:else}
     function create_else_block_1$1(ctx) {
     	let div;
     	let lottieplayer;
@@ -43428,7 +43813,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (179:6) {#if filteredIconList}
+    // (171:6) {#if filteredIconList}
     function create_if_block_2$1(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -43498,7 +43883,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (208:8) {:else}
+    // (201:8) {:else}
     function create_else_block$1(ctx) {
     	let div;
     	let div_intro;
@@ -43536,7 +43921,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if (dirty[0] & /*iconSet, filteredIconList*/ 257) {
+    			if (dirty & /*currentIcon, iconSet, filteredIconList*/ 257) {
     				each_value_1 = /*filteredIconList*/ ctx[8];
     				let i;
 
@@ -43597,7 +43982,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (180:8) {#if !isList}
+    // (172:8) {#if !isList}
     function create_if_block_3$1(ctx) {
     	let div;
     	let div_intro;
@@ -43635,7 +44020,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if (dirty[0] & /*iconSet, filteredIconList*/ 257) {
+    			if (dirty & /*currentIcon, iconSet, filteredIconList*/ 257) {
     				each_value = /*filteredIconList*/ ctx[8];
     				let i;
 
@@ -43696,13 +44081,13 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (215:12) {#each filteredIconList as icon}
+    // (208:12) {#each filteredIconList as icon}
     function create_each_block_1$1(ctx) {
     	let div;
     	let icon;
     	let t0;
     	let p;
-    	let t1_value = (/*icon*/ ctx[24].name || /*icon*/ ctx[24]) + "";
+    	let t1_value = (/*icon*/ ctx[23].name || /*icon*/ ctx[23]) + "";
     	let t1;
     	let t2;
     	let current;
@@ -43711,7 +44096,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	icon = new Icon({
     			props: {
-    				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[24].name || /*icon*/ ctx[24]}`,
+    				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[23].name || /*icon*/ ctx[23]}`,
     				width: "24",
     				height: "24",
     				class: " flex-shrink-0"
@@ -43719,7 +44104,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		});
 
     	function click_handler_6() {
-    		return /*click_handler_6*/ ctx[20](/*icon*/ ctx[24]);
+    		return /*click_handler_6*/ ctx[20](/*icon*/ ctx[23]);
     	}
 
     	return {
@@ -43750,9 +44135,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			const icon_changes = {};
-    			if (dirty[0] & /*iconSet, filteredIconList*/ 257) icon_changes.icon = `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[24].name || /*icon*/ ctx[24]}`;
+    			if (dirty & /*iconSet, filteredIconList*/ 257) icon_changes.icon = `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[23].name || /*icon*/ ctx[23]}`;
     			icon.$set(icon_changes);
-    			if ((!current || dirty[0] & /*filteredIconList*/ 256) && t1_value !== (t1_value = (/*icon*/ ctx[24].name || /*icon*/ ctx[24]) + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*filteredIconList*/ 256) && t1_value !== (t1_value = (/*icon*/ ctx[23].name || /*icon*/ ctx[23]) + "")) set_data(t1, t1_value);
     		},
     		i(local) {
     			if (current) return;
@@ -43772,13 +44157,13 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (187:12) {#each filteredIconList as icon}
+    // (179:12) {#each filteredIconList as icon}
     function create_each_block$1(ctx) {
     	let div;
     	let icon;
     	let t0;
     	let p;
-    	let t1_value = (/*icon*/ ctx[24].name || /*icon*/ ctx[24]).replace(/-/g, " ") + "";
+    	let t1_value = (/*icon*/ ctx[23].name || /*icon*/ ctx[23]).replace(/-/g, " ") + "";
     	let t1;
     	let t2;
     	let current;
@@ -43787,7 +44172,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	icon = new Icon({
     			props: {
-    				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[24].name || /*icon*/ ctx[24]}`,
+    				icon: `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[23].name || /*icon*/ ctx[23]}`,
     				width: "32",
     				height: "32",
     				class: ""
@@ -43795,7 +44180,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		});
 
     	function click_handler_5() {
-    		return /*click_handler_5*/ ctx[19](/*icon*/ ctx[24]);
+    		return /*click_handler_5*/ ctx[19](/*icon*/ ctx[23]);
     	}
 
     	return {
@@ -43806,7 +44191,8 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			p = element("p");
     			t1 = text(t1_value);
     			t2 = space();
-    			attr(p, "class", "font-medium text-[0.7rem] tracking-wide text-center mt-4 -mb-0.5");
+    			attr(p, "class", "font-medium tracking-wide text-center mt-4 -mb-0.5");
+    			set_style(p, "font-size", "0.7rem");
     			attr(div, "class", "flex flex-col items-center cursor-pointer transition-all hover:bg-stone-200 p-4");
     		},
     		m(target, anchor) {
@@ -43826,9 +44212,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			const icon_changes = {};
-    			if (dirty[0] & /*iconSet, filteredIconList*/ 257) icon_changes.icon = `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[24].name || /*icon*/ ctx[24]}`;
+    			if (dirty & /*iconSet, filteredIconList*/ 257) icon_changes.icon = `${/*iconSet*/ ctx[0]}:${/*icon*/ ctx[23].name || /*icon*/ ctx[23]}`;
     			icon.$set(icon_changes);
-    			if ((!current || dirty[0] & /*filteredIconList*/ 256) && t1_value !== (t1_value = (/*icon*/ ctx[24].name || /*icon*/ ctx[24]).replace(/-/g, " ") + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*filteredIconList*/ 256) && t1_value !== (t1_value = (/*icon*/ ctx[23].name || /*icon*/ ctx[23]).replace(/-/g, " ") + "")) set_data(t1, t1_value);
     		},
     		i(local) {
     			if (current) return;
@@ -43848,7 +44234,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (256:2) {#if curIcon}
+    // (249:2) {#if curIcon}
     function create_if_block$1(ctx) {
     	let usage;
     	let current;
@@ -44077,45 +44463,45 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     				mounted = true;
     			}
     		},
-    		p(ctx, dirty) {
-    			if (!current || dirty[0] & /*name*/ 8) set_data(t0, /*name*/ ctx[3]);
-    			if (!current || dirty[0] & /*version*/ 4) set_data(t2, /*version*/ ctx[2]);
+    		p(ctx, [dirty]) {
+    			if (!current || dirty & /*name*/ 8) set_data(t0, /*name*/ ctx[3]);
+    			if (!current || dirty & /*version*/ 4) set_data(t2, /*version*/ ctx[2]);
 
-    			if (!current || dirty[0] & /*iconCount*/ 16 && input_placeholder_value !== (input_placeholder_value = "Search " + /*iconCount*/ ctx[4] + " icons (Press '/' to focus)")) {
+    			if (!current || dirty & /*iconCount*/ 16 && input_placeholder_value !== (input_placeholder_value = "Search " + /*iconCount*/ ctx[4] + " icons (Press '/' to focus)")) {
     				attr(input, "placeholder", input_placeholder_value);
     			}
 
-    			if (dirty[0] & /*searchTerm*/ 128 && input.value !== /*searchTerm*/ ctx[7]) {
+    			if (dirty & /*searchTerm*/ 128 && input.value !== /*searchTerm*/ ctx[7]) {
     				set_input_value(input, /*searchTerm*/ ctx[7]);
     			}
 
     			const icon1_changes = {};
 
-    			if (dirty[0] & /*isList*/ 512) icon1_changes.class = "w-6 h-6 " + (/*isList*/ ctx[9]
+    			if (dirty & /*isList*/ 512) icon1_changes.class = "w-6 h-6 " + (/*isList*/ ctx[9]
     			? 'stroke-stone-400 text-stone-400'
     			: 'stroke-stone-600 text-stone-600') + " stroke-[0.6px]";
 
     			icon1.$set(icon1_changes);
     			const icon2_changes = {};
 
-    			if (dirty[0] & /*isList*/ 512) icon2_changes.class = "w-6 h-6 " + (!/*isList*/ ctx[9]
+    			if (dirty & /*isList*/ 512) icon2_changes.class = "w-6 h-6 " + (!/*isList*/ ctx[9]
     			? 'stroke-stone-400 text-stone-400'
     			: 'stroke-stone-600 text-stone-600') + " stroke-[0.6px]";
 
     			icon2.$set(icon2_changes);
     			const icon3_changes = {};
-    			if (dirty[0] & /*isList*/ 512) icon3_changes.class = "w-6 h-6 stroke-[0.6px] stroke-stone-600 " + (!/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100 stroke-stone-100');
+    			if (dirty & /*isList*/ 512) icon3_changes.class = "w-6 h-6 stroke-[0.6px] stroke-stone-600 " + (!/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100 stroke-stone-100');
     			icon3.$set(icon3_changes);
 
-    			if (!current || dirty[0] & /*isList*/ 512 && button2_class_value !== (button2_class_value = "border-2 border-stone-600 flex-1 py-4 flex items-center justify-center " + (!/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100'))) {
+    			if (!current || dirty & /*isList*/ 512 && button2_class_value !== (button2_class_value = "border-2 border-stone-600 flex-1 py-4 flex items-center justify-center " + (!/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100'))) {
     				attr(button2, "class", button2_class_value);
     			}
 
     			const icon4_changes = {};
-    			if (dirty[0] & /*isList*/ 512) icon4_changes.class = "w-6 h-6 stroke-[0.6px] stroke-stone-600 " + (/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100 stroke-stone-100');
+    			if (dirty & /*isList*/ 512) icon4_changes.class = "w-6 h-6 stroke-[0.6px] stroke-stone-600 " + (/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100 stroke-stone-100');
     			icon4.$set(icon4_changes);
 
-    			if (!current || dirty[0] & /*isList*/ 512 && button3_class_value !== (button3_class_value = "border-2 border-stone-600 flex-1 py-4 flex items-center justify-center " + (/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100'))) {
+    			if (!current || dirty & /*isList*/ 512 && button3_class_value !== (button3_class_value = "border-2 border-stone-600 flex-1 py-4 flex items-center justify-center " + (/*isList*/ ctx[9] && 'bg-stone-600 text-stone-100'))) {
     				attr(button3, "class", button3_class_value);
     			}
 
@@ -44160,7 +44546,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     			if (/*curIcon*/ ctx[1]) {
     				if (if_block2) {
-    					if (dirty[0] & /*curIcon*/ 2) {
+    					if (dirty & /*curIcon*/ 2) {
     						transition_in(if_block2, 1);
     					}
     				} else {
@@ -44335,7 +44721,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     class IconList extends SvelteComponent {
     	constructor(options) {
     		super();
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { iconSet: 0 }, null, [-1, -1]);
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { iconSet: 0 });
     	}
     }
 
@@ -44343,18 +44729,18 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[15] = list[i][0];
-    	child_ctx[16] = list[i][1];
+    	child_ctx[14] = list[i][0];
+    	child_ctx[15] = list[i][1];
     	return child_ctx;
     }
 
-    // (73:2) {#if iconSets}
+    // (63:2) {#if iconSets}
     function create_if_block_3(ctx) {
     	let div;
     	let each_value_1 = Object.entries(/*iconSets*/ ctx[0]);
@@ -44412,17 +44798,17 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (75:6) {#each Object.entries(iconSets) as [name, iconSet]}
+    // (65:6) {#each Object.entries(iconSets) as [name, iconSet]}
     function create_each_block_1(ctx) {
     	let button;
-    	let t_value = /*iconSet*/ ctx[16].name + "";
+    	let t_value = /*iconSet*/ ctx[15].name + "";
     	let t;
     	let button_class_value;
     	let mounted;
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[6](/*name*/ ctx[15]);
+    		return /*click_handler*/ ctx[6](/*name*/ ctx[14]);
     	}
 
     	return {
@@ -44430,7 +44816,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			button = element("button");
     			t = text(t_value);
 
-    			attr(button, "class", button_class_value = "" + ((/*currentIconSet*/ ctx[1] === /*name*/ ctx[15]
+    			attr(button, "class", button_class_value = "" + ((/*currentIconSet*/ ctx[1] === /*name*/ ctx[14]
     			? `bg-stone-600`
     			: ``) + " border-2 border-stone-600 whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium px-4 flex-grow sssm:px-8 pb-0.5"));
     		},
@@ -44445,9 +44831,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		},
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*iconSets*/ 1 && t_value !== (t_value = /*iconSet*/ ctx[16].name + "")) set_data(t, t_value);
+    			if (dirty & /*iconSets*/ 1 && t_value !== (t_value = /*iconSet*/ ctx[15].name + "")) set_data(t, t_value);
 
-    			if (dirty & /*currentIconSet, iconSets*/ 3 && button_class_value !== (button_class_value = "" + ((/*currentIconSet*/ ctx[1] === /*name*/ ctx[15]
+    			if (dirty & /*currentIconSet, iconSets*/ 3 && button_class_value !== (button_class_value = "" + ((/*currentIconSet*/ ctx[1] === /*name*/ ctx[14]
     			? `bg-stone-600`
     			: ``) + " border-2 border-stone-600 whitespace-nowrap h-11 flex transition-all items-center justify-center font-medium px-4 flex-grow sssm:px-8 pb-0.5"))) {
     				attr(button, "class", button_class_value);
@@ -44461,7 +44847,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (121:2) {:else}
+    // (112:2) {:else}
     function create_else_block_1(ctx) {
     	let p;
 
@@ -44483,7 +44869,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (86:2) {#if filteredIconList === null || filteredIconList.length > 0}
+    // (76:2) {#if filteredIconList === null || filteredIconList.length > 0}
     function create_if_block_1(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -44553,7 +44939,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (108:4) {:else}
+    // (99:4) {:else}
     function create_else_block(ctx) {
     	let div;
     	let lottieplayer;
@@ -44599,7 +44985,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (87:4) {#if filteredIconList}
+    // (77:4) {#if filteredIconList}
     function create_if_block_2(ctx) {
     	let div;
     	let current;
@@ -44635,7 +45021,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     			current = true;
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*currentIcon, filteredIconList*/ 4) {
+    			if (dirty & /*currentIcon, filteredIconList, curIconSet, iconSets*/ 5) {
     				each_value = /*filteredIconList*/ ctx[2];
     				let i;
 
@@ -44687,13 +45073,13 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (92:8) {#each filteredIconList as icon}
+    // (82:8) {#each filteredIconList as icon}
     function create_each_block(ctx) {
     	let div;
     	let icon;
     	let t0;
     	let p;
-    	let t1_value = /*icon*/ ctx[12] + "";
+    	let t1_value = /*icon*/ ctx[11] + "";
     	let t1;
     	let t2;
     	let current;
@@ -44702,7 +45088,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	icon = new Icon({
     			props: {
-    				icon: /*icon*/ ctx[12],
+    				icon: /*icon*/ ctx[11],
     				width: "32",
     				height: "32",
     				class: ""
@@ -44710,7 +45096,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		});
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[7](/*icon*/ ctx[12]);
+    		return /*click_handler_1*/ ctx[7](/*icon*/ ctx[11]);
     	}
 
     	return {
@@ -44741,9 +45127,9 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
     			const icon_changes = {};
-    			if (dirty & /*filteredIconList*/ 4) icon_changes.icon = /*icon*/ ctx[12];
+    			if (dirty & /*filteredIconList*/ 4) icon_changes.icon = /*icon*/ ctx[11];
     			icon.$set(icon_changes);
-    			if ((!current || dirty & /*filteredIconList*/ 4) && t1_value !== (t1_value = /*icon*/ ctx[12] + "")) set_data(t1, t1_value);
+    			if ((!current || dirty & /*filteredIconList*/ 4) && t1_value !== (t1_value = /*icon*/ ctx[11] + "")) set_data(t1, t1_value);
     		},
     		i(local) {
     			if (current) return;
@@ -44763,7 +45149,7 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	};
     }
 
-    // (126:2) {#if curIcon}
+    // (117:2) {#if curIcon}
     function create_if_block(ctx) {
     	let usage;
     	let current;
@@ -44921,12 +45307,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     }
 
     function instance$1($$self, $$props, $$invalidate) {
-
     	let iconlist = null;
     	let iconSets = null;
     	const urlParams = new URLSearchParams(window.location.search);
     	const searchTerm = urlParams.get("q");
-    	let currentIconSet = null;
+    	let currentIconSet$1 = null;
     	let filteredIconList = null;
     	let curIcon = null;
 
@@ -44958,11 +45343,11 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
     	});
 
     	const setCurrentIconSet = iconSet => {
-    		if (currentIconSet !== iconSet) {
-    			$$invalidate(1, currentIconSet = iconSet);
+    		if (currentIconSet$1 !== iconSet) {
+    			$$invalidate(1, currentIconSet$1 = iconSet);
     			$$invalidate(2, filteredIconList = iconlist.filter(e => e.split(":").shift() === iconSet));
     		} else {
-    			$$invalidate(1, currentIconSet = null);
+    			$$invalidate(1, currentIconSet$1 = null);
     			$$invalidate(2, filteredIconList = iconlist);
     		}
     	};
@@ -44971,11 +45356,12 @@ import icon${/*icon*/ ctx[0]?.split(":")[1]?.split("-").map(func).join("")} from
 
     	const click_handler_1 = icon => {
     		currentIcon.set(icon);
+    		currentIconSet.set(iconSets[icon.split(":").shift()].name);
     	};
 
     	return [
     		iconSets,
-    		currentIconSet,
+    		currentIconSet$1,
     		filteredIconList,
     		curIcon,
     		searchTerm,

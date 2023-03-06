@@ -6,6 +6,7 @@
 
   let iconSets = {
     General: [],
+    "Animated Icons": [],
     "Brands / Social": [],
     Emoji: [],
     "Maps / Flags": [],
