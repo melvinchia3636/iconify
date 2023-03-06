@@ -13714,23 +13714,22 @@ var app = (function () {
 
     function get_each_context$4(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[7] = list[i][0];
-    	child_ctx[8] = list[i][1];
-    	child_ctx[10] = i;
+    	child_ctx[7] = list[i];
+    	child_ctx[9] = i;
     	return child_ctx;
     }
 
-    // (54:4) {#each Object.entries(categories) as [color, category], index}
+    // (55:4) {#each Object.keys(iconSets) as category, index}
     function create_each_block$4(ctx) {
     	let button;
-    	let t_value = /*category*/ ctx[8] + "";
+    	let t_value = /*category*/ ctx[7] + "";
     	let t;
     	let button_class_value;
     	let mounted;
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[5](/*index*/ ctx[10]);
+    		return /*click_handler*/ ctx[5](/*index*/ ctx[9]);
     	}
 
     	return {
@@ -13738,7 +13737,7 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
 
-    			attr(button, "class", button_class_value = "" + ((/*selectedCategory*/ ctx[2] === /*index*/ ctx[10]
+    			attr(button, "class", button_class_value = "" + ((/*selectedCategory*/ ctx[2] === /*index*/ ctx[9]
     			? `bg-stone-600 text-stone-100`
     			: ``) + " border-2 border-stone-600 whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center font-medium px-8"));
     		},
@@ -13754,7 +13753,7 @@ var app = (function () {
     		p(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*selectedCategory*/ 4 && button_class_value !== (button_class_value = "" + ((/*selectedCategory*/ ctx[2] === /*index*/ ctx[10]
+    			if (dirty & /*selectedCategory*/ 4 && button_class_value !== (button_class_value = "" + ((/*selectedCategory*/ ctx[2] === /*index*/ ctx[9]
     			? `bg-stone-600 text-stone-100`
     			: ``) + " border-2 border-stone-600 whitespace-nowrap h-11 flex flex-grow md:flex-grow-0 transition-all items-center justify-center font-medium px-8"))) {
     				attr(button, "class", button_class_value);
@@ -13798,7 +13797,7 @@ var app = (function () {
     			}
     		});
 
-    	let each_value = Object.entries(/*categories*/ ctx[4]);
+    	let each_value = Object.keys(/*iconSets*/ ctx[4]);
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -13889,8 +13888,8 @@ var app = (function () {
     				attr(input0, "placeholder", input0_placeholder_value);
     			}
 
-    			if (dirty & /*selectedCategory, setSelectedCategory, Object, categories*/ 22) {
-    				each_value = Object.entries(/*categories*/ ctx[4]);
+    			if (dirty & /*selectedCategory, setSelectedCategory, Object, iconSets*/ 22) {
+    				each_value = Object.keys(/*iconSets*/ ctx[4]);
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -13941,14 +13940,15 @@ var app = (function () {
     }
 
     function instance$p($$self, $$props, $$invalidate) {
-    	const categories = {
-    		rose: "General",
-    		orange: "Brands / Social",
-    		emerald: "Emoji",
-    		sky: "Maps / Flags",
-    		purple: "Thematic",
-    		gray: "Archive / Unmaintained",
-    		teal: "Other"
+    	let iconSets = {
+    		General: [],
+    		"Animated Icons": [],
+    		"Brands / Social": [],
+    		Emoji: [],
+    		"Maps / Flags": [],
+    		Thematic: [],
+    		"Archive / Unmaintained": [],
+    		Other: []
     	};
 
     	let { setSelectedCategory } = $$props;
@@ -13978,7 +13978,7 @@ var app = (function () {
     		setSelectedCategory,
     		selectedCategory,
     		count_value,
-    		categories,
+    		iconSets,
     		click_handler,
     		input1_input_handler
     	];

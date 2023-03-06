@@ -2,14 +2,15 @@
   import Icon from "@iconify/svelte";
   import { count } from "./stores";
 
-  const categories = {
-    rose: "General",
-    orange: "Brands / Social",
-    emerald: "Emoji",
-    sky: "Maps / Flags",
-    purple: "Thematic",
-    gray: "Archive / Unmaintained",
-    teal: "Other",
+  let iconSets = {
+    General: [],
+    "Animated Icons": [],
+    "Brands / Social": [],
+    Emoji: [],
+    "Maps / Flags": [],
+    Thematic: [],
+    "Archive / Unmaintained": [],
+    Other: [],
   };
 
   export let setSelectedCategory;
@@ -51,7 +52,7 @@
   class="flex flex-col md:flex-row items-start justify-between w-full mt-4 gap-4"
 >
   <div class="flex flex-wrap gap-2">
-    {#each Object.entries(categories) as [color, category], index}
+    {#each Object.keys(iconSets) as category, index}
       <button
         on:click={() =>
           setSelectedCategory(selectedCategory == index ? null : index)}
