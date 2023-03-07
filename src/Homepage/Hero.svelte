@@ -15,7 +15,7 @@
     class="text-sm sssm:text-lg ssm:text-xl md:text-2xl leading-7 tracking-wide mt-8"
   >
     More than 100 icon sets, one library.
-    <br class="hidden 700:inline" />Over 100,000 open source vector icons.
+    <br class="hidden 700:inline" />Over 150,000 open source vector icons.
   </p>
   <form
     action="/search"
